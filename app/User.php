@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    protected  $primaryKey = 'user_id';
     use Notifiable;
 
     /**
@@ -36,4 +37,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function circles(){
+        return $this->hasMany('App\Circle','user_id','user_id');
+    }
 }
