@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCirclesTable extends Migration
+class CreateConversationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateCirclesTable extends Migration
      */
     public function up()
     {
-        Schema::create('circles', function (Blueprint $table) {
-            $table->bigIncrements('circle_id');
-            $table->string('name')->nullable();
-            //$table->integer('user_id')->references('id')->on('users')->nullable();
+        Schema::create('conversations', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ class CreateCirclesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('circles');
+        Schema::dropIfExists('conversations');
     }
 }

@@ -19,5 +19,7 @@ class UsersTableSeeder extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
 
         ]);
+
+        factory(App\User::class, 20)->create();
     }
 }

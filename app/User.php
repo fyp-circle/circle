@@ -38,7 +38,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function circles(){
-        return $this->hasMany('App\Circle','user_id','user_id');
+    // public function circles(){
+    //     return $this->hasMany('App\Circle','user_id','user_id');
+    // }
+
+    public function posts(){
+        return $this->hasMany('App\Post','user_id','user_id');
     }
 }
