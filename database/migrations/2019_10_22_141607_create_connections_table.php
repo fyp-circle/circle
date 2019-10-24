@@ -15,6 +15,9 @@ class CreateConnectionsTable extends Migration
     {
         Schema::create('connections', function (Blueprint $table) {
             $table->bigIncrements('connection_id');
+            $table->integer('user1_id')->references('user_id')->on('users')->nullable();
+            $table->integer('user2_id')->references('user_id')->on('users')->nullable();
+            $table->integer('circle_id')->references('circle_id')->on('circles')->nullable();
             $table->timestamps();
         });
     }
