@@ -17,6 +17,10 @@ class Circle extends Model
         return $this->hasMany('App\Post','circle_id','circle_id');
     }
 
+    public function conversations(){
+        return $this->hasMany('App\Conversation','circle_id','circle_id');
+    }
+
     public function connections(){
         return $this->hasMany('App\Connection','connection_id','connection_id');
     }

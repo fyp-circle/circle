@@ -53,4 +53,8 @@ class User extends Authenticatable
     public function connections2(){
         return $this->hasMany('App\Connection','user2_id','user2_id');
     }
+
+    public function comments(){
+        return $this->hasMany('App\Comment','user_id','user_id');
+    }
 }

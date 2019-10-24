@@ -15,4 +15,8 @@ class Post extends Model
     public function circle(){
         return $this->belongsTo('App\Circle','circle_id','circle_id');
     }
+
+    public function comments(){
+        return $this->hasMany('App\Comment','post_id','post_id');
+    }
 }
