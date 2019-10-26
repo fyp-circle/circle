@@ -50,4 +50,8 @@ class CheckController extends Controller
 
         // return $connection->circle->name;
     }
+
+    public function login(){
+        return view("our_login");
+    }
 }
