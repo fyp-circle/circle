@@ -14,7 +14,10 @@
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
 
-<link href="css/main.8d288f825d8dffbbe55e.css" rel="stylesheet"></head>
+<link href="{{ URL::asset('css/formattedThemeCSS.css') }}" rel="stylesheet"></head>
+
+{{-- munir include css and js and images like this. this is good practice. --}}
+
 
 <body>
 <div class="app-container app-theme-white body-tabs-shadow">
@@ -82,5 +85,6 @@
             </div>
         </div>
 </div>
-<script type="text/javascript" src="js/main.8d288f825d8dffbbe55e.js"></script></body>
+
+<script type="text/javascript" src="{{ URL::asset('js/formattedThemeJS.js') }}"></script></body>
 </html>
