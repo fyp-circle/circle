@@ -6,8 +6,8 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 	<title>Circle</title>
-    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
-    
+    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16">
+
     <link href="{{ URL::asset('css/main.min.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/color.css') }}" rel="stylesheet">
@@ -27,10 +27,10 @@
 							Circle
 						</p>
 						<div class="friend-logo">
-							<span><img src="images/wink.png" alt=""></span>
+							<span><img src="{{ URL::asset('images/wink.png') }}" alt=""></span>
 						</div>
 						<a href="#" title="" class="folow-me">Follow Us on</a>
-					</div>	
+					</div>
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -41,11 +41,11 @@
 								Don’t use Circle Yet? <a href="#" title="">Take the tour</a> or <a href="#" title="">Join now</a>
 							</p>
 						<form method="post">
-							<div class="form-group">	
+							<div class="form-group">
 							  <input type="text" id="input" required="required"/>
 							  <label class="control-label" for="input">Username</label><i class="mtrl-select"></i>
 							</div>
-							<div class="form-group">	
+							<div class="form-group">
 							  <input type="password" required="required"/>
 							  <label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
 							</div>
@@ -67,15 +67,15 @@
 								Don’t use Circle Yet? <a href="#" title="">Take the tour</a> or <a href="#" title="">Join now</a>
 							</p>
 						<form method="post">
-							<div class="form-group">	
+							<div class="form-group">
 							  <input type="text" required="required"/>
 							  <label class="control-label" for="input">First & Last Name</label><i class="mtrl-select"></i>
 							</div>
-							<div class="form-group">	
+							<div class="form-group">
 							  <input type="text" required="required"/>
 							  <label class="control-label" for="input">User Name</label><i class="mtrl-select"></i>
 							</div>
-							<div class="form-group">	
+							<div class="form-group">
 							  <input type="password" required="required"/>
 							  <label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
 							</div>
@@ -91,7 +91,7 @@
 								</label>
 							  </div>
 							</div>
-							<div class="form-group">	
+							<div class="form-group">
 							  <input type="text" required="required"/>
 							  <label class="control-label" for="input">Email@</label><i class="mtrl-select"></i>
 							</div>
@@ -113,5 +113,5 @@
 </div>
     <script src="{{ URL::asset('js/main.min.js') }}"></script>
     <script src="{{ URL::asset('js/script.js') }}"></script>
-</body>	
+</body>
 </html>
