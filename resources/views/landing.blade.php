@@ -22,9 +22,9 @@
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 				<div class="land-featurearea">
 					<div class="land-meta">
-						<h1>Winku</h1>
+						<h1>Circle</h1>
 						<p>
-							Circle
+							Social Media Platform
 						</p>
 						<div class="friend-logo">
 							<span><img src="{{ URL::asset('images/wink.png') }}" alt=""></span>
