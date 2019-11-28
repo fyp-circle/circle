@@ -27,7 +27,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('loginn', ['as' => 'login.user', 'uses' => 'CheckController@login']);
 
 Route::get('chec', ['as' => 'check.check', 'uses' => 'CheckController@check']);
-Route::get('our', ['as' => 'check.check', 'uses' => 'CheckController@our']);
+Route::get('mainscreen', ['as' => 'check.check', 'uses' => 'CheckController@mainscreen']);
 
 
 

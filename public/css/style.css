@@ -512,7 +512,7 @@ header.sticky {
 }
 
 .land-featurearea {
-    background: #1fb6ff none repeat scroll 0 0;
+    background-image: url("{{ URL::asset('images/wink.png') }}");
     color: #fff;
     float: left;
     height: 100vh;

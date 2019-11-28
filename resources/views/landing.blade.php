@@ -20,7 +20,7 @@
 	<div class="container-fluid pdng0">
 		<div class="row merged">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-				<div class="land-featurearea">
+				<div class="land-featurearea" style="background-image:url('images/networking.jpg'); background-size: cover;">
 					<div class="land-meta">
 						<h1>Circle</h1>
 						<p>
@@ -29,7 +29,6 @@
 						<div class="friend-logo">
 							<span><img src="{{ URL::asset('images/wink.png') }}" alt=""></span>
 						</div>
-						<a href="#" title="" class="folow-me">Follow Us on</a>
 					</div>
 				</div>
 			</div>

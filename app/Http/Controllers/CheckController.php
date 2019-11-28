@@ -55,7 +55,7 @@ class CheckController extends Controller
         return view("our_login");
     }
 
-    public function our(){
-        return view("layouts.main_lay");
+    public function mainscreen(){
+        return view("mainscreen");
     }
 }
