@@ -52,7 +52,7 @@ class CheckController extends Controller
     }
 
     public function login(){
-        return view("our_login");
+        return view("landing");
     }
 
     public function mainscreen(){

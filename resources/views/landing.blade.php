@@ -37,7 +37,7 @@
 					<div class="log-reg-area sign">
 						<h2 class="log-title">Login</h2>
 							<p>
-								Don’t use Circle Yet? <a href="#" title="">Take the tour</a> or <a href="#" title="">Join now</a>
+								Don’t use Circle Yet? <a href="#" title="">Join now</a>
 							</p>
 						<form method="post">
 							<div class="form-group">
@@ -63,7 +63,7 @@
 					<div class="log-reg-area reg">
 						<h2 class="log-title">Register</h2>
 							<p>
-								Don’t use Circle Yet? <a href="#" title="">Take the tour</a> or <a href="#" title="">Join now</a>
+								Don’t know how Circle works? <a href="#" title="">Take the tour</a>
 							</p>
 						<form method="post">
 							<div class="form-group">
@@ -102,6 +102,21 @@
 							<a href="#" title="" class="already-have">Already have an account</a>
 							<div class="submit-btns">
 								<button class="mtr-btn signup" type="button"><span>Register</span></button>
+							</div>
+						</form>
+					</div>
+					<div class="log-reg-area form forgot-pwd"> {{-- Forget password ye raha!! bs is ko dekhna hai --}}
+						<h2 class="log-title">Recover Password</h2>
+							<p>
+								Enter Email Address to get your code!
+							</p>
+						<form method="post">
+							<div class="form-group">
+							  <input type="text" required="required"/>
+							  <label class="control-label" for="input">Email@</label><i class="mtrl-select"></i>
+							</div>
+							<div class="submit-btns">
+								<button class="mtr-btn signup" type="button"><span>Send Code</span></button>
 							</div>
 						</form>
 					</div>
