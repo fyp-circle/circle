@@ -54,7 +54,12 @@ class CheckController extends Controller
     public function login(){
         return view("landing");
     }
-
+    public function forget(){
+        return view("forgotpwd");
+    }
+    public function resetpwd(){
+        return view("resetpwd");
+    }
     public function mainscreen(){
         return view("mainscreen");
     }
