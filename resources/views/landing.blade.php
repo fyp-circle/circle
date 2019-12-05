@@ -42,13 +42,14 @@
                             <p>
                                 Don’t use Circle Yet? <a href="#" title="">Join now</a>
                             </p>
-                            <form method="post">
+                            <form method="post"  action="{{ route('login') }}">
+                                @csrf
                                 <div class="form-group">
-                                    <input type="text" id="input" required="required" />
-                                    <label class="control-label" for="input">Username</label><i class="mtrl-select"></i>
+                                    <input type="email" id="input" required="required"  name="email" />
+                                    <label class="control-label" for="input">Email</label><i class="mtrl-select"></i>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" required="required" />
+                                    <input type="password" required="required" name="email" />
                                     <label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
                                 </div>
                                 <div class="checkbox">
@@ -57,9 +58,9 @@
                                         Remember Me.
                                     </label>
                                 </div>
-                                <a href="#" title="" class="forgot-pwd">Forgot Password?</a>
+                                <a href="" title="" class="forgot-pwd">Forgot Password?</a>
                                 <div class="submit-btns">
-                                    <button class="mtr-btn signin" type="button"><span>Login</span></button>
+                                    <button type="submit" class="mtr-btn signin" type="button"><span>Login</span></button>
                                     <button class="mtr-btn signup" type="button"><span>Register</span></button>
                                 </div>
                             </form>
@@ -69,7 +70,7 @@
                             <p>
                                 Don’t know how Circle works? <a href="#" title="">Take the tour</a>
                             </p>
-                            <form method="post">
+                            <form method="post" action="{{ route('register') }}">
                                 <div class="form-group">
                                     <input type="text" required="required" />
                                     <label class="control-label" for="input">First & Last Name</label><i
@@ -114,7 +115,7 @@
                                 </div>
                                 <a href="#" title="" class="already-have">Already have an account</a>
                                 <div class="submit-btns">
-                                    <button class="mtr-btn signup" type="button"><span>Register</span></button>
+                                    <button class="mtr-btn signup" type="button" type="submit"><span>Register</span></button>
                                 </div>
                             </form>
                         </div>
