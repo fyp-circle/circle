@@ -441,7 +441,8 @@
 			</ul>
 			<div class="user-img" style="left: 10px">
 				<img src="images/resources/admin.jpg" alt="" >
-				<span class="status f-online"></span>
+                {{-- <span class="status f-online"></span> --}}
+                {{Auth::user()->name}}
 				<div class="user-setting">
 					<a href="#" title=""><span class="status f-online"></span>online</a>
 					<a href="#" title=""><span class="status f-away"></span>away</a>

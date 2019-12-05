@@ -70,4 +70,8 @@ class CheckController extends Controller
     public function mainscreen(){
         return view("mainscreen");
     }
+
+    public function b(){
+        return view("without_content");
+    }
 }

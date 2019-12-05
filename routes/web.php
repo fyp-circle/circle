@@ -31,6 +31,7 @@ Route::get('resetpwd', ['as' => 'reset.pwd', 'uses' => 'CheckController@resetpwd
 
 Route::get('chec', ['as' => 'check.check', 'uses' => 'CheckController@check']);
 Route::get('mainscreen', ['as' => 'check.check', 'uses' => 'CheckController@mainscreen']);
+Route::get('b', ['as' => 'check.check', 'uses' => 'CheckController@b']);
 
 
 
