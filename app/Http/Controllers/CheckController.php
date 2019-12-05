@@ -13,6 +13,7 @@ use App\Circle;
 class CheckController extends Controller
 {
 
+
     public function check()
     {
         // $posts = User::find(1)->posts;
@@ -51,6 +52,12 @@ class CheckController extends Controller
         // return $connection->circle->name;
     }
 
+
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
     public function login(){
         return view("landing");
     }
@@ -62,5 +69,9 @@ class CheckController extends Controller
     }
     public function mainscreen(){
         return view("mainscreen");
+    }
+
+    public function b(){
+        return view("without_content");
     }
 }

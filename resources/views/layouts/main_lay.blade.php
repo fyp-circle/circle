@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 	<title>Circle</title>
-    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
-    
+    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16">
+
     <link rel="stylesheet" href="css/main.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/color.css">
 	<link rel="stylesheet" href="css/responsive.css">
-	<link rel="stylesheet" href="css/main.8d288f825d8dffbbe55e.css">
+    <link rel="stylesheet" href="css/main.8d288f825d8dffbbe55e.css">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
 <body>
@@ -51,8 +54,8 @@
 						<li><a href="groups.html" title="">groups page</a></li>
 						<li><a href="page-likers.html" title="">Likes page</a></li>
 						<li><a href="people-nearby.html" title="">people nearby</a></li>
-						
-						
+
+
 					</ul>
 				</li>
 				<li><span>Account Setting</span>
@@ -135,27 +138,27 @@
 					<form method="post">
 						<div class="setting-row">
 							<span>use night mode</span>
-							<input type="checkbox" id="nightmode"/> 
+							<input type="checkbox" id="nightmode"/>
 							<label for="nightmode" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>Notifications</span>
-							<input type="checkbox" id="switch2"/> 
+							<input type="checkbox" id="switch2"/>
 							<label for="switch2" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>Notification sound</span>
-							<input type="checkbox" id="switch3"/> 
+							<input type="checkbox" id="switch3"/>
 							<label for="switch3" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>My profile</span>
-							<input type="checkbox" id="switch4"/> 
+							<input type="checkbox" id="switch4"/>
 							<label for="switch4" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>Show profile</span>
-							<input type="checkbox" id="switch5"/> 
+							<input type="checkbox" id="switch5"/>
 							<label for="switch5" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 					</form>
@@ -163,32 +166,32 @@
 					<form method="post">
 						<div class="setting-row">
 							<span>Sub users</span>
-							<input type="checkbox" id="switch6" /> 
+							<input type="checkbox" id="switch6" />
 							<label for="switch6" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>personal account</span>
-							<input type="checkbox" id="switch7" /> 
+							<input type="checkbox" id="switch7" />
 							<label for="switch7" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>Business account</span>
-							<input type="checkbox" id="switch8" /> 
+							<input type="checkbox" id="switch8" />
 							<label for="switch8" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>Show me online</span>
-							<input type="checkbox" id="switch9" /> 
+							<input type="checkbox" id="switch9" />
 							<label for="switch9" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>Delete history</span>
-							<input type="checkbox" id="switch10" /> 
+							<input type="checkbox" id="switch10" />
 							<label for="switch10" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>Expose author name</span>
-							<input type="checkbox" id="switch11" /> 
+							<input type="checkbox" id="switch11" />
 							<label for="switch11" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 					</form>
@@ -196,12 +199,12 @@
 			</div>
 		</nav>
 	</div><!-- responsive header -->
-	
+
 	<div class="topbar stick">
 		<div class="logo">
 			<a title="" href="newsfeed.html"><img src="images/logo.png" alt=""></a>
 		</div>
-		
+
 		<div class="top-area">
 			<ul class="main-menu">
 				{{-- <li>
@@ -214,7 +217,7 @@
 						<li><a href="logout.html" title="">Logout Page</a></li>
 						<li><a href="newsfeed.html" title="">news feed</a></li>
 					</ul>
-					
+
 				</li>
 				<li>
 					<a href="#" title="">timeline</a>
@@ -274,7 +277,7 @@
 						<img src="images/resources/side-friend1.jpg" alt="" style="border-radius:50%">
 						<span class="status f-online" style="bottom: 32px; background: blue"></span>
 					</div>
-				</li>		
+				</li>
 			</ul>
 			<ul class="setting-area">
 				<li>
@@ -428,7 +431,8 @@
 			</ul>
 			<div class="user-img" style="left: 10px">
 				<img src="images/resources/admin.jpg" alt="" >
-				<span class="status f-online"></span>
+                {{-- <span class="status f-online"></span> --}}
+                {{Auth::user()->name}}
 				<div class="user-setting">
 					<a href="#" title=""><span class="status f-online"></span>online</a>
 					<a href="#" title=""><span class="status f-away"></span>away</a>
@@ -437,13 +441,17 @@
 					<a href="#" title=""><i class="ti-pencil-alt"></i>edit profile</a>
 					<a href="#" title=""><i class="ti-target"></i>activity log</a>
 					<a href="#" title=""><i class="ti-settings"></i>account setting</a>
-					<a href="#" title=""><i class="ti-power-off"></i>log out</a>
+					<a href="{{ route('logout') }}" title="" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();"><i class="ti-power-off"></i>log out</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
 				</div>
 			</div>
 			{{-- <span class="ti-menu main-menu" data-ripple=""></span> --}}
 		</div>
 	</div><!-- topbar -->
-	
+
 	<div class="fixed-sidebar right">
 		<div class="chat-friendz">
 			<ul class="chat-users">
@@ -584,7 +592,7 @@
 			</div>
 		</div>
 	</div><!-- right sidebar user chat -->
-	
+
 	<div class="fixed-sidebar left">
 		<div class="menu-left">
 			<ul class="left-menu">
@@ -597,14 +605,14 @@
 			</ul>
 		</div>
 	</div><!-- left sidebar menu -->
-		
+
 	<section>
 		<div class="gap gray-bg">
 			<div class="container">
-				
+
 				@yield('content')
 			</div>
-		</div>	
+		</div>
 	</section>
 
 
@@ -616,7 +624,7 @@
 						<div class="foot-logo">
 							<div class="logo">
 								<a href="index.html" title=""><img src="images/logo.png" alt=""></a>
-							</div>	
+							</div>
 							<p>
 								The trio took this simple idea and built it into the world’s leading carpooling platform.
 							</p>
@@ -698,27 +706,27 @@
 			<form method="post">
 				<div class="setting-row">
 					<span>use night mode</span>
-					<input type="checkbox" id="nightmode1"/> 
+					<input type="checkbox" id="nightmode1"/>
 					<label for="nightmode1" data-on-label="ON" data-off-label="OFF"></label>
 				</div>
 				<div class="setting-row">
 					<span>Notifications</span>
-					<input type="checkbox" id="switch22" /> 
+					<input type="checkbox" id="switch22" />
 					<label for="switch22" data-on-label="ON" data-off-label="OFF"></label>
 				</div>
 				<div class="setting-row">
 					<span>Notification sound</span>
-					<input type="checkbox" id="switch33" /> 
+					<input type="checkbox" id="switch33" />
 					<label for="switch33" data-on-label="ON" data-off-label="OFF"></label>
 				</div>
 				<div class="setting-row">
 					<span>My profile</span>
-					<input type="checkbox" id="switch44" /> 
+					<input type="checkbox" id="switch44" />
 					<label for="switch44" data-on-label="ON" data-off-label="OFF"></label>
 				</div>
 				<div class="setting-row">
 					<span>Show profile</span>
-					<input type="checkbox" id="switch55" /> 
+					<input type="checkbox" id="switch55" />
 					<label for="switch55" data-on-label="ON" data-off-label="OFF"></label>
 				</div>
 			</form>
@@ -726,42 +734,43 @@
 			<form method="post">
 				<div class="setting-row">
 					<span>Sub users</span>
-					<input type="checkbox" id="switch66" /> 
+					<input type="checkbox" id="switch66" />
 					<label for="switch66" data-on-label="ON" data-off-label="OFF"></label>
 				</div>
 				<div class="setting-row">
 					<span>personal account</span>
-					<input type="checkbox" id="switch77" /> 
+					<input type="checkbox" id="switch77" />
 					<label for="switch77" data-on-label="ON" data-off-label="OFF"></label>
 				</div>
 				<div class="setting-row">
 					<span>Business account</span>
-					<input type="checkbox" id="switch88" /> 
+					<input type="checkbox" id="switch88" />
 					<label for="switch88" data-on-label="ON" data-off-label="OFF"></label>
 				</div>
 				<div class="setting-row">
 					<span>Show me online</span>
-					<input type="checkbox" id="switch99" /> 
+					<input type="checkbox" id="switch99" />
 					<label for="switch99" data-on-label="ON" data-off-label="OFF"></label>
 				</div>
 				<div class="setting-row">
 					<span>Delete history</span>
-					<input type="checkbox" id="switch101" /> 
+					<input type="checkbox" id="switch101" />
 					<label for="switch101" data-on-label="ON" data-off-label="OFF"></label>
 				</div>
 				<div class="setting-row">
 					<span>Expose author name</span>
-					<input type="checkbox" id="switch111" /> 
+					<input type="checkbox" id="switch111" />
 					<label for="switch111" data-on-label="ON" data-off-label="OFF"></label>
 				</div>
 			</form>
 		</div><!-- side panel -->		 --}}
-	
+
 	<script src="js/main.min.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/map-init.js"></script>
 	<script src="js/main.8d288f825d8dffbbe55e.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
-</body>	
+</body>
 </html>
