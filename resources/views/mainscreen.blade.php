@@ -14,28 +14,12 @@
                                 <a href="newsfeed.html" title="">News feed</a>
                             </li>
                             <li>
-                                <i class="ti-mouse-alt"></i>
-                                <a href="inbox.html" title="">Inbox</a>
-                            </li>
-                            <li>
-                                <i class="ti-files"></i>
-                                <a href="fav-page.html" title="">My pages</a>
-                            </li>
-                            <li>
                                 <i class="ti-user"></i>
-                                <a href="timeline-friends.html" title="">friends</a>
-                            </li>
-                            <li>
-                                <i class="ti-image"></i>
-                                <a href="timeline-photos.html" title="">images</a>
-                            </li>
-                            <li>
-                                <i class="ti-video-camera"></i>
-                                <a href="timeline-videos.html" title="">videos</a>
+                                <a href="timeline-friends.html" title="">Friends</a>
                             </li>
                             <li>
                                 <i class="ti-comments-smiley"></i>
-                                <a href="messages.html" title="">Messages</a>
+                                <a href="messages.html" title="">Inbox</a>
                             </li>
                             <li>
                                 <i class="ti-bell"></i>
@@ -47,11 +31,7 @@
                             </li>
                             <li>
                                 <i class="fa fa-bar-chart-o"></i>
-                                <a href="insights.html" title="">insights</a>
-                            </li>
-                            <li>
-                                <i class="ti-power-off"></i>
-                                <a href="landing.html" title="">Logout</a>
+                                <a href="insights.html" title="">Insights</a>
                             </li>
                         </ul>
                     </div><!-- Shortcuts -->
@@ -81,7 +61,7 @@
                         </ul>
                     </div><!-- recent activites -->
                     <div class="widget stick-widget">
-                        <h4 class="widget-title">Who's follownig</h4>
+                        <h4 class="widget-title">Friend Requests</h4>
                         <ul class="followers">
                             <li>
                                 <figure><img src="images/resources/friend-avatar2.jpg" alt=""></figure>
@@ -119,7 +99,7 @@
                                 </div>
                             </li>
                         </ul>
-                    </div><!-- who's following -->
+                    </div><!-- Friend Requests -->
                 </aside>
             </div><!-- sidebar -->
             <div class="col-lg-6">
@@ -795,7 +775,175 @@
             </div><!-- centerl meta -->
             <div class="col-lg-3">
                 <aside class="sidebar static">
-                    <div class="widget">
+                    {{-- <div class="widget">
+                        <div class="banner medium-opacity bluesh">
+                            <div class="bg-image" style="background-image: url(images/resources/baner-widgetbg.jpg)">
+                            </div>
+                            <div class="baner-top">
+                                <span><img alt="" src="images/book-icon.png"></span>
+                                <i class="fa fa-ellipsis-h"></i>
+                            </div>
+                            <div class="banermeta">
+                                <p>
+                                    create your own favourit page.
+                                </p>
+                                <span>like them all</span>
+                                <a data-ripple="" title="" href="#">start now!</a>
+                            </div>
+                        </div>
+                    </div> --}}
+                    <div class="widget friend-list stick-widget">
+                        <h4 class="widget-title">Suggestions</h4>
+                        <div id="searchDir"></div>
+                        <ul id="people-list" class="friendz-list">
+                            <li>
+                                <figure>
+                                    <img src="images/resources/friend-avatar.jpg" alt="">
+                                </figure>
+                                <div class="friendz-meta">
+                                    <a href="time-line.html">bucky barnes</a>
+                                </div>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="images/resources/friend-avatar2.jpg" alt="">
+                                </figure>
+                                <div class="friendz-meta">
+                                    <a href="time-line.html">Sarah Loren</a>
+                                </div>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="images/resources/friend-avatar3.jpg" alt="">
+                                </figure>
+                                <div class="friendz-meta">
+                                    <a href="time-line.html">jason borne</a>
+                                </div>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="images/resources/friend-avatar4.jpg" alt="">
+                                </figure>
+                                <div class="friendz-meta">
+                                    <a href="time-line.html">Cameron diaz</a>
+                                </div>
+                            </li>
+                            <li>
+
+                                <figure>
+                                    <img src="images/resources/friend-avatar5.jpg" alt="">
+                                </figure>
+                                <div class="friendz-meta">
+                                    <a href="time-line.html">daniel warber</a>
+                                </div>
+                            </li>
+                            <li>
+
+                                <figure>
+                                    <img src="images/resources/friend-avatar6.jpg" alt="">
+                                </figure>
+                                <div class="friendz-meta">
+                                    <a href="time-line.html">andrew</a>
+                                </div>
+                            </li>
+                            <li>
+
+                                <figure>
+                                    <img src="images/resources/friend-avatar7.jpg" alt="">
+                                </figure>
+                                <div class="friendz-meta">
+                                    <a href="time-line.html">amy watson</a>
+                                </div>
+                            </li>
+                            <li>
+
+                                <figure>
+                                    <img src="images/resources/friend-avatar5.jpg" alt="">
+                                </figure>
+                                <div class="friendz-meta">
+                                    <a href="time-line.html">daniel warber</a>
+                                </div>
+                            </li>
+                            <li>
+
+                                <figure>
+                                    <img src="images/resources/friend-avatar2.jpg" alt="">
+                                </figure>
+                                <div class="friendz-meta">
+                                    <a href="time-line.html">Sarah Loren</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="chat-box">
+                            <div class="chat-head">
+                                <span class="status f-online"></span>
+                                <h6>Bucky Barnes</h6>
+                                <div class="more">
+                                    <span><i class="ti-more-alt"></i></span>
+                                    <span class="close-mesage"><i class="ti-close"></i></span>
+                                </div>
+                            </div>
+                            <div class="chat-list">
+                                <ul>
+                                    <li class="me">
+                                        <div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
+                                        <div class="notification-event">
+                                            <span class="chat-message-item">
+                                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be
+                                                handling the gifts and Jake’s gonna get the drinks
+                                            </span>
+                                            <span class="notification-date"><time datetime="2004-07-24T18:18"
+                                                    class="entry-date updated">Yesterday at 8:10pm</time></span>
+                                        </div>
+                                    </li>
+                                    <li class="you">
+                                        <div class="chat-thumb"><img src="images/resources/chatlist2.jpg" alt=""></div>
+                                        <div class="notification-event">
+                                            <span class="chat-message-item">
+                                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be
+                                                handling the gifts and Jake’s gonna get the drinks
+                                            </span>
+                                            <span class="notification-date"><time datetime="2004-07-24T18:18"
+                                                    class="entry-date updated">Yesterday at 8:10pm</time></span>
+                                        </div>
+                                    </li>
+                                    <li class="me">
+                                        <div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
+                                        <div class="notification-event">
+                                            <span class="chat-message-item">
+                                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be
+                                                handling the gifts and Jake’s gonna get the drinks
+                                            </span>
+                                            <span class="notification-date"><time datetime="2004-07-24T18:18"
+                                                    class="entry-date updated">Yesterday at 8:10pm</time></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <form class="text-box">
+                                    <textarea placeholder="Post enter to post..."></textarea>
+                                    <div class="add-smiles">
+                                        <span title="add icon" class="em em-expressionless"></span>
+                                    </div>
+                                    <div class="smiles-bunch">
+                                        <i class="em em---1"></i>
+                                        <i class="em em-smiley"></i>
+                                        <i class="em em-anguished"></i>
+                                        <i class="em em-laughing"></i>
+                                        <i class="em em-angry"></i>
+                                        <i class="em em-astonished"></i>
+                                        <i class="em em-blush"></i>
+                                        <i class="em em-disappointed"></i>
+                                        <i class="em em-worried"></i>
+                                        <i class="em em-kissing_heart"></i>
+                                        <i class="em em-rage"></i>
+                                        <i class="em em-stuck_out_tongue"></i>
+                                    </div>
+                                    <button type="submit"></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div><!-- Suggestions -->
+                    {{-- <div class="widget">
                         <h4 class="widget-title">Your page</h4>
                         <div class="your-page">
                             <figure>
@@ -873,193 +1021,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div><!-- page like widget -->
-                    <div class="widget">
-                        <div class="banner medium-opacity bluesh">
-                            <div class="bg-image" style="background-image: url(images/resources/baner-widgetbg.jpg)">
-                            </div>
-                            <div class="baner-top">
-                                <span><img alt="" src="images/book-icon.png"></span>
-                                <i class="fa fa-ellipsis-h"></i>
-                            </div>
-                            <div class="banermeta">
-                                <p>
-                                    create your own favourit page.
-                                </p>
-                                <span>like them all</span>
-                                <a data-ripple="" title="" href="#">start now!</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="widget friend-list stick-widget">
-                        <h4 class="widget-title">Friends</h4>
-                        <div id="searchDir"></div>
-                        <ul id="people-list" class="friendz-list">
-                            <li>
-                                <figure>
-                                    <img src="images/resources/friend-avatar.jpg" alt="">
-                                    <span class="status f-online"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">bucky barnes</a>
-                                    <i>wintersolder@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/resources/friend-avatar2.jpg" alt="">
-                                    <span class="status f-away"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">Sarah Loren</a>
-                                    <i>barnes@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/resources/friend-avatar3.jpg" alt="">
-                                    <span class="status f-off"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">jason borne</a>
-                                    <i>jasonb@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/resources/friend-avatar4.jpg" alt="">
-                                    <span class="status f-off"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">Cameron diaz</a>
-                                    <i>jasonb@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-
-                                <figure>
-                                    <img src="images/resources/friend-avatar5.jpg" alt="">
-                                    <span class="status f-online"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">daniel warber</a>
-                                    <i>jasonb@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-
-                                <figure>
-                                    <img src="images/resources/friend-avatar6.jpg" alt="">
-                                    <span class="status f-away"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">andrew</a>
-                                    <i>jasonb@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-
-                                <figure>
-                                    <img src="images/resources/friend-avatar7.jpg" alt="">
-                                    <span class="status f-off"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">amy watson</a>
-                                    <i>jasonb@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-
-                                <figure>
-                                    <img src="images/resources/friend-avatar5.jpg" alt="">
-                                    <span class="status f-online"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">daniel warber</a>
-                                    <i>jasonb@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-
-                                <figure>
-                                    <img src="images/resources/friend-avatar2.jpg" alt="">
-                                    <span class="status f-away"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">Sarah Loren</a>
-                                    <i>barnes@gmail.com</i>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="chat-box">
-                            <div class="chat-head">
-                                <span class="status f-online"></span>
-                                <h6>Bucky Barnes</h6>
-                                <div class="more">
-                                    <span><i class="ti-more-alt"></i></span>
-                                    <span class="close-mesage"><i class="ti-close"></i></span>
-                                </div>
-                            </div>
-                            <div class="chat-list">
-                                <ul>
-                                    <li class="me">
-                                        <div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
-                                        <div class="notification-event">
-                                            <span class="chat-message-item">
-                                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be
-                                                handling the gifts and Jake’s gonna get the drinks
-                                            </span>
-                                            <span class="notification-date"><time datetime="2004-07-24T18:18"
-                                                    class="entry-date updated">Yesterday at 8:10pm</time></span>
-                                        </div>
-                                    </li>
-                                    <li class="you">
-                                        <div class="chat-thumb"><img src="images/resources/chatlist2.jpg" alt=""></div>
-                                        <div class="notification-event">
-                                            <span class="chat-message-item">
-                                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be
-                                                handling the gifts and Jake’s gonna get the drinks
-                                            </span>
-                                            <span class="notification-date"><time datetime="2004-07-24T18:18"
-                                                    class="entry-date updated">Yesterday at 8:10pm</time></span>
-                                        </div>
-                                    </li>
-                                    <li class="me">
-                                        <div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
-                                        <div class="notification-event">
-                                            <span class="chat-message-item">
-                                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be
-                                                handling the gifts and Jake’s gonna get the drinks
-                                            </span>
-                                            <span class="notification-date"><time datetime="2004-07-24T18:18"
-                                                    class="entry-date updated">Yesterday at 8:10pm</time></span>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <form class="text-box">
-                                    <textarea placeholder="Post enter to post..."></textarea>
-                                    <div class="add-smiles">
-                                        <span title="add icon" class="em em-expressionless"></span>
-                                    </div>
-                                    <div class="smiles-bunch">
-                                        <i class="em em---1"></i>
-                                        <i class="em em-smiley"></i>
-                                        <i class="em em-anguished"></i>
-                                        <i class="em em-laughing"></i>
-                                        <i class="em em-angry"></i>
-                                        <i class="em em-astonished"></i>
-                                        <i class="em em-blush"></i>
-                                        <i class="em em-disappointed"></i>
-                                        <i class="em em-worried"></i>
-                                        <i class="em em-kissing_heart"></i>
-                                        <i class="em em-rage"></i>
-                                        <i class="em em-stuck_out_tongue"></i>
-                                    </div>
-                                    <button type="submit"></button>
-                                </form>
-                            </div>
-                        </div>
-                    </div><!-- friends list sidebar -->
+                    </div><!-- page like widget --> --}}
                 </aside>
             </div><!-- sidebar -->
         </div>
