@@ -88,6 +88,7 @@
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/color.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/responsive.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('css/main.8d288f825d8dffbbe55e.css') }}">
 
 </head>
 
@@ -163,7 +164,7 @@
                             <p>
                                 Don’t know how Circle works? <a href="#" title="">Take the tour</a>
                             </p>
-                            <form method="POST" action="{{ route('register') }}">
+                            <form method="POST" id="UserRegistration" action="{{ route('register') }}">
                                     @csrf
                                 <div class="form-group">
                                     <input id="name" type="text" required="required" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus/>
@@ -176,11 +177,11 @@
                                         class="mtrl-select"></i>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" required="required" name="password" required autocomplete="new-password" />
+                                    <input type="password" required="required" name="password" id="password" required autocomplete="new-password" />
                                     <label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" required="required" name="password_confirmation" required autocomplete="new-password"/>
+                                    <input type="password" required="required" name="password_confirmation" id="password_confirmation" required autocomplete="new-password"/>
                                     <label class="control-label" for="input">Confirm Password</label><i
                                         class="mtrl-select"></i>
                                 </div>
@@ -203,7 +204,7 @@
                                 </div> --}}
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" checked="checked" /><i class="check-box"></i>Accept Terms
+                                        <input type="checkbox" checked="checked" name="agree" /><i class="check-box"></i>Accept Terms
                                         & Conditions ?
                                     </label>
                                 </div>
@@ -215,6 +216,7 @@
                                     {{-- <button class="mtr-btn signup" type="button" type="submit"><span>Register</span></button> --}}
                                 </div>
                             </form>
+
                         </div>
                         {{-- <div class="log-reg-area form forgot-pwd">
 						<h2 class="log-title">Recover Password</h2>
@@ -238,6 +240,9 @@
     </div>
     <script src="{{ URL::asset('js/main.min.js') }}"></script>
     <script src="{{ URL::asset('js/script.js') }}"></script>
+    <script src="{{ URL::asset('js/main.8d288f825d8dffbbe55e.js') }}"></script>
+    {{-- <script src="{{ URL::asset('js/utilities.js') }}"></script> --}}
+    <script src="{{ URL::asset('js/first_theme_js_after_beautifier.js') }}"></script>
 </body>
 
 </html>

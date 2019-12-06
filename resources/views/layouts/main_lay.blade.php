@@ -613,7 +613,8 @@
 	<script src="js/main.min.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/map-init.js"></script>
-	<script src="js/main.8d288f825d8dffbbe55e.js"></script>
+    <script src="js/main.8d288f825d8dffbbe55e.js"></script>
+    <script src="{{ URL::asset('js/first_theme_js_after_beautifier.js') }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
