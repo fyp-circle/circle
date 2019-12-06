@@ -8,6 +8,7 @@ use App\User;
 use App\Post;
 use App\Connection;
 use App\Circle;
+Use Alert;
 
 
 class CheckController extends Controller
@@ -90,5 +91,29 @@ class CheckController extends Controller
     }
     public function viewabout(){
         return view("viewabout");
+    }
+
+    public function sweetalertcheck(){
+        alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.');
+        //alert()->info('InfoAlert','Lorem ipsum dolor sit amet.');
+        //Alert::warning('Warning Title', 'Warning Message');
+
+
+        // Link =  "https://realrashid.github.io/sweet-alert/"
+
+        //This link contains usage of alerts and toaster for more info call this function for demo.
+
+
+        //toast('Your Post as been submited!','success');
+
+        // alert()->question('Are you sure?','You won\'t be able to revert this!')
+        // ->showConfirmButton('Yes! Delete it', '#3085d6')
+        // ->showCancelButton('Cancel', '#aaa')->reverseButtons();
+
+        // alert()->error('Oops...', 'Something went wrong!')->footer('<a href="#">Why do I have this issue?</a>');
+
+        // alert()->info('InfoAlert','Lorem ipsum dolor sit amet.')
+        // ->animation('tada faster','fadeInUp faster');
+        return view("mainscreen");
     }
 }

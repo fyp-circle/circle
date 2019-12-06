@@ -39,6 +39,8 @@ Route::get('viewvideos', ['as' => 'viewvideos.videos', 'uses' => 'CheckControlle
 Route::get('viewfriends', ['as' => 'viewfriends.friends', 'uses' => 'CheckController@viewfriends']);
 Route::get('viewabout', ['as' => 'viewabout.about', 'uses' => 'CheckController@viewabout']);
 
+Route::get('sweetalertcheck', ['as' => 'sweetalertcheck', 'uses' => 'CheckController@sweetalertcheck']);
+
 
 
 

@@ -456,7 +456,9 @@
 			</div>
 			{{-- <span class="ti-menu main-menu" data-ripple=""></span> --}}
 		</div>
-	</div><!-- topbar -->
+    </div><!-- topbar -->
+
+    @include('sweetalert::alert')
     @yield('content')
 
 
