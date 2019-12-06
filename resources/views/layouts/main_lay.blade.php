@@ -28,7 +28,7 @@
 				<a class="" href="#menu"><i class="fa fa-align-justify"></i></a>
 			</span>
 			<span class="mh-text">
-				<a href="newsfeed.html" title=""><img src="images/logo2.png" alt=""></a>
+				<a href="{{ url('/') }} title="Home"><img src="images/logo2.png" alt=""></a>
 			</span>
 			<span class="mh-btns-right">
 				<a class="fa fa-sliders" href="#shoppingbag"></a>
@@ -202,7 +202,7 @@
 
 	<div class="topbar stick">
 		<div class="logo">
-			<a title="" href="newsfeed.html"><img src="images/logo.png" alt=""></a>
+			<a title="Home" href="{{ url('/') }}"><img src="images/logo.png" alt=""></a>
 		</div>
 
 		<div class="top-area">
@@ -262,22 +262,28 @@
 				</li> --}}
 				<li>
 					<div class="author-thmb">
+                        <a href = "{{ url('mainscreen') }}">
 						<img src="images/resources/side-friend1.jpg" alt="" style="border-radius:50%">
-						<span class="status f-online" style="bottom: 32px; background: black"></span>
+                        <span class="status f-online" style="bottom: 32px; background: black"></span>
+                        </a>
 					</div>
-				</li>
+				</li> <!-- friend mainscreen -->
 				<li>
 					<div class="author-thmb">
+                        <a href = "{{ url('mainscreenfamily') }}">
 						<img src="images/resources/side-friend1.jpg" alt="" style="border-radius:50%">
-						<span class="status f-online" style="bottom: 32px; background: red"></span>
+                        <span class="status f-online" style="bottom: 32px; background: red"></span>
+                        </a>
 					</div>
-				</li>
+				</li><!-- family mainscreen -->
 				<li>
 					<div class="author-thmb">
-						<img src="images/resources/side-friend1.jpg" alt="" style="border-radius:50%">
-						<span class="status f-online" style="bottom: 32px; background: blue"></span>
+                        <a href = "{{ url('mainscreenbusiness') }}">
+						<img src="images/resources/side-friend1.jpg" a href = "{{ url('mainscreenbusiness') }}" alt="" style="border-radius:50%">
+                        <span class="status f-online" style="bottom: 32px; background: blue"></span>
+                        </a>
 					</div>
-				</li>
+				</li> <!-- business mainscreen -->
 			</ul>
 			<ul class="setting-area">
 				<li>
@@ -289,7 +295,7 @@
 						</form>
 					</div>
 				</li>
-				<li><a href="newsfeed.html" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
+				<li><a href="{{ url('/') }}" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
 				<li>
 					<a href="#" title="Notification" data-ripple="">
 						<i class="ti-bell"></i><span>20</span>
@@ -437,7 +443,7 @@
 					<a href="#" title=""><span class="status f-online"></span>online</a>
 					<a href="#" title=""><span class="status f-away"></span>away</a>
 					<a href="#" title=""><span class="status f-off"></span>offline</a>
-					<a href="#" title=""><i class="ti-user"></i> view profile</a>
+					<a href="{{ url('viewprofile') }}" title=""><i class="ti-user"></i> view profile</a>
 					<a href="#" title=""><i class="ti-pencil-alt"></i>edit profile</a>
 					<a href="#" title=""><i class="ti-target"></i>activity log</a>
 					<a href="#" title=""><i class="ti-settings"></i>account setting</a>
@@ -451,169 +457,8 @@
 			{{-- <span class="ti-menu main-menu" data-ripple=""></span> --}}
 		</div>
 	</div><!-- topbar -->
+    @yield('content')
 
-	<div class="fixed-sidebar right">
-		<div class="chat-friendz">
-			<ul class="chat-users">
-				<li>
-					<div class="author-thmb">
-						<img src="images/resources/side-friend1.jpg" alt="">
-						<span class="status f-online"></span>
-					</div>
-				</li>
-				<li>
-					<div class="author-thmb">
-						<img src="images/resources/side-friend2.jpg" alt="">
-						<span class="status f-away"></span>
-					</div>
-				</li>
-				<li>
-					<div class="author-thmb">
-						<img src="images/resources/side-friend3.jpg" alt="">
-						<span class="status f-online"></span>
-					</div>
-				</li>
-				<li>
-					<div class="author-thmb">
-						<img src="images/resources/side-friend4.jpg" alt="">
-						<span class="status f-offline"></span>
-					</div>
-				</li>
-				<li>
-					<div class="author-thmb">
-						<img src="images/resources/side-friend5.jpg" alt="">
-						<span class="status f-online"></span>
-					</div>
-				</li>
-				<li>
-					<div class="author-thmb">
-						<img src="images/resources/side-friend6.jpg" alt="">
-						<span class="status f-online"></span>
-					</div>
-				</li>
-				<li>
-					<div class="author-thmb">
-						<img src="images/resources/side-friend7.jpg" alt="">
-						<span class="status f-offline"></span>
-					</div>
-				</li>
-				<li>
-					<div class="author-thmb">
-						<img src="images/resources/side-friend8.jpg" alt="">
-						<span class="status f-online"></span>
-					</div>
-				</li>
-				<li>
-					<div class="author-thmb">
-						<img src="images/resources/side-friend9.jpg" alt="">
-						<span class="status f-away"></span>
-					</div>
-				</li>
-				<li>
-					<div class="author-thmb">
-						<img src="images/resources/side-friend10.jpg" alt="">
-						<span class="status f-away"></span>
-					</div>
-				</li>
-				<li>
-					<div class="author-thmb">
-						<img src="images/resources/side-friend8.jpg" alt="">
-						<span class="status f-online"></span>
-					</div>
-				</li>
-			</ul>
-			<div class="chat-box">
-				<div class="chat-head">
-					<span class="status f-online"></span>
-					<h6>Bucky Barnes</h6>
-					<div class="more">
-						<span class="more-optns"><i class="ti-more-alt"></i>
-							<ul>
-								<li>block chat</li>
-								<li>unblock chat</li>
-								<li>conversation</li>
-							</ul>
-						</span>
-						<span class="close-mesage"><i class="ti-close"></i></span>
-					</div>
-				</div>
-				<div class="chat-list">
-					<ul>
-						<li class="me">
-							<div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
-							<div class="notification-event">
-								<span class="chat-message-item">
-									Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks
-								</span>
-								<span class="notification-date"><time datetime="2004-07-24T18:18" class="entry-date updated">Yesterday at 8:10pm</time></span>
-							</div>
-						</li>
-						<li class="you">
-							<div class="chat-thumb"><img src="images/resources/chatlist2.jpg" alt=""></div>
-							<div class="notification-event">
-								<span class="chat-message-item">
-									Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks
-								</span>
-								<span class="notification-date"><time datetime="2004-07-24T18:18" class="entry-date updated">Yesterday at 8:10pm</time></span>
-							</div>
-						</li>
-						<li class="me">
-							<div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
-							<div class="notification-event">
-								<span class="chat-message-item">
-									Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks
-								</span>
-								<span class="notification-date"><time datetime="2004-07-24T18:18" class="entry-date updated">Yesterday at 8:10pm</time></span>
-							</div>
-						</li>
-					</ul>
-					<form class="text-box">
-						<textarea placeholder="Post enter to post..."></textarea>
-						<div class="add-smiles">
-							<span title="add icon" class="em em-expressionless"></span>
-						</div>
-						<div class="smiles-bunch">
-							<i class="em em---1"></i>
-							<i class="em em-smiley"></i>
-							<i class="em em-anguished"></i>
-							<i class="em em-laughing"></i>
-							<i class="em em-angry"></i>
-							<i class="em em-astonished"></i>
-							<i class="em em-blush"></i>
-							<i class="em em-disappointed"></i>
-							<i class="em em-worried"></i>
-							<i class="em em-kissing_heart"></i>
-							<i class="em em-rage"></i>
-							<i class="em em-stuck_out_tongue"></i>
-						</div>
-						<button type="submit"></button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div><!-- right sidebar user chat -->
-
-	<div class="fixed-sidebar left">
-		<div class="menu-left">
-			<ul class="left-menu">
-				<li><a href="newsfeed.html" title="Newsfeed Page" data-toggle="tooltip" data-placement="right"><i class="ti-magnet"></i></a></li>
-				<li><a href="insights.html" title="Account Stats" data-toggle="tooltip" data-placement="right"><i class="ti-stats-up"></i></a></li>
-				{{-- <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right"><i class="ti-import"></i></a></li> --}}
-				<li><a href="messages.html" title="Messages" data-toggle="tooltip" data-placement="right"><i class="ti-comment-alt"></i></a></li>
-				<li><a href="edit-account-setting.html" title="Setting" data-toggle="tooltip" data-placement="right"><i class="ti-panel"></i></a></li>
-				<li><a href="timeline-friends.html" title="Friends" data-toggle="tooltip" data-placement="right"><i class="ti-themify-favicon"></i></a></li>
-			</ul>
-		</div>
-	</div><!-- left sidebar menu -->
-
-	<section>
-		<div class="gap gray-bg">
-			<div class="container">
-
-				@yield('content')
-			</div>
-		</div>
-	</section>
 
 
 	{{-- <footer>
