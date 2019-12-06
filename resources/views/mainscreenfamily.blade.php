@@ -151,16 +151,16 @@
 <div class="fixed-sidebar left">
     <div class="menu-left">
         <ul class="left-menu">
-            <li><a href="{{ url('/') }}" title="Newsfeed Page" data-toggle="tooltip" data-placement="right"><i
+            <li><a href="{{ url('mainscreenfamily') }}" title="Newsfeed Page" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i
                         class="ti-magnet"></i></a></li>
-            <li><a href="insights.html" title="Account Stats" data-toggle="tooltip" data-placement="right"><i
+            <li><a href="insights.html" title="Account Stats" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i
                         class="ti-stats-up"></i></a></li>
-            {{-- <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right"><i class="ti-import"></i></a></li> --}}
-            <li><a href="messages.html" title="Messages" data-toggle="tooltip" data-placement="right"><i
+            {{-- <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i class="ti-import"></i></a></li> --}}
+            <li><a href="messages.html" title="Messages" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i
                         class="ti-comment-alt"></i></a></li>
-            <li><a href="edit-account-setting.html" title="Setting" data-toggle="tooltip" data-placement="right"><i
+            <li><a href="edit-account-setting.html" title="Setting" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i
                         class="ti-panel"></i></a></li>
-            <li><a href="{{ url('viewfriends') }}" title="Friends" data-toggle="tooltip" data-placement="right"><i
+            <li><a href="{{ url('viewfriends') }}" title="Friends" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i
                         class="ti-themify-favicon"></i></a></li>
         </ul>
     </div>

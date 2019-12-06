@@ -70,8 +70,25 @@ class CheckController extends Controller
     public function mainscreen(){
         return view("mainscreen");
     }
-
-    public function b(){
-        return view("without_content");
+    public function mainscreenfamily(){
+        return view("mainscreenfamily");
+    }
+    public function mainscreenbusiness(){
+        return view("mainscreenfamily");
+    }
+    public function viewprofile(){
+        return view("viewprofile");
+    }
+    public function viewphotos(){
+        return view("viewphotos");
+    }
+    public function viewvideos(){
+        return view("viewvideos");
+    }
+    public function viewfriends(){
+        return view("viewfriends");
+    }
+    public function viewabout(){
+        return view("viewabout");
     }
 }
