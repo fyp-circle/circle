@@ -57,4 +57,20 @@ class User extends Authenticatable
     public function comments(){
         return $this->hasMany('App\Comment','user_id','user_id');
     }
+
+    public function business_users(){
+        return $this->hasMany('App\BusinessUser','business_user_id','business_user_id');
+    }
+
+    public function family_users(){
+        return $this->hasMany('App\FamilyUser','family_user_id','family_user_id');
+    }
+
+    public function business_user(){
+        return $this->belongsTo('App\BusinessUser','business_user_id','business_user_id');
+    }
+
+    public function family_user(){
+        return $this->belongsTo('App\FamilyUser','family_user_id','family_user_id');
+    }
 }
