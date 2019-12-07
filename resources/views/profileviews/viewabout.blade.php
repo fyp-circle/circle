@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="row merged20" id="page-contents">
-            <div class="col-lg-3">
+            {{-- <div class="col-lg-3">
 
                 <aside class="sidebar static">
                     <div class="widget">
@@ -33,7 +33,7 @@
                         </ul>
                     </div>
                 </aside>
-            </div><!-- sidebar -->
+            </div><!-- sidebar --> --}}
             <div class="col-lg-9">
                 <div class="central-meta">
                     <div class="about">

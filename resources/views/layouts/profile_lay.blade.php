@@ -284,7 +284,7 @@
                             <a href="{{ url('mainscreenbusiness') }}">
                                 <img src="images/resources/side-friend1.jpg" a href="{{ url('mainscreenbusiness') }}"
                                     alt="" style="border-radius:50%">
-                                <span class="status f-online" style="bottom: 32px; background: blue"></span>
+                                <span class="status f-online" style="bottom: 32px; background-color:cornflowerblue"></span>
                             </a>
                         </div>
                     </li> <!-- business mainscreen -->
@@ -475,7 +475,7 @@
                         <input type="file" />
                     </label>
                 </form>
-                <div class="container-fluid">
+                <div class="container-fluid" style="background-color: white">
                     <div class="row merged">
                         <div class="col-lg-2 col-sm-3">
                             <div class="user-avatar">
@@ -506,9 +506,9 @@
                                         <a class="" href="{{ url('viewvideos') }}" title="" data-ripple="">Videos</a>
                                         <a class="" href="{{ url('viewfriends') }}" title="" data-ripple="">Friends
                                             Circle</a>
-                                        <a class="" href="timeline-groups.html" title="" data-ripple="">Family
+                                        <a class="" href="{{ url('viewfamily') }}" title="" data-ripple="">Family
                                             Circle</a>
-                                        <a class="" href="about.html" title="" data-ripple="">Business Circle</a>
+                                        <a class="" href="{{ url('viewbusiness') }}" title="" data-ripple="">Business Circle</a>
                                         <a class="" href="{{ url('viewabout') }}" title="" data-ripple="">About</a>
                                     </li>
                                 </ul>

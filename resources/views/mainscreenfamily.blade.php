@@ -160,8 +160,8 @@
                         class="ti-comment-alt"></i></a></li>
             <li><a href="edit-account-setting.html" title="Setting" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i
                         class="ti-panel"></i></a></li>
-            <li><a href="{{ url('viewfriends') }}" title="Friends" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i
-                        class="ti-themify-favicon"></i></a></li>
+            <li><a href="{{ url('viewfamily') }}" title="Family Circle" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i
+                        class="ti-heart"></i></a></li>
         </ul>
     </div>
 </div><!-- left sidebar menu -->

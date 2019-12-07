@@ -75,22 +75,28 @@ class CheckController extends Controller
         return view("mainscreenfamily");
     }
     public function mainscreenbusiness(){
-        return view("mainscreenfamily");
+        return view("mainscreenbusiness");
     }
     public function viewprofile(){
-        return view("viewprofile");
+        return view("profileviews.viewprofile");
     }
     public function viewphotos(){
-        return view("viewphotos");
+        return view("profileviews.viewphotos");
     }
     public function viewvideos(){
-        return view("viewvideos");
+        return view("profileviews.viewvideos");
     }
     public function viewfriends(){
-        return view("viewfriends");
+        return view("profileviews.viewfriends");
+    }
+    public function viewfamily(){
+        return view("profileviews.viewfamily");
+    }
+    public function viewbusiness(){
+        return view("profileviews.viewbusiness");
     }
     public function viewabout(){
-        return view("viewabout");
+        return view("profileviews.viewabout");
     }
 
     public function sweetalertcheck(){

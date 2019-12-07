@@ -160,8 +160,8 @@
                         class="ti-comment-alt"></i></a></li> --}}
             <li><a href="edit-account-setting.html" title="Setting" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i
                         class="ti-panel"></i></a></li>
-            <li><a href="{{ url('viewfriends') }}" title="Friends" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i
-                        class="ti-themify-favicon"></i></a></li>
+            <li><a href="{{ url('viewbusiness') }}" title="BusinessCircle" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i
+                        class="ti-rss"></i></a></li>
         </ul>
     </div>
 </div><!-- left sidebar menu -->

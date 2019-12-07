@@ -37,6 +37,8 @@ Route::get('viewprofile', ['as' => 'viewprofile.profile', 'uses' => 'CheckContro
 Route::get('viewphotos', ['as' => 'viewphotos.photos', 'uses' => 'CheckController@viewphotos']);
 Route::get('viewvideos', ['as' => 'viewvideos.videos', 'uses' => 'CheckController@viewvideos']);
 Route::get('viewfriends', ['as' => 'viewfriends.friends', 'uses' => 'CheckController@viewfriends']);
+Route::get('viewfamily', ['as' => 'viewfamily.family', 'uses' => 'CheckController@viewfamily']);
+Route::get('viewbusiness', ['as' => 'viewbusiness.business', 'uses' => 'CheckController@viewbusiness']);
 Route::get('viewabout', ['as' => 'viewabout.about', 'uses' => 'CheckController@viewabout']);
 
 Route::get('sweetalertcheck', ['as' => 'sweetalertcheck', 'uses' => 'CheckController@sweetalertcheck']);

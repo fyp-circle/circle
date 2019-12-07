@@ -280,7 +280,7 @@
 					<div class="author-thmb">
                         <a href = "{{ url('mainscreenbusiness') }}">
 						<img src="images/resources/side-friend1.jpg" a href = "{{ url('mainscreenbusiness') }}" alt="" style="border-radius:50%">
-                        <span class="status f-online" style="bottom: 32px; background: blue"></span>
+                        <span class="status f-online" style="bottom: 32px; background-color:cornflowerblue"></span>
                         </a>
 					</div>
 				</li> <!-- business mainscreen -->
