@@ -42,9 +42,9 @@
                             <p>
                                 Enter Email Address to get your code!
                             </p>
-                            <form method="post">
+                            <form method="post" action="{{ route('password.email') }}">
                                 <div class="form-group">
-                                    <input type="text" required="required" />
+                                    <input type="email" required="required" name="email"/>
                                     <label class="control-label" for="input">Email@</label><i class="mtrl-select"></i>
                                 </div>
                                 <div class="submit-btns">

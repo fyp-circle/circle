@@ -152,7 +152,12 @@
                                         Remember Me.
                                     </label>
                                 </div>
-                                <a href="{{ route('forget.pwd') }}" title="" class="forgot-pwd">Forgot Password?</a>
+                                @if (Route::has('password.request'))
+                                    <a class="forgot-pwd" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+                                {{-- <a href="{{ route('forget.pwd') }}" title="" class="forgot-pwd">Forgot Password?</a> --}}
                                 <div class="submit-btns">
                                     <button type="submit" class="mtr-btn signin" type="button"><span>Login</span></button>
                                     <button class="mtr-btn signup" type="button"><span>Register</span></button>
