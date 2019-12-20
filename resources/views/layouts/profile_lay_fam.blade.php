@@ -34,17 +34,17 @@
                     <div class="timeline-info">
                         <ul>
                             <li class="admin-name">
-                                <h5 style="-webkit-text-fill-color:black">{{Auth::user()->name}}</h5>
+                                <h5 style="-webkit-text-fill-color:red">{{Auth::user()->name}}</h5>
 
                                 {{-- <span>Group Admin</span> --}}
                             </li>
                             <li>
-                                <a class="" href="{{ url('viewprofile') }}" title="" data-ripple="" style="-webkit-text-fill-color: black">time
+                                <a class="" href="{{ url('viewprofilefamily') }}" title="" data-ripple="" style="-webkit-text-fill-color: red">time
                                     line</a>
-                                <a class="" href="{{ url('viewphotos') }}" title="" data-ripple="" style="-webkit-text-fill-color: black">Photos</a>
-                                <a class="" href="{{ url('viewvideos') }}" title="" data-ripple="" style="-webkit-text-fill-color: black">Videos</a>
-                                <a class="" href="{{ url('viewfriends') }}" title="" data-ripple="" style="-webkit-text-fill-color: black">Friends Circle</a>
-                                <a class="" href="{{ url('viewabout') }}" title="" data-ripple="" style="-webkit-text-fill-color: black">About</a>
+                                <a class="" href="{{ url('viewphotosfamily') }}" title="" data-ripple="" style="-webkit-text-fill-color: red">Photos</a>
+                                <a class="" href="{{ url('viewvideosfamily') }}" title="" data-ripple="" style="-webkit-text-fill-color: red">Videos</a>
+                                <a class="" href="{{ url('viewfamily') }}" title="" data-ripple="" style="-webkit-text-fill-color: red">Family Circle</a>
+                                <a class="" href="{{ url('viewaboutfamily') }}" title="" data-ripple="" style="-webkit-text-fill-color: red">About</a>
                             </li>
                         </ul>
                     </div>

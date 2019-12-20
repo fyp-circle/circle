@@ -34,17 +34,17 @@
                     <div class="timeline-info">
                         <ul>
                             <li class="admin-name">
-                                <h5 style="-webkit-text-fill-color:black">{{Auth::user()->name}}</h5>
+                                <h5 style="-webkit-text-fill-color:cornflowerblue">{{Auth::user()->name}}</h5>
 
                                 {{-- <span>Group Admin</span> --}}
                             </li>
                             <li>
-                                <a class="" href="{{ url('viewprofile') }}" title="" data-ripple="" style="-webkit-text-fill-color: black">time
+                                <a class="" href="{{ url('viewprofilebusiness') }}" title="" data-ripple="" style="-webkit-text-fill-color:cornflowerblue">time
                                     line</a>
-                                <a class="" href="{{ url('viewphotos') }}" title="" data-ripple="" style="-webkit-text-fill-color: black">Photos</a>
-                                <a class="" href="{{ url('viewvideos') }}" title="" data-ripple="" style="-webkit-text-fill-color: black">Videos</a>
-                                <a class="" href="{{ url('viewfriends') }}" title="" data-ripple="" style="-webkit-text-fill-color: black">Friends Circle</a>
-                                <a class="" href="{{ url('viewabout') }}" title="" data-ripple="" style="-webkit-text-fill-color: black">About</a>
+                                <a class="" href="{{ url('viewphotosbusiness') }}" title="" data-ripple="" style="-webkit-text-fill-color:cornflowerblue">Photos</a>
+                                <a class="" href="{{ url('viewvideosbusiness') }}" title="" data-ripple="" style="-webkit-text-fill-color:cornflowerblue">Videos</a>
+                                <a class="" href="{{ url('viewbusiness') }}" title="" data-ripple="" style="-webkit-text-fill-color:cornflowerblue">Business Circle</a>
+                                <a class="" href="{{ url('viewaboutbusiness') }}" title="" data-ripple="" style="-webkit-text-fill-color:cornflowerblue">About</a>
                             </li>
                         </ul>
                     </div>

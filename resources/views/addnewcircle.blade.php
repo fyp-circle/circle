@@ -1,5 +1,6 @@
-@extends('layouts.profile_lay')
+@extends('layouts.main_lay')
 
 @section('content')
+
 
 @endsection

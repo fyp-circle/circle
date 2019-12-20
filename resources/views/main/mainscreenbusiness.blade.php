@@ -151,17 +151,17 @@
 <div class="fixed-sidebar left">
     <div class="menu-left">
         <ul class="left-menu">
-            <li><a href="{{ url('/') }}" title="Newsfeed Page" data-toggle="tooltip" data-placement="right"><i
+            <li><a href="{{ url('mainscreenbusiness') }}" title="Newsfeed Page" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color:cornflowerblue"><i
                         class="ti-magnet"></i></a></li>
-            <li><a href="insights.html" title="Account Stats" data-toggle="tooltip" data-placement="right"><i
+            <li><a href="insights.html" title="Account Stats" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i
                         class="ti-stats-up"></i></a></li>
-            {{-- <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right"><i class="ti-import"></i></a></li> --}}
-            <li><a href="messages.html" title="Messages" data-toggle="tooltip" data-placement="right"><i
-                        class="ti-comment-alt"></i></a></li>
-            <li><a href="edit-account-setting.html" title="Setting" data-toggle="tooltip" data-placement="right"><i
+            <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i class="ti-import"></i></a></li>
+            {{-- <li><a href="messages.html" title="Messages" data-toggle="tooltip" data-placement="right"><i
+                        class="ti-comment-alt"></i></a></li> --}}
+            <li><a href="edit-account-setting.html" title="Setting" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i
                         class="ti-panel"></i></a></li>
-            <li><a href="{{ url('viewfriends') }}" title="Friends" data-toggle="tooltip" data-placement="right"><i
-                        class="ti-themify-favicon"></i></a></li>
+            <li><a href="{{ url('viewbusiness') }}" title="BusinessCircle" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i
+                        class="ti-rss"></i></a></li>
         </ul>
     </div>
 </div><!-- left sidebar menu -->
@@ -179,11 +179,11 @@
                                     <ul class="naves">
                                         <li>
                                             <i class="ti-clipboard"></i>
-                                            <a href="{{ url('/') }}" title="">News feed</a>
+                                            <a href="{{ url('mainscreenbusiness') }}" title="">News feed</a>
                                         </li>
                                         <li>
                                             <i class="ti-user"></i>
-                                            <a href="timeline-friends.html" title="">Friends</a>
+                                            <a href="{{ url('viewbusiness') }}" title="">People</a>
                                         </li>
                                         <li>
                                             <i class="ti-comments-smiley"></i>
@@ -339,7 +339,7 @@
                                                         <li>
                                                             <span class="comment" data-toggle="tooltip"
                                                                 title="Comments">
-                                                                <i class="fa fa-comments-o"></i>
+                                                                <i class="fa fa-comments"></i>
                                                                 <ins>52</ins>
                                                             </span>
                                                         </li>
@@ -549,7 +549,7 @@
                                                         <li>
                                                             <span class="comment" data-toggle="tooltip"
                                                                 title="Comments">
-                                                                <i class="fa fa-comments-o"></i>
+                                                                <i class="fa fa-comments"></i>
                                                                 <ins>52</ins>
                                                             </span>
                                                         </li>
@@ -724,7 +724,7 @@
                                                         <li>
                                                             <span class="comment" data-toggle="tooltip"
                                                                 title="Comments">
-                                                                <i class="fa fa-comments-o"></i>
+                                                                <i class="fa fa-comments"></i>
                                                                 <ins>52</ins>
                                                             </span>
                                                         </li>
@@ -915,7 +915,7 @@
                                                         <li>
                                                             <span class="comment" data-toggle="tooltip"
                                                                 title="Comments">
-                                                                <i class="fa fa-comments-o"></i>
+                                                                <i class="fa fa-comments"></i>
                                                                 <ins>52</ins>
                                                             </span>
                                                         </li>

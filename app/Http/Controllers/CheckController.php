@@ -69,14 +69,15 @@ class CheckController extends Controller
         return view("resetpwd");
     }
     public function mainscreen(){
-        return view("mainscreen");
+        return view("main.mainscreen");
     }
     public function mainscreenfamily(){
-        return view("mainscreenfamily");
+        return view("main.mainscreenfamily");
     }
     public function mainscreenbusiness(){
-        return view("mainscreenbusiness");
+        return view("main.mainscreenbusiness");
     }
+
     public function viewprofile(){
         return view("profileviews.viewprofile");
     }
@@ -89,14 +90,40 @@ class CheckController extends Controller
     public function viewfriends(){
         return view("profileviews.viewfriends");
     }
-    public function viewfamily(){
-        return view("profileviews.viewfamily");
-    }
-    public function viewbusiness(){
-        return view("profileviews.viewbusiness");
-    }
     public function viewabout(){
         return view("profileviews.viewabout");
+    }
+
+    public function viewprofilefamily(){
+        return view("profileviewsfamily.viewprofile");
+    }
+    public function viewphotosfamily(){
+        return view("profileviewsfamily.viewphotos");
+    }
+    public function viewvideosfamily(){
+        return view("profileviewsfamily.viewvideos");
+    }
+    public function viewfamily(){
+        return view("profileviewsfamily.viewfamily");
+    }
+    public function viewaboutfamily(){
+        return view("profileviewsfamily.viewabout");
+    }
+
+    public function viewprofilebusiness(){
+        return view("profileviewsbusiness.viewprofile");
+    }
+    public function viewphotosbusiness(){
+        return view("profileviewsbusiness.viewphotos");
+    }
+    public function viewvideosbusiness(){
+        return view("profileviewsbusiness.viewvideos");
+    }
+    public function viewbusiness(){
+        return view("profileviewsbusiness.viewbusiness");
+    }
+    public function viewaboutbusiness(){
+        return view("profileviewsbusiness.viewabout");
     }
 
     public function sweetalertcheck(){
@@ -120,6 +147,6 @@ class CheckController extends Controller
 
         // alert()->info('InfoAlert','Lorem ipsum dolor sit amet.')
         // ->animation('tada faster','fadeInUp faster');
-        return view("mainscreen");
+        return view("main.mainscreen");
     }
 }

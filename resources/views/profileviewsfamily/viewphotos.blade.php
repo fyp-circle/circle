@@ -1,4 +1,4 @@
-@extends('layouts.profile_lay')
+@extends('layouts.profile_lay_fam')
 
 @section('profilecontent')
 <div class="row">

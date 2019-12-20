@@ -1,4 +1,4 @@
-@extends('layouts.profile_lay')
+@extends('layouts.profile_lay_bus')
 
 @section('profilecontent')
 <div class="row">
@@ -82,9 +82,9 @@
                 <div class="central-meta">
                     <div class="frnds">
                         <ul class="nav nav-tabs">
-                            <li class="nav-item"><a class="active" href="#frends" data-toggle="tab">My Friends</a>
+                            <li class="nav-item"><a class="active" href="#frends" data-toggle="tab">My Connections</a>
                                 <span>55</span></li>
-                            <li class="nav-item"><a class="" href="#frends-req" data-toggle="tab">Friend
+                            <li class="nav-item"><a class="" href="#frends-req" data-toggle="tab">Connection
                                     Requests</a><span>60</span></li>
                         </ul>
 
@@ -102,7 +102,7 @@
                                                 <h4><a href="time-line.html" title="">jhon kates</a></h4>
                                                 <span>ftv model</span>
                                                 <a href="#" title="" class="add-butn more-action"
-                                                    data-ripple="" style="right: 0">unfriend</a>
+                                                    data-ripple="" style="right:0">Remove Connection</a>
                                             </div>
                                         </div>
                                     </li>
@@ -116,7 +116,7 @@
                                                 <h4><a href="time-line.html" title="">sophia Gate</a></h4>
                                                 <span>tv actresses</span>
                                                 <a href="#" title="" class="add-butn more-action"
-                                                    data-ripple="" style="right: 0">unfriend</a>
+                                                    data-ripple="" style="right:0">Remove Connection</a>
                                             </div>
                                         </div>
                                     </li>
@@ -130,7 +130,7 @@
                                                 <h4><a href="time-line.html" title="">sara grey</a></h4>
                                                 <span>work at IBM</span>
                                                 <a href="#" title="" class="add-butn more-action"
-                                                    data-ripple="" style="right: 0">unfriend</a>
+                                                    data-ripple="" style="right:0">Remove Connection</a>
                                             </div>
                                         </div>
                                     </li>
@@ -138,13 +138,27 @@
                                         <div class="nearly-pepls">
                                             <figure>
                                                 <a href="time-line.html" title=""><img
-                                                        src="images/resources/nearly2.jpg" alt=""></a>
+                                                        src="images/resources/nearly4.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">Ema watson</a></h4>
-                                                <span>personal business</span>
+                                                <h4><a href="time-line.html" title="">Sara grey</a></h4>
+                                                <span>ftv model</span>
                                                 <a href="#" title="" class="add-butn more-action"
-                                                    data-ripple="" style="right: 0">unfriend</a>
+                                                    data-ripple="" style="right:0">Remove Connection</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="nearly-pepls">
+                                            <figure>
+                                                <a href="time-line.html" title=""><img
+                                                        src="images/resources/nearly5.jpg" alt=""></a>
+                                            </figure>
+                                            <div class="pepl-info">
+                                                <h4><a href="time-line.html" title="">Amy watson</a></h4>
+                                                <span>Study in university</span>
+                                                <a href="#" title="" class="add-butn more-action"
+                                                    data-ripple="" style="right:0">Remove Connection</a>
                                             </div>
                                         </div>
                                     </li>

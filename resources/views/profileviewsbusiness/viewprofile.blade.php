@@ -1,4 +1,4 @@
-@extends('layouts.profile_lay')
+@extends('layouts.profile_lay_bus')
 
 @section('profilecontent')
 <div class="row">
@@ -220,7 +220,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> <!--posts -->
+                    </div>
                     <div class="central-meta item">
                         <div class="user-post">
                             <div class="friend-info">

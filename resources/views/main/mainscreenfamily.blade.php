@@ -151,17 +151,17 @@
 <div class="fixed-sidebar left">
     <div class="menu-left">
         <ul class="left-menu">
-            <li><a href="{{ url('mainscreenfamily') }}" title="Newsfeed Page" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i
-                        class="ti-magnet"></i></a></li>
-            <li><a href="insights.html" title="Account Stats" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i
-                        class="ti-stats-up"></i></a></li>
+            <li><a href="{{ url('mainscreenfamily') }}" title="Newsfeed Page" data-toggle="tooltip"
+                    data-placement="right" style="-webkit-text-fill-color: red"><i class="ti-magnet"></i></a></li>
+            <li><a href="insights.html" title="Account Stats" data-toggle="tooltip" data-placement="right"
+                    style="-webkit-text-fill-color: red"><i class="ti-stats-up"></i></a></li>
             {{-- <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i class="ti-import"></i></a></li> --}}
-            <li><a href="messages.html" title="Messages" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i
-                        class="ti-comment-alt"></i></a></li>
-            <li><a href="edit-account-setting.html" title="Setting" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i
-                        class="ti-panel"></i></a></li>
-            <li><a href="{{ url('viewfamily') }}" title="Family Circle" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i
-                        class="ti-heart"></i></a></li>
+            <li><a href="messages.html" title="Messages" data-toggle="tooltip" data-placement="right"
+                    style="-webkit-text-fill-color: red"><i class="ti-comment-alt"></i></a></li>
+            <li><a href="edit-account-setting.html" title="Setting" data-toggle="tooltip" data-placement="right"
+                    style="-webkit-text-fill-color: red"><i class="ti-panel"></i></a></li>
+            <li><a href="{{ url('viewfamily') }}" title="Family Circle" data-toggle="tooltip" data-placement="right"
+                    style="-webkit-text-fill-color: red"><i class="ti-heart"></i></a></li>
         </ul>
     </div>
 </div><!-- left sidebar menu -->
@@ -179,11 +179,11 @@
                                     <ul class="naves">
                                         <li>
                                             <i class="ti-clipboard"></i>
-                                            <a href="{{ url('/') }}" title="">News feed</a>
+                                            <a href="{{ url('mainscreenfamily') }}" title="">News feed</a>
                                         </li>
                                         <li>
                                             <i class="ti-user"></i>
-                                            <a href="timeline-friends.html" title="">Friends</a>
+                                            <a href="{{ url('viewfamily') }}" title="">Family</a>
                                         </li>
                                         <li>
                                             <i class="ti-comments-smiley"></i>
@@ -339,7 +339,7 @@
                                                         <li>
                                                             <span class="comment" data-toggle="tooltip"
                                                                 title="Comments">
-                                                                <i class="fa fa-comments-o"></i>
+                                                                <i class="fa fa-comments"></i>
                                                                 <ins>52</ins>
                                                             </span>
                                                         </li>
@@ -549,7 +549,7 @@
                                                         <li>
                                                             <span class="comment" data-toggle="tooltip"
                                                                 title="Comments">
-                                                                <i class="fa fa-comments-o"></i>
+                                                                <i class="fa fa-comments"></i>
                                                                 <ins>52</ins>
                                                             </span>
                                                         </li>
@@ -724,7 +724,7 @@
                                                         <li>
                                                             <span class="comment" data-toggle="tooltip"
                                                                 title="Comments">
-                                                                <i class="fa fa-comments-o"></i>
+                                                                <i class="fa fa-comments"></i>
                                                                 <ins>52</ins>
                                                             </span>
                                                         </li>
@@ -915,7 +915,7 @@
                                                         <li>
                                                             <span class="comment" data-toggle="tooltip"
                                                                 title="Comments">
-                                                                <i class="fa fa-comments-o"></i>
+                                                                <i class="fa fa-comments"></i>
                                                                 <ins>52</ins>
                                                             </span>
                                                         </li>
@@ -984,22 +984,23 @@
                         <div class="col-lg-3">
                             <aside class="sidebar static">
                                 {{-- <div class="widget">
-                        <div class="banner medium-opacity bluesh">
-                            <div class="bg-image" style="background-image: url(images/resources/baner-widgetbg.jpg)">
-                            </div>
-                            <div class="baner-top">
-                                <span><img alt="" src="images/book-icon.png"></span>
-                                <i class="fa fa-ellipsis-h"></i>
-                            </div>
-                            <div class="banermeta">
-                                <p>
-                                    create your own favourit page.
-                                </p>
-                                <span>like them all</span>
-                                <a data-ripple="" title="" href="#">start now!</a>
-                            </div>
-                        </div>
-                    </div> --}}
+                                    <div class="banner medium-opacity bluesh">
+                                        <div class="bg-image"
+                                            style="background-image: url(images/resources/baner-widgetbg.jpg)">
+                                        </div>
+                                        <div class="baner-top">
+                                            <span><img alt="" src="images/book-icon.png"></span>
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </div>
+                                        <div class="banermeta">
+                                            <p>
+                                                create your own favourit page.
+                                            </p>
+                                            <span>like them all</span>
+                                            <a data-ripple="" title="" href="#">start now!</a>
+                                        </div>
+                                    </div>
+                                </div> --}}
                                 <div class="widget friend-list stick-widget">
                                     <h4 class="widget-title">Suggestions</h4>
                                     <div id="searchDir"></div>
@@ -1164,84 +1165,87 @@
                                     </div>
                                 </div><!-- Suggestions -->
                                 {{-- <div class="widget">
-                        <h4 class="widget-title">Your page</h4>
-                        <div class="your-page">
-                            <figure>
-                                <a href="#" title=""><img src="images/resources/friend-avatar9.jpg" alt=""></a>
-                            </figure>
-                            <div class="page-meta">
-                                <a href="#" title="" class="underline">My page</a>
-                                <span><i class="ti-comment"></i><a href="insight.html" title="">Messages
-                                        <em>9</em></a></span>
-                                <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications
-                                        <em>2</em></a></span>
-                            </div>
-                            <div class="page-likes">
-                                <ul class="nav nav-tabs likes-btn">
-                                    <li class="nav-item"><a class="active" href="#link1" data-toggle="tab">likes</a>
-                                    </li>
-                                    <li class="nav-item"><a class="" href="#link2" data-toggle="tab">views</a></li>
-                                </ul>
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div class="tab-pane active fade show " id="link1">
-                                        <span><i class="ti-heart"></i>884</span>
-                                        <a href="#" title="weekly-likes">35 new likes this week</a>
-                                        <div class="users-thumb-list">
-                                            <a href="#" title="Anderw" data-toggle="tooltip">
-                                                <img src="images/resources/userlist-1.jpg" alt="">
-                                            </a>
-                                            <a href="#" title="frank" data-toggle="tooltip">
-                                                <img src="images/resources/userlist-2.jpg" alt="">
-                                            </a>
-                                            <a href="#" title="Sara" data-toggle="tooltip">
-                                                <img src="images/resources/userlist-3.jpg" alt="">
-                                            </a>
-                                            <a href="#" title="Amy" data-toggle="tooltip">
-                                                <img src="images/resources/userlist-4.jpg" alt="">
-                                            </a>
-                                            <a href="#" title="Ema" data-toggle="tooltip">
-                                                <img src="images/resources/userlist-5.jpg" alt="">
-                                            </a>
-                                            <a href="#" title="Sophie" data-toggle="tooltip">
-                                                <img src="images/resources/userlist-6.jpg" alt="">
-                                            </a>
-                                            <a href="#" title="Maria" data-toggle="tooltip">
-                                                <img src="images/resources/userlist-7.jpg" alt="">
-                                            </a>
+                                    <h4 class="widget-title">Your page</h4>
+                                    <div class="your-page">
+                                        <figure>
+                                            <a href="#" title=""><img src="images/resources/friend-avatar9.jpg"
+                                                    alt=""></a>
+                                        </figure>
+                                        <div class="page-meta">
+                                            <a href="#" title="" class="underline">My page</a>
+                                            <span><i class="ti-comment"></i><a href="insight.html" title="">Messages
+                                                    <em>9</em></a></span>
+                                            <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications
+                                                    <em>2</em></a></span>
+                                        </div>
+                                        <div class="page-likes">
+                                            <ul class="nav nav-tabs likes-btn">
+                                                <li class="nav-item"><a class="active" href="#link1"
+                                                        data-toggle="tab">likes</a>
+                                                </li>
+                                                <li class="nav-item"><a class="" href="#link2"
+                                                        data-toggle="tab">views</a></li>
+                                            </ul>
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div class="tab-pane active fade show " id="link1">
+                                                    <span><i class="ti-heart"></i>884</span>
+                                                    <a href="#" title="weekly-likes">35 new likes this week</a>
+                                                    <div class="users-thumb-list">
+                                                        <a href="#" title="Anderw" data-toggle="tooltip">
+                                                            <img src="images/resources/userlist-1.jpg" alt="">
+                                                        </a>
+                                                        <a href="#" title="frank" data-toggle="tooltip">
+                                                            <img src="images/resources/userlist-2.jpg" alt="">
+                                                        </a>
+                                                        <a href="#" title="Sara" data-toggle="tooltip">
+                                                            <img src="images/resources/userlist-3.jpg" alt="">
+                                                        </a>
+                                                        <a href="#" title="Amy" data-toggle="tooltip">
+                                                            <img src="images/resources/userlist-4.jpg" alt="">
+                                                        </a>
+                                                        <a href="#" title="Ema" data-toggle="tooltip">
+                                                            <img src="images/resources/userlist-5.jpg" alt="">
+                                                        </a>
+                                                        <a href="#" title="Sophie" data-toggle="tooltip">
+                                                            <img src="images/resources/userlist-6.jpg" alt="">
+                                                        </a>
+                                                        <a href="#" title="Maria" data-toggle="tooltip">
+                                                            <img src="images/resources/userlist-7.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="link2">
+                                                    <span><i class="ti-eye"></i>440</span>
+                                                    <a href="#" title="weekly-likes">440 new views this week</a>
+                                                    <div class="users-thumb-list">
+                                                        <a href="#" title="Anderw" data-toggle="tooltip">
+                                                            <img src="images/resources/userlist-1.jpg" alt="">
+                                                        </a>
+                                                        <a href="#" title="frank" data-toggle="tooltip">
+                                                            <img src="images/resources/userlist-2.jpg" alt="">
+                                                        </a>
+                                                        <a href="#" title="Sara" data-toggle="tooltip">
+                                                            <img src="images/resources/userlist-3.jpg" alt="">
+                                                        </a>
+                                                        <a href="#" title="Amy" data-toggle="tooltip">
+                                                            <img src="images/resources/userlist-4.jpg" alt="">
+                                                        </a>
+                                                        <a href="#" title="Ema" data-toggle="tooltip">
+                                                            <img src="images/resources/userlist-5.jpg" alt="">
+                                                        </a>
+                                                        <a href="#" title="Sophie" data-toggle="tooltip">
+                                                            <img src="images/resources/userlist-6.jpg" alt="">
+                                                        </a>
+                                                        <a href="#" title="Maria" data-toggle="tooltip">
+                                                            <img src="images/resources/userlist-7.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="link2">
-                                        <span><i class="ti-eye"></i>440</span>
-                                        <a href="#" title="weekly-likes">440 new views this week</a>
-                                        <div class="users-thumb-list">
-                                            <a href="#" title="Anderw" data-toggle="tooltip">
-                                                <img src="images/resources/userlist-1.jpg" alt="">
-                                            </a>
-                                            <a href="#" title="frank" data-toggle="tooltip">
-                                                <img src="images/resources/userlist-2.jpg" alt="">
-                                            </a>
-                                            <a href="#" title="Sara" data-toggle="tooltip">
-                                                <img src="images/resources/userlist-3.jpg" alt="">
-                                            </a>
-                                            <a href="#" title="Amy" data-toggle="tooltip">
-                                                <img src="images/resources/userlist-4.jpg" alt="">
-                                            </a>
-                                            <a href="#" title="Ema" data-toggle="tooltip">
-                                                <img src="images/resources/userlist-5.jpg" alt="">
-                                            </a>
-                                            <a href="#" title="Sophie" data-toggle="tooltip">
-                                                <img src="images/resources/userlist-6.jpg" alt="">
-                                            </a>
-                                            <a href="#" title="Maria" data-toggle="tooltip">
-                                                <img src="images/resources/userlist-7.jpg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- page like widget --> --}}
+                                </div><!-- page like widget --> --}}
                             </aside>
                         </div><!-- sidebar -->
                     </div>
