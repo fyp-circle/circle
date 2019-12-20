@@ -19,6 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('profile_picture')->default('images/users/Profile_Pictures/default.png');
+            $table->string('cover_picture')->default('images/users/Cover_Pictures/default.jpg');
             $table->integer('business_user_id')->references('business_user_id')->on('business_users')->nullable();
             $table->integer('family_user_id')->references('family_user_id')->on('family_users')->nullable();
             $table->rememberToken();

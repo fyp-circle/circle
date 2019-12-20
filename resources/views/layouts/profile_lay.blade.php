@@ -3,30 +3,37 @@
 @section('content')
 <section>
     <div class="feature-photo">
-        <figure><img src="images/resources/timeline-1.jpg" alt=""></figure>
+        <figure><img src={{Auth::user()->cover_picture}} alt="User Cover Picture" width="304" height="228"> </figure>
         <div class="add-btn">
             {{-- <a href="#" title="" data-ripple="">Add Friend</a> --}}
         </div>
-        <form class="edit-phto">
+        <form class="edit-phto" action="{{ route('user.cover.picture.upload') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <i class="fa fa-camera-retro"></i>
             <label class="fileContainer">
                 Edit Cover Photo
-                <input type="file" />
+                <input type="file" name="image" class="form-control">
             </label>
+            <button type="submit" class="btn btn-success">Save Cover Photo</button>
         </form>
         <div class="container-fluid" style="background-color: white">
             <div class="row merged">
                 <div class="col-lg-2 col-sm-3">
                     <div class="user-avatar">
                         <figure>
-                            <img src="images/resources/user-avatar.jpg" alt="">
-                            <form class="edit-phto">
+                            <img src={{Auth::user()->profile_picture}} alt="User Profile Image" height="170" width="170">
+                            <form class="edit-phto" action="{{ route('user.profile.picture.upload') }}" method="POST" enctype="multipart/form-data" >
+                                @csrf
                                 <i class="fa fa-camera-retro"></i>
                                 <label class="fileContainer">
                                     Edit Display Photo
-                                    <input type="file" />
+                                    <input type="file" name="image" class="form-control">
                                 </label>
+
+                                    <button type="submit" class="btn btn-success">Save DP</button>
+
                             </form>
+
                         </figure>
                     </div>
                 </div>

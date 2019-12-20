@@ -21,6 +21,11 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 
 Auth::routes(['verify' => true]);
 
+//Route::get('image-upload', 'CheckController@imageUpload')->name('image.upload');
+
+Route::post('profilepicture', 'ImageController@UploadUserProfilePicture')->name('user.profile.picture.upload');
+Route::post('coverpicture', 'ImageController@UploadUserCoverPicture')->name('user.cover.picture.upload');
+
 //Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::get('login', ['as' => 'login.user', 'uses' => 'CheckController@login']);
