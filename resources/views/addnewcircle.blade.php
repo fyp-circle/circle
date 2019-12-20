@@ -67,35 +67,42 @@
                                 <div class="editing-info">
                                     <h5 class="f-title"><i class="ti-info-alt"></i>Add New Circle</h5>
 
-                                    <form method="post">
+                                    <form method="post" action="{{ route('user.create.circle') }}" >
+                                        @csrf
                                             <div class="dob">
                                                     <div class="form-group">
-                                                        <select>
-                                                            <option value="Day">Circle Type</option>
-                                                            <option>Family</option>
-                                                            <option>Business</option>
+                                                        <select  required name="circle_type">
+                                                            <option value="" disabled selected>Choose Circle Type</option>
+                                                            @if (Auth::user()->family_user_id==null)
+                                                            <option value = "Family">Family</option>
+                                                            <option value = "" disabled selected>Business</option>
+                                                            @endif
+                                                            @if (Auth::user()->business_user_id==null)
+                                                            <option value = "">Business</option>
+                                                            <option value = "Family" disabled selected>Family</option>
+                                                            @endif
                                                         </select>
                                                     </div>
                                                 </div>
                                         <div class="form-group half">
-                                            <input type="text" id="input" required="required" />
+                                        <input type="text" id="input" required="required" name="name" value= "{{Auth::user()->name}}" />
                                             <label class="control-label" for="input">Full Name</label><i
                                                 class="mtrl-select"></i>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" required="required" />
+                                            <input type="email" required="required" name="email" value= "{{Auth::user()->email}}" />
                                             <label class="control-label" for="input">Email@</label><i
                                                 class="mtrl-select"></i>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" required="required" />
+                                            <input type="text" required="required" name="phone" value= "{{Auth::user()->phone}}"/>
                                             <label class="control-label" for="input">Phone No.</label><i
                                                 class="mtrl-select"></i>
                                         </div>
-                                        <div class="dob">
+                                        {{-- <div class="dob">
                                             <div class="form-group">
-                                                <select>
-                                                    <option value="Day">Day</option>
+                                                <select name="day" >
+                                                    <option value="" disabled selected>Day</option>
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -130,8 +137,8 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <select>
-                                                    <option value="month">Month</option>
+                                                <select name="month">
+                                                    <option value="" disabled selected>Month</option>
                                                     <option>Jan</option>
                                                     <option>Feb</option>
                                                     <option>Mar</option>
@@ -147,44 +154,102 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <select>
-                                                    <option value="year">Year</option>
-                                                    <option>2000</option>
-                                                    <option>2001</option>
-                                                    <option>2002</option>
-                                                    <option>2004</option>
-                                                    <option>2005</option>
-                                                    <option>2006</option>
-                                                    <option>2007</option>
-                                                    <option>2008</option>
-                                                    <option>2009</option>
-                                                    <option>2010</option>
-                                                    <option>2011</option>
-                                                    <option>2012</option>
+                                                <select name="year">
+                                                    <option value="" disabled selected>Year</option>
+                                                    <option value="2019">2019</option>
+                                                    <option value="2018">2018</option>
+                                                    <option value="2017">2017</option>
+                                                    <option value="2016">2016</option>
+                                                    <option value="2015">2015</option>
+                                                    <option value="2014">2014</option>
+                                                    <option value="2013">2013</option>
+                                                    <option value="2012">2012</option>
+                                                    <option value="2011">2011</option>
+                                                    <option value="2010">2010</option>
+                                                    <option value="2009">2009</option>
+                                                    <option value="2008">2008</option>
+                                                    <option value="2007">2007</option>
+                                                    <option value="2006">2006</option>
+                                                    <option value="2005">2005</option>
+                                                    <option value="2004">2004</option>
+                                                    <option value="2003">2003</option>
+                                                    <option value="2002">2002</option>
+                                                    <option value="2001">2001</option>
+                                                    <option value="2000">2000</option>
+                                                    <option value="1999">1999</option>
+                                                    <option value="1998">1998</option>
+                                                    <option value="1997">1997</option>
+                                                    <option value="1996">1996</option>
+                                                    <option value="1995">1995</option>
+                                                    <option value="1994">1994</option>
+                                                    <option value="1993">1993</option>
+                                                    <option value="1992">1992</option>
+                                                    <option value="1991">1991</option>
+                                                    <option value="1990">1990</option>
+                                                    <option value="1989">1989</option>
+                                                    <option value="1988">1988</option>
+                                                    <option value="1987">1987</option>
+                                                    <option value="1986">1986</option>
+                                                    <option value="1985">1985</option>
+                                                    <option value="1984">1984</option>
+                                                    <option value="1983">1983</option>
+                                                    <option value="1982">1982</option>
+                                                    <option value="1981">1981</option>
+                                                    <option value="1980">1980</option>
+                                                    <option value="1979">1979</option>
+                                                    <option value="1978">1978</option>
+                                                    <option value="1977">1977</option>
+                                                    <option value="1976">1976</option>
+                                                    <option value="1975">1975</option>
+                                                    <option value="1974">1974</option>
+                                                    <option value="1973">1973</option>
+                                                    <option value="1972">1972</option>
+                                                    <option value="1971">1971</option>
+                                                    <option value="1970">1970</option>
+                                                    <option value="1969">1969</option>
+                                                    <option value="1968">1968</option>
+                                                    <option value="1967">1967</option>
+                                                    <option value="1966">1966</option>
+                                                    <option value="1965">1965</option>
+                                                    <option value="1964">1964</option>
+                                                    <option value="1963">1963</option>
+                                                    <option value="1962">1962</option>
+                                                    <option value="1961">1961</option>
+                                                    <option value="1960">1960</option>
+                                                    <option value="1959">1959</option>
+                                                    <option value="1958">1958</option>
+                                                    <option value="1957">1957</option>
+                                                    <option value="1956">1956</option>
+                                                    <option value="1955">1955</option>
+                                                    <option value="1954">1954</option>
+                                                    <option value="1953">1953</option>
+                                                    <option value="1952">1952</option>
+                                                    <option value="1951">1951</option>
+                                                    <option value="1950">1950</option>
                                                 </select>
                                             </div>
-                                        </div>
-                                        <div class="form-radio">
+                                        </div> --}}
+                                        {{-- <div class="form-radio">
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" checked="checked" name="radio"><i
+                                                    <input type="radio" checked="checked" name="gender"><i
                                                         class="check-box"></i>Male
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="radio"><i class="check-box"></i>Female
+                                                    <input type="radio" name="gender"><i class="check-box"></i>Female
                                                 </label>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" required="required" />
+                                        </div> --}}
+                                        {{-- <div class="form-group">
+                                            <input type="text" required="required" name="city" value= "{{Auth::user()->city}}" />
                                             <label class="control-label" for="input">City</label><i
                                                 class="mtrl-select"></i>
-                                        </div>
-                                        <div class="form-group">
-                                            <select>
-                                                <option value="country">Country</option>
+                                        </div> --}}
+                                        {{-- <div class="form-group">
+                                            <select name="country" >
+                                                <option value="" disabled selected>Choose your Country</option>
                                                 <option value="AFG">Afghanistan</option>
                                                 <option value="ALA">Ƭand Islands</option>
                                                 <option value="ALB">Albania</option>
@@ -437,15 +502,15 @@
                                                 <option value="ZMB">Zambia</option>
                                                 <option value="ZWE">Zimbabwe</option>
                                             </select>
-                                        </div>
+                                        </div> --}}
                                         <div class="form-group">
-                                            <textarea rows="4" id="textarea" required="required"></textarea>
+                                            <textarea rows="4" id="textarea" required="required" name="about_me" >{{Auth::user()->about_me}}</textarea>
                                             <label class="control-label" for="textarea">About Me</label><i
                                                 class="mtrl-select"></i>
                                         </div>
                                         <div class="submit-btns">
                                             <button type="button" class="mtr-btn" ><span>Cancel</span></button>
-                                            <button type="button" class="mtr-btn"><span>Update</span></button>
+                                            <button type="submit" class="mtr-btn"><span>Create Circle</span></button>
                                         </div>
                                     </form>
                                 </div>

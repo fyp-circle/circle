@@ -246,9 +246,45 @@
                             </a>
                         </div>
                     </li> <!-- business mainscreen --> --}}
-                    <li><a href="{{ url('addnewcircle') }}" title="Add Circle" data-toggle="tooltip"
+
+                    @if ($has_fam ?? ''==true)
+                        <li>
+                            <div class="author-thmb">
+                                <a href="{{ url('mainscreenfamily') }}">
+                                    <img src="images/resources/side-friend1.jpg" alt="" style="border-radius:50%">
+                                    <span class="status f-online" style="bottom: 32px; background: black"></span>
+                                </a>
+                            </div>
+                        </li>
+
+
+                    @else
+                        @if ($has_bus ?? ''==true)
+                            <li>
+                                <div class="author-thmb">
+                                    <a href="{{ url('mainscreenbusiness') }}">
+                                        <img src="images/resources/side-friend1.jpg" alt="" style="border-radius:50%">
+                                        <span class="status f-online" style="bottom: 32px; background: black"></span>
+                                    </a>
+                                </div>
+                            </li>
+
+
+                        @else
+
+                        @endif
+                    @endif
+
+                    @if (($has_bus ?? ''==false || $has_fam ?? ''==false) )
+                        <li><a href="{{ url('addnewcircle') }}" title="Add Circle" data-toggle="tooltip"
                             data-placement="center" style="-webkit-text-fill-color: black; padding-left: 0"><i class="ti-plus"></i></a>
-                    </li>
+                        </li>
+
+
+                    @else
+
+                    @endif
+
                 </ul>
                 <ul class="setting-area">
                     <li>

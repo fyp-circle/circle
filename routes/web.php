@@ -64,6 +64,8 @@ Route::get('editinfobusiness', ['as' => 'circle.new', 'uses' => 'CheckController
 
 Route::get('sweetalertcheck', ['as' => 'sweetalertcheck', 'uses' => 'CheckController@sweetalertcheck']);
 
+Route::post('createcircle', 'CircleController@CreateNewCircleProfile')->name('user.create.circle');
+
 
 
 

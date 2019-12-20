@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\User;
+
+Use Alert;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +28,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('main.mainscreen');
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("main.mainscreen")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
 }
