@@ -402,6 +402,11 @@
                                                 <label class="control-label" for="textarea">About Me</label><i
                                                     class="mtrl-select"></i>
                                             </div>
+                                            <div class="form-group">
+                                                    <p>Profile Pic</p>
+                                                    <i class="fa fa-camera-retro"></i>
+                                                    <input type="file" name="image" class="form-control">
+                                            </div>
                                             <div class="submit-btns">
                                                 <button type="button" class="mtr-btn"><span>Cancel</span></button>
                                                 <button type="button" class="mtr-btn"><span>Update</span></button>
