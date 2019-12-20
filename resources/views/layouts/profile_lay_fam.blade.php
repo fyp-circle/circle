@@ -45,6 +45,7 @@
                                 <a class="" href="{{ url('viewvideosfamily') }}" title="" data-ripple="" style="-webkit-text-fill-color: red">Videos</a>
                                 <a class="" href="{{ url('viewfamily') }}" title="" data-ripple="" style="-webkit-text-fill-color: red">Family Circle</a>
                                 <a class="" href="{{ url('viewaboutfamily') }}" title="" data-ripple="" style="-webkit-text-fill-color: red">About</a>
+                                <a class="" href="" title="" data-ripple="" style="-webkit-text-fill-color: red">More</a>
                             </li>
                         </ul>
                     </div>

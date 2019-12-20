@@ -201,6 +201,10 @@
                                             <i class="fa fa-bar-chart-o"></i>
                                             <a href="insights.html" title="">Insights</a>
                                         </li>
+                                        <li>
+                                            <i class="ti-pencil-alt"></i>
+                                            <a href="{{ url('editinfobusiness') }}" title="">Edit Info</a>
+                                        </li>
                                     </ul>
                                 </div><!-- Shortcuts -->
                                 <div class="widget">

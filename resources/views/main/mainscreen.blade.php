@@ -203,7 +203,7 @@
                                         </li>
                                         <li>
                                             <i class="ti-pencil-alt"></i>
-                                            <a href="insights.html" title="">Edit Info</a>
+                                            <a href="{{ url('editinfofriends') }}" title="">Edit Info</a>
                                         </li>
                                     </ul>
                                 </div><!-- Shortcuts -->

@@ -45,6 +45,7 @@
                                 <a class="" href="{{ url('viewvideos') }}" title="" data-ripple="" style="-webkit-text-fill-color: black">Videos</a>
                                 <a class="" href="{{ url('viewfriends') }}" title="" data-ripple="" style="-webkit-text-fill-color: black">Friends Circle</a>
                                 <a class="" href="{{ url('viewabout') }}" title="" data-ripple="" style="-webkit-text-fill-color: black">About</a>
+                                <a class="" href="" title="" data-ripple="" style="-webkit-text-fill-color: black">More</a>
                             </li>
                         </ul>
                     </div>

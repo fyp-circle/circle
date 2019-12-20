@@ -126,6 +126,20 @@ class CheckController extends Controller
         return view("profileviewsbusiness.viewabout");
     }
 
+    public function addnewcircle(){
+        return view("addnewcircle");
+    }
+
+    public function editinfofriends(){
+        return view("editinfo.editinfofriends");
+    }
+    public function editinfofamily(){
+        return view("editinfo.editinfofamily");
+    }
+    public function editinfobusiness(){
+        return view("editinfo.editinfobusiness");
+    }
+
     public function sweetalertcheck(){
         alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.');
         //alert()->info('InfoAlert','Lorem ipsum dolor sit amet.');

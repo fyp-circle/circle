@@ -51,6 +51,12 @@ Route::get('viewvideosbusiness', ['as' => 'viewvideos.videos', 'uses' => 'CheckC
 Route::get('viewbusiness', ['as' => 'viewfamily.family', 'uses' => 'CheckController@viewbusiness']);
 Route::get('viewaboutbusiness', ['as' => 'viewabout.about', 'uses' => 'CheckController@viewaboutbusiness']);
 
+Route::get('addnewcircle', ['as' => 'circle.new', 'uses' => 'CheckController@addnewcircle']);
+
+Route::get('editinfofriends', ['as' => 'circle.new', 'uses' => 'CheckController@editinfofriends']);
+Route::get('editinfofamily', ['as' => 'circle.new', 'uses' => 'CheckController@editinfofamily']);
+Route::get('editinfobusiness', ['as' => 'circle.new', 'uses' => 'CheckController@editinfobusiness']);
+
 Route::get('sweetalertcheck', ['as' => 'sweetalertcheck', 'uses' => 'CheckController@sweetalertcheck']);
 
 
