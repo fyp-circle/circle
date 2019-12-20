@@ -16,7 +16,7 @@
                                             <div class="activity-meta">
                                                 <i>10 hours Ago</i>
                                                 <span><a href="#" title="">Commented on Video posted </a></span>
-                                                <h6>by <a href="#">black demon.</a></h6>
+                                                <h6>by <a href="time-line.html">black demon.</a></h6>
                                             </div>
                                         </li>
                                         <li>

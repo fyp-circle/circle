@@ -7,7 +7,7 @@
         <div class="add-btn">
             {{-- <a href="#" title="" data-ripple="">Add Friend</a> --}}
         </div>
-        <form class="edit-phto" action="{{ route('user.cover.picture.upload') }}" method="POST" enctype="multipart/form-data">
+        {{-- <form class="edit-phto" action="{{ route('user.cover.picture.upload') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <i class="fa fa-camera-retro"></i>
             <label class="fileContainer">
@@ -15,11 +15,11 @@
                 <input type="file" name="image" class="form-control">
             </label>
             <button type="submit" class="btn btn-success">Save Cover Photo</button>
-        </form>
+        </form> --}}
         <div class="container-fluid" style="background-color: white">
             <div class="row merged">
                 <div class="col-lg-2 col-sm-3">
-                    <div class="user-avatar" style="width: 170px; height: 170px">
+                    <div class="user-avatar" style="width: 170px; height: 170px; margin-top:-6.9rem">
                         <figure>
                             <img src={{Auth::user()->profile_picture}} alt="User Profile Image" style ="height:170px; width: 170px;object-fit: cover;">
                             {{-- <form class="edit-phto" action="{{ route('user.profile.picture.upload') }}" method="POST" enctype="multipart/form-data" >

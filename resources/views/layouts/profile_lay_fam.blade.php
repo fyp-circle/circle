@@ -3,30 +3,30 @@
 @section('content')
 <section>
     <div class="feature-photo">
-        <figure><img src="images/resources/timeline-1.jpg" alt=""></figure>
+        <figure><img src={{Auth::user()->cover_picture}} alt="User Cover Picture" style="height: 350px; width: 1366px; object-fit: cover;"> </figure>
         <div class="add-btn">
             {{-- <a href="#" title="" data-ripple="">Add Friend</a> --}}
         </div>
-        <form class="edit-phto">
-            <i class="fa fa-camera-retro"></i>
-            <label class="fileContainer">
-                Edit Cover Photo
-                <input type="file" />
-            </label>
-        </form>
         <div class="container-fluid" style="background-color: white">
             <div class="row merged">
                 <div class="col-lg-2 col-sm-3">
-                    <div class="user-avatar">
+                    <div class="user-avatar" style="width: 170px; height: 170px; margin-top:-6.9rem">
                         <figure>
-                            <img src="images/resources/user-avatar.jpg" alt="">
-                            <form class="edit-phto">
-                                <i class="fa fa-camera-retro"></i>
-                                <label class="fileContainer">
-                                    Edit Display Photo
-                                    <input type="file" />
-                                </label>
-                            </form>
+                            <img src={{Auth::user()->profile_picture}} alt="User Profile Image"
+                                style="height:170px; width: 170px;object-fit: cover;">
+                            {{-- <form class="edit-phto" action="{{ route('user.profile.picture.upload') }}"
+                            method="POST" enctype="multipart/form-data" >
+                            @csrf
+                            <i class="fa fa-camera-retro"></i>
+                            <label class="fileContainer">
+                                Edit Display Photo
+                                <input type="file" name="image" class="form-control">
+                            </label>
+
+                            <button type="submit" class="btn btn-success">Save DP</button>
+
+                            </form> --}}
+
                         </figure>
                     </div>
                 </div>
@@ -39,13 +39,19 @@
                                 {{-- <span>Group Admin</span> --}}
                             </li>
                             <li>
-                                <a class="" href="{{ url('viewprofilefamily') }}" title="" data-ripple="" style="-webkit-text-fill-color: red">time
+                                <a class="" href="{{ url('viewprofilefamily') }}" title="" data-ripple=""
+                                    style="-webkit-text-fill-color: red">time
                                     line</a>
-                                <a class="" href="{{ url('viewphotosfamily') }}" title="" data-ripple="" style="-webkit-text-fill-color: red">Photos</a>
-                                <a class="" href="{{ url('viewvideosfamily') }}" title="" data-ripple="" style="-webkit-text-fill-color: red">Videos</a>
-                                <a class="" href="{{ url('viewfamily') }}" title="" data-ripple="" style="-webkit-text-fill-color: red">Family Circle</a>
-                                <a class="" href="{{ url('viewaboutfamily') }}" title="" data-ripple="" style="-webkit-text-fill-color: red">About</a>
-                                <a class="" href="" title="" data-ripple="" style="-webkit-text-fill-color: red">More</a>
+                                <a class="" href="{{ url('viewphotosfamily') }}" title="" data-ripple=""
+                                    style="-webkit-text-fill-color: red">Photos</a>
+                                <a class="" href="{{ url('viewvideosfamily') }}" title="" data-ripple=""
+                                    style="-webkit-text-fill-color: red">Videos</a>
+                                <a class="" href="{{ url('viewfamily') }}" title="" data-ripple=""
+                                    style="-webkit-text-fill-color: red">Family Circle</a>
+                                <a class="" href="{{ url('viewaboutfamily') }}" title="" data-ripple=""
+                                    style="-webkit-text-fill-color: red">About</a>
+                                <a class="" href="" title="" data-ripple=""
+                                    style="-webkit-text-fill-color: red">More</a>
                             </li>
                         </ul>
                     </div>

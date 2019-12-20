@@ -33,7 +33,7 @@ class CircleController extends Controller
             $user = Auth::user();
             $user->business_user_id=$b_user->business_user_id;
             $user->save();
-            alert()->success('Business Circle Created','You have successfully Created Family Circle.');
+            alert()->success('Business Circle Created','You have successfully Created Business Circle.');
 
 
         } else {

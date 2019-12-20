@@ -62,6 +62,14 @@ Route::get('editinfofriends', ['as' => 'circle.new', 'uses' => 'CheckController@
 Route::get('editinfofamily', ['as' => 'circle.new', 'uses' => 'CheckController@editinfofamily']);
 Route::get('editinfobusiness', ['as' => 'circle.new', 'uses' => 'CheckController@editinfobusiness']);
 
+Route::get('mainsettings', ['as' => 'main.settings', 'uses' => 'CheckController@mainsettings']);
+Route::get('privacysettings', ['as' => 'privacy.settings', 'uses' => 'CheckController@privacysettings']);
+Route::get('changepassword', ['as' => 'change.password', 'uses' => 'CheckController@changepassword']);
+
+Route::get('activityfriends', ['as' => 'activity.log', 'uses' => 'CheckController@activityfriends']);
+Route::get('activityfamily', ['as' => 'activity.log', 'uses' => 'CheckController@activityfamily']);
+Route::get('activitybusiness', ['as' => 'activity.log', 'uses' => 'CheckController@activitybusiness']);
+
 Route::get('sweetalertcheck', ['as' => 'sweetalertcheck', 'uses' => 'CheckController@sweetalertcheck']);
 
 Route::post('createcircle', 'CircleController@CreateNewCircleProfile')->name('user.create.circle');

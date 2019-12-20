@@ -51,9 +51,6 @@
                                     <a href="#basic" class="nav-link active" data-toggle="tab">Basic info</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#location" class="nav-link" data-toggle="tab">location</a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="#work" class="nav-link" data-toggle="tab">work and education</a>
                                 </li>
                                 <li class="nav-item">
@@ -72,11 +69,6 @@
                                         <li><i class="ti-email"></i>yourmail@email.com</li>
                                         <li><i class="ti-world"></i>www.yoursite.com</li>
                                     </ul>
-                                </div>
-                                <div class="tab-pane fade" id="location" role="tabpanel">
-                                    <div class="location-map">
-                                        <div id="map-canvas"></div>
-                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="work" role="tabpanel">
                                     <div>

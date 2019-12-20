@@ -403,7 +403,12 @@
                                                     class="mtrl-select"></i>
                                             </div>
                                             <div class="form-group">
-                                                    <p>Profile Pic</p>
+                                                    <p style="font-size:1rem">Profile Pic</p>
+                                                    <i class="fa fa-camera-retro"></i>
+                                                    <input type="file" name="image" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                    <p style="font-size:1rem">Cover Photo</p>
                                                     <i class="fa fa-camera-retro"></i>
                                                     <input type="file" name="image" class="form-control">
                                             </div>

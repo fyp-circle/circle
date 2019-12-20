@@ -113,65 +113,335 @@ class CheckController extends Controller
     }
 
     public function viewprofile(){
-        return view("profileviews.viewprofile");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("profileviews.viewprofile")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function viewphotos(){
-        return view("profileviews.viewphotos");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("profileviews.viewphotos")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function viewvideos(){
-        return view("profileviews.viewvideos");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("profileviews.viewvideos")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function viewfriends(){
-        return view("profileviews.viewfriends");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("profileviews.viewfriends")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function viewabout(){
-        return view("profileviews.viewabout");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("profileviews.viewabout")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
 
     public function viewprofilefamily(){
-        return view("profileviewsfamily.viewprofile");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("profileviewsfamily.viewprofile")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function viewphotosfamily(){
-        return view("profileviewsfamily.viewphotos");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("profileviewsfamily.viewphotos")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function viewvideosfamily(){
-        return view("profileviewsfamily.viewvideos");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("profileviewsfamily.viewvideos")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function viewfamily(){
-        return view("profileviewsfamily.viewfamily");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("profileviewsfamily.viewfamily")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function viewaboutfamily(){
-        return view("profileviewsfamily.viewabout");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("profileviewsfamily.viewabout")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
 
     public function viewprofilebusiness(){
-        return view("profileviewsbusiness.viewprofile");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("profileviewsbusiness.viewprofile")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function viewphotosbusiness(){
-        return view("profileviewsbusiness.viewphotos");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("profileviewsbusiness.viewphotos")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function viewvideosbusiness(){
-        return view("profileviewsbusiness.viewvideos");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("profileviewsbusiness.viewvideos")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function viewbusiness(){
-        return view("profileviewsbusiness.viewbusiness");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("profileviewsbusiness.viewbusiness")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function viewaboutbusiness(){
-        return view("profileviewsbusiness.viewabout");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("profileviewsbusiness.viewabout")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
 
     public function addnewcircle(){
-        return view("addnewcircle");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("addnewcircle")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
 
     public function editinfofriends(){
-        return view("editinfo.editinfofriends");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("editinfo.editinfofriends")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function editinfofamily(){
-        return view("editinfo.editinfofamily");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("editinfo.editinfofamily")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function editinfobusiness(){
-        return view("editinfo.editinfobusiness");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("editinfo.editinfobusiness")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+    }
+
+    public function mainsettings(){
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("accountsettings.mainsettings")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+    }
+    public function privacysettings(){
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("accountsettings.privacysettings")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+    }
+    public function changepassword(){
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("accountsettings.changepassword")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+    }
+
+    public function activityfriends(){
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("activitylog.activityfriends")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+    }
+    public function activityfamily(){
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("activitylog.activityfamily")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+    }
+    public function activitybusiness(){
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("activitylog.activitybusiness")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
 
     public function sweetalertcheck(){

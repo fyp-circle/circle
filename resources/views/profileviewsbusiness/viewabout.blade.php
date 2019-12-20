@@ -51,13 +51,10 @@
                                     <a href="#basic" class="nav-link active" data-toggle="tab">Basic info</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#location" class="nav-link" data-toggle="tab">location</a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="#work" class="nav-link" data-toggle="tab">work and education</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#interest" class="nav-link" data-toggle="tab">interests</a>
+                                    <a href="#interest" class="nav-link" data-toggle="tab">Skills</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#lang" class="nav-link" data-toggle="tab">languages</a>
@@ -73,11 +70,6 @@
                                         <li><i class="ti-world"></i>www.yoursite.com</li>
                                     </ul>
                                 </div>
-                                <div class="tab-pane fade" id="location" role="tabpanel">
-                                    <div class="location-map">
-                                        <div id="map-canvas"></div>
-                                    </div>
-                                </div>
                                 <div class="tab-pane fade" id="work" role="tabpanel">
                                     <div>
 
@@ -91,9 +83,9 @@
                                 </div>
                                 <div class="tab-pane fade" id="interest" role="tabpanel">
                                     <ul class="basics">
-                                        <li>Footbal</li>
-                                        <li>internet</li>
-                                        <li>photography</li>
+                                        <li>Java</li>
+                                        <li>C</li>
+                                        <li>Leadership</li>
                                     </ul>
                                 </div>
                                 <div class="tab-pane fade" id="lang" role="tabpanel">

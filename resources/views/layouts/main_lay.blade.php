@@ -228,59 +228,34 @@
                             </a>
                         </div>
                     </li> <!-- friend mainscreen -->
-                    {{-- <li>
-                        <div class="author-thmb">
-                            <a href="{{ url('mainscreenfamily') }}">
-                                <img src="images/resources/side-friend1.jpg" alt="" style="border-radius:50%">
-                                <span class="status f-online" style="bottom: 32px; background: red"></span>
-                            </a>
-                        </div>
-                    </li><!-- family mainscreen --> --}}
-                    {{-- <li>
-                        <div class="author-thmb">
-                            <a href="{{ url('mainscreenbusiness') }}">
-                                <img src="images/resources/side-friend1.jpg" a href="{{ url('mainscreenbusiness') }}"
-                                    alt="" style="border-radius:50%">
-                                <span class="status f-online"
-                                    style="bottom: 32px; background-color:cornflowerblue"></span>
-                            </a>
-                        </div>
-                    </li> <!-- business mainscreen --> --}}
-
                     @if ($has_fam ?? ''==true)
                         <li>
                             <div class="author-thmb">
                                 <a href="{{ url('mainscreenfamily') }}">
                                     <img src="images/resources/side-friend1.jpg" alt="" style="border-radius:50%">
-                                    <span class="status f-online" style="bottom: 32px; background: black"></span>
+                                    <span class="status f-online" style="bottom: 32px; background-color: red"></span>
                                 </a>
                             </div>
                         </li>
-
-
                     @else
                         @if ($has_bus ?? ''==true)
                             <li>
                                 <div class="author-thmb">
                                     <a href="{{ url('mainscreenbusiness') }}">
                                         <img src="images/resources/side-friend1.jpg" alt="" style="border-radius:50%">
-                                        <span class="status f-online" style="bottom: 32px; background: black"></span>
+                                        <span class="status f-online" style="bottom: 32px; background-color:cornflowerblue"></span>
                                     </a>
                                 </div>
                             </li>
-
-
                         @else
 
                         @endif
                     @endif
 
-                    @if (($has_bus ?? ''==false || $has_fam ?? ''==false) )
+                    @if (($has_bus ?? ''== false) || ($has_fam ?? ''== false))
                         <li><a href="{{ url('addnewcircle') }}" title="Add Circle" data-toggle="tooltip"
                             data-placement="center" style="-webkit-text-fill-color: black; padding-left: 0"><i class="ti-plus"></i></a>
                         </li>
-
-
                     @else
 
                     @endif
@@ -429,14 +404,14 @@
                     </li>
                 </ul>
                 <div class="user-img" style="left: 10px">
-                    <img src="images/resources/admin.jpg" alt="">
+                    <img src="{{Auth::user()->profile_picture}}" alt="" style="width:45px; height:45px">
                     {{-- <span class="status f-online"></span> --}}
                     {{Auth::user()->name}}
                     <div class="user-setting">
                         <a href="#" title=""><span class="status f-online"></span>online</a>
                         <a href="#" title=""><span class="status f-away"></span>away</a>
                         <a href="#" title=""><span class="status f-off"></span>offline</a>
-                        <a href="#" title=""><i class="ti-settings"></i>account setting</a>
+                    <a href="{{url('mainsettings')}}" title=""><i class="ti-settings"></i>account setting</a>
                         <a href="{{ route('logout') }}" title="" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();"><i class="ti-power-off"></i>log out</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

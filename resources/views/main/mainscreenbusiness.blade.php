@@ -153,12 +153,12 @@
         <ul class="left-menu">
             <li><a href="{{ url('mainscreenbusiness') }}" title="Newsfeed Page" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color:cornflowerblue"><i
                         class="ti-magnet"></i></a></li>
-            <li><a href="insights.html" title="Account Stats" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i
+            <li><a href="{{url('activitybusiness')}}" title="Insight" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i
                         class="ti-stats-up"></i></a></li>
             <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i class="ti-import"></i></a></li>
             {{-- <li><a href="messages.html" title="Messages" data-toggle="tooltip" data-placement="right"><i
                         class="ti-comment-alt"></i></a></li> --}}
-            <li><a href="edit-account-setting.html" title="Setting" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i
+            <li><a href="{{url('editinfobusiness')}}" title="Setting" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i
                         class="ti-panel"></i></a></li>
             <li><a href="{{ url('viewbusiness') }}" title="BusinessCircle" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i
                         class="ti-rss"></i></a></li>
@@ -199,7 +199,7 @@
                                         </li>
                                         <li>
                                             <i class="fa fa-bar-chart-o"></i>
-                                            <a href="insights.html" title="">Insights</a>
+                                            <a href="{{url('activitybusiness')}}" title="">Insights</a>
                                         </li>
                                         <li>
                                             <i class="ti-pencil-alt"></i>

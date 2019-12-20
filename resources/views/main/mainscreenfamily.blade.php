@@ -153,12 +153,12 @@
         <ul class="left-menu">
             <li><a href="{{ url('mainscreenfamily') }}" title="Newsfeed Page" data-toggle="tooltip"
                     data-placement="right" style="-webkit-text-fill-color: red"><i class="ti-magnet"></i></a></li>
-            <li><a href="insights.html" title="Account Stats" data-toggle="tooltip" data-placement="right"
+            <li><a href="{{url('activityfamily')}}" title="Activty Log" data-toggle="tooltip" data-placement="right"
                     style="-webkit-text-fill-color: red"><i class="ti-stats-up"></i></a></li>
             {{-- <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i class="ti-import"></i></a></li> --}}
             <li><a href="messages.html" title="Messages" data-toggle="tooltip" data-placement="right"
                     style="-webkit-text-fill-color: red"><i class="ti-comment-alt"></i></a></li>
-            <li><a href="edit-account-setting.html" title="Setting" data-toggle="tooltip" data-placement="right"
+            <li><a href="{{url('editinfofamily')}}" title="Setting" data-toggle="tooltip" data-placement="right"
                     style="-webkit-text-fill-color: red"><i class="ti-panel"></i></a></li>
             <li><a href="{{ url('viewfamily') }}" title="Family Circle" data-toggle="tooltip" data-placement="right"
                     style="-webkit-text-fill-color: red"><i class="ti-heart"></i></a></li>
@@ -199,7 +199,7 @@
                                         </li>
                                         <li>
                                             <i class="fa fa-bar-chart-o"></i>
-                                            <a href="insights.html" title="">Insights</a>
+                                            <a href="{{url('activityfamily')}}" title="">Activty Log</a>
                                         </li>
                                         <li>
                                             <i class="ti-pencil-alt"></i>
