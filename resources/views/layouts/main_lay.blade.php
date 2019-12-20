@@ -17,10 +17,20 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/main.8d288f825d8dffbbe55e.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/spinner_wrapper.css') }}" rel="stylesheet">
 
 </head>
 
 <body>
+    {{-- If you want to remove the laoder then just umcomment the follwing 8 lines --}}
+    <div class="spinner-wrapper">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </div>
     <!--<div class="se-pre-con"></div>-->
     <div class="theme-layout">
         <div class="postoverlay"></div>
@@ -625,6 +635,22 @@
     <script src="{{ URL::asset('js/first_theme_js_after_beautifier.js') }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script>
+
+            $(document).ready(function () {
+                    //Preloader
+                    $(window).on("load", function () {
+                        preloaderFadeOutTime = 1;
+
+                        function hidePreloader() {
+                            var preloader = $('.spinner-wrapper');
+                            preloader.fadeOut(preloaderFadeOutTime);
+                        }
+                        hidePreloader();
+                    });
+                });
+        </script>
+
 
 </body>
 
