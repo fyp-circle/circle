@@ -19,6 +19,7 @@ class CreateFamilyUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('phone')->unique()->nullable();
+            $table->string('about_me')->nullable();
             $table->string('profile_picture')->default('images/users/Profile_Pictures/default.png');
             $table->string('cover_picture')->default('images/users/Cover_Pictures/default.jpg');
             $table->integer('user_id')->references('user_id')->on('users')->nullable();

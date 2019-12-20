@@ -9,6 +9,7 @@ use App\Post;
 use App\Connection;
 use App\Circle;
 Use Alert;
+use Auth;
 
 
 class CheckController extends Controller
@@ -69,13 +70,46 @@ class CheckController extends Controller
         return view("resetpwd");
     }
     public function mainscreen(){
-        return view("main.mainscreen");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+
+        return view("main.mainscreen")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function mainscreenfamily(){
-        return view("main.mainscreenfamily");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+
+        return view("main.mainscreenfamily")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
     public function mainscreenbusiness(){
-        return view("main.mainscreenbusiness");
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+
+        return view("main.mainscreenbusiness")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
 
     public function viewprofile(){
