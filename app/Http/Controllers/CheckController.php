@@ -444,6 +444,46 @@ class CheckController extends Controller
         return view("activitylog.activitybusiness")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
 
+    public function messagefriends(){
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("messages.messagefriends")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+    }
+    public function messagefamily(){
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("messages.messagefamily")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+    }
+    public function inbox(){
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("messages.inbox")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+    }
+
     public function sweetalertcheck(){
         alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.');
         //alert()->info('InfoAlert','Lorem ipsum dolor sit amet.');

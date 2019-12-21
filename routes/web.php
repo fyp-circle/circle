@@ -70,6 +70,10 @@ Route::get('activityfriends', ['as' => 'activity.log', 'uses' => 'CheckControlle
 Route::get('activityfamily', ['as' => 'activity.log', 'uses' => 'CheckController@activityfamily']);
 Route::get('activitybusiness', ['as' => 'activity.log', 'uses' => 'CheckController@activitybusiness']);
 
+Route::get('messagefriends', ['as' => 'messages.friends', 'uses' => 'CheckController@messagefriends']);
+Route::get('messagefamily', ['as' => 'messages.family', 'uses' => 'CheckController@messagefamily']);
+Route::get('inbox', ['as' => 'inbox.business', 'uses' => 'CheckController@inbox']);
+
 Route::get('sweetalertcheck', ['as' => 'sweetalertcheck', 'uses' => 'CheckController@sweetalertcheck']);
 
 Route::post('createcircle', 'CircleController@CreateNewCircleProfile')->name('user.create.circle');
