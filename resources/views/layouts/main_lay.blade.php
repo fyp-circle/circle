@@ -223,7 +223,7 @@
                     <li>
                         <div class="author-thmb">
                             <a href="{{ url('mainscreen') }}">
-                            <img src="{{Auth::user()->profile_picture}}" alt="" style="border-radius:50%; width:45px">
+                            <img src="{{Auth::user()->profile_picture}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
                                 <span class="status f-online" style="bottom: 32px; background: black"></span>
                             </a>
                         </div>
@@ -232,7 +232,7 @@
                         <li>
                             <div class="author-thmb">
                                 <a href="{{ url('mainscreenfamily') }}">
-                                    <img src="{{Auth::user()->family_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px">
+                                    <img src="{{Auth::user()->family_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
                                     <span class="status f-online" style="bottom: 32px; background-color: red"></span>
                                 </a>
                             </div>
@@ -244,7 +244,7 @@
                         <li>
                             <div class="author-thmb">
                                 <a href="{{ url('mainscreenbusiness') }}">
-                                    <img src="{{Auth::user()->business_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px">
+                                    <img src="{{Auth::user()->business_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
                                     <span class="status f-online" style="bottom: 32px; background-color:cornflowerblue"></span>
                                 </a>
                             </div>
@@ -381,7 +381,7 @@
                     </li>
                 </ul>
                 <div class="user-img" style="left: 10px">
-                    <img src="{{Auth::user()->profile_picture}}" alt="" style="width:45px; height:45px">
+                    <img src="{{Auth::user()->profile_picture}}" alt="" style="width:45px; height:45px; object-fit:cover">
                     {{-- <span class="status f-online"></span> --}}
                     {{Auth::user()->name}}
                     <div class="user-setting">

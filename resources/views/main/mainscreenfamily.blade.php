@@ -202,7 +202,7 @@
                                             <a href="{{url('activityfamily')}}" title="">Activty Log</a>
                                         </li>
                                         <li>
-                                            <i class="ti-pencil-alt"></i>
+                                            <i class="ti-face-smile"></i>
                                             <a href="{{ url('viewprofilefamily') }}" title="">View Profile</a>
                                         </li>
                                         <li>

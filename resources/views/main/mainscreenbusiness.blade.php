@@ -202,7 +202,7 @@
                                             <a href="{{url('activitybusiness')}}" title="">Insights</a>
                                         </li>
                                         <li>
-                                            <i class="ti-pencil-alt"></i>
+                                            <i class="ti-face-smile"></i>
                                             <a href="{{ url('viewprofilebusiness') }}" title="">View Profile</a>
                                         </li>
                                         <li>

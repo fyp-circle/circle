@@ -8,34 +8,54 @@
                 <div class="col-lg-12">
                     <div class="row merged20" id="page-contents">
                         <div class="col-lg-6">
-                            <aside class="sidebar static">
-                                <div class="widget">
-                                        <h4 class="widget-title">Recent Activity</h4>
-                                        <ul class="activitiez">
-                                            <li>
-                                                <div class="activity-meta">
-                                                    <i>10 hours Ago</i>
-                                                    <span><a title="" href="#">Commented on Video posted </a></span>
-                                                    <h6>by <a href="time-line.html">black demon.</a></h6>
+                            <div class="main-card mb-3 card">
+                                <div class="card-body"><h5 class="card-title">Activity Log</h5>
+                                    <div class="scroll-area">
+                                        <div class="scrollbar-container">
+                                            <div class="vertical-timeline vertical-timeline--animate vertical-timeline--one-column">
+                                                <div class="vertical-timeline-item vertical-timeline-element">
+                                                    <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-success"> </i></span>
+                                                        <div class="vertical-timeline-element-content bounce-in"><p>You commented on XYZ's post</p>
+                                                            <p>XYZ shared a post of ABC...</p><span class="vertical-timeline-element-date">10:30 PM</span></div>
+                                                    </div>
                                                 </div>
-                                            </li>
-                                            <li>
-                                                <div class="activity-meta">
-                                                    <i>30 Days Ago</i>
-                                                    <span><a title="" href="#">Posted your status. “Hello guys, how are you?”</a></span>
+                                                <div class="vertical-timeline-item vertical-timeline-element">
+                                                    <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-warning"> </i></span>
+                                                        <div class="vertical-timeline-element-content bounce-in"><p>You liked on XYZ's post</p>
+                                                            <p>Yet another one, at..</p><span class="vertical-timeline-element-date">12:25 PM</span></div>
+                                                    </div>
                                                 </div>
-                                            </li>
-                                            <li>
-                                                <div class="activity-meta">
-                                                    <i>2 Years Ago</i>
-                                                    <span><a title="" href="#">Share a video on her timeline.</a></span>
-                                                    <h6>"<a href="#">you are so funny mr.been.</a>"</h6>
+                                                <div class="vertical-timeline-item vertical-timeline-element">
+                                                    <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-danger"> </i></span>
+                                                        <div class="vertical-timeline-element-content bounce-in"><p>You sent a connection request to CBA</p>
+                                                            <p></p><span
+                                                                    class="vertical-timeline-element-date">15:00 PM</span></div>
+                                                    </div>
                                                 </div>
-                                            </li>
-                                        </ul>
+                                                <div class="vertical-timeline-item vertical-timeline-element">
+                                                    <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-success"> </i></span>
+                                                        <div class="vertical-timeline-element-content bounce-in"><p>You commented on XYZ's post</p>
+                                                            <p>XYZ shared a post of ABC...</p><span class="vertical-timeline-element-date">10:30 PM</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="vertical-timeline-item vertical-timeline-element">
+                                                    <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-warning"> </i></span>
+                                                        <div class="vertical-timeline-element-content bounce-in"><p>You liked on XYZ's post</p>
+                                                            <p>Yet another one, at..</p><span class="vertical-timeline-element-date">12:25 PM</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="vertical-timeline-item vertical-timeline-element">
+                                                    <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-danger"> </i></span>
+                                                        <div class="vertical-timeline-element-content bounce-in"><p>You sent a connection request to CBA</p>
+                                                            <p></p><span
+                                                                    class="vertical-timeline-element-date">15:00 PM</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-                            </aside>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="central-meta">
