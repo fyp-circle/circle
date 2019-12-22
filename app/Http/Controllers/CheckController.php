@@ -484,6 +484,75 @@ class CheckController extends Controller
         return view("messages.inbox")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
     }
 
+    public function nearbyfriends(){
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("nearby.nearbyfriends")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+    }
+    public function nearbyfamily(){
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("nearby.nearbyfamily")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+    }
+    public function nearbyconnections(){
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("nearby.nearbyconnections")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+    }
+
+    public function notification(){
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("notification")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+    }
+
+    public function search(){
+        $user = User::find(Auth::user()->user_id);
+        $has_bus=false;
+        $has_fam=false;
+        if ($user->business_user_id!=null) {
+            $has_bus=true;
+        } else {
+            if ($user->family_user_id!=null) {
+                $has_fam=true;
+            }
+        }
+        return view("search")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+    }
+
+
     public function sweetalertcheck(){
         alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.');
         //alert()->info('InfoAlert','Lorem ipsum dolor sit amet.');

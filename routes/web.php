@@ -74,6 +74,14 @@ Route::get('messagefriends', ['as' => 'messages.friends', 'uses' => 'CheckContro
 Route::get('messagefamily', ['as' => 'messages.family', 'uses' => 'CheckController@messagefamily']);
 Route::get('inbox', ['as' => 'inbox.business', 'uses' => 'CheckController@inbox']);
 
+Route::get('nearbyfriends', ['as' => 'messages.friends', 'uses' => 'CheckController@nearbyfriends']);
+Route::get('nearbyfamily', ['as' => 'messages.family', 'uses' => 'CheckController@nearbyfamily']);
+Route::get('nearbyconnections', ['as' => 'inbox.business', 'uses' => 'CheckController@nearbyconnections']);
+
+Route::get('notification', ['as' => 'notify.notify', 'uses' => 'CheckController@notification']);
+
+Route::get('search', ['as' => 'search.search', 'uses' => 'CheckController@search']);
+
 Route::get('sweetalertcheck', ['as' => 'sweetalertcheck', 'uses' => 'CheckController@sweetalertcheck']);
 
 Route::post('createcircle', 'CircleController@CreateNewCircleProfile')->name('user.create.circle');
