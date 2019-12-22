@@ -283,7 +283,7 @@
                             <div class="central-meta new-pst">
                                 <div class="new-postbox">
                                     <figure>
-                                        <img src="{{Auth::user()->profile_picture}}" alt="" style="width:100%">
+                                        <img src="{{Auth::user()->business_user['profile_picture']}}" alt="" style="width:60px; height:52px; object-fit:cover">
                                     </figure>
                                     <div class="newpst-input">
                                         <form method="post">
