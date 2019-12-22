@@ -204,71 +204,21 @@ class CheckController extends Controller
     }
 
     public function nearbyfriends(){
-        $user = User::find(Auth::user()->user_id);
-        $has_bus=false;
-        $has_fam=false;
-        if ($user->business_user_id!=null) {
-            $has_bus=true;
-        } else {
-            if ($user->family_user_id!=null) {
-                $has_fam=true;
-            }
-        }
-        return view("nearby.nearbyfriends")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+        return view("nearby.nearbyfriends");
     }
     public function nearbyfamily(){
-        $user = User::find(Auth::user()->user_id);
-        $has_bus=false;
-        $has_fam=false;
-        if ($user->business_user_id!=null) {
-            $has_bus=true;
-        } else {
-            if ($user->family_user_id!=null) {
-                $has_fam=true;
-            }
-        }
-        return view("nearby.nearbyfamily")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+        return view("nearby.nearbyfamily");
     }
     public function nearbyconnections(){
-        $user = User::find(Auth::user()->user_id);
-        $has_bus=false;
-        $has_fam=false;
-        if ($user->business_user_id!=null) {
-            $has_bus=true;
-        } else {
-            if ($user->family_user_id!=null) {
-                $has_fam=true;
-            }
-        }
-        return view("nearby.nearbyconnections")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+        return view("nearby.nearbyconnections");
     }
 
     public function notification(){
-        $user = User::find(Auth::user()->user_id);
-        $has_bus=false;
-        $has_fam=false;
-        if ($user->business_user_id!=null) {
-            $has_bus=true;
-        } else {
-            if ($user->family_user_id!=null) {
-                $has_fam=true;
-            }
-        }
-        return view("notification")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+        return view("notification");
     }
 
     public function search(){
-        $user = User::find(Auth::user()->user_id);
-        $has_bus=false;
-        $has_fam=false;
-        if ($user->business_user_id!=null) {
-            $has_bus=true;
-        } else {
-            if ($user->family_user_id!=null) {
-                $has_fam=true;
-            }
-        }
-        return view("search")->with('has_fam', $has_fam)->with('has_bus', $has_bus);
+        return view("search");
     }
 
 
