@@ -223,40 +223,39 @@
                     <li>
                         <div class="author-thmb">
                             <a href="{{ url('mainscreen') }}">
-                                <img src="images/resources/users/default.png" alt="" style="border-radius:50%; width:45px">
+                            <img src="{{Auth::user()->profile_picture}}" alt="" style="border-radius:50%; width:45px">
                                 <span class="status f-online" style="bottom: 32px; background: black"></span>
                             </a>
                         </div>
                     </li> <!-- friend mainscreen -->
-                    @if ($has_fam ?? ''==true)
+                    @if (Auth::user()->family_user_id!=null)
                         <li>
                             <div class="author-thmb">
                                 <a href="{{ url('mainscreenfamily') }}">
-                                    <img src="images/resources/users/default.png" alt="" style="border-radius:50%; width:45px">
+                                    <img src="{{Auth::user()->family_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px">
                                     <span class="status f-online" style="bottom: 32px; background-color: red"></span>
                                 </a>
                             </div>
                         </li>
-                    @else
-                        @if ($has_bus ?? ''==true)
-                            <li>
-                                <div class="author-thmb">
-                                    <a href="{{ url('mainscreenbusiness') }}">
-                                        <img src="images/resources/users/default.png" alt="" style="border-radius:50%; width:45px">
-                                        <span class="status f-online" style="bottom: 32px; background-color:cornflowerblue"></span>
-                                    </a>
-                                </div>
-                            </li>
-                        @else
 
-                        @endif
                     @endif
 
-                    @if (($has_bus ?? ''== false) || ($has_fam ?? ''== false))
+                    @if (Auth::user()->business_user_id!=null)
+                        <li>
+                            <div class="author-thmb">
+                                <a href="{{ url('mainscreenbusiness') }}">
+                                    <img src="{{Auth::user()->business_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px">
+                                    <span class="status f-online" style="bottom: 32px; background-color:cornflowerblue"></span>
+                                </a>
+                            </div>
+                        </li>
+
+                    @endif
+
+                    @if (Auth::user()->business_user_id==null || Auth::user()->business_user_id==null)
                         <li><a href="{{ url('addnewcircle') }}" title="Add Circle" data-toggle="tooltip"
                             data-placement="center" style="-webkit-text-fill-color: black; padding-left: 0"><i class="ti-plus"></i></a>
                         </li>
-                    @else
 
                     @endif
 

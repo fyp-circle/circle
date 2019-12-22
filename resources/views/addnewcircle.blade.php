@@ -19,12 +19,10 @@
                                                         <select  required name="circle_type">
                                                             <option value="" disabled selected>Choose Circle Type</option>
                                                             @if (Auth::user()->family_user_id==null)
-                                                            <option value = "Family">Family</option>
-                                                            <option value = "" disabled selected>Business</option>
+                                                                <option value = "Family">Family</option>
                                                             @endif
                                                             @if (Auth::user()->business_user_id==null)
-                                                            <option value = "">Business</option>
-                                                            <option value = "Family" disabled selected>Family</option>
+                                                                <option value = "Business">Business</option>
                                                             @endif
                                                         </select>
                                                     </div>

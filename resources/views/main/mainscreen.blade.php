@@ -203,6 +203,10 @@
                                         </li>
                                         <li>
                                             <i class="ti-pencil-alt"></i>
+                                            <a href="{{ url('viewprofile') }}" title="">View Profile</a>
+                                        </li>
+                                        <li>
+                                            <i class="ti-pencil-alt"></i>
                                             <a href="{{ url('editinfofriends') }}" title="">Edit Info</a>
                                         </li>
                                     </ul>

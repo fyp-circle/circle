@@ -38,7 +38,7 @@ return [
     | for particular modal just use the width() helper method.
     */
 
-    'width' => env('SWEET_ALERT_WIDTH', '32rem'),
+    'width' => env('SWEET_ALERT_WIDTH', '24rem'),
 
     /*
     |--------------------------------------------------------------------------
@@ -50,7 +50,8 @@ return [
     |
     */
 
-    'height_auto' => env('SWEET_ALERT_HEIGHT_AUTO', true),
+
+    'height_auto' => env('SWEET_ALERT_HEIGHT_AUTO',false),
 
     /*
     |--------------------------------------------------------------------------
@@ -131,7 +132,7 @@ return [
 
     'middleware' => [
 
-        'toast_position' => env('SWEET_ALERT_MIDDLEWARE_TOAST_POSITION', 'bottom-end'),
+        'toast_position' => env('SWEET_ALERT_MIDDLEWARE_TOAST_POSITION', 'top-end'),
 
         'toast_close_button' => env('SWEET_ALERT_MIDDLEWARE_TOAST_CLOSE_BUTTON', true),
 
