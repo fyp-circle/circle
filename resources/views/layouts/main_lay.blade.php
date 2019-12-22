@@ -270,16 +270,16 @@
                             </form>
                         </div>
                     </li>
-                    <li><a href="{{ url('mainscreen') }}" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
+                    <li><a href="{{ url('/') }}" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
                     <li>
                         <a href="#" title="Notification" data-ripple="">
-                            <i class="ti-bell"></i><span>20</span>
+                            <i class="ti-bell"></i><span>5</span>
                         </a>
                         <div class="dropdowns">
-                            <span>4 New Notifications</span>
+                            <span>5 New Notifications</span>
                             <ul class="drops-menu">
                                 <li>
-                                    <a href="notifications.html" title="">
+                                <a href="{{url('notification')}}" title="">
                                         <img src="images/resources/thumb-1.jpg" alt="">
                                         <div class="mesg-meta">
                                             <h6>sarah Loren</h6>
@@ -290,7 +290,7 @@
                                     <span class="tag green">New</span>
                                 </li>
                                 <li>
-                                    <a href="notifications.html" title="">
+                                    <a href="{{url('notification')}}" title="">
                                         <img src="images/resources/thumb-2.jpg" alt="">
                                         <div class="mesg-meta">
                                             <h6>Jhon doe</h6>
@@ -301,7 +301,7 @@
                                     <span class="tag red">Reply</span>
                                 </li>
                                 <li>
-                                    <a href="notifications.html" title="">
+                                    <a href="{{url('notification')}}" title="">
                                         <img src="images/resources/thumb-3.jpg" alt="">
                                         <div class="mesg-meta">
                                             <h6>Andrew</h6>
@@ -312,7 +312,7 @@
                                     <span class="tag blue">Unseen</span>
                                 </li>
                                 <li>
-                                    <a href="notifications.html" title="">
+                                    <a href="{{url('notification')}}" title="">
                                         <img src="images/resources/thumb-4.jpg" alt="">
                                         <div class="mesg-meta">
                                             <h6>Tom cruse</h6>
@@ -323,7 +323,7 @@
                                     <span class="tag">New</span>
                                 </li>
                                 <li>
-                                    <a href="notifications.html" title="">
+                                    <a href="{{url('notification')}}" title="">
                                         <img src="images/resources/thumb-5.jpg" alt="">
                                         <div class="mesg-meta">
                                             <h6>Amy</h6>
@@ -334,16 +334,16 @@
                                     <span class="tag">New</span>
                                 </li>
                             </ul>
-                            <a href="notifications.html" title="" class="more-mesg">view more</a>
+                            <a href="{{url('notification')}}" title="" class="more-mesg">view more</a>
                         </div>
                     </li>
                     <li>
-                        <a href="#" title="Messages" data-ripple=""><i class="ti-comment"></i><span>12</span></a>
+                        <a href="#" title="Messages" data-ripple=""><i class="ti-comment"></i><span>3</span></a>
                         <div class="dropdowns">
-                            <span>5 New Messages</span>
+                            <span>3 New Messages</span>
                             <ul class="drops-menu">
                                 <li>
-                                    <a href="notifications.html" title="">
+                                    <a href="{{url('messagefriends')}}" title="">
                                         <img src="images/resources/thumb-1.jpg" alt="">
                                         <div class="mesg-meta">
                                             <h6>sarah Loren</h6>
@@ -351,10 +351,10 @@
                                             <i>2 min ago</i>
                                         </div>
                                     </a>
-                                    <span class="tag green">New</span>
+                                    <span class="tag green" style="background-color:black">Friends</span>
                                 </li>
                                 <li>
-                                    <a href="notifications.html" title="">
+                                    <a href="{{url('messagefamily')}}" title="">
                                         <img src="images/resources/thumb-2.jpg" alt="">
                                         <div class="mesg-meta">
                                             <h6>Jhon doe</h6>
@@ -362,10 +362,10 @@
                                             <i>2 min ago</i>
                                         </div>
                                     </a>
-                                    <span class="tag red">Reply</span>
+                                    <span class="tag red">Family</span>
                                 </li>
                                 <li>
-                                    <a href="notifications.html" title="">
+                                    <a href="{{url('inbox')}}" title="">
                                         <img src="images/resources/thumb-3.jpg" alt="">
                                         <div class="mesg-meta">
                                             <h6>Andrew</h6>
@@ -373,32 +373,10 @@
                                             <i>2 min ago</i>
                                         </div>
                                     </a>
-                                    <span class="tag blue">Unseen</span>
-                                </li>
-                                <li>
-                                    <a href="notifications.html" title="">
-                                        <img src="images/resources/thumb-4.jpg" alt="">
-                                        <div class="mesg-meta">
-                                            <h6>Tom cruse</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span class="tag">New</span>
-                                </li>
-                                <li>
-                                    <a href="notifications.html" title="">
-                                        <img src="images/resources/thumb-5.jpg" alt="">
-                                        <div class="mesg-meta">
-                                            <h6>Amy</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span class="tag">New</span>
+                                    <span class="tag blue" style="background-color:cornflowerblue">Business</span>
                                 </li>
                             </ul>
-                            <a href="messages.html" title="" class="more-mesg">view more</a>
+                            <a href="{{url('notification')}}" title="" class="more-mesg">view more</a>
                         </div>
                     </li>
                 </ul>

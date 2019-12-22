@@ -1,46 +1,46 @@
 //google map
 if ($("#map-canvas").length) {
 jQuery(document).ready(function($) {
-	
+
 	"use strict";
 
 		var map;
 		function initialize() {
 		  var mapOptions = {
 		    zoom: 12,
-		    center: new google.maps.LatLng(37.048437, -100.921268)
+		    center: new google.maps.LatLng(24.926294, 67.022095)
 		  };
 		  map = new google.maps.Map(document.getElementById('map-canvas'),
 		      mapOptions);
 		      var marker = new google.maps.Marker({
 		        map: map,
 		        icon: "images/map-marker.png",
-		        title: "Mi marcador",
-		        position: map.getCenter()
+		        title: "Basit Ali",
+		        position: map.getCenter(24.9415492, 67.1523507)
 		      });
 		      var marker2 = new google.maps.Marker({
 		        map: map,
 		        icon: "images/map-marker2.png",
-		        title: "Otro marker",
-		        position: new google.maps.LatLng(37.071450, -100.900326)
+		        title: "Munir Hassan",
+		        position: new google.maps.LatLng(24.9238073, 67.1146239,19)
 		      });
 		      var marker3 = new google.maps.Marker({
 		        map: map,
 		        icon: "images/map-marker3.png",
-		        title: "Otro marker mas",
-		        position: new google.maps.LatLng(37.020208, -100.917492)
+		        title: "Malik Obaid",
+		        position: new google.maps.LatLng(24.8697863,67.022789)
 		      });
 
 
 
 		      var infowindow = new google.maps.InfoWindow();
-		      infowindow.setContent('<b>Mi marcador</b><br>Tel: 46546545');
+		      infowindow.setContent('<b>Basit Ali</b><br>ID: 16k-3762');
 
 		      var infowindow2 = new google.maps.InfoWindow();
-		      infowindow2.setContent('<b>Otro marker</b><br>Tel: 46546545');
+		      infowindow2.setContent('<b>Munir Hassan</b><br>ID: 16k-3761');
 
 		      var infowindow3 = new google.maps.InfoWindow();
-		      infowindow3.setContent('<b>Otro marker mas</b><br>Tel: 46546545');
+		      infowindow3.setContent('<b>Malik Obaid</b><br>ID: 16k-3767');
 
 		      infowindow.open(map, marker);
 
