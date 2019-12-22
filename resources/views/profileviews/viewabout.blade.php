@@ -40,9 +40,7 @@
                         <div class="personal">
                             <h5 class="f-title"><i class="ti-info-alt"></i> Personal Info</h5>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                {{Auth::user()->about_me}}
                             </p>
                         </div>
                         <div class="d-flex flex-row mt-2">
@@ -63,10 +61,10 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="basic">
                                     <ul class="basics">
-                                        <li><i class="ti-user"></i>sarah grey</li>
-                                        <li><i class="ti-map-alt"></i>live in Dubai</li>
-                                        <li><i class="ti-mobile"></i>+1-234-345675</li>
-                                        <li><i class="ti-email"></i>yourmail@email.com</li>
+                                        <li><i class="ti-user"></i>{{Auth::user()->name}}</li>
+                                        <li><i class="ti-map-alt"></i>{{Auth::user()->city}} , {{Auth::user()->country}}</li>
+                                        <li><i class="ti-mobile"></i>{{Auth::user()->phone}}</li>
+                                        <li><i class="ti-email"></i>{{Auth::user()->email}}</li>
                                         <li><i class="ti-world"></i>www.yoursite.com</li>
                                     </ul>
                                 </div>
