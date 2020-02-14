@@ -42,11 +42,11 @@ Route::get('mainscreen', ['as' => 'check.check.friend', 'uses' => 'CheckControll
 Route::get('mainscreenfamily', ['as' => 'check.check.family', 'uses' => 'CheckController@mainscreenfamily']);
 Route::get('mainscreenbusiness', ['as' => 'check.check.business', 'uses' => 'CheckController@mainscreenbusiness']);
 
-Route::get('viewprofile', ['as' => 'viewprofile.profile.friend', 'uses' => 'CheckController@viewprofile']);
-Route::get('viewphotos', ['as' => 'viewphotos.photos', 'uses' => 'CheckController@viewphotos']);
-Route::get('viewvideos', ['as' => 'viewvideos.videos', 'uses' => 'CheckController@viewvideos']);
-Route::get('viewfriends', ['as' => 'viewfriends.friends', 'uses' => 'CheckController@viewfriends']);
-Route::get('viewabout', ['as' => 'viewabout.about', 'uses' => 'CheckController@viewabout']);
+Route::get('viewprofile-{id}', ['as' => 'viewprofile.profile.friend', 'uses' => 'CheckController@viewprofile']);
+Route::get('viewphotos-{id}', ['as' => 'viewphotos.photos', 'uses' => 'CheckController@viewphotos']);
+Route::get('viewvideos-{id}', ['as' => 'viewvideos.videos', 'uses' => 'CheckController@viewvideos']);
+Route::get('viewfriends-{id}', ['as' => 'viewfriends.friends', 'uses' => 'CheckController@viewfriends']);
+Route::get('viewabout-{id}', ['as' => 'viewabout.about', 'uses' => 'CheckController@viewabout']);
 
 Route::get('viewprofilefamily', ['as' => 'viewprofile.profile.family', 'uses' => 'CheckController@viewprofilefamily']);
 Route::get('viewphotosfamily', ['as' => 'viewphotos.photos', 'uses' => 'CheckController@viewphotosfamily']);
@@ -62,7 +62,7 @@ Route::get('viewaboutbusiness', ['as' => 'viewabout.about', 'uses' => 'CheckCont
 
 Route::get('addnewcircle', ['as' => 'circle.new', 'uses' => 'CheckController@addnewcircle']);
 
-Route::get('editinfofriends', ['as' => 'circle.new', 'uses' => 'CheckController@editinfofriends']);
+Route::get('editinfofriends-{id}', ['as' => 'circle.new', 'uses' => 'CheckController@editinfofriends']);
 Route::get('editinfofamily', ['as' => 'circle.new', 'uses' => 'CheckController@editinfofamily']);
 Route::get('editinfobusiness', ['as' => 'circle.new', 'uses' => 'CheckController@editinfobusiness']);
 

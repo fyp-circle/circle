@@ -8,12 +8,43 @@ use App\User;
 use App\Post;
 use App\Connection;
 use App\Circle;
+use Illuminate\Support\Facades\DB;
 Use Alert;
 use Auth;
 
 
 class CheckController extends Controller
 {
+
+    public function checkConnection($id){
+        $c=0;
+
+        if($id==Auth::user()->user_id){
+            $c=2; //means user is auth user
+        }
+        else{
+            $a=DB::table('connections')
+            ->where([
+                ['user1_id', $id],
+                ['user2_id', Auth::user()->user_id],
+                ['circle_id', 1]
+            ])
+            ->orWhere([
+                ['user2_id', $id],
+                ['user1_id', Auth::user()->user_id],
+                ['circle_id', 1]
+            ])
+            ->get();
+
+            if (!$a->isEmpty()) {
+                $c = 1; //means connection exists
+
+            } else {
+                $c = 0;  //means connection do not exists
+            }
+        }
+        return $c;
+    }
 
 
     public function check()
@@ -83,25 +114,28 @@ class CheckController extends Controller
         return view("main.mainscreenbusiness");
     }
 
-    public function viewprofile(){
+    public function viewprofile($id){
+        $user = User::find($id);
 
-        return view("profileviews.viewprofile");
+
+        $c=CheckController::checkConnection($id);
+        return view("profileviews.viewprofile")->with('user',$user)->with('c',$c);
     }
-    public function viewphotos(){
-
-        return view("profileviews.viewphotos");
+    public function viewphotos($id){
+        $user = User::find($id);
+        return view("profileviews.viewphotos")->with('user',$user);
     }
-    public function viewvideos(){
-
-        return view("profileviews.viewvideos");
+    public function viewvideos($id){
+        $user = User::find($id);
+        return view("profileviews.viewvideos")->with('user',$user);
     }
-    public function viewfriends(){
-
-        return view("profileviews.viewfriends");
+    public function viewfriends($id){
+        $user = User::find($id);
+        return view("profileviews.viewfriends")->with('user',$user);
     }
-    public function viewabout(){
-
-        return view("profileviews.viewabout");
+    public function viewabout($id){
+        $user = User::find($id);
+        return view("profileviews.viewabout")->with('user',$user);
     }
 
     public function viewprofilefamily(){
@@ -151,9 +185,9 @@ class CheckController extends Controller
         return view("addnewcircle");
     }
 
-    public function editinfofriends(){
-
-        return view("editinfo.editinfofriends");
+    public function editinfofriends($id){
+        $user = User::find($id);
+        return view("editinfo.editinfofriends")->with('user',$user);;
     }
     public function editinfofamily(){
 

@@ -126,7 +126,7 @@
                                     <img src="images/resources/friend-avatar10.jpg" alt="">
                                 </figure>
                                 <div class="friend-name">
-                                    <ins><a href="time-line.html" title="">{{Auth::user()->name}}</a></ins>
+                                    <ins><a href="time-line.html" title="">{{$user->name}}</a></ins>
                                     <span>published: june,2 2018 19:PM</span>
                                 </div>
                                 <div class="description">
@@ -228,7 +228,7 @@
                                     <img src="images/resources/friend-avatar10.jpg" alt="">
                                 </figure>
                                 <div class="friend-name">
-                                    <ins><a href="time-line.html" title="">{{Auth::user()->name}}</a></ins>
+                                    <ins><a href="time-line.html" title="">{{$user->name}}</a></ins>
                                     <span>published: june,2 2018 19:PM</span>
                                 </div>
                                 <div class="post-meta">
@@ -422,7 +422,7 @@
                                     <img src="images/resources/friend-avatar10.jpg" alt="">
                                 </figure>
                                 <div class="friend-name">
-                                    <ins><a href="time-line.html" title="">{{Auth::user()->name}}</a></ins>
+                                    <ins><a href="time-line.html" title="">{{$user->name}}</a></ins>
                                     <span>published: june,2 2018 19:PM</span>
                                 </div>
                                 <div class="post-meta">
