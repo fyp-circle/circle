@@ -9,15 +9,15 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <title>Circle</title>
-    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/images/fav.png" type="image/png" sizes="16x16">
 
-    <link rel="stylesheet" href="css/main.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/color.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/main.8d288f825d8dffbbe55e.css">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/spinner_wrapper.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/color.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/main.8d288f825d8dffbbe55e.css">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/spinner_wrapper.css') }}" rel="stylesheet">
 
 </head>
 
@@ -40,7 +40,7 @@
                     <a class="" href="#menu"><i class="fa fa-align-justify"></i></a>
                 </span>
                 <span class="mh-text">
-                    <a href="{{ url('/') }} title=" Home"><img src="images/logo2.png" alt=""></a>
+                    <a href="{{ url('/') }} title=" Home"><img src="/images/logo2.png" alt=""></a>
                 </span>
                 <span class="mh-btns-right">
                     <a class="fa fa-sliders" href="#shoppingbag"></a>
@@ -215,7 +215,7 @@
 
         <div class="topbar stick">
             <div class="logo">
-                <a title="Home" href="{{ url('/') }}"><img src="images/logo.png" alt=""></a>
+                <a title="Home" href="{{ url('/') }}"><img src="/images/logo.png" alt=""></a>
             </div>
 
             <div class="top-area">
@@ -223,7 +223,7 @@
                     <li>
                         <div class="author-thmb">
                             <a href="{{ url('mainscreen') }}">
-                            <img src="{{Auth::user()->profile_picture}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
+                            <img src="/{{Auth::user()->profile_picture}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
                                 <span class="status f-online" style="bottom: 32px; background: black"></span>
                             </a>
                         </div>
@@ -232,7 +232,7 @@
                         <li>
                             <div class="author-thmb">
                                 <a href="{{ url('mainscreenfamily') }}">
-                                    <img src="{{Auth::user()->family_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
+                                    <img src="/{{Auth::user()->family_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
                                     <span class="status f-online" style="bottom: 32px; background-color: red"></span>
                                 </a>
                             </div>
@@ -244,7 +244,7 @@
                         <li>
                             <div class="author-thmb">
                                 <a href="{{ url('mainscreenbusiness') }}">
-                                    <img src="{{Auth::user()->business_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
+                                    <img src="/{{Auth::user()->business_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
                                     <span class="status f-online" style="bottom: 32px; background-color:cornflowerblue"></span>
                                 </a>
                             </div>
@@ -280,7 +280,7 @@
                             <ul class="drops-menu">
                                 <li>
                                 <a href="{{url('notification')}}" title="">
-                                        <img src="images/resources/thumb-1.jpg" alt="">
+                                        <img src="/images/resources/thumb-1.jpg" alt="">
                                         <div class="mesg-meta">
                                             <h6>sarah Loren</h6>
                                             <span>Hi, how r u dear ...?</span>
@@ -403,14 +403,14 @@
         @include('sweetalert::alert')
         @yield('content')
 
-    <script src="js/main.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/map-init.js"></script>
-    <script src="js/main.8d288f825d8dffbbe55e.js"></script>
-    <script src="{{asset('js/echarts.min.js')}}"></script>
-    <script src="{{asset('js/world.js')}}"></script>
-	<script src="{{asset('js/custom.js')}}"></script>
-    <script src="{{ URL::asset('js/first_theme_js_after_beautifier.js') }}"></script>
+    <script src="/js/main.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/map-init.js"></script>
+    <script src="/js/main.8d288f825d8dffbbe55e.js"></script>
+    <script src="{{asset('/js/echarts.min.js')}}"></script>
+    <script src="{{asset('/js/world.js')}}"></script>
+	<script src="{{asset('/js/custom.js')}}"></script>
+    <script src="{{ URL::asset('/js/first_theme_js_after_beautifier.js') }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script>

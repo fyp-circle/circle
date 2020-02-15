@@ -42,7 +42,7 @@ Route::get('mainscreen', ['as' => 'check.check.friend', 'uses' => 'CheckControll
 Route::get('mainscreenfamily', ['as' => 'check.check.family', 'uses' => 'CheckController@mainscreenfamily']);
 Route::get('mainscreenbusiness', ['as' => 'check.check.business', 'uses' => 'CheckController@mainscreenbusiness']);
 
-Route::get('viewprofile-{id}', ['as' => 'viewprofile.profile.friend', 'uses' => 'CheckController@viewprofile']);
+Route::get('viewprofile/{id}', ['as' => 'viewprofile.profile.friend', 'uses' => 'CheckController@viewprofile'])->where('id', '[0-9]+');
 Route::get('viewphotos-{id}', ['as' => 'viewphotos.photos', 'uses' => 'CheckController@viewphotos']);
 Route::get('viewvideos-{id}', ['as' => 'viewvideos.videos', 'uses' => 'CheckController@viewvideos']);
 Route::get('viewfriends-{id}', ['as' => 'viewfriends.friends', 'uses' => 'CheckController@viewfriends']);
@@ -89,6 +89,12 @@ Route::get('search', ['as' => 'search.search', 'uses' => 'CheckController@search
 Route::get('sweetalertcheck', ['as' => 'sweetalertcheck', 'uses' => 'CheckController@sweetalertcheck']);
 
 Route::post('createcircle', 'CircleController@CreateNewCircleProfile')->name('user.create.circle');
+
+Route::redirect('/{any}', '/', 301);
+
+// Route::any('/{any}', function () {
+//     return redirect()->url('/');
+// });
 
 
 

@@ -203,7 +203,7 @@
                                         </li>
                                         <li>
                                             <i class="ti-face-smile"></i>
-                                            <a href="{{ url('viewprofile') }}" title="">View Profile</a>
+                                            <a href="{{ url('viewprofile',Auth::user()->user_id) }}" title="">View Profile</a>
                                         </li>
                                         <li>
                                             <i class="ti-pencil-alt"></i>
