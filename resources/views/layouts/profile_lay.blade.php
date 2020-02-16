@@ -38,7 +38,14 @@
                     </div>
                 </div>
                 @if ($c==0)
-                <button>Add Friend</button>
+                <button id="AddFriendButton" class="submit-button" >Add Friend</button>
+
+                <script type="text/javascript">
+                    document.getElementById("AddFriendButton").onclick = function () {
+                        var profile_id = "{{ $profile_id }}";
+                        location.href = "/requestsent/"+profile_id;
+                    };
+                </script>
                 @else
                     @if ($c==1)
                     <button>You are already Friends.</button>

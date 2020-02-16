@@ -11,6 +11,8 @@ use App\Circle;
 use Illuminate\Support\Facades\DB;
 Use Alert;
 use Auth;
+use App\Events\MyEvent;
+use Illuminate\Support\Facades\Redirect;
 
 
 class CheckController extends Controller
@@ -124,7 +126,7 @@ class CheckController extends Controller
 
 
         $c=CheckController::checkConnection($id);
-        return view("profileviews.viewprofile")->with('user',$user)->with('c',$c);
+        return view("profileviews.viewprofile")->with('user',$user)->with('c',$c)->with('profile_id',$id);
     }
     public function viewphotos($id){
         $user = User::find($id);
@@ -258,6 +260,13 @@ class CheckController extends Controller
 
     public function search(){
         return view("search");
+    }
+
+
+    public function sentRequest($id){
+        event(new MyEvent($id));
+        alert()->success('Request Sent Successfully.','You have successfully sent rquest to friend Circle.')->position('top-end')->toToast()->width('24rem');
+        return Redirect::back();
     }
 
 

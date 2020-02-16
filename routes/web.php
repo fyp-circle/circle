@@ -16,10 +16,14 @@ Route::get('/request', function () {
 });
 
 
-Route::get('/test', function () {
-    event(new App\Events\MyEvent('Someone'));
-    return "Event has been sent!";
-});
+// Route::get('/requestsent/{id}', function () {
+//     event(new App\Events\MyEvent(id));
+//     alert()->success('Request Sent Successfully.','You have successfully sent rquest to friend Circle.')->position('top-end')->toToast()->width('24rem');
+//     return Redirect::back();
+// });
+
+
+Route::get('/requestsent/{id}', ['as' => 'request.sent', 'uses' => 'CheckController@sentRequest'])->where('id', '[0-9]+');
 
 
 Route::get('/', 'HomeController@index')->name('home')->middleware('verified');

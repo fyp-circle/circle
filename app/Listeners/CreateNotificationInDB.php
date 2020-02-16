@@ -31,7 +31,7 @@ class CreateNotificationInDB
         $notif->title = $event->title;
         $notif->content= $event->content;
         $notif->read = 0;
-        $notif->user_id = $event->user_id;
+        $notif->user_id = $event->dest_id;
         $notif->circle_id = $event->circle_id;
         $notif->save();
     }

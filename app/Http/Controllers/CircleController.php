@@ -9,6 +9,7 @@ use App\FamilyUser;
 use Auth;
 use Alert;
 
+
 class CircleController extends Controller
 {
     public function CreateNewCircleProfile(Request $request){

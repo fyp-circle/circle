@@ -351,7 +351,6 @@
                 {{-- <span class="ti-menu main-menu" data-ripple=""></span> --}}
             </div>
         </div><!-- topbar -->
-
         @include('sweetalert::alert')
         @yield('content')
 
@@ -405,15 +404,16 @@
 
         // Subscribe to the channel we specified in our Laravel Event
         var user_id="{{Auth::user()->user_id}}";
-        var channel = pusher.subscribe('user_id_'+user_id);
+        var profile_id = "{{ $profile_id }}";
+        if (user_id===profile_id) {
+            var channel = pusher.subscribe('user_id_'+profile_id);
+            // Bind a function to a Event (the full Laravel class)
+            channel.bind('my-event', function(data) {
 
-        // Bind a function to a Event (the full Laravel class)
-        channel.bind('my-event', function(data) {
-
-          var existingNotifications = $("#test2").html();
-        //   var avatar = Math.floor(Math.random() * (71 - 20 + 1)) + 20;
-          var newNotificationHtml = `
-          <li>
+            var existingNotifications = $("#test2").html();
+            //   var avatar = Math.floor(Math.random() * (71 - 20 + 1)) + 20;
+            var newNotificationHtml = `
+            <li>
             <a href="{{url('notification')}}" title="">
                     <img src="/images/resources/thumb-1.jpg" alt="">
                     <div class="mesg-meta">
@@ -424,14 +424,20 @@
                 </a>
                 <span class="tag green">Circle Name</span>
             </li>
-          `;
-          $("#test2").html(newNotificationHtml + existingNotifications);
+            `;
+            $("#test2").html(newNotificationHtml + existingNotifications);
 
-          notificationsCount += 1;
-          notificationsCountElem.attr('data-count', notificationsCount);
-          notificationsWrapper.find('.notif-count').text(notificationsCount);
-          notificationsWrapper.show();
-        });
+            notificationsCount += 1;
+            notificationsCountElem.attr('data-count', notificationsCount);
+            notificationsWrapper.find('.notif-count').text(notificationsCount);
+            notificationsWrapper.show();
+            });
+        } else {
+
+        }
+
+
+
       </script>
 
 
