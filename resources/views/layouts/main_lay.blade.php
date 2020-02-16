@@ -307,7 +307,7 @@
                                 </li>
                                 <li>
                                     <a href="{{url('messagefamily')}}" title="">
-                                        <img src="images/resources/thumb-2.jpg" alt="">
+                                        <img src="/images/resources/thumb-2.jpg" alt="">
                                         <div class="mesg-meta">
                                             <h6>Jhon doe</h6>
                                             <span>Hi, how r u dear ...?</span>
@@ -318,7 +318,7 @@
                                 </li>
                                 <li>
                                     <a href="{{url('inbox')}}" title="">
-                                        <img src="images/resources/thumb-3.jpg" alt="">
+                                        <img src="/images/resources/thumb-3.jpg" alt="">
                                         <div class="mesg-meta">
                                             <h6>Andrew</h6>
                                             <span>Hi, how r u dear ...?</span>
@@ -333,7 +333,7 @@
                     </li>
                 </ul>
                 <div class="user-img" style="left: 10px">
-                    <img src="{{Auth::user()->profile_picture}}" alt="" style="width:45px; height:45px; object-fit:cover">
+                    <img src="/{{Auth::user()->profile_picture}}" alt="" style="width:45px; height:45px; object-fit:cover">
                     {{-- <span class="status f-online"></span> --}}
                     {{Auth::user()->name}}
                     <div class="user-setting">
@@ -404,7 +404,7 @@
 
         // Subscribe to the channel we specified in our Laravel Event
         var user_id="{{Auth::user()->user_id}}";
-        var profile_id = "{{ $profile_id }}";
+        var profile_id = "{{ $profile_id ?? '' }}";
         if (user_id===profile_id) {
             var channel = pusher.subscribe('user_id_'+profile_id);
             // Bind a function to a Event (the full Laravel class)

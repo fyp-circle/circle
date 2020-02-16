@@ -269,6 +269,11 @@ class CheckController extends Controller
         return Redirect::back();
     }
 
+    public function defaultPage(){
+        alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+        return redirect()->to('/');
+    }
+
 
     public function sweetalertcheck(){
         alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.')->position('top-end')->toToast()->width('24rem')->padding('1.25rem')->showCancelButton()->showConfirmButton()->focusConfirm(true);

@@ -100,12 +100,14 @@ Route::get('sweetalertcheck', ['as' => 'sweetalertcheck', 'uses' => 'CheckContro
 
 Route::post('createcircle', 'CircleController@CreateNewCircleProfile')->name('user.create.circle');
 
-Route::redirect('/{any}', '/', 301);
+// Route::redirect('/{any}', '/', 301);
 
 // Route::any('/{any}', function () {
 //     return redirect()->url('/');
 // });
 
+
+Route::get('/{any}', ['as' => 'default.page', 'uses' => 'CheckController@defaultPage']);
 
 
 
