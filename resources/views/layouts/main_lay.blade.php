@@ -18,6 +18,12 @@
     <link rel="stylesheet" href="/css/main.8d288f825d8dffbbe55e.css">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/spinner_wrapper.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-notifications.min.css">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
@@ -271,68 +277,14 @@
                         </div>
                     </li>
                     <li><a href="{{ url('/') }}" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
-                    <li>
-                        <a href="#" title="Notification" data-ripple="">
-                            <i class="ti-bell"></i><span>5</span>
+                    <li class= "dropdown-notifications">
+                        <a  href="#notifications-panel" title="Notification" data-ripple="" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="ti-bell" data-count="0"></i><span class="notif-count">0</span>
                         </a>
-                        <div class="dropdowns">
+                        <div class="dropdowns" id="test2">
                             <span>5 New Notifications</span>
-                            <ul class="drops-menu">
-                                <li>
-                                <a href="{{url('notification')}}" title="">
-                                        <img src="/images/resources/thumb-1.jpg" alt="">
-                                        <div class="mesg-meta">
-                                            <h6>sarah Loren</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span class="tag green">New</span>
-                                </li>
-                                <li>
-                                    <a href="{{url('notification')}}" title="">
-                                        <img src="images/resources/thumb-2.jpg" alt="">
-                                        <div class="mesg-meta">
-                                            <h6>Jhon doe</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span class="tag red">Reply</span>
-                                </li>
-                                <li>
-                                    <a href="{{url('notification')}}" title="">
-                                        <img src="images/resources/thumb-3.jpg" alt="">
-                                        <div class="mesg-meta">
-                                            <h6>Andrew</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span class="tag blue">Unseen</span>
-                                </li>
-                                <li>
-                                    <a href="{{url('notification')}}" title="">
-                                        <img src="images/resources/thumb-4.jpg" alt="">
-                                        <div class="mesg-meta">
-                                            <h6>Tom cruse</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span class="tag">New</span>
-                                </li>
-                                <li>
-                                    <a href="{{url('notification')}}" title="">
-                                        <img src="images/resources/thumb-5.jpg" alt="">
-                                        <div class="mesg-meta">
-                                            <h6>Amy</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span class="tag">New</span>
-                                </li>
+                            <ul class="dropdown-menu">
+
                             </ul>
                             <a href="{{url('notification')}}" title="" class="more-mesg">view more</a>
                         </div>
@@ -427,6 +379,64 @@
             });
         });
     </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//js.pusher.com/3.1/pusher.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <script type="text/javascript">
+        var notificationsWrapper   = $('.dropdown-notifications');
+        var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
+        var notificationsCountElem = notificationsToggle.find('i[data-count]');
+        var notificationsCount     = parseInt(notificationsCountElem.data('count'));
+        var notifications          = notificationsWrapper.find('ul.dropdown-menu');
+
+        // if (notificationsCount <= 0) {
+        //   notificationsWrapper.hide();
+        // }
+
+        // Enable pusher logging - don't include this in production
+        // Pusher.logToConsole = true;
+
+        var pusher = new Pusher('490345636eb3c4e8f2d8', {
+            cluster: 'us2',
+            forceTLS: true
+        });
+
+        // Subscribe to the channel we specified in our Laravel Event
+        var user_id="{{Auth::user()->user_id}}";
+        var channel = pusher.subscribe('user_id_'+user_id);
+
+        // Bind a function to a Event (the full Laravel class)
+        channel.bind('my-event', function(data) {
+
+          var existingNotifications = $("#test2").html();
+        //   var avatar = Math.floor(Math.random() * (71 - 20 + 1)) + 20;
+          var newNotificationHtml = `
+          <li>
+            <a href="{{url('notification')}}" title="">
+                    <img src="/images/resources/thumb-1.jpg" alt="">
+                    <div class="mesg-meta">
+                        <h6>`+data.message+`</h6>
+                        <span>`+data.user_id+`</span>
+                        <i>`+data.username+`</i>
+                    </div>
+                </a>
+                <span class="tag green">Circle Name</span>
+            </li>
+          `;
+          $("#test2").html(newNotificationHtml + existingNotifications);
+
+          notificationsCount += 1;
+          notificationsCountElem.attr('data-count', notificationsCount);
+          notificationsWrapper.find('.notif-count').text(notificationsCount);
+          notificationsWrapper.show();
+        });
+      </script>
+
+
+
+
 
 
 </body>

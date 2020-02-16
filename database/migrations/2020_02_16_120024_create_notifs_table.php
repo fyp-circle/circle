@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateConnectionsTable extends Migration
+class CreateNotifsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateConnectionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('connections', function (Blueprint $table) {
-            $table->bigIncrements('connection_id');
-            $table->boolean('approve')->nullable();
-            $table->integer('user1_id')->references('user_id')->on('users')->nullable();
-            $table->integer('user2_id')->references('user_id')->on('users')->nullable();
+        Schema::create('notifs', function (Blueprint $table) {
+            $table->bigIncrements('notif_id');
+            $table->string('title')->nullable();
+            $table->string('content')->nullable();
+            $table->integer('user_id')->references('user_id')->on('users')->nullable();
             $table->integer('circle_id')->references('circle_id')->on('circles')->nullable();
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateConnectionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('connections');
+        Schema::dropIfExists('notifs');
     }
 }

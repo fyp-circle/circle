@@ -7,15 +7,15 @@
     // Enable pusher logging - don't include this in production
     // Pusher.logToConsole = true;
 
-    var pusher = new Pusher('490345636eb3c4e8f2d8', {
-      cluster: 'us2',
-      forceTLS: true
-    });
+    // var pusher = new Pusher('490345636eb3c4e8f2d8', {
+    //   cluster: 'us2',
+    //   forceTLS: true
+    // });
 
-    var channel = pusher.subscribe('my-channel');
-    channel.bind('my-event', function(data) {
-      alert(JSON.stringify(data));
-    });
+    // var channel = pusher.subscribe('my-channel');
+    // channel.bind('my-event', function(data) {
+    //   alert(JSON.stringify(data));
+    // });
   </script>
 </head>
 <body>

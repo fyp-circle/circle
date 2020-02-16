@@ -20,27 +20,32 @@ class CheckController extends Controller
         $c=0;
 
         if($id==Auth::user()->user_id){
-            $c=2; //means user is auth user
+            $c=2; //means user is auth user means show 'Nothing'
         }
         else{
             $a=DB::table('connections')
             ->where([
                 ['user1_id', $id],
                 ['user2_id', Auth::user()->user_id],
-                ['circle_id', 1]
+                ['circle_id', 1],
             ])
             ->orWhere([
                 ['user2_id', $id],
                 ['user1_id', Auth::user()->user_id],
-                ['circle_id', 1]
+                ['circle_id', 1],
             ])
             ->get();
 
             if (!$a->isEmpty()) {
-                $c = 1; //means connection exists
+                if($a[0]->approve==1){
+                    $c = 1; //means connection exists means show 'You are already friends Button'
+                }
+                else{
+                    $c=3; //request is pending means show 'Pending Request Button'
+                }
 
             } else {
-                $c = 0;  //means connection do not exists
+                $c = 0;  //means connection do not exists means show 'Add Friend Button'
             }
         }
         return $c;

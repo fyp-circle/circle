@@ -43,7 +43,15 @@
                     @if ($c==1)
                     <button>You are already Friends.</button>
                     @else
-                    <button>abey ye to mein hi hun.</button>
+                        @if ($c==2)
+                            <button>abey ye to mein hi hun.</button>
+                        @else
+                            @if ($c==3)
+                                <button>Pending Request.</button>
+                            @else
+
+                            @endif
+                        @endif
                     @endif
                 @endif
 
