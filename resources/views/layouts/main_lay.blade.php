@@ -417,9 +417,9 @@
             <a href="{{url('notification')}}" title="">
                     <img src="/images/resources/thumb-1.jpg" alt="">
                     <div class="mesg-meta">
-                        <h6>`+data.message+`</h6>
-                        <span>`+data.user_id+`</span>
-                        <i>`+data.username+`</i>
+                        <h6>`+data.title+`</h6>
+                        <span>`+data.content+`</span>
+                        <i>`+data.created_at+`</i>
                     </div>
                 </a>
                 <span class="tag green">Circle Name</span>

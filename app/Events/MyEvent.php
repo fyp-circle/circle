@@ -11,25 +11,30 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use Auth;
 use App\User;
+use Carbon\Carbon;
 
 class MyEvent implements ShouldBroadcast
 {
   use Dispatchable, InteractsWithSockets, SerializesModels;
 
-  public $message;
+  public $content;
+  public $title;
   public $user_id;
-  public $username;
+  public $circle_id;
+  public $created_at;
 
-  public function __construct($message)
+  public function __construct($content)
   {
-      $this->message = $message;
+      $this->title = "This is my title.";
+      $this->content = "This is my content.";
       $this->user_id = Auth::user()->user_id;
-      $this->username = Auth::user()->name;
+      $this->circle_id = 1;
+      $this->created_at=Carbon::now()->format('Y-m-d H:i:s');
   }
 
   public function broadcastOn()
   {
-      return ['user_id_2'];
+      return ['user_id_1'];
   }
 
   public function broadcastAs()
