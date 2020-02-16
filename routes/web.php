@@ -11,9 +11,15 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/request', function () {
+    return view('request');
+});
+
+
+Route::get('/test', function () {
+    event(new App\Events\MyEvent('Someone'));
+    return "Event has been sent!";
+});
 
 
 Route::get('/', 'HomeController@index')->name('home')->middleware('verified');
