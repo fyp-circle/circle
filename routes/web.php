@@ -24,7 +24,8 @@ Route::get('/request', function () {
 
 
 Route::get('/requestsent/{id}', ['as' => 'request.sent', 'uses' => 'CheckController@sentRequest'])->where('id', '[0-9]+');
-
+Route::get('/cancelrequest/{id}', ['as' => 'cancel.request', 'uses' => 'CheckController@cancelRequest'])->where('id', '[0-9]+');
+Route::get('/acceptrequest/{id}', ['as' => 'cancel.request', 'uses' => 'CheckController@acceptRequest'])->where('id', '[0-9]+');
 
 Route::get('/', 'HomeController@index')->name('home')->middleware('verified');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');

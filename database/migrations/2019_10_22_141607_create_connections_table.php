@@ -15,6 +15,7 @@ class CreateConnectionsTable extends Migration
     {
         Schema::create('connections', function (Blueprint $table) {
             $table->bigIncrements('connection_id');
+            $table->boolean('con_ini')->nullable();
             $table->boolean('approve')->nullable();
             $table->integer('user1_id')->references('user_id')->on('users')->nullable();
             $table->integer('user2_id')->references('user_id')->on('users')->nullable();

@@ -26,8 +26,8 @@ class MyEvent implements ShouldBroadcast
 
   public function __construct($dest_id)
   {
-      $this->title = "New Friend Request";
-      $this->content = "This is my content.";
+      $this->title = "New Friend Request.";
+      $this->content = Auth::user()->name." sent you a Request.";
       $this->user_id = Auth::user()->user_id;
       $this->circle_id = 1;
       $this->dest_id=$dest_id;

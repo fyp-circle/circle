@@ -6,6 +6,7 @@ use App\Events\MyEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use App\Notif;
+use App\Connection;
 
 class CreateNotificationInDB
 {
@@ -34,5 +35,14 @@ class CreateNotificationInDB
         $notif->user_id = $event->dest_id;
         $notif->circle_id = $event->circle_id;
         $notif->save();
+
+        $connection = new Connection;
+        $connection->user1_id = $event->user_id;
+        $connection->user2_id= $event->dest_id;
+        $connection->circle_id= $event->circle_id;
+        $connection->approve = 0;
+        $connection->con_ini= $event->user_id;
+        $connection->save();
+
     }
 }

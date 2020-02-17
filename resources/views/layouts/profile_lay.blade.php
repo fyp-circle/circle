@@ -54,9 +54,27 @@
                             <button>abey ye to mein hi hun.</button>
                         @else
                             @if ($c==3)
-                                <button>Pending Request.</button>
-                            @else
+                            <button id="AcceptRequestButton" class="submit-button" >Accept request</button>
+                                <button id="CancelRequestButton" class="submit-button" >Cancel request</button>
 
+                                <script type="text/javascript">
+                                    document.getElementById("CancelRequestButton").onclick = function () {
+                                        var profile_id = "{{ $profile_id }}";
+                                        location.href = "/cancelrequest/"+profile_id;
+                                    };
+                                </script>
+                                <script type="text/javascript">
+                                    document.getElementById("AcceptRequestButton").onclick = function () {
+                                        var profile_id = "{{ $profile_id }}";
+                                        location.href = "/acceptrequest/"+profile_id;
+                                    };
+                                </script>
+                            @else
+                                @if ($c==4)
+                                    <button>Request Already Sent</button>
+                                @else
+
+                                @endif
                             @endif
                         @endif
                     @endif

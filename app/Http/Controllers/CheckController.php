@@ -43,7 +43,13 @@ class CheckController extends Controller
                     $c = 1; //means connection exists means show 'You are already friends Button'
                 }
                 else{
-                    $c=3; //request is pending means show 'Pending Request Button'
+                    if($a[0]->con_ini==Auth::user()->user_id){
+                        $c = 4; //means Auth user has sent request means show 'Request Already Sent'
+                    }
+                    else{
+                        $c=3; //request is pending means show 'Accept request' and 'cancel request' button
+                    }
+
                 }
 
             } else {
@@ -266,6 +272,46 @@ class CheckController extends Controller
     public function sentRequest($id){
         event(new MyEvent($id));
         alert()->success('Request Sent Successfully.','You have successfully sent rquest to friend Circle.')->position('top-end')->toToast()->width('24rem');
+        return Redirect::back();
+    }
+
+
+    public function cancelRequest($id){
+        DB::table('connections')
+            ->where([
+                ['user1_id', $id],
+                ['user2_id', Auth::user()->user_id],
+                ['circle_id', 1],
+            ])
+            ->orWhere([
+                ['user2_id', $id],
+                ['user1_id', Auth::user()->user_id],
+                ['circle_id', 1],
+            ])
+            ->delete();
+        alert()->success('Request Cancelled Successfully.','You have successfully sent rquest to friend Circle.')->position('top-end')->toToast()->width('24rem');
+        return Redirect::back();
+    }
+
+    public function acceptRequest($id){
+        DB::table('connections')
+            ->where([
+                ['user1_id', $id],
+                ['user2_id', Auth::user()->user_id],
+                ['circle_id', 1],
+            ])
+            ->orWhere([
+                ['user2_id', $id],
+                ['user1_id', Auth::user()->user_id],
+                ['circle_id', 1],
+            ])
+            ->update([
+                'approve' => '1',
+                'con_ini' => null,
+            ]);
+
+            $user=User::find($id);
+        alert()->success('You and '.$user->name.' are now connected through Friend Circle','')->position('top-end')->toToast()->width('24rem');
         return Redirect::back();
     }
 
