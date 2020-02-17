@@ -36,7 +36,7 @@ Auth::routes(['verify' => true]);
 Route::post('profilepicture', 'ImageController@UploadUserProfilePicture')->name('user.profile.picture.upload');
 Route::post('coverpicture', 'ImageController@UploadUserCoverPicture')->name('user.cover.picture.upload');
 
-Route::post('editinfofriends', 'ProfileController@editprofilefriends')->name('user.profile.edit.friends');
+Route::post('editinfofriends/{id}', ['as' => 'circle.new', 'uses' => 'CheckController@editinfofriends'])->where('id', '[0-9]+');
 Route::post('editinfofamily', 'ProfileController@editprofilefamily')->name('user.profile.edit.family');
 Route::post('editinfobusiness', 'ProfileController@editprofilebusiness')->name('user.profile.edit.business');
 
@@ -48,31 +48,31 @@ Route::get('forgetpassword', ['as' => 'forget.pwd', 'uses' => 'CheckController@f
 Route::get('resetpwd', ['as' => 'reset.pwd', 'uses' => 'CheckController@resetpwd']);
 
 Route::get('chec', ['as' => 'check.check', 'uses' => 'CheckController@check']);
-Route::get('mainscreen', ['as' => 'check.check.friend', 'uses' => 'CheckController@mainscreen']);
+Route::get('mainscreen/{id}/{circle_id}', ['as' => 'check.check.friend', 'uses' => 'CheckController@mainscreen'])->where('id', '[0-9]+')->where('circle_id', '[0-9]+');
 Route::get('mainscreenfamily', ['as' => 'check.check.family', 'uses' => 'CheckController@mainscreenfamily']);
 Route::get('mainscreenbusiness', ['as' => 'check.check.business', 'uses' => 'CheckController@mainscreenbusiness']);
 
-Route::get('viewprofile/{id}', ['as' => 'viewprofile.profile.friend', 'uses' => 'CheckController@viewprofile'])->where('id', '[0-9]+');
-Route::get('viewphotos-{id}', ['as' => 'viewphotos.photos', 'uses' => 'CheckController@viewphotos']);
-Route::get('viewvideos-{id}', ['as' => 'viewvideos.videos', 'uses' => 'CheckController@viewvideos']);
-Route::get('viewfriends-{id}', ['as' => 'viewfriends.friends', 'uses' => 'CheckController@viewfriends']);
-Route::get('viewabout-{id}', ['as' => 'viewabout.about', 'uses' => 'CheckController@viewabout']);
+Route::get('viewprofile/{id}/{circle_id}', ['as' => 'viewprofile.profile.friend', 'uses' => 'CheckController@viewprofile'])->where('id', '[0-9]+')->where('circle_id', '[0-9]+');
+Route::get('viewphotos/{id}', ['as' => 'viewphotos.photos', 'uses' => 'CheckController@viewphotos'])->where('id', '[0-9]+');
+Route::get('viewvideos/{id}', ['as' => 'viewvideos.videos', 'uses' => 'CheckController@viewvideos'])->where('id', '[0-9]+');
+Route::get('viewfriends/{id}', ['as' => 'viewfriends.friends', 'uses' => 'CheckController@viewfriends'])->where('id', '[0-9]+');
+Route::get('viewabout/{id}', ['as' => 'viewabout.about', 'uses' => 'CheckController@viewabout'])->where('id', '[0-9]+');
 
-Route::get('viewprofilefamily', ['as' => 'viewprofile.profile.family', 'uses' => 'CheckController@viewprofilefamily']);
-Route::get('viewphotosfamily', ['as' => 'viewphotos.photos', 'uses' => 'CheckController@viewphotosfamily']);
-Route::get('viewvideosfamily', ['as' => 'viewvideos.videos', 'uses' => 'CheckController@viewvideosfamily']);
-Route::get('viewfamily', ['as' => 'viewfamily.family', 'uses' => 'CheckController@viewfamily']);
-Route::get('viewaboutfamily', ['as' => 'viewabout.about', 'uses' => 'CheckController@viewaboutfamily']);
+Route::get('viewprofilefamily/{id}', ['as' => 'viewprofile.profile.family', 'uses' => 'CheckController@viewprofilefamily'])->where('id', '[0-9]+');
+Route::get('viewphotosfamily/{id}', ['as' => 'viewphotos.photos', 'uses' => 'CheckController@viewphotosfamily'])->where('id', '[0-9]+');
+Route::get('viewvideosfamily/{id}', ['as' => 'viewvideos.videos', 'uses' => 'CheckController@viewvideosfamily'])->where('id', '[0-9]+');
+Route::get('viewfamily/{id}', ['as' => 'viewfamily.family', 'uses' => 'CheckController@viewfamily'])->where('id', '[0-9]+');
+Route::get('viewaboutfamily/{id}', ['as' => 'viewabout.about', 'uses' => 'CheckController@viewaboutfamily'])->where('id', '[0-9]+');
 
-Route::get('viewprofilebusiness', ['as' => 'viewprofile.profile.business', 'uses' => 'CheckController@viewprofilebusiness']);
-Route::get('viewphotosbusiness', ['as' => 'viewphotos.photos', 'uses' => 'CheckController@viewphotosbusiness']);
-Route::get('viewvideosbusiness', ['as' => 'viewvideos.videos', 'uses' => 'CheckController@viewvideosbusiness']);
-Route::get('viewbusiness', ['as' => 'viewfamily.family', 'uses' => 'CheckController@viewbusiness']);
-Route::get('viewaboutbusiness', ['as' => 'viewabout.about', 'uses' => 'CheckController@viewaboutbusiness']);
+Route::get('viewprofilebusiness/{id}', ['as' => 'viewprofile.profile.business', 'uses' => 'CheckController@viewprofilebusiness'])->where('id', '[0-9]+');
+Route::get('viewphotosbusiness/{id}', ['as' => 'viewphotos.photos', 'uses' => 'CheckController@viewphotosbusiness'])->where('id', '[0-9]+');
+Route::get('viewvideosbusiness/{id}', ['as' => 'viewvideos.videos', 'uses' => 'CheckController@viewvideosbusiness'])->where('id', '[0-9]+');
+Route::get('viewbusiness/{id}', ['as' => 'viewfamily.family', 'uses' => 'CheckController@viewbusiness'])->where('id', '[0-9]+');
+Route::get('viewaboutbusiness/{id}', ['as' => 'viewabout.about', 'uses' => 'CheckController@viewaboutbusiness'])->where('id', '[0-9]+');
 
 Route::get('addnewcircle', ['as' => 'circle.new', 'uses' => 'CheckController@addnewcircle']);
 
-Route::get('editinfofriends-{id}', ['as' => 'circle.new', 'uses' => 'CheckController@editinfofriends']);
+Route::get('editinfofriends/{id}', ['as' => 'circle.new', 'uses' => 'CheckController@editinfofriends'])->where('id', '[0-9]+');
 Route::get('editinfofamily', ['as' => 'circle.new', 'uses' => 'CheckController@editinfofamily']);
 Route::get('editinfobusiness', ['as' => 'circle.new', 'uses' => 'CheckController@editinfobusiness']);
 
@@ -107,7 +107,7 @@ Route::post('createcircle', 'CircleController@CreateNewCircleProfile')->name('us
 // });
 
 
-Route::get('/{any}', ['as' => 'default.page', 'uses' => 'CheckController@defaultPage']);
+// Route::get('/{any}', ['as' => 'default.page', 'uses' => 'CheckController@defaultPage']);
 
 
 

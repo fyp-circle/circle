@@ -160,7 +160,7 @@
                         class="ti-comment-alt"></i></a></li>
             <li><a href="{{url('editinfofriends')}}" title="Setting" data-toggle="tooltip" data-placement="right"><i
                         class="ti-panel"></i></a></li>
-            <li><a href="{{ url('viewfriends') }}" title="Friends" data-toggle="tooltip" data-placement="right"><i
+            <li><a href="{{ url('viewfriends',Auth::user()->user_id) }}" title="Friends" data-toggle="tooltip" data-placement="right"><i
                         class="ti-themify-favicon"></i></a></li>
         </ul>
     </div>
@@ -203,11 +203,11 @@
                                         </li>
                                         <li>
                                             <i class="ti-face-smile"></i>
-                                            <a href="{{ url('viewprofile',Auth::user()->user_id) }}" title="">View Profile</a>
+                                            <a href="{{ url('viewprofile',Auth::user()->user_id, $circle_id) }}" title="">View Profile</a>
                                         </li>
                                         <li>
                                             <i class="ti-pencil-alt"></i>
-                                            <a href="{{ url('editinfofriends') }}" title="">Edit Info</a>
+                                            <a href="{{ url('editinfofriends',Auth::user()->user_id) }}" title="">Edit Info</a>
                                         </li>
                                     </ul>
                                 </div><!-- Shortcuts -->
