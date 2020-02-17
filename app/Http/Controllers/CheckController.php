@@ -121,13 +121,18 @@ class CheckController extends Controller
         return view("main.mainscreen")->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id);
     }
     public function mainscreenfamily(){
-
-        return view("main.mainscreenfamily");
+        //$user = User::find($id);
+        $id=Auth::user()->user_id;
+        // return $circle_id;
+        $c=CheckController::checkConnection($id);
+        return view("main.mainscreenfamily")->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id);
     }
     public function mainscreenbusiness(){
-
-
-        return view("main.mainscreenbusiness");
+        //$user = User::find($id);
+        $id=Auth::user()->user_id;
+        // return $circle_id;
+        $c=CheckController::checkConnection($id);
+        return view("main.mainscreenbusiness")->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id);
     }
 
     public function viewprofile($id, $circle_id){
@@ -136,67 +141,77 @@ class CheckController extends Controller
         $c=CheckController::checkConnection($id);
         return view("profileviews.viewprofile")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
-    public function viewphotos($id){
+    public function viewphotos($id, $circle_id){
         $user = User::find($id);
         $c=CheckController::checkConnection($id);
-        return view("profileviews.viewphotos")->with('user',$user)->with('c',$c)->with('profile_id',$id);
+        return view("profileviews.viewphotos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
-    public function viewvideos($id){
+    public function viewvideos($id, $circle_id){
         $user = User::find($id);
         $c=CheckController::checkConnection($id);
-        return view("profileviews.viewvideos")->with('user',$user)->with('c',$c)->with('profile_id',$id);
+        return view("profileviews.viewvideos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
-    public function viewfriends($id){
+    public function viewfriends($id, $circle_id){
         $user = User::find($id);
         $c=CheckController::checkConnection($id);
-        return view("profileviews.viewfriends")->with('user',$user)->with('c',$c)->with('profile_id',$id);
+        return view("profileviews.viewfriends")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
-    public function viewabout($id){
+    public function viewabout($id, $circle_id){
         $user = User::find($id);
         $c=CheckController::checkConnection($id);
-        return view("profileviews.viewabout")->with('user',$user)->with('c',$c)->with('profile_id',$id);
+        return view("profileviews.viewabout")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
     //FAMILY
-    public function viewprofilefamily(){
-
-        return view("profileviewsfamily.viewprofile");
+    public function viewprofilefamily($id, $circle_id){
+        $user = User::find($id);
+        $c=CheckController::checkConnection($id);
+        return view("profileviewsfamily.viewprofile")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
-    public function viewphotosfamily(){
-
-        return view("profileviewsfamily.viewphotos");
+    public function viewphotosfamily($id, $circle_id){
+        $user = User::find($id);
+        $c=CheckController::checkConnection($id);
+        return view("profileviewsfamily.viewphotos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
-    public function viewvideosfamily(){
-
-        return view("profileviewsfamily.viewvideos");
+    public function viewvideosfamily($id, $circle_id){
+        $user = User::find($id);
+        $c=CheckController::checkConnection($id);
+        return view("profileviewsfamily.viewvideos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
-    public function viewfamily(){
-
-        return view("profileviewsfamily.viewfamily");
+    public function viewfamily($id, $circle_id){
+        $user = User::find($id);
+        $c=CheckController::checkConnection($id);
+        return view("profileviewsfamily.viewfamily")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
-    public function viewaboutfamily(){
-
-        return view("profileviewsfamily.viewabout");
+    public function viewaboutfamily($id, $circle_id){
+        $user = User::find($id);
+        $c=CheckController::checkConnection($id);
+        return view("profileviewsfamily.viewabout")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
     //BUSINESS
-    public function viewprofilebusiness(){
-
-        return view("profileviewsbusiness.viewprofile");
+    public function viewprofilebusiness($id, $circle_id){
+        $user = User::find($id);
+        $c=CheckController::checkConnection($id);
+        return view("profileviewsbusiness.viewprofile")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
-    public function viewphotosbusiness(){
-
-        return view("profileviewsbusiness.viewphotos");
+    public function viewphotosbusiness($id, $circle_id){
+        $user = User::find($id);
+        $c=CheckController::checkConnection($id);
+        return view("profileviewsbusiness.viewphotos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
-    public function viewvideosbusiness(){
-
-        return view("profileviewsbusiness.viewvideos");
+    public function viewvideosbusiness($id, $circle_id){
+        $user = User::find($id);
+        $c=CheckController::checkConnection($id);
+        return view("profileviewsbusiness.viewvideos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
-    public function viewbusiness(){
-
-        return view("profileviewsbusiness.viewbusiness");
+    public function viewbusiness($id, $circle_id){
+        $user = User::find($id);
+        $c=CheckController::checkConnection($id);
+        return view("profileviewsbusiness.viewbusiness")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
-    public function viewaboutbusiness(){
-
-        return view("profileviewsbusiness.viewabout");
+    public function viewaboutbusiness($id, $circle_id){
+        $user = User::find($id);
+        $c=CheckController::checkConnection($id);
+        return view("profileviewsbusiness.viewabout")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
     //ADD NEW CIRCLE
     public function addnewcircle(){
@@ -209,13 +224,15 @@ class CheckController extends Controller
         $c=CheckController::checkConnection($id);
         return view("editinfo.editinfofriends")->with('user',$user)->with('c',$c)->with('profile_id',$id);
     }
-    public function editinfofamily(){
-
-        return view("editinfo.editinfofamily");
+    public function editinfofamily($id){
+        $user = User::find($id);
+        $c=CheckController::checkConnection($id);
+        return view("editinfo.editinfofamily")->with('user',$user)->with('c',$c)->with('profile_id',$id);
     }
-    public function editinfobusiness(){
-
-        return view("editinfo.editinfobusiness");
+    public function editinfobusiness($id){
+        $user = User::find($id);
+        $c=CheckController::checkConnection($id);
+        return view("editinfo.editinfobusiness")->with('user',$user)->with('c',$c)->with('profile_id',$id);
     }
     //MAIN SETTINGS
     public function mainsettings(){

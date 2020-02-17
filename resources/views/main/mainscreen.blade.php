@@ -6,67 +6,67 @@
         <ul class="chat-users">
             <li>
                 <div class="author-thmb" style="width: 66%">
-                    <img src="images/resources/users/default.png" alt="" style="">
+                    <img src="/images/resources/users/default.png" alt="" style="">
                     <span class="status f-online"></span>
                 </div>
             </li>
             <li>
                 <div class="author-thmb" style="width: 66%">
-                    <img src="images/resources/users/default.png" alt="">
+                    <img src="/images/resources/users/default.png" alt="">
                     <span class="status f-away"></span>
                 </div>
             </li>
             <li>
                 <div class="author-thmb" style="width: 66%">
-                    <img src="images/resources/users/default.png" alt="">
+                    <img src="/images/resources/users/default.png" alt="">
                     <span class="status f-online"></span>
                 </div>
             </li>
             <li>
                 <div class="author-thmb" style="width: 66%">
-                    <img src="images/resources/users/default.png" alt="">
+                    <img src="/images/resources/users/default.png" alt="">
                     <span class="status f-offline"></span>
                 </div>
             </li>
             <li>
                 <div class="author-thmb" style="width: 66%">
-                    <img src="images/resources/users/default.png" alt="">
+                    <img src="/images/resources/users/default.png" alt="">
                     <span class="status f-online"></span>
                 </div>
             </li>
             <li>
                 <div class="author-thmb" style="width: 66%">
-                    <img src="images/resources/users/default.png" alt="">
+                    <img src="/images/resources/users/default.png" alt="">
                     <span class="status f-online"></span>
                 </div>
             </li>
             <li>
                 <div class="author-thmb" style="width: 66%">
-                    <img src="images/resources/users/default.png" alt="">
+                    <img src="/images/resources/users/default.png" alt="">
                     <span class="status f-offline"></span>
                 </div>
             </li>
             <li>
                 <div class="author-thmb" style="width: 66%">
-                    <img src="images/resources/users/default.png" alt="">
+                    <img src="/images/resources/users/default.png" alt="">
                     <span class="status f-online"></span>
                 </div>
             </li>
             <li>
                 <div class="author-thmb" style="width: 66%">
-                    <img src="images/resources/users/default.png" alt="">
+                    <img src="/images/resources/users/default.png" alt="">
                     <span class="status f-away"></span>
                 </div>
             </li>
             <li>
                 <div class="author-thmb" style="width: 66%">
-                    <img src="images/resources/users/default.png" alt="">
+                    <img src="/images/resources/users/default.png" alt="">
                     <span class="status f-away"></span>
                 </div>
             </li>
             <li>
                 <div class="author-thmb" style="width: 66%">
-                    <img src="images/resources/users/default.png" alt="">
+                    <img src="/images/resources/users/default.png" alt="">
                     <span class="status f-online"></span>
                 </div>
             </li>
@@ -89,7 +89,7 @@
             <div class="chat-list">
                 <ul>
                     <li class="me">
-                        <div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
+                        <div class="chat-thumb"><img src="/images/resources/chatlist1.jpg" alt=""></div>
                         <div class="notification-event">
                             <span class="chat-message-item">
                                 Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts
@@ -100,7 +100,7 @@
                         </div>
                     </li>
                     <li class="you">
-                        <div class="chat-thumb"><img src="images/resources/chatlist2.jpg" alt=""></div>
+                        <div class="chat-thumb"><img src="/images/resources/chatlist2.jpg" alt=""></div>
                         <div class="notification-event">
                             <span class="chat-message-item">
                                 Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts
@@ -111,7 +111,7 @@
                         </div>
                     </li>
                     <li class="me">
-                        <div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
+                        <div class="chat-thumb"><img src="/images/resources/chatlist1.jpg" alt=""></div>
                         <div class="notification-event">
                             <span class="chat-message-item">
                                 Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts
@@ -207,7 +207,7 @@
                                         </li>
                                         <li>
                                             <i class="ti-pencil-alt"></i>
-                                            <a href="{{ url('editinfofriends',Auth::user()->user_id) }}" title="">Edit Info</a>
+                                            <a href="{{ route('editinfofriends',['id'=>Auth::user()->user_id]) }}" title="">Edit Info</a>
                                         </li>
                                     </ul>
                                 </div><!-- Shortcuts -->
@@ -262,7 +262,7 @@
                                             </div>
                                         </li>
                                         <li>
-                                            <figure><img src="images/resources/users/11.jpg" alt=""></figure>
+                                            <figure><img src="/images/resources/users/11.jpg" alt=""></figure>
                                             <div class="friend-meta">
                                                 <h4><a href="time-line.html" title="">Sophia</a></h4>
                                                 <a href="#" title="" class="underline">Add Friend</a>
@@ -635,7 +635,7 @@
                                             <ul class="we-comet">
                                                 <li>
                                                     <div class="comet-avatar">
-                                                        <img src="images/resources/users/75.jpg" alt="">
+                                                        <img src="/images/resources/users/75.jpg" alt="">
                                                     </div>
                                                     <div class="we-comment">
                                                         <div class="coment-head">
@@ -653,7 +653,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="comet-avatar">
-                                                        <img src="images/resources/users/26.jpg" alt="">
+                                                        <img src="/images/resources/users/26.jpg" alt="">
                                                     </div>
                                                     <div class="we-comment">
                                                         <div class="coment-head">
@@ -709,7 +709,7 @@
                                     <div class="user-post">
                                         <div class="friend-info">
                                             <figure>
-                                                <img src="images/resources/users/26.jpg" alt="">
+                                                <img src="/images/resources/users/26.jpg" alt="">
                                             </figure>
                                             <div class="friend-name">
                                                 <ins><a href="time-line.html" title="">Sophia</a></ins>
@@ -810,7 +810,7 @@
                                             <ul class="we-comet">
                                                 <li>
                                                     <div class="comet-avatar">
-                                                        <img src="images/resources/users/75.jpg" alt="">
+                                                        <img src="/images/resources/users/75.jpg" alt="">
                                                     </div>
                                                     <div class="we-comment">
                                                         <div class="coment-head">
@@ -828,7 +828,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="comet-avatar">
-                                                        <img src="images/resources/users/26.jpg" alt="">
+                                                        <img src="/images/resources/users/26.jpg" alt="">
                                                     </div>
                                                     <div class="we-comment">
                                                         <div class="coment-head">
@@ -884,7 +884,7 @@
                                     <div class="user-post">
                                         <div class="friend-info">
                                             <figure>
-                                                <img alt="" src="images/resources/users/67.jpg">
+                                                <img alt="" src="/images/resources/users/67.jpg">
                                             </figure>
                                             <div class="friend-name">
                                                 <ins><a title="" href="time-line.html">Janice Griffith</a></ins>
@@ -898,7 +898,7 @@
                                             <div class="post-meta">
                                                 <div class="linked-image align-left">
                                                     <a title="" href="#"><img alt=""
-                                                            src="images/resources/post2.jpg"></a>
+                                                            src="/images/resources/post2.jpg"></a>
                                                 </div>
                                                 <div class="detail">
                                                     <span>Love Maid - ChillGroves</span>
@@ -1010,7 +1010,7 @@
                                     <ul id="people-list">
                                         <li>
                                             <figure>
-                                                <img src="images/resources/users/71.jpg" alt="">
+                                                <img src="/images/resources/users/71.jpg" alt="">
                                             </figure>
                                             <div class="friendz-meta">
                                             <a href="{{ url('viewprofile')}}">bucky barnes</a>
@@ -1018,7 +1018,7 @@
                                         </li>
                                         <li>
                                             <figure>
-                                                <img src="images/resources/users/2.jpg" alt="">
+                                                <img src="/images/resources/users/2.jpg" alt="">
                                             </figure>
                                             <div class="friendz-meta">
                                                 <a href="#">Sarah Loren</a>
@@ -1026,7 +1026,7 @@
                                         </li>
                                         <li>
                                             <figure>
-                                                <img src="images/resources/users/75.jpg" alt="">
+                                                <img src="/images/resources/users/75.jpg" alt="">
                                             </figure>
                                             <div class="friendz-meta">
                                                 <a href="#">jason borne</a>
@@ -1034,7 +1034,7 @@
                                         </li>
                                         <li>
                                             <figure>
-                                                <img src="images/resources/users/80.jpg" alt="">
+                                                <img src="/images/resources/users/80.jpg" alt="">
                                             </figure>
                                             <div class="friendz-meta">
                                                 <a href="#">Cameron diaz</a>
@@ -1043,7 +1043,7 @@
                                         <li>
 
                                             <figure>
-                                                <img src="images/resources/users/40.jpg" alt="">
+                                                <img src="/images/resources/users/40.jpg" alt="">
                                             </figure>
                                             <div class="friendz-meta">
                                                 <a href="#">daniel warber</a>
@@ -1052,7 +1052,7 @@
                                         <li>
 
                                             <figure>
-                                                <img src="images/resources/users/17.jpg" alt="">
+                                                <img src="/images/resources/users/17.jpg" alt="">
                                             </figure>
                                             <div class="friendz-meta">
                                                 <a href="#">andrew</a>
@@ -1061,7 +1061,7 @@
                                         <li>
 
                                             <figure>
-                                                <img src="images/resources/users/37.jpg" alt="">
+                                                <img src="/images/resources/users/37.jpg" alt="">
                                             </figure>
                                             <div class="friendz-meta">
                                                 <a href="#">amy watson</a>
@@ -1070,7 +1070,7 @@
                                         <li>
 
                                             <figure>
-                                                <img src="images/resources/users/60.jpg" alt="">
+                                                <img src="/images/resources/users/60.jpg" alt="">
                                             </figure>
                                             <div class="friendz-meta">
                                                 <a href="#">daniel warber</a>
@@ -1079,7 +1079,7 @@
                                         <li>
 
                                             <figure>
-                                                <img src="images/resources/users/65.jpg" alt="">
+                                                <img src="/images/resources/users/65.jpg" alt="">
                                             </figure>
                                             <div class="friendz-meta">
                                                 <a href="#">Sarah Loren</a>
