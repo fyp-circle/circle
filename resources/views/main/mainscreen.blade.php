@@ -203,7 +203,7 @@
                                         </li>
                                         <li>
                                             <i class="ti-face-smile"></i>
-                                            <a href="{{ url('viewprofile',Auth::user()->user_id, $circle_id) }}" title="">View Profile</a>
+                                            <a href="{{ route('viewprofile',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">View Profile</a>
                                         </li>
                                         <li>
                                             <i class="ti-pencil-alt"></i>
@@ -241,21 +241,21 @@
                                     <h4 class="widget-title">Friend Requests</h4>
                                     <ul class="followers">
                                         <li>
-                                            <figure><img src="images/resources/users/81.jpg" alt=""></figure>
+                                            <figure><img src="/images/resources/users/81.jpg" alt=""></figure>
                                             <div class="friend-meta">
                                                 <h4><a href="time-line.html" title="">Kelly Bill</a></h4>
                                                 <a href="#" title="" class="underline">Add Friend</a>
                                             </div>
                                         </li>
                                         <li>
-                                            <figure><img src="images/resources/users/13.jpg" alt=""></figure>
+                                            <figure><img src="/images/resources/users/13.jpg" alt=""></figure>
                                             <div class="friend-meta">
                                                 <h4><a href="time-line.html" title="">Issabel</a></h4>
                                                 <a href="#" title="" class="underline">Add Friend</a>
                                             </div>
                                         </li>
                                         <li>
-                                            <figure><img src="images/resources/users/40.jpg" alt=""></figure>
+                                            <figure><img src="/images/resources/users/40.jpg" alt=""></figure>
                                             <div class="friend-meta">
                                                 <h4><a href="time-line.html" title="">Andrew</a></h4>
                                                 <a href="#" title="" class="underline">Add Friend</a>
@@ -269,7 +269,7 @@
                                             </div>
                                         </li>
                                         <li>
-                                            <figure><img src="images/resources/users/71.jpg" alt=""></figure>
+                                            <figure><img src="/images/resources/users/71.jpg" alt=""></figure>
                                             <div class="friend-meta">
                                                 <h4><a href="time-line.html" title="">Allen</a></h4>
                                                 <a href="#" title="" class="underline">Add Friend</a>
@@ -283,7 +283,7 @@
                             <div class="central-meta new-pst">
                                 <div class="new-postbox">
                                     <figure>
-                                        <img src="{{Auth::user()->profile_picture}}" alt="" style="width:60px; height:52px; object-fit:cover">
+                                        <img src="/{{Auth::user()->profile_picture}}" alt="" style="width:60px; height:52px; object-fit:cover">
                                     </figure>
                                     <div class="newpst-input">
                                         <form method="post">
@@ -328,14 +328,14 @@
                                     <div class="user-post">
                                         <div class="friend-info">
                                             <figure>
-                                                <img src="images/resources/users/67.jpg" alt="">
+                                                <img src="/images/resources/users/67.jpg" alt="">
                                             </figure>
                                             <div class="friend-name">
                                                 <ins><a href="time-line.html" title="">Janice Griffith</a></ins>
                                                 <span>published: june,2 2018 19:PM</span>
                                             </div>
                                             <div class="post-meta">
-                                                <img src="images/resources/post1.jpg" alt="">
+                                                <img src="/images/resources/post1.jpg" alt="">
                                                 <div class="we-video-info">
                                                     <ul>
                                                         <li>
@@ -423,7 +423,7 @@
                                             <ul class="we-comet">
                                                 <li>
                                                     <div class="comet-avatar">
-                                                        <img src="images/resources/users/75.jpg" alt="">
+                                                        <img src="/images/resources/users/75.jpg" alt="">
                                                     </div>
                                                     <div class="we-comment">
                                                         <div class="coment-head">
@@ -439,7 +439,7 @@
                                                     <ul>
                                                         <li>
                                                             <div class="comet-avatar">
-                                                                <img src="images/resources/users/81.jpg" alt="">
+                                                                <img src="/images/resources/users/81.jpg" alt="">
                                                             </div>
                                                             <div class="we-comment">
                                                                 <div class="coment-head">
@@ -458,7 +458,7 @@
                                                         </li>
                                                         <li>
                                                             <div class="comet-avatar">
-                                                                <img src="images/resources/users/63.jpg" alt="">
+                                                                <img src="/images/resources/users/63.jpg" alt="">
                                                             </div>
                                                             <div class="we-comment">
                                                                 <div class="coment-head">
@@ -478,7 +478,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="comet-avatar">
-                                                        <img src="images/resources/users/71.jpg" alt="">
+                                                        <img src="/images/resources/users/71.jpg" alt="">
                                                     </div>
                                                     <div class="we-comment">
                                                         <div class="coment-head">
@@ -500,7 +500,7 @@
                                                 </li>
                                                 <li class="post-comment">
                                                     <div class="comet-avatar">
-                                                        <img src="{{Auth::user()->profile_picture}}" alt="" style="width:100%">
+                                                        <img src="/{{Auth::user()->profile_picture}}" alt="" style="width:100%">
                                                     </div>
                                                     <div class="post-comt-box">
                                                         <form method="post">
@@ -535,7 +535,7 @@
                                     <div class="user-post">
                                         <div class="friend-info">
                                             <figure>
-                                                <img src="images/resources/users/11.jpg" alt="">
+                                                <img src="/images/resources/users/11.jpg" alt="">
                                             </figure>
                                             <div class="friend-name">
                                                 <ins><a href="time-line.html" title="">Sara Grey</a></ins>
@@ -674,7 +674,7 @@
                                                 </li>
                                                 <li class="post-comment">
                                                     <div class="comet-avatar">
-                                                        <img src="{{Auth::user()->profile_picture}}" alt="">
+                                                        <img src="/{{Auth::user()->profile_picture}}" alt="">
                                                     </div>
                                                     <div class="post-comt-box">
                                                         <form method="post">
@@ -849,7 +849,7 @@
                                                 </li>
                                                 <li class="post-comment">
                                                     <div class="comet-avatar">
-                                                        <img src="{{Auth::user()->profile_picture}}" alt="">
+                                                        <img src="/{{Auth::user()->profile_picture}}" alt="">
                                                     </div>
                                                     <div class="post-comt-box">
                                                         <form method="post">

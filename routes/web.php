@@ -49,11 +49,18 @@ Route::get('forgetpassword', ['as' => 'forget.pwd', 'uses' => 'CheckController@f
 Route::get('resetpwd', ['as' => 'reset.pwd', 'uses' => 'CheckController@resetpwd']);
 
 Route::get('chec', ['as' => 'check.check', 'uses' => 'CheckController@check']);
-Route::get('mainscreen/{id}/{circle_id}', ['as' => 'check.check.friend', 'uses' => 'CheckController@mainscreen'])->where('id', '[0-9]+')->where('circle_id', '[0-9]+');
+// Route::get('mainscreen/{circle_id}', ['as' => 'check.check.friend', 'uses' => 'CheckController@mainscreen'])->where('circle_id', '[0-9]+');
+Route::get('mainscreen/{circle_id}', ['as' => 'mainscreen', 'uses' => 'CheckController@mainscreen'])->where('circle_id', '[0-9]+');
 Route::get('mainscreenfamily', ['as' => 'check.check.family', 'uses' => 'CheckController@mainscreenfamily']);
 Route::get('mainscreenbusiness', ['as' => 'check.check.business', 'uses' => 'CheckController@mainscreenbusiness']);
 
-Route::get('viewprofile/{id}/{circle_id}', ['as' => 'viewprofile.profile.friend', 'uses' => 'CheckController@viewprofile'])->where('id', '[0-9]+')->where('circle_id', '[0-9]+');
+// Route::get('viewprofile/{id}/{circle_id}', ['as' => 'viewprofile.profile.friend', 'uses' => 'CheckController@viewprofile'])->where('id', '[0-9]+')->where('circle_id', '[0-9]+');
+
+
+//Acha Tarika
+Route::get('viewprofile/{id}/{circle_id}', ['as' => 'viewprofile', 'uses' => 'CheckController@viewprofile'])->where('id', '[0-9]+')->where('circle_id', '[0-9]+');
+
+
 Route::get('viewphotos/{id}', ['as' => 'viewphotos.photos', 'uses' => 'CheckController@viewphotos'])->where('id', '[0-9]+');
 Route::get('viewvideos/{id}', ['as' => 'viewvideos.videos', 'uses' => 'CheckController@viewvideos'])->where('id', '[0-9]+');
 Route::get('viewfriends/{id}', ['as' => 'viewfriends.friends', 'uses' => 'CheckController@viewfriends'])->where('id', '[0-9]+');

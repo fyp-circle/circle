@@ -28,6 +28,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view("main.mainscreen");
+        return redirect()->route('mainscreen',['circle_id'=>1]);
     }
 }

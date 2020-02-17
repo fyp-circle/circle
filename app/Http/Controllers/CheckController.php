@@ -113,12 +113,12 @@ class CheckController extends Controller
     public function resetpwd(){
         return view("resetpwd");
     }
-    public function mainscreen($id,$circle_id){
-        $user = User::find($id);
-        $circle_id = 1;
-
+    public function mainscreen($circle_id){
+        //$user = User::find($id);
+        $id=Auth::user()->user_id;
+        // return $circle_id;
         $c=CheckController::checkConnection($id);
-        return view("main.mainscreen")->with('user',$user)->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id);
+        return view("main.mainscreen")->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id);
     }
     public function mainscreenfamily(){
 
@@ -132,7 +132,6 @@ class CheckController extends Controller
 
     public function viewprofile($id, $circle_id){
         $user = User::find($id);
-        $circle_id = 1;
 
         $c=CheckController::checkConnection($id);
         return view("profileviews.viewprofile")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
