@@ -113,9 +113,12 @@ class CheckController extends Controller
     public function resetpwd(){
         return view("resetpwd");
     }
-    public function mainscreen(){
+    public function mainscreen($id,$circle_id){
+        $user = User::find($id);
+        $circle_id = 1;
 
-        return view("main.mainscreen");
+        $c=CheckController::checkConnection($id);
+        return view("main.mainscreen")->with('user',$user)->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id);
     }
     public function mainscreenfamily(){
 
@@ -127,30 +130,34 @@ class CheckController extends Controller
         return view("main.mainscreenbusiness");
     }
 
-    public function viewprofile($id){
+    public function viewprofile($id, $circle_id){
         $user = User::find($id);
-
+        $circle_id = 1;
 
         $c=CheckController::checkConnection($id);
-        return view("profileviews.viewprofile")->with('user',$user)->with('c',$c)->with('profile_id',$id);
+        return view("profileviews.viewprofile")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
     public function viewphotos($id){
         $user = User::find($id);
-        return view("profileviews.viewphotos")->with('user',$user);
+        $c=CheckController::checkConnection($id);
+        return view("profileviews.viewphotos")->with('user',$user)->with('c',$c)->with('profile_id',$id);
     }
     public function viewvideos($id){
         $user = User::find($id);
-        return view("profileviews.viewvideos")->with('user',$user);
+        $c=CheckController::checkConnection($id);
+        return view("profileviews.viewvideos")->with('user',$user)->with('c',$c)->with('profile_id',$id);
     }
     public function viewfriends($id){
         $user = User::find($id);
-        return view("profileviews.viewfriends")->with('user',$user);
+        $c=CheckController::checkConnection($id);
+        return view("profileviews.viewfriends")->with('user',$user)->with('c',$c)->with('profile_id',$id);
     }
     public function viewabout($id){
         $user = User::find($id);
-        return view("profileviews.viewabout")->with('user',$user);
+        $c=CheckController::checkConnection($id);
+        return view("profileviews.viewabout")->with('user',$user)->with('c',$c)->with('profile_id',$id);
     }
-
+    //FAMILY
     public function viewprofilefamily(){
 
         return view("profileviewsfamily.viewprofile");
@@ -171,7 +178,7 @@ class CheckController extends Controller
 
         return view("profileviewsfamily.viewabout");
     }
-
+    //BUSINESS
     public function viewprofilebusiness(){
 
         return view("profileviewsbusiness.viewprofile");
@@ -192,15 +199,16 @@ class CheckController extends Controller
 
         return view("profileviewsbusiness.viewabout");
     }
-
+    //ADD NEW CIRCLE
     public function addnewcircle(){
 
         return view("addnewcircle");
     }
-
+    //EDIT INFO
     public function editinfofriends($id){
         $user = User::find($id);
-        return view("editinfo.editinfofriends")->with('user',$user);;
+        $c=CheckController::checkConnection($id);
+        return view("editinfo.editinfofriends")->with('user',$user)->with('c',$c)->with('profile_id',$id);
     }
     public function editinfofamily(){
 
@@ -210,7 +218,7 @@ class CheckController extends Controller
 
         return view("editinfo.editinfobusiness");
     }
-
+    //MAIN SETTINGS
     public function mainsettings(){
 
         return view("accountsettings.mainsettings");
@@ -223,7 +231,7 @@ class CheckController extends Controller
 
         return view("accountsettings.changepassword");
     }
-
+    //ACTIIVTY LOG
     public function activityfriends(){
 
         return view("activitylog.activityfriends");
@@ -236,7 +244,7 @@ class CheckController extends Controller
 
         return view("activitylog.activitybusiness");
     }
-
+    //MESSAGE
     public function messagefriends(){
 
         return view("messages.messagefriends");
@@ -249,7 +257,7 @@ class CheckController extends Controller
 
         return view("messages.inbox");
     }
-
+    //NEARBY
     public function nearbyfriends(){
         return view("nearby.nearbyfriends");
     }
@@ -259,11 +267,11 @@ class CheckController extends Controller
     public function nearbyconnections(){
         return view("nearby.nearbyconnections");
     }
-
+    //NOTIFICATION
     public function notification(){
         return view("notification");
     }
-
+    //SEARCH
     public function search(){
         return view("search");
     }

@@ -42,7 +42,7 @@
 
                 <script type="text/javascript">
                     document.getElementById("AddFriendButton").onclick = function () {
-                        var profile_id = "{{ $profile_id }}";
+                        var profile_id = "{{ $profile_id}}";
                         location.href = "/requestsent/"+profile_id;
                     };
                 </script>
@@ -50,7 +50,7 @@
                     @if ($c==1)
                     <button>You are already Friends.</button>
                     @else
-                        @if ($c==2)
+                        @if ($c ==2)
                             <button>abey ye to mein hi hun.</button>
                         @else
                             @if ($c==3)
