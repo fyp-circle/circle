@@ -66,13 +66,10 @@ Route::group([
         Route::get('/cancelrequest/{id}', ['as' => 'cancel.request', 'uses' => 'CheckController@cancelRequest']);
         Route::get('/acceptrequest/{id}', ['as' => 'cancel.request', 'uses' => 'CheckController@acceptRequest']);
 
-        Route::post('editinfofriends/{id}', ['as' => 'editinfofriends', 'uses' => 'CheckController@editinfofriends']);
-        Route::post('editinfofamily/{id}', ['as' => 'editinfofamily', 'uses' => 'CheckController@editinfofamily']);
-        Route::post('editinfobusiness/{id}', ['as' => 'editinfobusiness', 'uses' => 'CheckController@editinfobusiness']);
 
-        Route::get('editinfofriends/{id}', ['as' => 'editinfofriends', 'uses' => 'CheckController@editinfofriends']);
-        Route::get('editinfofamily/{id}', ['as' => 'editinfofamily', 'uses' => 'CheckController@editinfofamily']);
-        Route::get('editinfobusiness/{id}', ['as' => 'editinfobusiness', 'uses' => 'CheckController@editinfobusiness']);
+
+
+
 
         Route::get('activityfriends/{id}', ['as' => 'activityfriends', 'uses' => 'CheckController@activityfriends']);
         Route::get('activityfamily/{id}', ['as' => 'activityfamily', 'uses' => 'CheckController@activityfamily']);
@@ -87,8 +84,17 @@ Route::group([
         Route::get('nearbyconnections/{id}', ['as' => 'nearbyconnections', 'uses' => 'CheckController@nearbyconnections']);
 
 
+        Route::post('editinfofriends/{id}/{circle_id}', ['as' => 'editinfofriendspost', 'uses' => 'ProfileController@editprofilefriends'])->where('circle_id', '[0-9]+');
+        Route::post('editinfofamily/{id}/{circle_id}', ['as' => 'editinfofamilypost', 'uses' => 'ProfileController@editprofilefamily'])->where('circle_id', '[0-9]+');
+        Route::post('editinfobusiness/{id}/{circle_id}', ['as' => 'editinfobusinesspost', 'uses' => 'ProfileController@editprofilebusiness'])->where('circle_id', '[0-9]+');
+
+
 
     });
+
+        Route::get('editinfofriends/{circle_id}', ['as' => 'editinfofriends', 'uses' => 'CheckController@editinfofriends'])->where('circle_id', '[0-9]+');
+        Route::get('editinfofamily/{circle_id}', ['as' => 'editinfofamily', 'uses' => 'CheckController@editinfofamily'])->where('circle_id', '[0-9]+');
+        Route::get('editinfobusiness/{circle_id}', ['as' => 'editinfobusiness', 'uses' => 'CheckController@editinfobusiness'])->where('circle_id', '[0-9]+');
 
 
 

@@ -29,7 +29,7 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="basic">
                                     <ul class="basics">
-                                        <form method="post" action="{{ route('user.profile.edit.family') }}" enctype="multipart/form-data">
+                                        <form method="post" action="{{ route('editinfofamilypost',['id'=>Auth::user()->user_id,'circle_id'=>2]) }}" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group">
                                                 <input type="text" id="input" required="required" name="name" value= "{{Auth::user()->family_user['name']}}"  />

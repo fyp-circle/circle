@@ -70,7 +70,7 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return redirect()->route('viewprofile.profile.friend');
+        return redirect()->route('viewprofile',['id'=>Auth::user()->user_id,'circle_id'=>1]);
 
 
     }
@@ -124,7 +124,7 @@ class ProfileController extends Controller
 
         $f_user->save();
 
-        return redirect()->route('viewprofile.profile.family');
+        return redirect()->route('viewprofilefamily',['id'=>Auth::user()->user_id,'circle_id'=>2]);
 
 
     }
@@ -177,7 +177,7 @@ class ProfileController extends Controller
 
         $b_user->save();
 
-        return redirect()->route('viewprofile.profile.business');
+        return redirect()->route('viewprofilebusiness',['id'=>Auth::user()->user_id,'circle_id'=>3]);
 
 
     }

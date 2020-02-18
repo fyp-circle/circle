@@ -219,20 +219,20 @@ class CheckController extends Controller
         return view("addnewcircle")->with('circle_id',$circle_id);
     }
     //EDIT INFO
-    public function editinfofriends($id){
-        $user = User::find($id);
-        $c=CheckController::checkConnection($id);
-        return view("editinfo.editinfofriends")->with('user',$user)->with('c',$c)->with('profile_id',$id);
+    public function editinfofriends($circle_id){
+        $user = Auth::user();
+        $c=CheckController::checkConnection($user->user_id);
+        return view("editinfo.editinfofriends")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id);
     }
-    public function editinfofamily($id){
-        $user = User::find($id);
-        $c=CheckController::checkConnection($id);
-        return view("editinfo.editinfofamily")->with('user',$user)->with('c',$c)->with('profile_id',$id);
+    public function editinfofamily($circle_id){
+        $user = Auth::user();
+        $c=CheckController::checkConnection($user->user_id);
+        return view("editinfo.editinfofamily")->with('c',$c)->with('user',$user)->with('profile_id',$user->user_id)->with('circle_id',$circle_id);
     }
-    public function editinfobusiness($id){
-        $user = User::find($id);
-        $c=CheckController::checkConnection($id);
-        return view("editinfo.editinfobusiness")->with('user',$user)->with('c',$c)->with('profile_id',$id);
+    public function editinfobusiness($circle_id){
+        $user = Auth::user();
+        $c=CheckController::checkConnection($user->user_id);
+        return view("editinfo.editinfobusiness")->with('c',$c)->with('user',$user)->with('profile_id',$user->user_id)->with('circle_id',$circle_id);
     }
     //MAIN SETTINGS
     public function mainsettings($circle_id){

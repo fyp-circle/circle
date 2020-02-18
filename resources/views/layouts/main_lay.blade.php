@@ -19,7 +19,7 @@
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/spinner_wrapper.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap-notifications.min.css">
+    {{-- <link rel="stylesheet" type="text/css" href="/css/bootstrap-notifications.min.css"> --}}
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -46,7 +46,7 @@
                     <a class="" href="#menu"><i class="fa fa-align-justify"></i></a>
                 </span>
                 <span class="mh-text">
-                    <a href="{{ url('/') }} title=" Home"><img src="/images/logo2.png" alt=""></a>
+                    <a href="{{ url('/') }}" title="Home"><img src="/images/logo2.png" alt=""></a>
                 </span>
                 <span class="mh-btns-right">
                     <a class="fa fa-sliders" href="#shoppingbag"></a>
@@ -257,7 +257,7 @@
                         </li>
 
                     @endif
-                    @if (Auth::user()->business_user_id==null || Auth::user()->business_user_id==null)
+                    @if (Auth::user()->business_user_id==null || Auth::user()->family_user_id==null)
                         <li><a href="{{ route('circle.new',['circle_id'=>$circle_id]) }}" title="Add Circle" data-toggle="tooltip"
                             data-placement="center" style="-webkit-text-fill-color: black; padding-left: 0"><i class="ti-plus"></i></a>
                         </li>

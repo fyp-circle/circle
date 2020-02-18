@@ -29,7 +29,7 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="basic">
                                     <ul class="basics">
-                                        <form method="post"  action="{{ url('editinfofriends',Auth::user()->user_id) }}" enctype="multipart/form-data">
+                                        <form method="post"  action="{{ route('editinfofriendspost',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group">
                                                 <input type="text" id="input" required="required" name="name" value= "{{Auth::user()->name}}"  />

@@ -207,7 +207,7 @@
                                         </li>
                                         <li>
                                             <i class="ti-pencil-alt"></i>
-                                            <a href="{{ route('editinfofriends',['id'=>Auth::user()->user_id]) }}" title="">Edit Info</a>
+                                            <a href="{{ route('editinfofriends',['circle_id'=>$circle_id]) }}" title="">Edit Info</a>
                                         </li>
                                     </ul>
                                 </div><!-- Shortcuts -->
