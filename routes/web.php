@@ -92,9 +92,9 @@ Route::group([
 
     });
 
-        Route::get('editinfofriends/{circle_id}', ['as' => 'editinfofriends', 'uses' => 'CheckController@editinfofriends'])->where('circle_id', '[0-9]+');
-        Route::get('editinfofamily/{circle_id}', ['as' => 'editinfofamily', 'uses' => 'CheckController@editinfofamily'])->where('circle_id', '[0-9]+');
-        Route::get('editinfobusiness/{circle_id}', ['as' => 'editinfobusiness', 'uses' => 'CheckController@editinfobusiness'])->where('circle_id', '[0-9]+');
+        Route::get('editinfofriends/{circle_id}', ['as' => 'editinfofriends', 'uses' => 'CheckController@editinfofriends'])->where('circle_id', '1');
+        Route::get('editinfofamily/{circle_id}', ['as' => 'editinfofamily', 'uses' => 'CheckController@editinfofamily'])->where('circle_id', '2');
+        Route::get('editinfobusiness/{circle_id}', ['as' => 'editinfobusiness', 'uses' => 'CheckController@editinfobusiness'])->where('circle_id', '3');
 
 
 
