@@ -239,13 +239,13 @@ class CheckController extends Controller
 
         return view("accountsettings.mainsettings")->with('circle_id',$circle_id);
     }
-    public function privacysettings(){
+    public function privacysettings($circle_id){
 
-        return view("accountsettings.privacysettings");
+        return view("accountsettings.privacysettings")->with('circle_id',$circle_id);
     }
-    public function changepassword(){
+    public function changepassword($circle_id){
 
-        return view("accountsettings.changepassword");
+        return view("accountsettings.changepassword")->with('circle_id',$circle_id);;
     }
     //ACTIIVTY LOG
     public function activityfriends(){

@@ -14,11 +14,11 @@
                                     <ul class="naves">
                                         <li>
                                             <i class="ti-settings"></i>
-                                            <a href="{{ url('mainsettings')}}" title="">Main Settings</a>
+                                            <a href="{{ route('main.settings',['circle_id'=>1]) }}" title="">Main Settings</a>
                                         </li>
                                         <li>
                                             <i class="ti-lock"></i>
-                                            <a href="{{ url('changepassword')}}" title="">change password</a>
+                                            <a href="{{ route('change.password',['circle_id'=>1]) }}" title="">change password</a>
                                         </li>
                                     </ul>
                                 </div><!-- settings widget -->
