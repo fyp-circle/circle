@@ -34,7 +34,7 @@ class CircleController extends Controller
             $user = Auth::user();
             $user->business_user_id=$b_user->business_user_id;
             $user->save();
-            $circle_id=2;
+            $circle_id=3;
             alert()->success('Business Circle Created','You have successfully Created Your Business Circle.')->position('top-end')->toToast()->width('24rem');
             return redirect()->route('mainscreenbusiness',['circle_id'=>$circle_id]);
 

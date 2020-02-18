@@ -8,7 +8,7 @@
         @if ($c==0)
             <div class="add-btn">
                 <button id="AddFriendButton">Add Friend</button>
-                <a href="#" title="" data-ripple="">Add Connection</a>
+                {{-- <a href="#" title="" data-ripple="">Add Connection</a> --}}
             </div>
 
             <script type="text/javascript">
@@ -22,22 +22,22 @@
             @if ($c==1)
                 {{-- <button>You are already Friends.</button> --}}
                 <div class="add-btn">
-                    <button>Connected</button>
-                    <a href="#" title="" data-ripple="">Connected</a>
+                    <button>Unfriend</button>
+                    {{-- <a href="#" title="" data-ripple="">Unfriend</a> --}}
                 </div>
             @else
                 @if ($c ==2)
-                    <div class="add-btn">
+                    {{-- <div class="add-btn">
                         <button>Myself</button>
                         <a href="#" title="" data-ripple="">Myself</a>
-                    </div>
+                    </div> --}}
                     {{-- <button>abey ye to mein hi hun.</button> --}}
                 @else
                     @if ($c==3)
                         <div class="add-btn">
                             <button id="AcceptRequestButton" class="submit-button">Accept Request</button>
                             <button id="CancelRequestButton" class="submit-button">Cancel request</button>
-                            <a href="#" title="" data-ripple="">Myself</a>
+                            {{-- <a href="#" title="" data-ripple="">Myself</a> --}}
                         </div>
                         <script type="text/javascript">
                             document.getElementById("CancelRequestButton").onclick = function () {
@@ -57,7 +57,7 @@
                         @if ($c==4)
                             <div class="add-btn">
                                 <button>Request Already Sent</button>
-                                <a href="#" title="" data-ripple="">Sent</a>
+                                {{-- <a href="#" title="" data-ripple="">Sent</a> --}}
                             </div>
                             {{-- <button>Request Already Sent</button> --}}
                         @else
