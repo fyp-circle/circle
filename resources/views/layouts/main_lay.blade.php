@@ -228,7 +228,7 @@
                 <ul class="main-menu">
                     <li>
                         <div class="author-thmb">
-                            <a href="{{ url('mainscreen') }}">
+                            <a href="{{ route('mainscreen',['circle_id'=>1]) }}">
                             <img src="/{{Auth::user()->profile_picture}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
                                 <span class="status f-online" style="bottom: 32px; background: black"></span>
                             </a>
@@ -237,7 +237,7 @@
                     @if (Auth::user()->family_user_id!=null)
                         <li>
                             <div class="author-thmb">
-                                <a href="{{ url('mainscreenfamily') }}">
+                                <a href="{{ route('mainscreenfamily',['circle_id'=>2]) }}">
                                     <img src="/{{Auth::user()->family_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
                                     <span class="status f-online" style="bottom: 32px; background-color: red"></span>
                                 </a>
@@ -249,7 +249,7 @@
                     @if (Auth::user()->business_user_id!=null)
                         <li>
                             <div class="author-thmb">
-                                <a href="{{ url('mainscreenbusiness') }}">
+                                <a href="{{ route('mainscreenbusiness',['circle_id'=>3]) }}">
                                     <img src="/{{Auth::user()->business_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
                                     <span class="status f-online" style="bottom: 32px; background-color:cornflowerblue"></span>
                                 </a>
@@ -257,9 +257,8 @@
                         </li>
 
                     @endif
-
                     @if (Auth::user()->business_user_id==null || Auth::user()->business_user_id==null)
-                        <li><a href="{{ url('addnewcircle') }}" title="Add Circle" data-toggle="tooltip"
+                        <li><a href="{{ route('circle.new',['circle_id'=>$circle_id]) }}" title="Add Circle" data-toggle="tooltip"
                             data-placement="center" style="-webkit-text-fill-color: black; padding-left: 0"><i class="ti-plus"></i></a>
                         </li>
 
@@ -340,7 +339,7 @@
                         <a href="#" title=""><span class="status f-online"></span>online</a>
                         <a href="#" title=""><span class="status f-away"></span>away</a>
                         <a href="#" title=""><span class="status f-off"></span>offline</a>
-                    <a href="{{url('mainsettings')}}" title=""><i class="ti-settings"></i>account setting</a>
+                    <a href="{{ route('main.settings',['circle_id'=>1]) }}" title=""><i class="ti-settings"></i>account setting</a>
                         <a href="{{ route('logout') }}" title="" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();"><i class="ti-power-off"></i>log out</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

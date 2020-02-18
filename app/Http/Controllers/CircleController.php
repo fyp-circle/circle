@@ -34,8 +34,9 @@ class CircleController extends Controller
             $user = Auth::user();
             $user->business_user_id=$b_user->business_user_id;
             $user->save();
+            $circle_id=2;
             alert()->success('Business Circle Created','You have successfully Created Your Business Circle.')->position('top-end')->toToast()->width('24rem');
-            return redirect()->route('check.check.business');
+            return redirect()->route('mainscreenbusiness',['circle_id'=>$circle_id]);
 
 
         } else {
@@ -51,8 +52,9 @@ class CircleController extends Controller
                 $user = Auth::user();
                 $user->family_user_id=$f_user->family_user_id;
                 $user->save();
+                $circle_id=2;
                 alert()->success('Family Circle Created','You have successfully Created Your Family Circle.')->position('top-end')->toToast()->width('24rem');
-                return redirect()->route('check.check.family');
+                return redirect()->route('mainscreenfamily',['circle_id'=>$circle_id]);
             } else {
                 # code...
             }

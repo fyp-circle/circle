@@ -50,9 +50,9 @@ Route::get('resetpwd', ['as' => 'reset.pwd', 'uses' => 'CheckController@resetpwd
 
 Route::get('chec', ['as' => 'check.check', 'uses' => 'CheckController@check']);
 // Route::get('mainscreen/{circle_id}', ['as' => 'check.check.friend', 'uses' => 'CheckController@mainscreen'])->where('circle_id', '[0-9]+');
-Route::get('mainscreen/{circle_id}', ['as' => 'mainscreen', 'uses' => 'CheckController@mainscreen'])->where('circle_id', '[0-9]+');
-Route::get('mainscreenfamily/{circle_id}', ['as' => 'mainscreenfamily', 'uses' => 'CheckController@mainscreenfamily'])->where('circle_id', '[0-9]+');
-Route::get('mainscreenbusiness/{circle_id}', ['as' => 'mainscreenbusiness', 'uses' => 'CheckController@mainscreenbusiness'])->where('circle_id', '[0-9]+');
+Route::get('mainscreen/{circle_id}', ['as' => 'mainscreen', 'uses' => 'CheckController@mainscreen'])->where('circle_id', '1');
+Route::get('mainscreenfamily/{circle_id}', ['as' => 'mainscreenfamily', 'uses' => 'CheckController@mainscreenfamily'])->where('circle_id', '2');
+Route::get('mainscreenbusiness/{circle_id}', ['as' => 'mainscreenbusiness', 'uses' => 'CheckController@mainscreenbusiness'])->where('circle_id', '3');
 
 
 // Route::get('viewprofile/{id}/{circle_id}', ['as' => 'viewprofile.profile.friend', 'uses' => 'CheckController@viewprofile'])->where('id', '[0-9]+')->where('circle_id', '[0-9]+');
@@ -77,13 +77,13 @@ Route::get('viewvideosbusiness/{id}/{circle_id}', ['as' => 'viewvideosbusiness',
 Route::get('viewbusiness/{id}/{circle_id}', ['as' => 'viewbusiness', 'uses' => 'CheckController@viewbusiness'])->where('id', '[0-9]+')->where('circle_id', '[0-9]+');
 Route::get('viewaboutbusiness/{id}/{circle_id}', ['as' => 'viewaboutbusiness', 'uses' => 'CheckController@viewaboutbusiness'])->where('id', '[0-9]+')->where('circle_id', '[0-9]+');
 
-Route::get('addnewcircle', ['as' => 'circle.new', 'uses' => 'CheckController@addnewcircle']);
+Route::get('addnewcircle/{circle_id}', ['as' => 'circle.new', 'uses' => 'CheckController@addnewcircle'])->where('circle_id', '[0-9]+');
 
 Route::get('editinfofriends/{id}', ['as' => 'editinfofriends', 'uses' => 'CheckController@editinfofriends'])->where('id', '[0-9]+');
 Route::get('editinfofamily/{id}', ['as' => 'editinfofamily', 'uses' => 'CheckController@editinfofamily'])->where('id', '[0-9]+');
 Route::get('editinfobusiness/{id}', ['as' => 'editinfobusiness', 'uses' => 'CheckController@editinfobusiness'])->where('id', '[0-9]+');
 
-Route::get('mainsettings', ['as' => 'main.settings', 'uses' => 'CheckController@mainsettings']);
+Route::get('mainsettings/{circle_id}', ['as' => 'main.settings', 'uses' => 'CheckController@mainsettings']);
 Route::get('privacysettings', ['as' => 'privacy.settings', 'uses' => 'CheckController@privacysettings']);
 Route::get('changepassword', ['as' => 'change.password', 'uses' => 'CheckController@changepassword']);
 

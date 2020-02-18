@@ -120,14 +120,14 @@ class CheckController extends Controller
         $c=CheckController::checkConnection($id);
         return view("main.mainscreen")->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id);
     }
-    public function mainscreenfamily(){
+    public function mainscreenfamily($circle_id){
         //$user = User::find($id);
         $id=Auth::user()->user_id;
         // return $circle_id;
         $c=CheckController::checkConnection($id);
         return view("main.mainscreenfamily")->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id);
     }
-    public function mainscreenbusiness(){
+    public function mainscreenbusiness($circle_id){
         //$user = User::find($id);
         $id=Auth::user()->user_id;
         // return $circle_id;
@@ -214,9 +214,9 @@ class CheckController extends Controller
         return view("profileviewsbusiness.viewabout")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
     //ADD NEW CIRCLE
-    public function addnewcircle(){
+    public function addnewcircle($circle_id){
 
-        return view("addnewcircle");
+        return view("addnewcircle")->with('circle_id',$circle_id);
     }
     //EDIT INFO
     public function editinfofriends($id){
@@ -235,9 +235,9 @@ class CheckController extends Controller
         return view("editinfo.editinfobusiness")->with('user',$user)->with('c',$c)->with('profile_id',$id);
     }
     //MAIN SETTINGS
-    public function mainsettings(){
+    public function mainsettings($circle_id){
 
-        return view("accountsettings.mainsettings");
+        return view("accountsettings.mainsettings")->with('circle_id',$circle_id);
     }
     public function privacysettings(){
 
