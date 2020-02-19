@@ -71,17 +71,17 @@ Route::group([
 
 
 
-        Route::get('activityfriends/{id}', ['as' => 'activityfriends', 'uses' => 'CheckController@activityfriends']);
-        Route::get('activityfamily/{id}', ['as' => 'activityfamily', 'uses' => 'CheckController@activityfamily']);
-        Route::get('activitybusiness/{id}', ['as' => 'activitybusiness', 'uses' => 'CheckController@activitybusiness']);
+        Route::get('activityfriends/{circle_id}', ['as' => 'activityfriends', 'uses' => 'CheckController@activityfriends']);
+        Route::get('activityfamily/{circle_id}', ['as' => 'activityfamily', 'uses' => 'CheckController@activityfamily']);
+        Route::get('activitybusiness/{circle_id}', ['as' => 'activitybusiness', 'uses' => 'CheckController@activitybusiness']);
 
-        Route::get('messagefriends/{id}', ['as' => 'messagefriends', 'uses' => 'CheckController@messagefriends']);
-        Route::get('messagefamily/{id}', ['as' => 'messagefamily', 'uses' => 'CheckController@messagefamily']);
-        Route::get('inbox/{id}', ['as' => 'inbox', 'uses' => 'CheckController@inbox'])->where('id', '[0-9]+');
+        Route::get('messagefriends/{circle_id}', ['as' => 'messagefriends', 'uses' => 'CheckController@messagefriends']);
+        Route::get('messagefamily/{circle_id}', ['as' => 'messagefamily', 'uses' => 'CheckController@messagefamily']);
+        Route::get('inbox/{circle_id}', ['as' => 'inbox', 'uses' => 'CheckController@inbox'])->where('id', '[0-9]+');
 
-        Route::get('nearbyfriends/{id}', ['as' => 'nearbyfriends', 'uses' => 'CheckController@nearbyfriends']);
-        Route::get('nearbyfamily/{id}', ['as' => 'nearbyfamily', 'uses' => 'CheckController@nearbyfamily']);
-        Route::get('nearbyconnections/{id}', ['as' => 'nearbyconnections', 'uses' => 'CheckController@nearbyconnections']);
+        Route::get('nearbyfriends/{circle_id}', ['as' => 'nearbyfriends', 'uses' => 'CheckController@nearbyfriends']);
+        Route::get('nearbyfamily/{circle_id}', ['as' => 'nearbyfamily', 'uses' => 'CheckController@nearbyfamily']);
+        Route::get('nearbyconnections/{circle_id}', ['as' => 'nearbyconnections', 'uses' => 'CheckController@nearbyconnections']);
 
 
         Route::post('editinfofriends/{id}/{circle_id}', ['as' => 'editinfofriendspost', 'uses' => 'ProfileController@editprofilefriends'])->where('circle_id', '[0-9]+');

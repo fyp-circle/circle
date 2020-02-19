@@ -151,17 +151,17 @@
 <div class="fixed-sidebar left">
     <div class="menu-left">
         <ul class="left-menu">
-            <li><a href="{{ url('mainscreenbusiness') }}" title="Newsfeed Page" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color:cornflowerblue"><i
-                        class="ti-magnet"></i></a></li>
-            <li><a href="{{url('activitybusiness')}}" title="Insight" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i
-                        class="ti-stats-up"></i></a></li>
-            <li><a href="{{ url('inbox') }}" title="inbox" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i class="ti-import"></i></a></li>
-            {{-- <li><a href="messages.html" title="Messages" data-toggle="tooltip" data-placement="right"><i
-                        class="ti-comment-alt"></i></a></li> --}}
-            <li><a href="{{url('editinfobusiness')}}" title="Setting" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i
-                        class="ti-panel"></i></a></li>
-            <li><a href="{{ url('viewbusiness') }}" title="BusinessCircle" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: cornflowerblue"><i
-                        class="ti-rss"></i></a></li>
+            <li><a href="{{ url('/') }}" title="Newsfeed Page" data-toggle="tooltip" data-placement="right"><i
+                class="ti-magnet"></i></a></li>
+    <li><a href="{{ route('activitybusiness',['circle_id'=>$circle_id]) }}" title="Activity" data-toggle="tooltip" data-placement="right"><i
+                class="ti-stats-up"></i></a></li>
+    {{-- <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right"><i class="ti-import"></i></a></li> --}}
+    <li><a href="{{ route('inbox',['circle_id'=>$circle_id]) }}" title="Messages" data-toggle="tooltip" data-placement="right"><i
+                class="ti-comment-alt"></i></a></li>
+    <li><a href="{{ route('editinfobusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="Setting" data-toggle="tooltip" data-placement="right"><i
+                class="ti-panel"></i></a></li>
+    <li><a href="{{ route('viewbusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }} title="Friends" data-toggle="tooltip" data-placement="right"><i
+                class="ti-themify-favicon"></i></a></li>
         </ul>
     </div>
 </div><!-- left sidebar menu -->
@@ -179,15 +179,15 @@
                                     <ul class="naves">
                                         <li>
                                             <i class="ti-clipboard"></i>
-                                            <a href="{{ url('mainscreenbusiness') }}" title="">News feed</a>
+                                            <a href="{{ url('/') }}" title="">News feed</a>
                                         </li>
                                         <li>
                                             <i class="ti-user"></i>
-                                            <a href="{{ url('viewbusiness') }}" title="">People</a>
+                                            <a href="{{ route('viewbusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Friends</a>
                                         </li>
                                         <li>
                                             <i class="ti-comments-smiley"></i>
-                                            <a href="{{ url('inbox') }}" title="">Inbox</a>
+                                            <a href="{{ route('inbox',['circle_id'=>$circle_id]) }}" title="">Inbox</a>
                                         </li>
                                         <li>
                                             <i class="ti-bell"></i>
@@ -195,19 +195,19 @@
                                         </li>
                                         <li>
                                             <i class="ti-share"></i>
-                                            <a href="{{url('nearbyconnections')}}" title="">People Nearby</a>
+                                        <a href="{{ route('nearbyconnections',['circle_id'=>$circle_id]) }}" title="">People Nearby</a>
                                         </li>
                                         <li>
                                             <i class="fa fa-bar-chart-o"></i>
-                                            <a href="{{url('activitybusiness')}}" title="">Insights</a>
+                                            <a href="{{ route('activitybusiness',['circle_id'=>$circle_id]) }}" title="">Activity Log</a>
                                         </li>
                                         <li>
                                             <i class="ti-face-smile"></i>
-                                            <a href="{{ url('viewprofilebusiness') }}" title="">View Profile</a>
+                                            <a href="{{ route('viewprofilebusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">View Profile</a>
                                         </li>
                                         <li>
                                             <i class="ti-pencil-alt"></i>
-                                            <a href="{{ route('editinfobusiness',['circle_id'=>$circle_id]) }}" title="">Edit Info</a>
+                                            <a href="{{ route('editinfobusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Edit Info</a>
                                         </li>
                                     </ul>
                                 </div><!-- Shortcuts -->

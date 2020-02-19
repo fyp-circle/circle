@@ -3,7 +3,7 @@
 @section('content')
 <section>
     <div class="feature-photo">
-        <figure><img src="/{{Auth::user()->business_user['cover_picture']}}" alt="User Cover Picture"
+        <figure><img src="/{{$user->business_user['cover_picture']}}" alt="User Cover Picture"
                 style="height: 350px; width: 1366px; object-fit: cover;"> </figure>
                 @if ($c==0)
                 <div class="add-btn">
@@ -71,7 +71,7 @@
                 <div class="col-lg-2 col-sm-3">
                     <div class="user-avatar" style="width: 170px; height: 170px; margin-top:-6.9rem">
                         <figure>
-                            <img src="/{{Auth::user()->business_user['profile_picture']}}" alt="User Profile Image"
+                            <img src="/{{$user->business_user['profile_picture']}}" alt="User Profile Image"
                                 style="height:170px; width: 170px;object-fit: cover;">
                             {{-- <form class="edit-phto" action="{{ route('user.profile.picture.upload') }}"
                             method="POST" enctype="multipart/form-data" >
@@ -93,12 +93,12 @@
                     <div class="timeline-info">
                         <ul>
                             <li class="admin-name">
-                                <h5 style="-webkit-text-fill-color:cornflowerblue">{{Auth::user()->name}}</h5>
+                                <h5 style="-webkit-text-fill-color:cornflowerblue">{{$user->business_user['name']}}</h5>
 
                                 {{-- <span>Group Admin</span> --}}
                             </li>
                             <li>
-                                <a class="" href="{{ route('viewprofilebusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewprofilebusiness',['id'=>$user->business_user['user_id'],'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">time
                                     line</a>
                                 <a class="" href="{{ route('viewphotosbusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""

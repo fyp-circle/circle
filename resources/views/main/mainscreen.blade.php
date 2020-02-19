@@ -153,14 +153,14 @@
         <ul class="left-menu">
             <li><a href="{{ url('/') }}" title="Newsfeed Page" data-toggle="tooltip" data-placement="right"><i
                         class="ti-magnet"></i></a></li>
-            <li><a href="{{url('activityfriends')}}" title="Activity" data-toggle="tooltip" data-placement="right"><i
+            <li><a href="{{ route('activityfriends',['circle_id'=>$circle_id]) }}" title="Activity" data-toggle="tooltip" data-placement="right"><i
                         class="ti-stats-up"></i></a></li>
             {{-- <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right"><i class="ti-import"></i></a></li> --}}
-            <li><a href="{{ url('messagefriends') }}" title="Messages" data-toggle="tooltip" data-placement="right"><i
+            <li><a href="{{ route('messagefriends',['circle_id'=>$circle_id]) }}" title="Messages" data-toggle="tooltip" data-placement="right"><i
                         class="ti-comment-alt"></i></a></li>
-            <li><a href="{{url('editinfofriends')}}" title="Setting" data-toggle="tooltip" data-placement="right"><i
+            <li><a href="{{ route('editinfofriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="Setting" data-toggle="tooltip" data-placement="right"><i
                         class="ti-panel"></i></a></li>
-            <li><a href="{{ url('viewfriends',Auth::user()->user_id) }}" title="Friends" data-toggle="tooltip" data-placement="right"><i
+            <li><a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }} title="Friends" data-toggle="tooltip" data-placement="right"><i
                         class="ti-themify-favicon"></i></a></li>
         </ul>
     </div>
@@ -183,11 +183,11 @@
                                         </li>
                                         <li>
                                             <i class="ti-user"></i>
-                                            <a href="{{ url('viewfriends') }}" title="">Friends</a>
+                                            <a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Friends</a>
                                         </li>
                                         <li>
                                             <i class="ti-comments-smiley"></i>
-                                            <a href="{{ url('messagefriends') }}" title="">Inbox</a>
+                                            <a href="{{ route('messagefriends',['circle_id'=>$circle_id]) }}" title="">Inbox</a>
                                         </li>
                                         <li>
                                             <i class="ti-bell"></i>
@@ -195,11 +195,11 @@
                                         </li>
                                         <li>
                                             <i class="ti-share"></i>
-                                        <a href="{{ url('nearbyfriends') }}" title="">People Nearby</a>
+                                        <a href="{{ route('nearbyfriends',['circle_id'=>$circle_id]) }}" title="">People Nearby</a>
                                         </li>
                                         <li>
                                             <i class="fa fa-bar-chart-o"></i>
-                                            <a href="{{url('activityfriends')}}" title="">Activity Log</a>
+                                            <a href="{{ route('activityfriends',['circle_id'=>$circle_id]) }}" title="">Activity Log</a>
                                         </li>
                                         <li>
                                             <i class="ti-face-smile"></i>
@@ -207,7 +207,7 @@
                                         </li>
                                         <li>
                                             <i class="ti-pencil-alt"></i>
-                                            <a href="{{ route('editinfofriends',['circle_id'=>$circle_id]) }}" title="">Edit Info</a>
+                                            <a href="{{ route('editinfofriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Edit Info</a>
                                         </li>
                                     </ul>
                                 </div><!-- Shortcuts -->

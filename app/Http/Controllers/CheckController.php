@@ -248,40 +248,52 @@ class CheckController extends Controller
         return view("accountsettings.changepassword")->with('circle_id',$circle_id);;
     }
     //ACTIIVTY LOG
-    public function activityfriends(){
-
-        return view("activitylog.activityfriends");
+    public function activityfriends($circle_id){
+        $user = Auth::user();
+        $c=CheckController::checkConnection($user->user_id);
+        return view("activitylog.activityfriends")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id);
     }
-    public function activityfamily(){
-
-        return view("activitylog.activityfamily");
+    public function activityfamily($circle_id){
+        $user = Auth::user();
+        $c=CheckController::checkConnection($user->user_id);
+        return view("activitylog.activityfamily")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id);
     }
-    public function activitybusiness(){
-
-        return view("activitylog.activitybusiness");
+    public function activitybusiness($circle_id){
+        $user = Auth::user();
+        $c=CheckController::checkConnection($user->user_id);
+        return view("activitylog.activitybusiness")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id);
     }
     //MESSAGE
-    public function messagefriends(){
-
-        return view("messages.messagefriends");
+    public function messagefriends($circle_id){
+        $user = Auth::user();
+        $c=CheckController::checkConnection($user->user_id);
+        return view("messages.messagefriends")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id);
     }
-    public function messagefamily(){
-
-        return view("messages.messagefamily");
+    public function messagefamily($circle_id){
+        $user = Auth::user();
+        $c=CheckController::checkConnection($user->user_id);
+        return view("messages.messagefamily")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id);
     }
-    public function inbox(){
-
-        return view("messages.inbox");
+    public function inbox($circle_id){
+        $user = Auth::user();
+        $c=CheckController::checkConnection($user->user_id);
+        return view("messages.inbox")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id);
     }
     //NEARBY
-    public function nearbyfriends(){
-        return view("nearby.nearbyfriends");
+    public function nearbyfriends($circle_id){
+        $user = Auth::user();
+        $c=CheckController::checkConnection($user->user_id);
+        return view("nearby.nearbyfriends")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id);
     }
-    public function nearbyfamily(){
-        return view("nearby.nearbyfamily");
+    public function nearbyfamily($circle_id){
+        $user = Auth::user();
+        $c=CheckController::checkConnection($user->user_id);
+        return view("nearby.nearbyfamily")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id);
     }
-    public function nearbyconnections(){
-        return view("nearby.nearbyconnections");
+    public function nearbyconnections($circle_id){
+        $user = Auth::user();
+        $c=CheckController::checkConnection($user->user_id);
+        return view("nearby.nearbyconnections")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id);
     }
     //NOTIFICATION
     public function notification(){

@@ -151,17 +151,17 @@
 <div class="fixed-sidebar left">
     <div class="menu-left">
         <ul class="left-menu">
-            <li><a href="{{ url('mainscreenfamily') }}" title="Newsfeed Page" data-toggle="tooltip"
-                    data-placement="right" style="-webkit-text-fill-color: red"><i class="ti-magnet"></i></a></li>
-            <li><a href="{{url('activityfamily')}}" title="Activty Log" data-toggle="tooltip" data-placement="right"
-                    style="-webkit-text-fill-color: red"><i class="ti-stats-up"></i></a></li>
-            {{-- <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right" style="-webkit-text-fill-color: red"><i class="ti-import"></i></a></li> --}}
-            <li><a href="{{ url('messagefamily') }}" title="Messages" data-toggle="tooltip" data-placement="right"
-                    style="-webkit-text-fill-color: red"><i class="ti-comment-alt"></i></a></li>
-            <li><a href="{{url('editinfofamily')}}" title="Setting" data-toggle="tooltip" data-placement="right"
-                    style="-webkit-text-fill-color: red"><i class="ti-panel"></i></a></li>
-            <li><a href="{{ url('viewfamily') }}" title="Family Circle" data-toggle="tooltip" data-placement="right"
-                    style="-webkit-text-fill-color: red"><i class="ti-heart"></i></a></li>
+            <li><a href="{{ url('/') }}" title="Newsfeed Page" data-toggle="tooltip" data-placement="right"><i
+                class="ti-magnet"></i></a></li>
+    <li><a href="{{ route('activityfamily',['circle_id'=>$circle_id]) }}" title="Activity" data-toggle="tooltip" data-placement="right"><i
+                class="ti-stats-up"></i></a></li>
+    {{-- <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right"><i class="ti-import"></i></a></li> --}}
+    <li><a href="{{ route('messagefamily',['circle_id'=>$circle_id]) }}" title="Messages" data-toggle="tooltip" data-placement="right"><i
+                class="ti-comment-alt"></i></a></li>
+    <li><a href="{{ route('editinfofamily',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="Setting" data-toggle="tooltip" data-placement="right"><i
+                class="ti-panel"></i></a></li>
+    <li><a href="{{ route('viewfamily',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }} title="Friends" data-toggle="tooltip" data-placement="right"><i
+                class="ti-themify-favicon"></i></a></li>
         </ul>
     </div>
 </div><!-- left sidebar menu -->
@@ -179,15 +179,15 @@
                                     <ul class="naves">
                                         <li>
                                             <i class="ti-clipboard"></i>
-                                            <a href="{{ url('mainscreenfamily') }}" title="">News feed</a>
+                                            <a href="{{ url('/') }}" title="">News feed</a>
                                         </li>
                                         <li>
                                             <i class="ti-user"></i>
-                                            <a href="{{ url('viewfamily') }}" title="">Family</a>
+                                            <a href="{{ route('viewfamily',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Friends</a>
                                         </li>
                                         <li>
                                             <i class="ti-comments-smiley"></i>
-                                            <a href="{{ url('messagefamily') }}" title="">Messages</a>
+                                            <a href="{{ route('messagefamily',['circle_id'=>$circle_id]) }}" title="">Inbox</a>
                                         </li>
                                         <li>
                                             <i class="ti-bell"></i>
@@ -195,19 +195,19 @@
                                         </li>
                                         <li>
                                             <i class="ti-share"></i>
-                                            <a href="{{url('nearbyfamily')}}" title="">People Nearby</a>
+                                        <a href="{{ route('nearbyfamily',['circle_id'=>$circle_id]) }}" title="">People Nearby</a>
                                         </li>
                                         <li>
                                             <i class="fa fa-bar-chart-o"></i>
-                                            <a href="{{url('activityfamily')}}" title="">Activty Log</a>
+                                            <a href="{{ route('activityfamily',['circle_id'=>$circle_id]) }}" title="">Activity Log</a>
                                         </li>
                                         <li>
                                             <i class="ti-face-smile"></i>
-                                            <a href="{{ url('viewprofilefamily') }}" title="">View Profile</a>
+                                            <a href="{{ route('viewprofilefamily',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">View Profile</a>
                                         </li>
                                         <li>
                                             <i class="ti-pencil-alt"></i>
-                                            <a href="{{ route('editinfofamily',['circle_id'=>$circle_id]) }}" title="">Edit Info</a>
+                                            <a href="{{ route('editinfofamily',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Edit Info</a>
                                         </li>
                                     </ul>
                                 </div><!-- Shortcuts -->
