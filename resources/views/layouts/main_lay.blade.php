@@ -278,15 +278,37 @@
                     <li><a href="{{ url('/') }}" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
                     <li class= "dropdown-notifications">
                         <a  href="#notifications-panel" title="Notification" data-ripple="" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="ti-bell" data-count="0"></i><span class="notif-count">0</span>
+                        <i class="ti-bell" data-count="0"></i><span class="notif-count">{{count($notifications)}}</span>
                         </a>
-                        <div class="dropdowns" id="test2">
-                            <span>5 New Notifications</span>
-                            <ul class="dropdown-menu">
-
+                        @if (count($notifications) ==0)
+                        <div class="dropdowns">
+                            <span>No Notifications</span>
+                            <ul class="drops-menu">
+                                <li>
+                                </li>
                             </ul>
-                            <a href="{{url('notification')}}" title="" class="more-mesg">view more</a>
                         </div>
+                        @else
+                        <div class="dropdowns">
+                            <span>New Notifications</span>
+                            <ul class="drops-menu">
+                                @foreach ($notifications as $i)
+                                <li>
+                                    <a href="{{ route('notification') }}" title="">
+                                            <img src="/images/resources/thumb-1.jpg" alt="">
+                                            <div class="mesg-meta">
+                                                <h6>{{$i->title}}</h6>
+                                                <span>{{$i->content}}</span>
+                                                <i>{{$i->created_at}}</i>
+                                            </div>
+                                        </a>
+                                        <span class="tag green">Circle Name</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                            <a href="{{ route('notification') }}" title="" class="more-mesg">view more</a>
+                        </div>
+                        @endif
                     </li>
                     <li>
                         <a href="#" title="Messages" data-ripple=""><i class="ti-comment"></i><span>3</span></a>

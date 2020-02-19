@@ -40,12 +40,11 @@ Route::group([
     Route::get('mainscreenfamily/{circle_id}', ['as' => 'mainscreenfamily', 'uses' => 'CheckController@mainscreenfamily'])->where('circle_id', '2');
     Route::get('mainscreenbusiness/{circle_id}', ['as' => 'mainscreenbusiness', 'uses' => 'CheckController@mainscreenbusiness'])->where('circle_id', '3');
 
-    Route::get('mainsettings/{circle_id}', ['as' => 'main.settings', 'uses' => 'CheckController@mainsettings'])->where('circle_id', '1');;
-    Route::get('privacysettings/{circle_id}', ['as' => 'privacy.settings', 'uses' => 'CheckController@privacysettings'])->where('circle_id', '1');;
-    Route::get('changepassword/{circle_id}', ['as' => 'change.password', 'uses' => 'CheckController@changepassword'])->where('circle_id', '1');;
+    Route::get('mainsettings/{circle_id}', ['as' => 'main.settings', 'uses' => 'CheckController@mainsettings'])->where('circle_id', '1');
+    Route::get('privacysettings/{circle_id}', ['as' => 'privacy.settings', 'uses' => 'CheckController@privacysettings'])->where('circle_id', '1');
+    Route::get('changepassword/{circle_id}', ['as' => 'change.password', 'uses' => 'CheckController@changepassword'])->where('circle_id', '1');
 
-
-    Route::get('notification', ['as' => 'notify.notify', 'uses' => 'CheckController@notification']);
+    Route::get('notification', ['as' => 'notification', 'uses' => 'CheckController@notification']);
 
     Route::get('search', ['as' => 'search.search', 'uses' => 'CheckController@search']);
 
