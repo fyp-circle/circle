@@ -153,15 +153,15 @@
         <ul class="left-menu">
             <li><a href="{{ url('/') }}" title="Newsfeed Page" data-toggle="tooltip" data-placement="right"><i
                         class="ti-magnet"></i></a></li>
-            <li><a href="{{ route('activityfriends',['circle_id'=>$circle_id]) }}" title="Activity" data-toggle="tooltip" data-placement="right"><i
-                        class="ti-stats-up"></i></a></li>
-            {{-- <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right"><i class="ti-import"></i></a></li> --}}
-            <li><a href="{{ route('messagefriends',['circle_id'=>$circle_id]) }}" title="Messages" data-toggle="tooltip" data-placement="right"><i
-                        class="ti-comment-alt"></i></a></li>
-            <li><a href="{{ route('editinfofriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="Setting" data-toggle="tooltip" data-placement="right"><i
-                        class="ti-panel"></i></a></li>
-            <li><a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }} title="Friends" data-toggle="tooltip" data-placement="right"><i
-                        class="ti-themify-favicon"></i></a></li>
+            <li><a href="{{ route('activityfriends',['circle_id'=>$circle_id]) }}" title="Activity"
+                    data-toggle="tooltip" data-placement="right"><i class="ti-stats-up"></i></a></li>
+           <li><a href="{{ route('messagefriends',['circle_id'=>$circle_id]) }}" title="Messages" data-toggle="tooltip"
+                    data-placement="right"><i class="ti-comment-alt"></i></a></li>
+            <li><a href="{{ route('editinfofriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
+                    title="Setting" data-toggle="tooltip" data-placement="right"><i class="ti-panel"></i></a></li>
+            <li><a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
+                    title="Friends" data-toggle="tooltip" data-placement="right"><i class="ti-themify-favicon"></i></a>
+            </li>
         </ul>
     </div>
 </div><!-- left sidebar menu -->

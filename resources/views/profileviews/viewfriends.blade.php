@@ -4,80 +4,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="row merged20" id="page-contents">
-            {{-- <div class="col-lg-3">
-                <aside class="sidebar static">
-                    <div class="widget">
-                        <h4 class="widget-title">Shortcuts</h4>
-                        <ul class="naves">
-                            <li>
-                                <i class="ti-clipboard"></i>
-                                <a href="newsfeed.html" title="">News feed</a>
-                            </li>
-                            <li>
-                                <i class="ti-mouse-alt"></i>
-                                <a href="inbox.html" title="">Inbox</a>
-                            </li>
-                            <li>
-                                <i class="ti-files"></i>
-                                <a href="fav-page.html" title="">My pages</a>
-                            </li>
-                            <li>
-                                <i class="ti-user"></i>
-                                <a href="timeline-friends.html" title="">friends</a>
-                            </li>
-                            <li>
-                                <i class="ti-image"></i>
-                                <a href="timeline-photos.html" title="">images</a>
-                            </li>
-                            <li>
-                                <i class="ti-video-camera"></i>
-                                <a href="timeline-videos.html" title="">videos</a>
-                            </li>
-                            <li>
-                                <i class="ti-comments-smiley"></i>
-                                <a href="messages.html" title="">Messages</a>
-                            </li>
-                            <li>
-                                <i class="ti-bell"></i>
-                                <a href="notifications.html" title="">Notifications</a>
-                            </li>
-                            <li>
-                                <i class="ti-share"></i>
-                                <a href="people-nearby.html" title="">People Nearby</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-bar-chart-o"></i>
-                                <a href="insights.html" title="">insights</a>
-                            </li>
-                            <li>
-                                <i class="ti-power-off"></i>
-                                <a href="landing.html" title="">Logout</a>
-                            </li>
-                        </ul>
-                    </div><!-- Shortcuts -->
-                    <div class="widget stick-widget">
-                        <h4 class="widget-title">Profile intro</h4>
-                        <ul class="short-profile">
-                            <li>
-                                <span>about</span>
-                                <p>Hi, i am jhon kates, i am 32 years old and worked as a web developer in microsoft
-                                    company. </p>
-                            </li>
-                            <li>
-                                <span>fav tv show</span>
-                                <p>Hi, i am jhon kates, i am 32 years old and worked as a web developer in microsoft
-                                    company. </p>
-                            </li>
-                            <li>
-                                <span>favourit music</span>
-                                <p>Hi, i am jhon kates, i am 32 years old and worked as a web developer in microsoft
-                                    company. </p>
-                            </li>
-                        </ul>
-                    </div><!-- profile intro widget -->
 
-                </aside>
-            </div><!-- sidebar --> --}}
             <div class="col-lg-9">
                 <div class="central-meta">
                     <div class="frnds">
@@ -96,7 +23,7 @@
                                         <div class="nearly-pepls">
                                             <figure>
                                                 <a href="time-line.html" title=""><img
-                                                        src="images/resources/friend-avatar9.jpg" alt=""></a>
+                                                        src="/images/resources/friend-avatar9.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">jhon kates</a></h4>
@@ -110,7 +37,7 @@
                                         <div class="nearly-pepls">
                                             <figure>
                                                 <a href="time-line.html" title=""><img
-                                                        src="images/resources/nearly1.jpg" alt=""></a>
+                                                        src="/images/resources/nearly1.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">sophia Gate</a></h4>
@@ -124,7 +51,7 @@
                                         <div class="nearly-pepls">
                                             <figure>
                                                 <a href="time-line.html" title=""><img
-                                                        src="images/resources/nearly2.jpg" alt=""></a>
+                                                        src="/images/resources/nearly2.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">sara grey</a></h4>
@@ -138,7 +65,7 @@
                                         <div class="nearly-pepls">
                                             <figure>
                                                 <a href="time-line.html" title=""><img
-                                                        src="images/resources/nearly2.jpg" alt=""></a>
+                                                        src="/images/resources/nearly2.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">Ema watson</a></h4>
@@ -157,7 +84,7 @@
                                         <div class="nearly-pepls">
                                             <figure>
                                                 <a href="time-line.html" title=""><img
-                                                        src="images/resources/nearly5.jpg" alt=""></a>
+                                                        src="/images/resources/nearly5.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">Amy watson</a></h4>
@@ -168,12 +95,11 @@
                                             </div>
                                         </div>
                                     </li>
-
                                     <li>
                                         <div class="nearly-pepls">
                                             <figure>
                                                 <a href="time-line.html" title=""><img
-                                                        src="images/resources/nearly1.jpg" alt=""></a>
+                                                        src="/images/resources/nearly1.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">sophia Gate</a></h4>
@@ -188,7 +114,7 @@
                                         <div class="nearly-pepls">
                                             <figure>
                                                 <a href="time-line.html" title=""><img
-                                                        src="images/resources/nearly6.jpg" alt=""></a>
+                                                        src="/images/resources/nearly6.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">caty lasbo</a></h4>
@@ -203,7 +129,7 @@
                                         <div class="nearly-pepls">
                                             <figure>
                                                 <a href="time-line.html" title=""><img
-                                                        src="images/resources/friend-avatar9.jpg" alt=""></a>
+                                                        src="/images/resources/friend-avatar9.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">jhon kates</a></h4>
@@ -218,7 +144,7 @@
                                         <div class="nearly-pepls">
                                             <figure>
                                                 <a href="time-line.html" title=""><img
-                                                        src="images/resources/nearly2.jpg" alt=""></a>
+                                                        src="/images/resources/nearly2.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">sara grey</a></h4>
@@ -233,7 +159,7 @@
                                         <div class="nearly-pepls">
                                             <figure>
                                                 <a href="time-line.html" title=""><img
-                                                        src="images/resources/nearly4.jpg" alt=""></a>
+                                                        src="/images/resources/nearly4.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">Sara grey</a></h4>
@@ -248,7 +174,7 @@
                                         <div class="nearly-pepls">
                                             <figure>
                                                 <a href="time-line.html" title=""><img
-                                                        src="images/resources/nearly3.jpg" alt=""></a>
+                                                        src="/images/resources/nearly3.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">Sexy cat</a></h4>
@@ -263,7 +189,7 @@
                                         <div class="nearly-pepls">
                                             <figure>
                                                 <a href="time-line.html" title=""><img
-                                                        src="images/resources/friend-avatar9.jpg" alt=""></a>
+                                                        src="/images/resources/friend-avatar9.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">jhon kates</a></h4>
@@ -287,35 +213,35 @@
                         <h4 class="widget-title">Who's following you</h4>
                         <ul class="followers">
                             <li>
-                                <figure><img src="images/resources/friend-avatar2.jpg" alt=""></figure>
+                                <figure><img src="/images/resources/friend-avatar2.jpg" alt=""></figure>
                                 <div class="friend-meta">
                                     <h4><a href="time-line.html" title="">Kelly Bill</a></h4>
                                     <a href="#" title="" class="underline">Add Friend</a>
                                 </div>
                             </li>
                             <li>
-                                <figure><img src="images/resources/friend-avatar4.jpg" alt=""></figure>
+                                <figure><img src="/images/resources/friend-avatar4.jpg" alt=""></figure>
                                 <div class="friend-meta">
                                     <h4><a href="time-line.html" title="">Issabel</a></h4>
                                     <a href="#" title="" class="underline">Add Friend</a>
                                 </div>
                             </li>
                             <li>
-                                <figure><img src="images/resources/friend-avatar6.jpg" alt=""></figure>
+                                <figure><img src="/images/resources/friend-avatar6.jpg" alt=""></figure>
                                 <div class="friend-meta">
                                     <h4><a href="time-line.html" title="">Andrew</a></h4>
                                     <a href="#" title="" class="underline">Add Friend</a>
                                 </div>
                             </li>
                             <li>
-                                <figure><img src="images/resources/friend-avatar8.jpg" alt=""></figure>
+                                <figure><img src="/images/resources/friend-avatar8.jpg" alt=""></figure>
                                 <div class="friend-meta">
                                     <h4><a href="time-line.html" title="">Sophia</a></h4>
                                     <a href="#" title="" class="underline">Add Friend</a>
                                 </div>
                             </li>
                             <li>
-                                <figure><img src="images/resources/friend-avatar3.jpg" alt=""></figure>
+                                <figure><img src="/images/resources/friend-avatar3.jpg" alt=""></figure>
                                 <div class="friend-meta">
                                     <h4><a href="time-line.html" title="">Allen</a></h4>
                                     <a href="#" title="" class="underline">Add Friend</a>
@@ -329,7 +255,7 @@
                         <ul id="people-list" class="friendz-list">
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">bucky barnes</a>
@@ -337,7 +263,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar2.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar2.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">Sarah Loren</a>
@@ -345,7 +271,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar3.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar3.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">jason borne</a>
@@ -353,7 +279,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar4.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar4.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">Cameron diaz</a>
@@ -362,7 +288,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar5.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar5.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">daniel warber</a>
@@ -371,7 +297,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar6.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar6.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">andrew</a>
@@ -380,7 +306,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar7.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar7.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">amy watson</a>
@@ -389,7 +315,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar5.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar5.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">daniel warber</a>
@@ -398,7 +324,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar2.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar2.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">Sarah Loren</a>
@@ -417,7 +343,7 @@
                             <div class="chat-list">
                                 <ul>
                                     <li class="me">
-                                        <div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
+                                        <div class="chat-thumb"><img src="/images/resources/chatlist1.jpg" alt=""></div>
                                         <div class="notification-event">
                                             <span class="chat-message-item">
                                                 Hi James! Please remember to buy the food for tomorrow! I’m gonna be
@@ -428,7 +354,7 @@
                                         </div>
                                     </li>
                                     <li class="you">
-                                        <div class="chat-thumb"><img src="images/resources/chatlist2.jpg" alt=""></div>
+                                        <div class="chat-thumb"><img src="/images/resources/chatlist2.jpg" alt=""></div>
                                         <div class="notification-event">
                                             <span class="chat-message-item">
                                                 Hi James! Please remember to buy the food for tomorrow! I’m gonna be
@@ -439,7 +365,7 @@
                                         </div>
                                     </li>
                                     <li class="me">
-                                        <div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
+                                        <div class="chat-thumb"><img src="/images/resources/chatlist1.jpg" alt=""></div>
                                         <div class="notification-event">
                                             <span class="chat-message-item">
                                                 Hi James! Please remember to buy the food for tomorrow! I’m gonna be

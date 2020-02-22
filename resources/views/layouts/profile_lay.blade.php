@@ -3,41 +3,35 @@
 @section('content')
 <section>
     <div class="feature-photo">
-        <figure><img src="/{{$user->cover_picture}}" alt="User Cover Picture" style="height: 350px; width: 1366px; object-fit: cover;"> </figure>
+        <figure><img src="/{{$user->cover_picture}}" alt="User Cover Picture" style="height: 350px; width: 100%; object-fit:cover;"> </figure>
 
         @if ($c==0)
-            <div class="add-btn">
-                <button id="AddFriendButton">Add Friend</button>
-                {{-- <a href="#" title="" data-ripple="">Add Connection</a> --}}
+            {{-- Add --}}
+            <div class="add-btn" style="bottom:25%; right:4%;">
+                <a id = "AddFriendButton" href="#" title="" data-ripple="" style="background-color: black; -webkit-text-fill-color: white;">Add Friend</a>
             </div>
-
             <script type="text/javascript">
                 document.getElementById("AddFriendButton").onclick = function () {
                     var profile_id = "{{ $profile_id}}";
                     location.href = "/requestsent/" + profile_id;
                 };
-
             </script>
         @else
             @if ($c==1)
-                {{-- <button>You are already Friends.</button> --}}
-                <div class="add-btn">
-                    <button>Unfriend</button>
-                    {{-- <a href="#" title="" data-ripple="">Unfriend</a> --}}
+                {{-- Connected --}}
+                <div class="add-btn" style="bottom:25%; right:4%;">
+                    <a href="#" title="" data-ripple="" style="background-color: transparent; -webkit-text-fill-color: white;">Friend <i class="ti-user"></i></a>
+                    <a id = "UnfriendButton" href="#" title="" data-ripple="" style="background-color: red; -webkit-text-fill-color: white;">Unfriend <i class="ti-close"></i></a>
                 </div>
             @else
                 @if ($c ==2)
-                    {{-- <div class="add-btn">
-                        <button>Myself</button>
-                        <a href="#" title="" data-ripple="">Myself</a>
-                    </div> --}}
-                    {{-- <button>abey ye to mein hi hun.</button> --}}
+                    {{-- Myself --}}
                 @else
                     @if ($c==3)
-                        <div class="add-btn">
-                            <button id="AcceptRequestButton" class="submit-button">Accept Request</button>
-                            <button id="CancelRequestButton" class="submit-button">Cancel request</button>
-                            {{-- <a href="#" title="" data-ripple="">Myself</a> --}}
+                        {{-- Accept or Reject --}}
+                        <div class="add-btn" style="bottom:25%; right:4%;">
+                            <a id = "AcceptRequestButton" href="#" title="" data-ripple="" style="background-color: white; -webkit-text-fill-color: black;">Accept Request</a>
+                            <a id = "CancelRequestButton" href="#" title="" data-ripple="" style="background-color: red; -webkit-text-fill-color: white;">Cancel Request</a>
                         </div>
                         <script type="text/javascript">
                             document.getElementById("CancelRequestButton").onclick = function () {
@@ -55,11 +49,9 @@
                         </script>
                     @else
                         @if ($c==4)
-                            <div class="add-btn">
-                                <button>Request Already Sent</button>
-                                {{-- <a href="#" title="" data-ripple="">Sent</a> --}}
+                            <div class="add-btn" style="bottom:25%; right:4%;">
+                                <a href="#" title="" data-ripple="" style="background-color: transparent; -webkit-text-fill-color: white;">Request Already Sent <i class="ti-timer"></i></a>
                             </div>
-                            {{-- <button>Request Already Sent</button> --}}
                         @else
                         @endif
                     @endif

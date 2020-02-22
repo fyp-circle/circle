@@ -275,7 +275,7 @@
                             </form>
                         </div>
                     </li>
-                    <li><a href="{{ url('/') }}" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
+                    <li><a href="{{ route('mainscreen',['circle_id'=>1]) }}" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
                     <li class= "dropdown-notifications">
                         <a  href="#notifications-panel" title="Notification" data-ripple="" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="ti-bell" data-count="0"></i><span class="notif-count">{{count($notifications)}}</span>
