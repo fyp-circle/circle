@@ -10,6 +10,10 @@ class Notif extends Model
         return $this->belongsTo('App\User','user_id','user_id');
     }
 
+    public function sender(){
+        return $this->belongsTo('App\User','sender_id','user_id');
+    }
+
     public function circle(){
         return $this->belongsTo('App\Circle','circle_id','circle_id');
     }

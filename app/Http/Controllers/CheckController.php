@@ -8,6 +8,7 @@ use App\User;
 use App\Post;
 use App\Connection;
 use App\Circle;
+use App\Notif;
 use Illuminate\Support\Facades\DB;
 Use Alert;
 use Auth;
@@ -344,12 +345,13 @@ class CheckController extends Controller
 
     public function sentRequest($id){
         event(new MyEvent($id));
-        alert()->success('Request Sent Successfully.','You have successfully sent rquest to friend Circle.')->position('top-end')->toToast()->width('24rem');
+        $user=User::find($id);
+        alert()->success('Request Sent Successfully.','You have successfully sent request to '.$user->name.' in  friend Circle.')->position('top-end')->toToast()->width('24rem');
         return Redirect::back();
     }
 
 
-    public function cancelRequest($id){
+    public function cancelRequest($id,$sender_id){
         DB::table('connections')
             ->where([
                 ['user1_id', $id],
@@ -362,11 +364,54 @@ class CheckController extends Controller
                 ['circle_id', 1],
             ])
             ->delete();
-        alert()->success('Request Cancelled Successfully.','You have successfully sent rquest to friend Circle.')->position('top-end')->toToast()->width('24rem');
+
+            $sender=User::find($sender_id);
+            $user=User::find($id);
+
+            $notif = new Notif;
+            $notif->title = "Friend Request Cancelled.";
+            $notif->content= $sender->name." cancelled your request in Circle Friend.";
+            $notif->read = 0;
+            $notif->user_id =$id;
+            $notif->sender_id =Auth::user()->user_id;
+            $notif->circle_id = 1;
+            $notif->save();
+
+        alert()->success('Request Cancelled Successfully.','You have successfully cancelled request of '.$user->name.' in friend Circle.')->position('top-end')->toToast()->width('24rem');
         return Redirect::back();
     }
 
-    public function acceptRequest($id){
+    public function unfriend($id,$sender_id){
+        DB::table('connections')
+            ->where([
+                ['user1_id', $id],
+                ['user2_id', Auth::user()->user_id],
+                ['circle_id', 1],
+            ])
+            ->orWhere([
+                ['user2_id', $id],
+                ['user1_id', Auth::user()->user_id],
+                ['circle_id', 1],
+            ])
+            ->delete();
+
+            $sender=User::find($sender_id);
+            $user=User::find($id);
+
+            $notif = new Notif;
+            $notif->title = "Unfriended.";
+            $notif->content= $sender->name." remove you from Friends List.";
+            $notif->read = 0;
+            $notif->user_id =$id;
+            $notif->sender_id =Auth::user()->user_id;
+            $notif->circle_id = 1;
+            $notif->save();
+
+        alert()->success('Friend Successfully Removed.','You have successfully removed '.$user->name.' from your friend list')->position('top-end')->toToast()->width('24rem');
+        return Redirect::back();
+    }
+
+    public function acceptRequest($id,$sender_id){
         DB::table('connections')
             ->where([
                 ['user1_id', $id],
@@ -383,9 +428,20 @@ class CheckController extends Controller
                 'con_ini' => null,
             ]);
 
+            $sender=User::find($sender_id);
+
+            $notif = new Notif;
+            $notif->title = "Friend Request Accepted.";
+            $notif->content= $sender->name." accepted your request in Circle Friend.";
+            $notif->read = 0;
+            $notif->user_id =$id;
+            $notif->sender_id =Auth::user()->user_id;
+            $notif->circle_id = 1;
+            $notif->save();
+
             $user=User::find($id);
-        alert()->success('You and '.$user->name.' are now connected through Friend Circle','')->position('top-end')->toToast()->width('24rem');
-        return Redirect::back();
+            alert()->success('You and '.$user->name.' are now connected through Friend Circle','')->position('top-end')->toToast()->width('24rem');
+            return Redirect::back();
     }
 
     public function defaultPage(){

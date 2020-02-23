@@ -23,6 +23,12 @@
                     <a href="#" title="" data-ripple="" style="background-color: transparent; -webkit-text-fill-color: white;">Friend <i class="ti-user"></i></a>
                     <a id = "UnfriendButton" href="#" title="" data-ripple="" style="background-color: red; -webkit-text-fill-color: white;">Unfriend <i class="ti-close"></i></a>
                 </div>
+                <script type="text/javascript">
+                    document.getElementById("UnfriendButton").onclick = function () {
+                        var profile_id = "{{ $profile_id}}";
+                        location.href = "/unfriend/" + profile_id+"/{{Auth::user()->user_id}}";
+                    };
+                </script>
             @else
                 @if ($c ==2)
                     {{-- Myself --}}
@@ -36,14 +42,14 @@
                         <script type="text/javascript">
                             document.getElementById("CancelRequestButton").onclick = function () {
                                 var profile_id = "{{ $profile_id }}";
-                                location.href = "/cancelrequest/" + profile_id;
+                                location.href = "/cancelrequest/" + profile_id+"/{{Auth::user()->user_id}}";
                             };
 
                         </script>
                         <script type="text/javascript">
                             document.getElementById("AcceptRequestButton").onclick = function () {
                                 var profile_id = "{{ $profile_id }}";
-                                location.href = "/acceptrequest/" + profile_id;
+                                location.href = "/acceptrequest/" + profile_id +"/{{Auth::user()->user_id}}";
                             };
 
                         </script>
@@ -51,6 +57,14 @@
                         @if ($c==4)
                             <div class="add-btn" style="bottom:25%; right:4%;">
                                 <a href="#" title="" data-ripple="" style="background-color: transparent; -webkit-text-fill-color: white;">Request Already Sent <i class="ti-timer"></i></a>
+                                <a id = "CancelRequestButton1" href="#" title="" data-ripple="" style="background-color: red; -webkit-text-fill-color: white;">Cancel Request</a>
+                               <script type="text/javascript">
+                                    document.getElementById("CancelRequestButton1").onclick = function () {
+                                        var profile_id = "{{ $profile_id }}";
+                                        location.href = "/cancelrequest/" + profile_id+"/{{Auth::user()->user_id}}";
+                                    };
+
+                                </script>
                             </div>
                         @else
                         @endif
@@ -105,16 +119,16 @@
                                 {{-- <span>Group Admin</span> --}}
                             </li>
                             <li>
-                                <a class="" href="{{ route('viewprofile',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewprofile',['id'=>$profile_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">time
                                     line</a>
-                                <a class="" href="{{ route('viewphotos',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewphotos',['id'=>$profile_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">Photos</a>
-                                <a class="" href="{{ route('viewvideos',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewvideos',['id'=>$profile_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">Videos</a>
-                                <a class="" href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewfriends',['id'=>$profile_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">Friends Circle</a>
-                                <a class="" href="{{ route('viewabout',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewabout',['id'=>$profile_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">About</a>
                                 <a class="" href="" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">More</a>

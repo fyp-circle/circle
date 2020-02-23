@@ -62,8 +62,9 @@ Route::group([
       ],
       function () {
         Route::get('/requestsent/{id}', ['as' => 'request.sent', 'uses' => 'CheckController@sentRequest']);
-        Route::get('/cancelrequest/{id}', ['as' => 'cancel.request', 'uses' => 'CheckController@cancelRequest']);
-        Route::get('/acceptrequest/{id}', ['as' => 'cancel.request', 'uses' => 'CheckController@acceptRequest']);
+        Route::get('/cancelrequest/{id}/{sender_id}', ['as' => 'cancel.request', 'uses' => 'CheckController@cancelRequest']);
+        Route::get('/acceptrequest/{id}/{sender_id}', ['as' => 'accept.request', 'uses' => 'CheckController@acceptRequest'])->where('sender_id', '[0-9]+');
+        Route::get('/unfriend/{id}/{sender_id}', ['as' => 'unfriend', 'uses' => 'CheckController@unfriend'])->where('sender_id', '[0-9]+');
 
 
 

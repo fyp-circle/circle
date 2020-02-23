@@ -15,16 +15,26 @@
                                         <ul>
                                             @foreach ($notifications as $i)
                                             <li>
-                                                <figure><img src="images/resources/friend-avatar6.jpg" alt=""></figure>
+                                                <a href="{{ route('viewprofile',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
+                                                <figure><img src="/{{$i->sender['profile_picture']}}" alt=""></figure>
                                                 <div class="notifi-meta">
                                                     <p>{{$i->content}}</p>
                                                     <span>{{$i->created_at}}</span>
-                                                    {{-- @if ()
+                                                    @if ($i->circle_id==1)
+                                                        <span class="tag blue" style="background-color:black;-webkit-text-fill-color: white">Friend</span>
+                                                    @else
+                                                        @if ($i->circle_id==3)
+                                                        <span class="tag blue" style="background-color:cornflowerblue;-webkit-text-fill-color: white">Business</span>
 
-                                                    @endif --}}
-                                                    <span class="tag blue" style="background-color:red;-webkit-text-fill-color: white">Family</span>
+                                                        @else
+                                                        <span class="tag blue" style="background-color:red;-webkit-text-fill-color: white">Family</span>
+                                                        @endif
+                                                    @endif
+
                                                 </div>
+                                            </a>
                                                 <i class="del fa fa-close"></i>
+
                                             </li>
                                             @endforeach
                                         </ul>

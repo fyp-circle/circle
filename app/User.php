@@ -50,6 +50,10 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany('App\Notif','user_id','user_id');
     }
 
+    public function notifs1(){
+        return $this->hasMany('App\Notif','user_id','user_id');
+    }
+
     public function connections1(){
         return $this->hasMany('App\Connection','user1_id','user1_id');
     }

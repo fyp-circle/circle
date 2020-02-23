@@ -258,7 +258,7 @@
 
                     @endif
                     @if (Auth::user()->business_user_id==null || Auth::user()->family_user_id==null)
-                        <li><a href="{{ route('circle.new',['circle_id'=>$circle_id]) }}" title="Add Circle" data-toggle="tooltip"
+                        <li><a href="{{ route('circle.new',['circle_id'=>1]) }}" title="Add Circle" data-toggle="tooltip"
                             data-placement="center" style="-webkit-text-fill-color: black; padding-left: 0"><i class="ti-plus"></i></a>
                         </li>
 
@@ -294,15 +294,26 @@
                             <ul class="drops-menu">
                                 @foreach ($notifications as $i)
                                 <li>
-                                    <a href="{{ route('notification') }}" title="">
-                                            <img src="/images/resources/thumb-1.jpg" alt="">
+                                    <a href="{{ route('viewprofile',['id'=>$i->sender_id,'circle_id'=>$i->circle_id]) }}" title="">
+                                            <img src="/{{$i->sender['profile_picture']}}" alt="">
                                             <div class="mesg-meta">
                                                 <h6>{{$i->title}}</h6>
                                                 <span>{{$i->content}}</span>
                                                 <i>{{$i->created_at}}</i>
                                             </div>
                                         </a>
-                                        <span class="tag green">Circle Name</span>
+                                        @if ($i->circle_id==1)
+
+                                                        <span class="tag green" style="background-color:black;-webkit-text-fill-color: white">Friend</span>
+                                                    @else
+                                                        @if ($i->circle_id==3)
+
+                                                        <span class="tag green" style="background-color:cornflowerblue;-webkit-text-fill-color: white">Business</span>
+                                                        @else
+
+                                                        <span class="tag green" style="background-color:red;-webkit-text-fill-color: white">Family</span>
+                                                        @endif
+                                                    @endif
                                     </li>
                                 @endforeach
                             </ul>
