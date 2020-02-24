@@ -116,7 +116,7 @@
                         <div class="log-reg-area sign">
                             <h2 class="log-title">Login</h2>
                             <p>
-                                Don’t use Circle Yet? <a href="#" title="">Join now</a>
+                                Don’t use Circle Yet? <a href="#" title=""><button class="signup">Join now</button></a>
                             </p>
                             <form method="post"  action="{{ route('login') }}">
                                 @csrf
