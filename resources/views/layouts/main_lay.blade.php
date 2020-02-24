@@ -277,8 +277,9 @@
                     </li>
                     <li><a href="{{ route('mainscreen',['circle_id'=>1]) }}" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
                     <li class= "dropdown-notifications">
-                        <a  href="#notifications-panel" title="Notification" data-ripple="" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="ti-bell" data-count="0"></i><span class="notif-count">{{count($notifications)}}</span>
+                        {{-- <a  href="#notifications-panel" title="Notification" data-ripple="" class="dropdown-toggle" data-toggle="dropdown"> --}}
+                            <a href="#" title="Notification" data-ripple="" class="dropdown-toggle" href="#notifications-panel" data-toggle="dropdown">
+                            <i class="ti-bell" data-count="{{count($notifications)}}"></i><span class="notif-count">{{count($notifications)}}</span>
                         </a>
                         @if (count($notifications) ==0)
                         <div class="dropdowns">
@@ -291,7 +292,7 @@
                         @else
                         <div class="dropdowns">
                             <span>New Notifications</span>
-                            <ul class="drops-menu">
+                            <ul class="drops-menu" id="test2" class="dropdown-menu">
                                 @foreach ($notifications as $i)
                                 <li>
                                     <a href="{{ route('viewprofile',['id'=>$i->sender_id,'circle_id'=>$i->circle_id]) }}" title="">
@@ -436,9 +437,8 @@
 
         // Subscribe to the channel we specified in our Laravel Event
         var user_id="{{Auth::user()->user_id}}";
-        var profile_id = "{{ $profile_id ?? '' }}";
-        if (user_id===profile_id) {
-            var channel = pusher.subscribe('user_id_'+profile_id);
+        var profile_id = "{{$profile_id}}";
+            var channel = pusher.subscribe('user_id_'+user_id);
             // Bind a function to a Event (the full Laravel class)
             channel.bind('my-event', function(data) {
 
@@ -446,8 +446,8 @@
             //   var avatar = Math.floor(Math.random() * (71 - 20 + 1)) + 20;
             var newNotificationHtml = `
             <li>
-            <a href="{{url('notification')}}" title="">
-                    <img src="/images/resources/thumb-1.jpg" alt="">
+            <a href="{{ route('notification') }}" title="">
+                    <img src="/`+data.sender.profile_picture+`" alt="">
                     <div class="mesg-meta">
                         <h6>`+data.title+`</h6>
                         <span>`+data.content+`</span>
@@ -464,9 +464,6 @@
             notificationsWrapper.find('.notif-count').text(notificationsCount);
             notificationsWrapper.show();
             });
-        } else {
-
-        }
 
 
 

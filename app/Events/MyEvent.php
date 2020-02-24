@@ -23,6 +23,7 @@ class MyEvent implements ShouldBroadcast
   public $dest_id;
   public $circle_id;
   public $created_at;
+  public $sender;
 
   public function __construct($dest_id)
   {
@@ -31,6 +32,7 @@ class MyEvent implements ShouldBroadcast
       $this->user_id = Auth::user()->user_id;
       $this->circle_id = 1;
       $this->dest_id=$dest_id;
+      $this->sender=Auth::user();
       $this->created_at=Carbon::now()->format('Y-m-d H:i:s');
   }
 
