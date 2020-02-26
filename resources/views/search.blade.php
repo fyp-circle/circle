@@ -26,10 +26,9 @@
                                                             </figure>
 
                                                             <div class="pepl-info">
-                                                                <h4><a href="" title="">{{$searchuser->name}}</a>
+                                                                <h4><a href="{{ route('viewprofile',['id'=>$searchuser->user_id,'circle_id'=>1]) }}" title="">{{$searchuser->name}}</a>
                                                                 </h4>
                                                                 <span>{{$searchuser->country}}</span>
-                                                                <a href="{{ route('viewprofile',['id'=>$searchuser->user_id,'circle_id'=>1]) }}" title="" class="add-butn more-action" data-ripple="">Friend</a>
 
                                                                 @if ($searchuser->family_user != null)
                                                                 <a href="{{ route('viewprofilefamily',['id'=>$searchuser->user_id,'circle_id'=>2]) }}" title="" class="add-butn more-action" style = "background-color: red" data-ripple="">Family</a>
