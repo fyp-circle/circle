@@ -15,6 +15,7 @@ use Auth;
 use App\Events\MyEvent;
 use App\Events\StalkingEvent;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Input;
 
 
 class CheckController extends Controller
@@ -349,10 +350,43 @@ class CheckController extends Controller
         return view("notification")->with('user',$user)->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n);
     }
     //SEARCH
+    // public function search(){
+    //     $user = Auth::user();
+    //     $n = CheckController::getNotifications();
+    //     $c=CheckController::checkConnection($user->user_id);
+    //     return view("search")->with('user',$user)->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n);
+    // }
     public function search(){
-        return view("search");
+        $user = Auth::user();
+        $n = CheckController::getNotifications();
+        $c=CheckController::checkConnection($user->user_id);
+        return view('search')->with('user',$user)->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n);
+
+        // $q = Request::get ( 'q' );
+        // $n = CheckController::getNotifications();
+        // $c=CheckController::checkConnection($user->user_id);
+        // $user = User::where('name','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
+        // if(count($user) > 0)
+        //     return view('search')->withDetails($user)->withQuery ( $q )->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n);
+        // else return view ('search')->withMessage('No Details found. Try to search again !')->with('user',$user)->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n);
     }
 
+    public function hello(Request $request){
+        $f=$request->q;
+        $user = Auth::user();
+        $n = CheckController::getNotifications();
+        $c=CheckController::checkConnection($user->user_id);
+        $searchuser = user::where('name','LIKE','%'.$f.'%')->get();
+        return view('search')->withDetails($searchuser)->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n)->with('query', $f);
+
+        // $q = Request::get ( 'q' );
+        // $n = CheckController::getNotifications();
+        // $c=CheckController::checkConnection($user->user_id);
+        // $user = User::where('name','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
+        // if(count($user) > 0)
+        //     return view('search')->withDetails($user)->withQuery ( $q )->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n);
+        // else return view ('search')->withMessage('No Details found. Try to search again !')->with('user',$user)->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n);
+    }
 
     public function sentRequest($id){
         event(new MyEvent($id));
