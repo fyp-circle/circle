@@ -359,7 +359,7 @@ class CheckController extends Controller
     public function search(){
         $user = Auth::user();
         $n = CheckController::getNotifications();
-        $c=CheckController::checkConnection($user->user_id);
+        $c=CheckController::checkConnection($user->user_id,1);
         return view('search')->with('user',$user)->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n);
 
         // $q = Request::get ( 'q' );
@@ -375,7 +375,7 @@ class CheckController extends Controller
         $f=$request->q;
         $user = Auth::user();
         $n = CheckController::getNotifications();
-        $c=CheckController::checkConnection($user->user_id);
+        $c=CheckController::checkConnection($user->user_id,1);
         $searchuser = user::where('name','LIKE','%'.$f.'%')->get();
         return view('search')->withDetails($searchuser)->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n)->with('query', $f);
 
