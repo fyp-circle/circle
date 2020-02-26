@@ -13,7 +13,7 @@
                                     <li>
                                         <div class="nearly-pepls">
                                             <figure>
-                                                <a href="time-line.html" title=""><img src="images/resources/friend-avatar9.jpg" alt=""></a>
+                                                <a href="time-line.html" title=""><img src="/images/resources/friend-avatar9.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">jhon kates</a></h4>
@@ -25,7 +25,7 @@
                                     <li>
                                         <div class="nearly-pepls">
                                             <figure>
-                                                <a href="time-line.html" title=""><img src="images/resources/nearly1.jpg" alt=""></a>
+                                                <a href="time-line.html" title=""><img src="/images/resources/nearly1.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">sophia Gate</a></h4>
@@ -37,7 +37,7 @@
                                     <li>
                                         <div class="nearly-pepls">
                                             <figure>
-                                                <a href="time-line.html" title=""><img src="images/resources/nearly2.jpg" alt=""></a>
+                                                <a href="time-line.html" title=""><img src="/images/resources/nearly2.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">sara grey</a></h4>
@@ -49,7 +49,7 @@
                                     <li>
                                         <div class="nearly-pepls">
                                             <figure>
-                                                <a href="time-line.html" title=""><img src="images/resources/nearly3.jpg" alt=""></a>
+                                                <a href="time-line.html" title=""><img src="/images/resources/nearly3.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">William Son</a></h4>
@@ -61,7 +61,7 @@
                                     <li>
                                         <div class="nearly-pepls">
                                             <figure>
-                                                <a href="time-line.html" title=""><img src="images/resources/nearly4.jpg" alt=""></a>
+                                                <a href="time-line.html" title=""><img src="/images/resources/nearly4.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">Sara grey</a></h4>
@@ -73,7 +73,7 @@
                                     <li>
                                         <div class="nearly-pepls">
                                             <figure>
-                                                <a href="time-line.html" title=""><img src="images/resources/nearly5.jpg" alt=""></a>
+                                                <a href="time-line.html" title=""><img src="/images/resources/nearly5.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">Amy watson</a></h4>
@@ -85,7 +85,7 @@
                                     <li>
                                         <div class="nearly-pepls">
                                             <figure>
-                                                <a href="time-line.html" title=""><img src="images/resources/nearly6.jpg" alt=""></a>
+                                                <a href="time-line.html" title=""><img src="/images/resources/nearly6.jpg" alt=""></a>
                                             </figure>
                                             <div class="pepl-info">
                                                 <h4><a href="time-line.html" title="">caty lasbo</a></h4>
