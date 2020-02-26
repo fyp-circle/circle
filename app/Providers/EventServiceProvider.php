@@ -22,6 +22,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\MyEvent' => [
            'App\Listeners\CreateNotificationInDB',
         ],
+        'App\Events\StalkingEvent' => [
+            'App\Listeners\CreateStalkingNotification',
+         ],
     ];
 
     /**

@@ -305,16 +305,16 @@
                                         </a>
                                         @if ($i->circle_id==1)
 
-                                                        <span class="tag green" style="background-color:black;-webkit-text-fill-color: white">Friend</span>
-                                                    @else
-                                                        @if ($i->circle_id==3)
+                                            <span class="tag green" style="background-color:black;-webkit-text-fill-color: white">Friend</span>
+                                        @else
+                                            @if ($i->circle_id==3)
 
-                                                        <span class="tag green" style="background-color:cornflowerblue;-webkit-text-fill-color: white">Business</span>
-                                                        @else
+                                            <span class="tag green" style="background-color:cornflowerblue;-webkit-text-fill-color: white">Business</span>
+                                            @else
 
-                                                        <span class="tag green" style="background-color:red;-webkit-text-fill-color: white">Family</span>
-                                                        @endif
-                                                    @endif
+                                            <span class="tag green" style="background-color:red;-webkit-text-fill-color: white">Family</span>
+                                            @endif
+                                        @endif
                                     </li>
                                 @endforeach
                             </ul>
@@ -437,7 +437,7 @@
 
         // Subscribe to the channel we specified in our Laravel Event
         var user_id="{{Auth::user()->user_id}}";
-        var profile_id = "{{$profile_id}}";
+        // var profile_id = "{{$profile_id ?? ''}}";
             var channel = pusher.subscribe('user_id_'+user_id);
             // Bind a function to a Event (the full Laravel class)
             channel.bind('my-event', function(data) {
@@ -454,7 +454,6 @@
                         <i>`+data.created_at+`</i>
                     </div>
                 </a>
-                <span class="tag green">Circle Name</span>
             </li>
             `;
             $("#test2").html(newNotificationHtml + existingNotifications);
@@ -470,7 +469,58 @@
       </script>
 
 
+<script type="text/javascript">
+    var notificationsWrapper   = $('.dropdown-notifications');
+    var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
+    var notificationsCountElem = notificationsToggle.find('i[data-count]');
+    var notificationsCount     = parseInt(notificationsCountElem.data('count'));
+    var notifications          = notificationsWrapper.find('ul.dropdown-menu');
 
+    // if (notificationsCount <= 0) {
+    //   notificationsWrapper.hide();
+    // }
+
+    // Enable pusher logging - don't include this in production
+    // Pusher.logToConsole = true;
+
+    var pusher = new Pusher('490345636eb3c4e8f2d8', {
+        cluster: 'us2',
+        forceTLS: true
+    });
+
+    // Subscribe to the channel we specified in our Laravel Event
+    var user_id="{{Auth::user()->user_id}}";
+    // var profile_id = "{{$profile_id ?? ''}}";
+        var channel = pusher.subscribe('user_id_'+user_id);
+        // Bind a function to a Event (the full Laravel class)
+            channel.bind('stalking-event', function(data) {
+
+            var existingNotifications = $("#test2").html();
+            //   var avatar = Math.floor(Math.random() * (71 - 20 + 1)) + 20;
+            var newNotificationHtml = `
+            <li>
+            <a href="{{ route('notification') }}" title="">
+                    <img src="/`+data.sender.profile_picture+`" alt="">
+                    <div class="mesg-meta">
+                        <h6>`+data.title+`</h6>
+                        <span>`+data.content+`</span>
+                        <i>`+data.created_at+`</i>
+                    </div>
+                </a>
+
+            </li>
+            `;
+            $("#test2").html(newNotificationHtml + existingNotifications);
+
+            notificationsCount += 1;
+            notificationsCountElem.attr('data-count', notificationsCount);
+            notificationsWrapper.find('.notif-count').text(notificationsCount);
+            notificationsWrapper.show();
+            });
+
+
+
+  </script>
 
 
 

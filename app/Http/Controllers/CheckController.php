@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 Use Alert;
 use Auth;
 use App\Events\MyEvent;
+use App\Events\StalkingEvent;
 use Illuminate\Support\Facades\Redirect;
 
 
@@ -147,9 +148,13 @@ class CheckController extends Controller
     }
 
     public function viewprofile($id, $circle_id){
+
         $user = User::find($id);
          $n = CheckController::getNotifications();
         $c=CheckController::checkConnection($id);
+        if($c!=1 && $c!=2){
+            event(new StalkingEvent($circle_id,$id));
+        }
         return view("profileviews.viewprofile")->with('notifications',$n)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
     public function viewphotos($id, $circle_id){
