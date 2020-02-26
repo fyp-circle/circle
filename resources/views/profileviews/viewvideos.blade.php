@@ -389,7 +389,7 @@
                         <ul id="people-list" class="friendz-list">
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar.jpg" alt="">
+                                    <img src="//images/resources/friend-avatar.jpg" alt="">
                                     <span class="status f-online"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -399,7 +399,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar2.jpg" alt="">
+                                    <img src="//images/resources/friend-avatar2.jpg" alt="">
                                     <span class="status f-away"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -409,7 +409,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar3.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar3.jpg" alt="">
                                     <span class="status f-off"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -419,7 +419,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar4.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar4.jpg" alt="">
                                     <span class="status f-off"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -430,7 +430,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar5.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar5.jpg" alt="">
                                     <span class="status f-online"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -441,7 +441,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar6.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar6.jpg" alt="">
                                     <span class="status f-away"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -452,7 +452,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar7.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar7.jpg" alt="">
                                     <span class="status f-off"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -463,7 +463,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar5.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar5.jpg" alt="">
                                     <span class="status f-online"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -474,7 +474,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar2.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar2.jpg" alt="">
                                     <span class="status f-away"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -495,7 +495,7 @@
                             <div class="chat-list">
                                 <ul>
                                     <li class="me">
-                                        <div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
+                                        <div class="chat-thumb"><img src="/images/resources/chatlist1.jpg" alt=""></div>
                                         <div class="notification-event">
                                             <span class="chat-message-item">
                                                 Hi James! Please remember to buy the food for tomorrow! I’m gonna be
@@ -506,7 +506,7 @@
                                         </div>
                                     </li>
                                     <li class="you">
-                                        <div class="chat-thumb"><img src="images/resources/chatlist2.jpg" alt=""></div>
+                                        <div class="chat-thumb"><img src="/images/resources/chatlist2.jpg" alt=""></div>
                                         <div class="notification-event">
                                             <span class="chat-message-item">
                                                 Hi James! Please remember to buy the food for tomorrow! I’m gonna be
@@ -517,7 +517,7 @@
                                         </div>
                                     </li>
                                     <li class="me">
-                                        <div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
+                                        <div class="chat-thumb"><img src="/images/resources/chatlist1.jpg" alt=""></div>
                                         <div class="notification-event">
                                             <span class="chat-message-item">
                                                 Hi James! Please remember to buy the food for tomorrow! I’m gonna be

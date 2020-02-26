@@ -16,7 +16,7 @@
                                             <li>
 
                                                 <figure>
-                                                    <img src="images/resources/friend-avatar2.jpg" alt="">
+                                                    <img src="/images/resources/friend-avatar2.jpg" alt="">
                                                     <span class="status f-online"></span>
                                                 </figure>
                                                 <div class="people-name">
@@ -25,7 +25,7 @@
                                             </li>
                                             <li>
 
-                                                <figure><img src="images/resources/friend-avatar3.jpg" alt="">
+                                                <figure><img src="/images/resources/friend-avatar3.jpg" alt="">
                                                     <span class="status f-away"></span>
                                                 </figure>
                                                 <div class="people-name">
@@ -35,7 +35,7 @@
                                             <li>
 
                                                 <figure>
-                                                    <img src="images/resources/friend-avatar.jpg" alt="">
+                                                    <img src="/images/resources/friend-avatar.jpg" alt="">
                                                     <span class="status f-online"></span>
                                                 </figure>
 
@@ -45,7 +45,7 @@
                                             </li>
                                             <li>
 
-                                                <figure><img src="images/resources/friend-avatar4.jpg" alt="">
+                                                <figure><img src="/images/resources/friend-avatar4.jpg" alt="">
                                                     <span class="status off-online"></span>
                                                 </figure>
                                                 <div class="people-name">
@@ -54,7 +54,7 @@
                                             </li>
                                             <li>
 
-                                                <figure><img src="images/resources/friend-avatar5.jpg" alt="">
+                                                <figure><img src="/images/resources/friend-avatar5.jpg" alt="">
                                                     <span class="status f-online"></span>
                                                 </figure>
                                                 <div class="people-name">
@@ -63,7 +63,7 @@
                                             </li>
                                             <li>
 
-                                                <figure><img src="images/resources/friend-avatar6.jpg" alt="">
+                                                <figure><img src="/images/resources/friend-avatar6.jpg" alt="">
                                                     <span class="status f-away"></span>
                                                 </figure>
                                                 <div class="people-name">
@@ -72,7 +72,7 @@
                                             </li>
                                             <li>
 
-                                                <figure><img src="images/resources/friend-avatar7.jpg" alt="">
+                                                <figure><img src="/images/resources/friend-avatar7.jpg" alt="">
                                                     <span class="status off-online"></span>
                                                 </figure>
                                                 <div class="people-name">
@@ -81,7 +81,7 @@
                                             </li>
                                             <li>
 
-                                                <figure><img src="images/resources/friend-avatar8.jpg" alt="">
+                                                <figure><img src="/images/resources/friend-avatar8.jpg" alt="">
                                                     <span class="status f-online"></span>
                                                 </figure>
                                                 <div class="people-name">
@@ -90,7 +90,7 @@
                                             </li>
                                             <li>
 
-                                                <figure><img src="images/resources/friend-avatar6.jpg" alt="">
+                                                <figure><img src="/images/resources/friend-avatar6.jpg" alt="">
                                                     <span class="status f-online"></span>
                                                 </figure>
                                                 <div class="people-name">
@@ -100,36 +100,36 @@
                                         </ul>
                                         <div class="peoples-mesg-box">
                                             <div class="conversation-head">
-                                                <figure><img src="images/resources/friend-avatar.jpg" alt=""></figure>
+                                                <figure><img src="/images/resources/friend-avatar.jpg" alt=""></figure>
                                                 <span>jason bourne <i>online</i></span>
                                             </div>
                                             <ul class="chatting-area">
                                                 <li class="you">
-                                                    <figure><img src="images/resources/userlist-2.jpg" alt=""></figure>
+                                                    <figure><img src="/images/resources/userlist-2.jpg" alt=""></figure>
                                                     <p>what's liz short for? :)</p>
                                                 </li>
                                                 <li class="me">
-                                                    <figure><img src="images/resources/userlist-1.jpg" alt=""></figure>
+                                                    <figure><img src="/images/resources/userlist-1.jpg" alt=""></figure>
                                                     <p>Elizabeth lol</p>
                                                 </li>
                                                 <li class="me">
-                                                    <figure><img src="images/resources/userlist-1.jpg" alt=""></figure>
+                                                    <figure><img src="/images/resources/userlist-1.jpg" alt=""></figure>
                                                     <p>wanna know whats my second guess was?</p>
                                                 </li>
                                                 <li class="you">
-                                                    <figure><img src="images/resources/userlist-2.jpg" alt=""></figure>
+                                                    <figure><img src="/images/resources/userlist-2.jpg" alt=""></figure>
                                                     <p>yes</p>
                                                 </li>
                                                 <li class="me">
-                                                    <figure><img src="images/resources/userlist-1.jpg" alt=""></figure>
+                                                    <figure><img src="/images/resources/userlist-1.jpg" alt=""></figure>
                                                     <p>Disney's the lizard king</p>
                                                 </li>
                                                 <li class="me">
-                                                    <figure><img src="images/resources/userlist-1.jpg" alt=""></figure>
+                                                    <figure><img src="/images/resources/userlist-1.jpg" alt=""></figure>
                                                     <p>i know him 5 years ago</p>
                                                 </li>
                                                 <li class="you">
-                                                    <figure><img src="images/resources/userlist-2.jpg" alt=""></figure>
+                                                    <figure><img src="/images/resources/userlist-2.jpg" alt=""></figure>
                                                     <p>coooooooooool dude ;)</p>
                                                 </li>
                                             </ul>

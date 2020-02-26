@@ -12,7 +12,7 @@
             <script type="text/javascript">
                 document.getElementById("AddConnectionButton").onclick = function () {
                     var profile_id = "{{ $profile_id}}";
-                    location.href = "/requestsent/" + profile_id;
+                    location.href = "/requestsentbusiness/" + profile_id;
                 };
             </script>
         @else
@@ -21,6 +21,13 @@
                 <div class="add-btn" style="bottom:25%; right:4%;">
                     <a href="#" title="" data-ripple="" style="background-color: transparent; -webkit-text-fill-color: white;">Connected <i class="ti-user"></i></a>
                     <a id = "DisconnectButton" href="#" title="" data-ripple="" style="background-color: red; -webkit-text-fill-color: white;">Disconnect <i class="ti-close"></i></a>
+                    <script type="text/javascript">
+                        document.getElementById("DisconnectButton").onclick = function () {
+                            var profile_id = "{{ $profile_id }}";
+                            location.href = "/disconnect/" + profile_id+"/{{Auth::user()->user_id}}";
+                        };
+
+                    </script>
                 </div>
             @else
                 @if ($c ==2)
@@ -35,14 +42,14 @@
                         <script type="text/javascript">
                             document.getElementById("CancelRequestButton").onclick = function () {
                                 var profile_id = "{{ $profile_id }}";
-                                location.href = "/cancelrequest/" + profile_id;
+                                location.href = "/cancelrequestbusiness/" + profile_id+"/{{Auth::user()->user_id}}";
                             };
 
                         </script>
                         <script type="text/javascript">
                             document.getElementById("AcceptRequestButton").onclick = function () {
                                 var profile_id = "{{ $profile_id }}";
-                                location.href = "/acceptrequest/" + profile_id;
+                                location.href = "/acceptrequestbusiness/"+ profile_id+"/{{Auth::user()->user_id}}";
                             };
 
                         </script>
@@ -89,7 +96,7 @@
                                 {{-- <span>Group Admin</span> --}}
                             </li>
                             <li>
-                                <a class="" href="{{ route('viewprofilebusiness',['id'=>$user->business_user['user_id'],'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewprofilebusiness',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">time
                                     line</a>
                                 <a class="" href="{{ route('viewphotosbusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""

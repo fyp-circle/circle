@@ -69,6 +69,10 @@ Route::group([
 
 
 
+        Route::get('/requestsentbusiness/{id}', ['as' => 'request.sent.b', 'uses' => 'BusinessController@sentRequest']);
+        Route::get('/cancelrequestbusiness/{id}/{sender_id}', ['as' => 'cancel.request.b', 'uses' => 'BusinessController@cancelRequest']);
+        Route::get('/acceptrequestbusiness/{id}/{sender_id}', ['as' => 'accept.request.b', 'uses' => 'BusinessController@acceptRequest'])->where('sender_id', '[0-9]+');
+        Route::get('/disconnect/{id}/{sender_id}', ['as' => 'unfriend.b', 'uses' => 'BusinessController@disconnect'])->where('sender_id', '[0-9]+');
 
 
 

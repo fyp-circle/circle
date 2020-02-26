@@ -83,79 +83,79 @@
                         <li>
                             <a class="strip" href="images/resources/photo-22.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="images/resources/photo2.jpg" alt=""></a>
+                                <img src="/images/resources/photo2.jpg" alt=""></a>
                         </li>
                         <li>
                             <a class="strip" href="images/resources/photo-33.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="images/resources/photo3.jpg" alt=""></a>
+                                <img src="/images/resources/photo3.jpg" alt=""></a>
                         </li>
                         <li>
                             <a class="strip" href="images/resources/photo-44.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="images/resources/photo4.jpg" alt=""></a>
+                                <img src="/images/resources/photo4.jpg" alt=""></a>
                         </li>
                         <li>
                             <a class="strip" href="images/resources/photo-55.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="images/resources/photo5.jpg" alt=""></a>
+                                <img src="/images/resources/photo5.jpg" alt=""></a>
                         </li>
 
                         <li>
                             <a class="strip" href="images/resources/photo-66.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="images/resources/photo6.jpg" alt=""></a>
+                                <img src="/images/resources/photo6.jpg" alt=""></a>
                         </li>
                         <li>
                             <a class="strip" href="images/resources/photo-77.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="images/resources/photo7.jpg" alt=""></a>
+                                <img src="/images/resources/photo7.jpg" alt=""></a>
                         </li>
                         <li>
                             <a class="strip" href="images/resources/photo-88.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="images/resources/photo8.jpg" alt=""></a>
+                                <img src="/images/resources/photo8.jpg" alt=""></a>
                         </li>
 
                         <li>
                             <a class="strip" href="images/resources/photo-99.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="images/resources/photo12.jpg" alt=""></a>
+                                <img src="/images/resources/photo12.jpg" alt=""></a>
                         </li>
                         <li>
                             <a class="strip" href="images/resources/photo-101.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="images/resources/photo10.jpg" alt=""></a>
+                                <img src="/images/resources/photo10.jpg" alt=""></a>
                         </li>
                         <li>
                             <a class="strip" href="images/resources/photo-101.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="images/resources/photo11.jpg" alt=""></a>
+                                <img src="/images/resources/photo11.jpg" alt=""></a>
                         </li>
                         <li>
                             <a class="strip" href="images/resources/photo-22.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="images/resources/photo1.jpg" alt=""></a>
+                                <img src="/images/resources/photo1.jpg" alt=""></a>
                         </li>
                         <li>
                             <a class="strip" href="images/resources/photo-33.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="images/resources/photo9.jpg" alt=""></a>
+                                <img src="/images/resources/photo9.jpg" alt=""></a>
                         </li>
                         <li>
                             <a class="strip" href="images/resources/photo-99.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="images/resources/photo12.jpg" alt=""></a>
+                                <img src="/images/resources/photo12.jpg" alt=""></a>
                         </li>
                         <li>
                             <a class="strip" href="images/resources/photo-66.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="images/resources/photo6.jpg" alt=""></a>
+                                <img src="/images/resources/photo6.jpg" alt=""></a>
                         </li>
                         <li>
                             <a class="strip" href="images/resources/photo-66.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="images/resources/photo13.jpg" alt=""></a>
+                                <img src="/images/resources/photo13.jpg" alt=""></a>
                         </li>
                     </ul>
                     <div class="lodmore"><button class="btn-view btn-load-more"></button></div>
@@ -169,7 +169,7 @@
                         <ul id="people-list" class="friendz-list">
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar.jpg" alt="">
                                     <span class="status f-online"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -179,7 +179,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar2.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar2.jpg" alt="">
                                     <span class="status f-away"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -189,7 +189,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar3.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar3.jpg" alt="">
                                     <span class="status f-off"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -199,7 +199,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar4.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar4.jpg" alt="">
                                     <span class="status f-off"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -210,7 +210,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar5.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar5.jpg" alt="">
                                     <span class="status f-online"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -221,7 +221,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar6.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar6.jpg" alt="">
                                     <span class="status f-away"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -232,7 +232,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar7.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar7.jpg" alt="">
                                     <span class="status f-off"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -243,7 +243,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar5.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar5.jpg" alt="">
                                     <span class="status f-online"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -254,7 +254,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar2.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar2.jpg" alt="">
                                     <span class="status f-away"></span>
                                 </figure>
                                 <div class="friendz-meta">
@@ -275,7 +275,7 @@
                             <div class="chat-list">
                                 <ul>
                                     <li class="me">
-                                        <div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
+                                        <div class="chat-thumb"><img src="/images/resources/chatlist1.jpg" alt=""></div>
                                         <div class="notification-event">
                                             <span class="chat-message-item">
                                                 Hi James! Please remember to buy the food for tomorrow! I’m gonna be
@@ -286,7 +286,7 @@
                                         </div>
                                     </li>
                                     <li class="you">
-                                        <div class="chat-thumb"><img src="images/resources/chatlist2.jpg" alt=""></div>
+                                        <div class="chat-thumb"><img src="/images/resources/chatlist2.jpg" alt=""></div>
                                         <div class="notification-event">
                                             <span class="chat-message-item">
                                                 Hi James! Please remember to buy the food for tomorrow! I’m gonna be
@@ -297,7 +297,7 @@
                                         </div>
                                     </li>
                                     <li class="me">
-                                        <div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
+                                        <div class="chat-thumb"><img src="/images/resources/chatlist1.jpg" alt=""></div>
                                         <div class="notification-event">
                                             <span class="chat-message-item">
                                                 Hi James! Please remember to buy the food for tomorrow! I’m gonna be

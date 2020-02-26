@@ -301,35 +301,35 @@
                         <h4 class="widget-title">Who's following you</h4>
                         <ul class="followers">
                             <li>
-                                <figure><img src="images/resources/friend-avatar2.jpg" alt=""></figure>
+                                <figure><img src="/images/resources/friend-avatar2.jpg" alt=""></figure>
                                 <div class="friend-meta">
                                     <h4><a href="time-line.html" title="">Kelly Bill</a></h4>
                                     <a href="#" title="" class="underline">Add Friend</a>
                                 </div>
                             </li>
                             <li>
-                                <figure><img src="images/resources/friend-avatar4.jpg" alt=""></figure>
+                                <figure><img src="/images/resources/friend-avatar4.jpg" alt=""></figure>
                                 <div class="friend-meta">
                                     <h4><a href="time-line.html" title="">Issabel</a></h4>
                                     <a href="#" title="" class="underline">Add Friend</a>
                                 </div>
                             </li>
                             <li>
-                                <figure><img src="images/resources/friend-avatar6.jpg" alt=""></figure>
+                                <figure><img src="/images/resources/friend-avatar6.jpg" alt=""></figure>
                                 <div class="friend-meta">
                                     <h4><a href="time-line.html" title="">Andrew</a></h4>
                                     <a href="#" title="" class="underline">Add Friend</a>
                                 </div>
                             </li>
                             <li>
-                                <figure><img src="images/resources/friend-avatar8.jpg" alt=""></figure>
+                                <figure><img src="/images/resources/friend-avatar8.jpg" alt=""></figure>
                                 <div class="friend-meta">
                                     <h4><a href="time-line.html" title="">Sophia</a></h4>
                                     <a href="#" title="" class="underline">Add Friend</a>
                                 </div>
                             </li>
                             <li>
-                                <figure><img src="images/resources/friend-avatar3.jpg" alt=""></figure>
+                                <figure><img src="/images/resources/friend-avatar3.jpg" alt=""></figure>
                                 <div class="friend-meta">
                                     <h4><a href="time-line.html" title="">Allen</a></h4>
                                     <a href="#" title="" class="underline">Add Friend</a>
@@ -343,7 +343,7 @@
                         <ul id="people-list" class="friendz-list">
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">bucky barnes</a>
@@ -351,7 +351,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar2.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar2.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">Sarah Loren</a>
@@ -359,7 +359,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar3.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar3.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">jason borne</a>
@@ -367,7 +367,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img src="images/resources/friend-avatar4.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar4.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">Cameron diaz</a>
@@ -376,7 +376,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar5.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar5.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">daniel warber</a>
@@ -385,7 +385,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar6.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar6.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">andrew</a>
@@ -394,7 +394,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar7.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar7.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">amy watson</a>
@@ -403,7 +403,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar5.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar5.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">daniel warber</a>
@@ -412,7 +412,7 @@
                             <li>
 
                                 <figure>
-                                    <img src="images/resources/friend-avatar2.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar2.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">Sarah Loren</a>
@@ -431,7 +431,7 @@
                             <div class="chat-list">
                                 <ul>
                                     <li class="me">
-                                        <div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
+                                        <div class="chat-thumb"><img src="/images/resources/chatlist1.jpg" alt=""></div>
                                         <div class="notification-event">
                                             <span class="chat-message-item">
                                                 Hi James! Please remember to buy the food for tomorrow! I’m gonna be
@@ -442,7 +442,7 @@
                                         </div>
                                     </li>
                                     <li class="you">
-                                        <div class="chat-thumb"><img src="images/resources/chatlist2.jpg" alt=""></div>
+                                        <div class="chat-thumb"><img src="/images/resources/chatlist2.jpg" alt=""></div>
                                         <div class="notification-event">
                                             <span class="chat-message-item">
                                                 Hi James! Please remember to buy the food for tomorrow! I’m gonna be
@@ -453,7 +453,7 @@
                                         </div>
                                     </li>
                                     <li class="me">
-                                        <div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
+                                        <div class="chat-thumb"><img src="/images/resources/chatlist1.jpg" alt=""></div>
                                         <div class="notification-event">
                                             <span class="chat-message-item">
                                                 Hi James! Please remember to buy the food for tomorrow! I’m gonna be
