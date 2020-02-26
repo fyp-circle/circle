@@ -46,7 +46,8 @@ Route::group([
 
     Route::get('notification', ['as' => 'notification', 'uses' => 'CheckController@notification']);
 
-    Route::get('search', ['as' => 'search.search', 'uses' => 'CheckController@search']);
+    Route::get('/search', ['as' => 'search', 'uses' => 'CheckController@search']);
+    Route::post('/search', ['as' => 'search', 'uses' => 'CheckController@hello']);
 
     Route::get('sweetalertcheck', ['as' => 'sweetalertcheck', 'uses' => 'CheckController@sweetalertcheck']);
 

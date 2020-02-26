@@ -267,15 +267,16 @@
                 </ul>
                 <ul class="setting-area">
                     <li>
-                        <a href="" title="Search" data-ripple=""><i class="ti-search"></i></a>
+                        <a href="" ><i class="ti-search"></i></a>
                         <div class="searched">
-                            <form method="post" class="form-search">
-                                <input type="text" placeholder="Search Friend">
-                                <button data-ripple><i class="ti-search"></i></button>
+                            <form action="{{ route('search') }}" method="POST" role="search" class="form-search">
+                                @csrf
+                                <input type="text" name="q" placeholder="Search Friend">
+                                <button type="submit"><i class="ti-search"></i></button>
                             </form>
                         </div>
                     </li>
-                    <li><a href="{{ route('mainscreen',['circle_id'=>1]) }}" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
+                    <li><a href="{{ route('mainscreen',['circle_id'=>1]) }}"><i class="ti-home"></i></a></li>
                     <li class= "dropdown-notifications">
                         {{-- <a  href="#notifications-panel" title="Notification" data-ripple="" class="dropdown-toggle" data-toggle="dropdown"> --}}
                             <a href="#" title="Notification" data-ripple="" class="dropdown-toggle" href="#notifications-panel" data-toggle="dropdown">
