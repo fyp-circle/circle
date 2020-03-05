@@ -316,7 +316,7 @@
                                                         </label>
                                                     </li>
                                                     <li>
-                                                        <button type="submit">Post</button>
+                                                        <button type="submit">Publish</button>
                                                     </li>
                                                 </ul>
                                             </div>

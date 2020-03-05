@@ -16,14 +16,14 @@ class ProfileController extends Controller
 
             'name' => 'required',
             'email' => ['required', 'string', 'email', 'max:255'],
-            'phone' => ['required'],
-            'country' => ['required'],
-            'city' => ['required'],
-            'gender' => ['required'],
-            'day' =>['required'],
-            'month' =>['required'],
-            'year' =>['required'],
-            'about_me' =>['required'],
+            // 'phone' => ['required'],
+            // 'country' => ['required'],
+            // 'city' => ['required'],
+            // 'gender' => ['required'],
+            // 'day' =>['required'],
+            // 'month' =>['required'],
+            // 'year' =>['required'],
+            // 'about_me' =>['required'],
             'cover' => 'image|mimes:jpeg,png,jpg,gif,svg',
             'dp' => 'image|mimes:jpeg,png,jpg,gif,svg',
 
@@ -46,16 +46,51 @@ class ProfileController extends Controller
 
 
         $user = User::find(Auth::user()->user_id);
-        $user->email= $request->email;
+        // $user->email= $request->email;
         $user->name= $request->name;
         $user->phone= $request->phone;
-        $user->country= $request->country;
-        $user->city= $request->city;
-        $user->gender= $request->gender;
-        $user->about_me= $request->about_me;
-        $user->day = $request->day;
-        $user->month = $request->month;
-        $user->year = $request->year;
+        if($request->has('country'))
+        {
+
+            $user->country= $request->country;
+
+        }
+        if($request->has('city'))
+        {
+
+            $user->city= $request->city;
+
+        }
+        if($request->has('gender'))
+        {
+
+            $user->gender= $request->gendery;
+
+        }
+        if($request->has('about_me'))
+        {
+
+            $user->about_me= $request->about_me;
+
+        }
+        if($request->has('day'))
+        {
+
+            $user->day= $request->day;
+
+        }
+        if($request->has('month'))
+        {
+
+            $user->month= $request->month;
+
+        }
+        if($request->has('year'))
+        {
+
+            $user->year= $request->year;
+
+        }
         if($request->hasFile('dp'))
         {
             $user->profile_picture = 'images/users/Friend/Profile_Pictures/'.$dpName;
@@ -83,7 +118,7 @@ class ProfileController extends Controller
             'name' => 'required',
             'email' => ['required', 'string', 'email', 'max:255'],
             'phone' => ['required'],
-            'about_me' =>['required'],
+            // 'about_me' =>['required'],
             'cover' => 'image|mimes:jpeg,png,jpg,gif,svg',
             'dp' => 'image|mimes:jpeg,png,jpg,gif,svg',
 
@@ -109,7 +144,12 @@ class ProfileController extends Controller
         $f_user->email= $request->email;
         $f_user->name= $request->name;
         $f_user->phone= $request->phone;
-        $f_user->about_me= $request->about_me;
+        if($request->has('about_me'))
+        {
+
+            $f_user->about_me= $request->about_me;
+
+        }
         if($request->hasFile('dp'))
         {
             $f_user->profile_picture = 'images/users/Family/Profile_Pictures/'.$dpName;
@@ -136,7 +176,7 @@ class ProfileController extends Controller
             'name' => 'required',
             'email' => ['required', 'string', 'email', 'max:255'],
             'phone' => ['required'],
-            'about_me' =>['required'],
+            // 'about_me' =>['required'],
             'cover' => 'image|mimes:jpeg,png,jpg,gif,svg',
             'dp' => 'image|mimes:jpeg,png,jpg,gif,svg',
 
@@ -162,7 +202,12 @@ class ProfileController extends Controller
         $b_user->email= $request->email;
         $b_user->name= $request->name;
         $b_user->phone= $request->phone;
-        $b_user->about_me= $request->about_me;
+        if($request->has('about_me'))
+        {
+
+            $b_user->about_me= $request->about_me;
+
+        }
         if($request->hasFile('dp'))
         {
             $b_user->profile_picture = 'images/users/Business/Profile_Pictures/'.$dpName;

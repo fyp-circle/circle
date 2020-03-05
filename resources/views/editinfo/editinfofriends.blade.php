@@ -49,7 +49,7 @@
                                             <div class="dob">
                                                 <div class="form-group">
                                                     <select name="day">
-                                                        <option value="Day" disabled selected>Day</option>
+                                                        <option value="00" disabled selected>Day</option>
                                                         <option value={{Auth::user()->day}} selected> {{Auth::user()->day}} </option>
                                                         <option value="01">1</option>
                                                         <option value="02">2</option>
@@ -86,7 +86,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <select name="month">
-                                                        <option value="month" disable selected>Month</option>
+                                                        <option value="00" disable selected>Month</option>
                                                         <option value={{Auth::user()->month}} selected> {{Auth::user()->month}} </option>
                                                         <option value="01">January</option>
                                                         <option value="02">February</option>
@@ -104,7 +104,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <select name="year">
-                                                        <option value="year">Year</option>
+                                                        <option value="0000">Year</option>
                                                         <option value={{Auth::user()->year}} selected> {{Auth::user()->year}} </option>
                                                         <option value="2019">2019</option>
                                                         <option value="2018">2018</option>

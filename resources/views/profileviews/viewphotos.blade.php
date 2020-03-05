@@ -148,7 +148,7 @@
                                 <img src="images/resources/photo12.jpg" alt=""></a>
                         </li>
                         <li>
-                            <a class="strip" href="images/resources/photo-66.jpg" title="" data-strip-group="mygroup"
+                            <a class="strip" href="/images/resources/photo-66.jpg" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
                                 <img src="images/resources/photo6.jpg" alt=""></a>
                         </li>

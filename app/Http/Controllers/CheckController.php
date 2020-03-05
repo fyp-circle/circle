@@ -27,6 +27,24 @@ class CheckController extends Controller
         return $n;
     }
 
+    public function getMyPosts($circle_id,$id){
+        // $posts=DB::table('posts')
+        //     ->where([
+        //         ['user_id', Auth::user()->user_id],
+        //         ['circle_id', $circle_id],
+        //     ])
+        //     ->get();
+
+        // $posts = DB::table('posts')->where('user_id', Auth::user()->user_id)->where('circle_id', $circle_id)->orderBy('updated_at','desc')->get();
+        $posts = User::find($id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get();
+            return $posts;
+    }
+
+    public function getFriendsPosts($circle_id){
+        $posts = User::find($id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get();
+        return $posts;
+    }
+
     public function checkConnection($id,$circle_id){
         $c=0;
 
@@ -154,9 +172,11 @@ class CheckController extends Controller
          $n = CheckController::getNotifications();
         $c=CheckController::checkConnection($id,$circle_id);
         if($c!=1 && $c!=2){
-            event(new StalkingEvent($circle_id,$id));
+            // event(new StalkingEvent($circle_id,$id));
         }
-        return view("profileviews.viewprofile")->with('notifications',$n)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
+        $my_posts=CheckController::getMyPosts($circle_id,$id);
+        // return $my_posts;
+        return view("profileviews.viewprofile")->with('posts',$my_posts)->with('notifications',$n)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
     }
     public function viewphotos($id, $circle_id){
          $n = CheckController::getNotifications();
