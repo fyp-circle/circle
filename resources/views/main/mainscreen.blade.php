@@ -286,32 +286,33 @@
                                         <img src="/{{Auth::user()->profile_picture}}" alt="" style="width:60px; height:52px; object-fit:cover">
                                     </figure>
                                     <div class="newpst-input">
-                                        <form method="post">
-                                            <textarea rows="2" placeholder="write something"></textarea>
+                                        <form method="post" action="{{ route('createpost',['circle_id'=>$circle_id]) }}" enctype="multipart/form-data">
+                                            @csrf
+                                            <textarea rows="2" placeholder="write something... " name="content"></textarea>
                                             <div class="attachments">
                                                 <ul>
                                                     <li>
                                                         <i class="fa fa-music"></i>
                                                         <label class="fileContainer">
-                                                            <input type="file">
+                                                            <input type="file" name="audio" accept="audio/*">
                                                         </label>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-image"></i>
                                                         <label class="fileContainer">
-                                                            <input type="file">
+                                                            <input type="file" name="image" accept="image/*">
                                                         </label>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-video-camera"></i>
                                                         <label class="fileContainer">
-                                                            <input type="file">
+                                                            <input type="file" name="video"  accept="video/*">
                                                         </label>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-camera"></i>
                                                         <label class="fileContainer">
-                                                            <input type="file">
+                                                            <input type="file" name="cam"  accept="image/*" >
                                                         </label>
                                                     </li>
                                                     <li>

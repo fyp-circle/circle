@@ -55,6 +55,9 @@ Route::group([
 
     Route::get('addnewcircle/{circle_id}', ['as' => 'circle.new', 'uses' => 'CheckController@addnewcircle'])->where('circle_id', '[0-9]+');
 
+
+    Route::post('createpost/{circle_id}', ['as' => 'createpost', 'uses' => 'PostController@createPost'])->where('circle_id', '[0-9]+');
+
     Route::group([
         'prefix' => '/',
         'where'  => [
