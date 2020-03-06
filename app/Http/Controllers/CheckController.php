@@ -41,8 +41,31 @@ class CheckController extends Controller
     }
 
     public function getFriendsPosts($circle_id){
-        $posts = User::find($id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get();
-        return $posts;
+        $con=DB::table('connections')
+            ->where([
+                ['user2_id', Auth::user()->user_id],
+                ['circle_id', $circle_id],
+            ])
+            ->orWhere([
+                ['user1_id', Auth::user()->user_id],
+                ['circle_id', $circle_id],
+            ])
+            ->get();
+            // $items=collect();
+            foreach ($con as $c) {
+                if ($c->user1_id != Auth::user()->user_id) {
+                    $first[]=(User::find($c->user1_id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get());
+                } else {
+                    $first[]=(User::find($c->user2_id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get());
+                }
+                // $items->push($first);
+
+            }
+            $first[]=(User::find(Auth::user()->user_id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get());
+            // $items=$items->sortBy('updated_at');
+            // $items->toJson();
+            dd($first);
+        return $first;
     }
 
     public function checkConnection($id,$circle_id){
@@ -144,10 +167,11 @@ class CheckController extends Controller
         //$user = User::find($id);
         $id=Auth::user()->user_id;
         $n = CheckController::getNotifications();
-
-        // return $circle_id;
+        // $my_posts=CheckController::getFriendsPosts($circle_id);
+        // return $my_posts;
+        $my_posts=CheckController::getMyPosts($circle_id,$id);
         $c=CheckController::checkConnection($id,$circle_id);
-        return view("main.mainscreen")->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
+        return view("main.mainscreen")->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
     }
     public function mainscreenfamily($circle_id){
         //$user = User::find($id);
