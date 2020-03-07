@@ -367,9 +367,9 @@
                                                     </span>
                                                 </li>
                                                 <li>
-                                                    <span class="like" data-toggle="tooltip" title="like">
+                                                    <span class="like" id="likebutton" data-toggle="tooltip" title="like">
                                                         <i class="ti-heart"></i>
-                                                        <ins>2.2k</ins>
+                                                        <ins id ="test">2.2k</ins>
                                                     </span>
                                                 </li>
                                                 <li>
