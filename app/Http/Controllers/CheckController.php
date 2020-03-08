@@ -188,7 +188,8 @@ class CheckController extends Controller
         // return $circle_id;
         $n = CheckController::getNotifications();
         $c=CheckController::checkConnection($id,$circle_id);
-        return view("main.mainscreenfamily")->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
+        $my_posts=CheckController::getMyPosts($circle_id,$id);
+        return view("main.mainscreenfamily")->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
     }
     public function mainscreenbusiness($circle_id){
         //$user = User::find($id);
@@ -196,7 +197,8 @@ class CheckController extends Controller
         // return $circle_id;
         $n = CheckController::getNotifications();
         $c=CheckController::checkConnection($id,$circle_id);
-        return view("main.mainscreenbusiness")->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
+        $my_posts=CheckController::getMyPosts($circle_id,$id);
+        return view("main.mainscreenbusiness")->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
     }
 
     public function viewprofile($id, $circle_id){

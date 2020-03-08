@@ -333,10 +333,10 @@
                             <div class="user-post">
                                 <div class="friend-info">
                                     <figure>
-                                        <img src="/{{$post->user->profile_picture}}" alt="">
+                                        <a href="{{ route('viewprofile',['id'=>$post->user->user_id,'circle_id'=>$circle_id]) }}"><img src="/{{$post->user->profile_picture}}" alt=""></a>
                                     </figure>
                                     <div class="friend-name">
-                                        <ins><a href="time-line.html" title="">{{$post->user->name}}</a></ins>
+                                        <ins><a href="{{ route('viewprofile',['id'=>$post->user->user_id,'circle_id'=>$circle_id]) }}" title="">{{$post->user->name}}</a></ins>
                                         <span>published: {{$post->created_at}}</span>
                                     </div>
                                     <div class="post-meta">

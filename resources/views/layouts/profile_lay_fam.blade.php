@@ -3,7 +3,7 @@
 @section('content')
 <section>
     <div class="feature-photo">
-        <figure><img src="/{{Auth::user()->family_user['cover_picture']}}" alt="User Cover Picture" style="height: 350px; width: 1100%; object-fit: cover;"> </figure>
+        <figure><img src="/{{$user->family_user->cover_picture}}" alt="User Cover Picture" style="height: 350px; width: 1100%; object-fit: cover;"> </figure>
         @if ($c==0)
             {{-- Add --}}
 
@@ -35,7 +35,7 @@
                 <div class="col-lg-2 col-sm-3">
                     <div class="user-avatar" style="width: 170px; height: 170px; margin-top:-6.9rem">
                         <figure>
-                            <img src="/{{Auth::user()->family_user['profile_picture']}}" alt="User Profile Image"
+                            <img src="/{{$user->family_user->profile_picture}}" alt="User Profile Image"
                                 style="height:170px; width: 170px;object-fit: cover;">
                             {{-- <form class="edit-phto" action="{{ route('user.profile.picture.upload') }}"
                             method="POST" enctype="multipart/form-data" >
@@ -57,21 +57,21 @@
                     <div class="timeline-info">
                         <ul>
                             <li class="admin-name">
-                                <h5 style="-webkit-text-fill-color:red">{{Auth::user()->name}}</h5>
+                                <h5 style="-webkit-text-fill-color:red">{{$user->family_user->name}}</h5>
 
                                 {{-- <span>Group Admin</span> --}}
                             </li>
                             <li>
-                                <a class="" href="{{ route('viewprofilefamily',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewprofilefamily',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">time
                                     line</a>
-                                <a class="" href="{{ route('viewphotosfamily',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewphotosfamily',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">Photos</a>
-                                <a class="" href="{{ route('viewvideosfamily',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewvideosfamily',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">Videos</a>
-                                <a class="" href="{{ route('viewfamily',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewfamily',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">Family Circle</a>
-                                <a class="" href="{{ route('viewaboutfamily',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewaboutfamily',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">About</a>
                                 <a class="" href="" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">More</a>

@@ -27,13 +27,34 @@ class PostController extends Controller
         {
 
         $i = time().'.'.$request->image->extension();
-        $request->image->move(public_path('images/posts/Friend'), $i);
+        if ($circle_id==1) {
+            $request->image->move(public_path('images/posts/Friend'), $i);
+        } else {
+            if ($circle_id==2) {
+                $request->image->move(public_path('images/posts/Family'), $i);
+            } else {
+                $request->image->move(public_path('images/posts/Business'), $i);
+            }
+
+        }
+
+
 
         }
         if($request->hasFile('cam'))
         {
             $ca = time().'.'.$request->cam->extension();
-            $request->cam->move(public_path('images/posts/Friend'), $ca);
+            if ($circle_id==1) {
+                $request->cam->move(public_path('images/posts/Friend'), $ca);
+            } else {
+                if ($circle_id==2) {
+                    $request->cam->move(public_path('images/posts/Family'), $ca);
+                } else {
+                    $request->cam->move(public_path('images/posts/Business'), $ca);
+                }
+
+            }
+
 
         }
 
@@ -41,7 +62,17 @@ class PostController extends Controller
         {
 
         $v = time().'.'.$request->video->extension();
-        $request->video->move(public_path('videos/posts/Friend'), $v);
+        if ($circle_id==1) {
+            $request->video->move(public_path('videos/posts/Friend'), $v);
+        } else {
+            if ($circle_id==2) {
+                $request->video->move(public_path('videos/posts/Family'), $v);
+            } else {
+                $request->video->move(public_path('videos/posts/Business'), $v);
+            }
+
+        }
+
 
         }
 
@@ -50,7 +81,17 @@ class PostController extends Controller
         {
 
         $a = time().'.'.$request->audio->extension();
-        $request->audio->move(public_path('audio/posts/Friend'), $a);
+        if ($circle_id==1) {
+            $request->audio->move(public_path('audio/posts/Friend'), $a);
+        } else {
+            if ($circle_id==2) {
+                $request->audio->move(public_path('audio/posts/Family'), $a);
+            } else {
+                $request->audio->move(public_path('audio/posts/Business'), $a);
+            }
+
+        }
+
 
         }
 
@@ -61,7 +102,17 @@ class PostController extends Controller
         $post->circle_id = $circle_id;
         if($request->hasFile('image'))
         {
-            $post->picture = 'images/posts/Friend/'.$i;
+            if ($circle_id==1) {
+                $post->picture = 'images/posts/Friend/'.$i;
+            } else {
+                if ($circle_id==2) {
+                    $post->picture = 'images/posts/Family/'.$i;
+                } else {
+                    $post->picture = 'images/posts/Business/'.$i;
+                }
+
+            }
+
 
         }
         $post->save();
@@ -69,14 +120,24 @@ class PostController extends Controller
         $a = new Activity;
         $a->content= "You created a New Post.";
         $a->user_id = Auth::user()->user_id;
-        $a->circle_id = 1;
+        $a->circle_id = $circle_id;
         $a->save();
 
-        alert()->success('Post Created','You have successfully Created A post in your Friends Circle.')->position('top-end')->toToast()->width('24rem');
 
+        if ($circle_id==1) {
+            alert()->success('Post Created','You have successfully Created A post in your Friends Circle.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->route('mainscreen',['circle_id'=>$circle_id]);
+        } else {
+            if ($circle_id==2) {
+                alert()->success('Post Created','You have successfully Created A post in your Family Circle.')->position('top-end')->toToast()->width('24rem');
+                return redirect()->route('mainscreenfamily',['circle_id'=>$circle_id]);
+            } else {
+                alert()->success('Post Created','You have successfully Created A post in your Business Circle.')->position('top-end')->toToast()->width('24rem');
+                return redirect()->route('mainscreenbusiness',['circle_id'=>$circle_id]);
+            }
 
+        }
 
-        return redirect()->route('mainscreen',['circle_id'=>$circle_id]);
 
 
     }
