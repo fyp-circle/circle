@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 use App\Post;
+use App\Activity;
 
 class PostController extends Controller
 {
@@ -64,6 +65,13 @@ class PostController extends Controller
 
         }
         $post->save();
+
+        $a = new Activity;
+        $a->content= "You created a New Post.";
+        $a->user_id = Auth::user()->user_id;
+        $a->circle_id = 1;
+        $a->save();
+
         alert()->success('Post Created','You have successfully Created A post in your Friends Circle.')->position('top-end')->toToast()->width('24rem');
 
 

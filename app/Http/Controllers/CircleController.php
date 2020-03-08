@@ -7,11 +7,22 @@ use App\User;
 use App\BusinessUser;
 use App\FamilyUser;
 use Auth;
+use App\Activity;
 use Alert;
 
 
 class CircleController extends Controller
 {
+
+
+    public function createActivity($circle_id,$content){
+        $a = new Activity;
+        $a->content= $content;
+        $a->user_id = Auth::user()->user_id;
+        $a->circle_id = $circle_id;
+        $a->save();
+    }
+
     public function CreateNewCircleProfile(Request $request){
         $request->validate([
             'circle_type' =>['required'],
@@ -35,6 +46,8 @@ class CircleController extends Controller
             $user->business_user_id=$b_user->business_user_id;
             $user->save();
             $circle_id=3;
+            $content="You created a new Business Circle for You.";
+            CircleController::createActivity(3,$content);
             alert()->success('Business Circle Created','You have successfully Created Your Business Circle.')->position('top-end')->toToast()->width('24rem');
             return redirect()->route('mainscreenbusiness',['circle_id'=>$circle_id]);
 
@@ -53,6 +66,8 @@ class CircleController extends Controller
                 $user->family_user_id=$f_user->family_user_id;
                 $user->save();
                 $circle_id=2;
+                $content="You created a new Family Circle for You.";
+                CircleController::createActivity(2,$content);
                 alert()->success('Family Circle Created','You have successfully Created Your Family Circle.')->position('top-end')->toToast()->width('24rem');
                 return redirect()->route('mainscreenfamily',['circle_id'=>$circle_id]);
             } else {

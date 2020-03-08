@@ -20,7 +20,7 @@
                                                     <li>
                                                         <div class="nearly-pepls">
                                                             <figure>
-                                                                <a href="" title=""><img
+                                                                <a href="{{ route('viewprofile',['id'=>$searchuser->user_id,'circle_id'=>1]) }}" title=""><img
                                                                 src="{{$searchuser->profile_picture}}"
                                                                         alt=""></a>
                                                             </figure>

@@ -9,6 +9,7 @@ use App\Post;
 use App\Connection;
 use App\Circle;
 use App\Notif;
+use App\Activity;
 use Illuminate\Support\Facades\DB;
 Use Alert;
 use Auth;
@@ -25,6 +26,14 @@ class CheckController extends Controller
     public function getNotifications(){
         $n =User::find(Auth::user()->user_id)->notifs()->orderBy('created_at','desc')->take(10)->get();
         return $n;
+    }
+
+    public function createActivity($circle_id,$content){
+        $a = new Activity;
+        $a->content= $content;
+        $a->user_id = Auth::user()->user_id;
+        $a->circle_id = $circle_id;
+        $a->save();
     }
 
     public function getMyPosts($circle_id,$id){
@@ -195,6 +204,11 @@ class CheckController extends Controller
         $user = User::find($id);
          $n = CheckController::getNotifications();
         $c=CheckController::checkConnection($id,$circle_id);
+        $content="You Viewed ".$user->name."'s Friends profile.";
+        if ($c!=2) {
+            CheckController::createActivity($circle_id,$content);
+        }
+
         if($c!=1 && $c!=2){
             // event(new StalkingEvent($circle_id,$id));
         }
@@ -229,8 +243,15 @@ class CheckController extends Controller
     //FAMILY
     public function viewprofilefamily($id, $circle_id){
          $n = CheckController::getNotifications();
-        $user = User::find($id);
-        $c=CheckController::checkConnection($id,$circle_id);
+         $user = User::find($id);
+         $c=CheckController::checkConnection($id,$circle_id);
+         $content="You Viewed ".$user->family_user->name."'s Family profile.";
+
+        if ($c!=2) {
+            CheckController::createActivity($circle_id,$content);
+        }
+
+
         return view("profileviewsfamily.viewprofile")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
     }
     public function viewphotosfamily($id, $circle_id){
@@ -262,6 +283,10 @@ class CheckController extends Controller
          $n = CheckController::getNotifications();
         $user = User::find($id);
         $c=CheckController::checkConnection($id,$circle_id);
+        $content="You Viewed ".$user->business_user->name."'s Business profile.";
+        if ($c!=2) {
+            CheckController::createActivity($circle_id,$content);
+        }
         return view("profileviewsbusiness.viewprofile")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
     }
     public function viewphotosbusiness($id, $circle_id){
@@ -334,6 +359,10 @@ class CheckController extends Controller
          $n = CheckController::getNotifications();
         $user = Auth::user();
        $c=CheckController::checkConnection($user->user_id,$circle_id);
+
+       $activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get();
+    //    return $activities;
+
         return view("activitylog.activityfriends")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
     }
     public function activityfamily($circle_id){
@@ -435,6 +464,8 @@ class CheckController extends Controller
     public function sentRequest($id){
         event(new MyEvent($id));
         $user=User::find($id);
+        $content="You sent request to ".$user->name."'s Friend profile.";
+        CheckController::createActivity(1,$content);
         alert()->success('Request Sent Successfully.','You have successfully sent request to '.$user->name.' in  friend Circle.')->position('top-end')->toToast()->width('24rem');
         return Redirect::back();
     }
@@ -465,7 +496,8 @@ class CheckController extends Controller
             $notif->sender_id =Auth::user()->user_id;
             $notif->circle_id = 1;
             $notif->save();
-
+            $content="You cancelled request which was sent to ".$user->name."'s Friend profile.";
+            CheckController::createActivity(1,$content);
         alert()->success('Request Cancelled Successfully.','You have successfully cancelled request of '.$user->name.' in friend Circle.')->position('top-end')->toToast()->width('24rem');
         return Redirect::back();
     }
@@ -495,7 +527,8 @@ class CheckController extends Controller
             $notif->sender_id =Auth::user()->user_id;
             $notif->circle_id = 1;
             $notif->save();
-
+            $content="You unfriended ".$user->name."'s Friend profile.";
+            CheckController::createActivity(1,$content);
         alert()->success('Friend Successfully Removed.','You have successfully removed '.$user->name.' from your friend list')->position('top-end')->toToast()->width('24rem');
         return Redirect::back();
     }
@@ -529,6 +562,8 @@ class CheckController extends Controller
             $notif->save();
 
             $user=User::find($id);
+            $content="You accepted the request from ".$user->name."'s Friend profile.";
+        CheckController::createActivity(1,$content);
             alert()->success('You and '.$user->name.' are now connected through Friend Circle','')->position('top-end')->toToast()->width('24rem');
             return Redirect::back();
     }

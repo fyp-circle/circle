@@ -28,4 +28,8 @@ class Circle extends Model
     public function connections(){
         return $this->hasMany('App\Connection','connection_id','connection_id');
     }
+
+    public function activities(){
+        return $this->hasMany('App\Activity','circle_id','circle_id');
+    }
 }

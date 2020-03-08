@@ -7,6 +7,7 @@ use App\User;
 use App\FamilyUser;
 use App\BusinessUser;
 use Auth;
+use App\Activity;
 
 class ProfileController extends Controller
 {
@@ -105,6 +106,12 @@ class ProfileController extends Controller
 
         $user->save();
 
+        $a = new Activity;
+        $a->content= "You updated your Friend Profile.";
+        $a->user_id = Auth::user()->user_id;
+        $a->circle_id = 1;
+        $a->save();
+
         return redirect()->route('viewprofile',['id'=>Auth::user()->user_id,'circle_id'=>1]);
 
 
@@ -164,6 +171,12 @@ class ProfileController extends Controller
 
         $f_user->save();
 
+        $a = new Activity;
+        $a->content= "You updated your Family Profile.";
+        $a->user_id = Auth::user()->user_id;
+        $a->circle_id = 1;
+        $a->save();
+
         return redirect()->route('viewprofilefamily',['id'=>Auth::user()->user_id,'circle_id'=>2]);
 
 
@@ -221,6 +234,12 @@ class ProfileController extends Controller
         alert()->success('Business Profile Updated','You have successfully Updated your Business Profile.')->position('top-end')->toToast()->width('24rem');
 
         $b_user->save();
+
+        $a = new Activity;
+        $a->content= "You updated your Business Profile.";
+        $a->user_id = Auth::user()->user_id;
+        $a->circle_id = 1;
+        $a->save();
 
         return redirect()->route('viewprofilebusiness',['id'=>Auth::user()->user_id,'circle_id'=>3]);
 

@@ -15,7 +15,7 @@ class CreateActivitiesTable extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->bigIncrements('activity_id');
-            $table->integer('activity_Type');
+            $table->integer('activity_Type')->nullable();
             $table->string('content')->nullable();
             $table->integer('user_id')->references('user_id')->on('users')->nullable();
             $table->integer('circle_id')->references('circle_id')->on('circles')->nullable();
