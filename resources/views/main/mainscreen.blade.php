@@ -157,7 +157,7 @@
                     data-toggle="tooltip" data-placement="right"><i class="ti-stats-up"></i></a></li>
            <li><a href="{{ route('messagefriends',['circle_id'=>$circle_id]) }}" title="Messages" data-toggle="tooltip"
                     data-placement="right"><i class="ti-comment-alt"></i></a></li>
-            <li><a href="{{ route('editinfofriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
+            <li><a href="{{ route('editinfofriends',['circle_id'=>$circle_id]) }}"
                     title="Setting" data-toggle="tooltip" data-placement="right"><i class="ti-panel"></i></a></li>
             <li><a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
                     title="Friends" data-toggle="tooltip" data-placement="right"><i class="ti-themify-favicon"></i></a>
@@ -207,7 +207,7 @@
                                         </li>
                                         <li>
                                             <i class="ti-pencil-alt"></i>
-                                            <a href="{{ route('editinfofriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Edit Info</a>
+                                            <a href="{{ route('editinfofriends',['circle_id'=>$circle_id]) }}" title="">Edit Info</a>
                                         </li>
                                     </ul>
                                 </div><!-- Shortcuts -->

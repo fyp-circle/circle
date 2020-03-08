@@ -158,7 +158,7 @@
             {{-- <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right"><i class="ti-import"></i></a></li> --}}
             <li><a href="{{ route('inbox',['circle_id'=>$circle_id]) }}" title="Messages" data-toggle="tooltip"
                     data-placement="right"><i class="ti-comment-alt" style="-webkit-text-fill-color:cornflowerblue "></i></a></li>
-            <li><a href="{{ route('editinfobusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
+            <li><a href="{{ route('editinfobusiness',['circle_id'=>$circle_id]) }}"
                     title="Setting" data-toggle="tooltip" data-placement="right"><i class="ti-panel" style="-webkit-text-fill-color:cornflowerblue "></i></a></li>
             <li><a href="{{ route('viewbusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="
                     Friends" data-toggle="tooltip" data-placement="right"><i class="ti-themify-favicon" style="-webkit-text-fill-color:cornflowerblue "></i></a></li>
@@ -207,7 +207,7 @@
                                         </li>
                                         <li>
                                             <i class="ti-pencil-alt"></i>
-                                            <a href="{{ route('editinfobusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Edit Info</a>
+                                            <a href="{{ route('editinfobusiness',['circle_id'=>$circle_id]) }}" title="">Edit Info</a>
                                         </li>
                                     </ul>
                                 </div><!-- Shortcuts -->

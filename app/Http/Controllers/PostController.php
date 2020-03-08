@@ -125,14 +125,14 @@ class PostController extends Controller
 
 
         if ($circle_id==1) {
-            alert()->success('Post Created','You have successfully Created A post in your Friends Circle.')->position('top-end')->toToast()->width('24rem');
+            alert()->success('Post Created','You have successfully Created a post in your Friends Circle.')->position('top-end')->toToast()->width('24rem');
             return redirect()->route('mainscreen',['circle_id'=>$circle_id]);
         } else {
             if ($circle_id==2) {
-                alert()->success('Post Created','You have successfully Created A post in your Family Circle.')->position('top-end')->toToast()->width('24rem');
+                alert()->success('Post Created','You have successfully Created a post in your Family Circle.')->position('top-end')->toToast()->width('24rem');
                 return redirect()->route('mainscreenfamily',['circle_id'=>$circle_id]);
             } else {
-                alert()->success('Post Created','You have successfully Created A post in your Business Circle.')->position('top-end')->toToast()->width('24rem');
+                alert()->success('Post Created','You have successfully Created a post in your Business Circle.')->position('top-end')->toToast()->width('24rem');
                 return redirect()->route('mainscreenbusiness',['circle_id'=>$circle_id]);
             }
 

@@ -183,28 +183,48 @@ class CheckController extends Controller
         return view("main.mainscreen")->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
     }
     public function mainscreenfamily($circle_id){
-        //$user = User::find($id);
-        $id=Auth::user()->user_id;
-        // return $circle_id;
-        $n = CheckController::getNotifications();
-        $c=CheckController::checkConnection($id,$circle_id);
-        $my_posts=CheckController::getMyPosts($circle_id,$id);
-        return view("main.mainscreenfamily")->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
+        if (Auth::user()->family_user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        } else {
+           //$user = User::find($id);
+            $id=Auth::user()->user_id;
+            // return $circle_id;
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($id,$circle_id);
+            $my_posts=CheckController::getMyPosts($circle_id,$id);
+            return view("main.mainscreenfamily")->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
+        }
+
+
     }
     public function mainscreenbusiness($circle_id){
-        //$user = User::find($id);
+        if (Auth::user()->business_user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else {
+            //$user = User::find($id);
         $id=Auth::user()->user_id;
         // return $circle_id;
         $n = CheckController::getNotifications();
         $c=CheckController::checkConnection($id,$circle_id);
         $my_posts=CheckController::getMyPosts($circle_id,$id);
         return view("main.mainscreenbusiness")->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
+        }
+
+
     }
 
     public function viewprofile($id, $circle_id){
 
         $user = User::find($id);
-         $n = CheckController::getNotifications();
+        if ($user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else {
+            $n = CheckController::getNotifications();
         $c=CheckController::checkConnection($id,$circle_id);
         $content="You Viewed ".$user->name."'s Friends profile.";
         if ($c!=2) {
@@ -217,103 +237,215 @@ class CheckController extends Controller
         $my_posts=CheckController::getMyPosts($circle_id,$id);
         // return $my_posts;
         return view("profileviews.viewprofile")->with('posts',$my_posts)->with('notifications',$n)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id);
+        }
+
+
     }
     public function viewphotos($id, $circle_id){
-         $n = CheckController::getNotifications();
+
         $user = User::find($id);
-        $c=CheckController::checkConnection($id,$circle_id);
-        return view("profileviews.viewphotos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        if ($user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($id,$circle_id);
+            return view("profileviews.viewphotos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        }
+
     }
     public function viewvideos($id, $circle_id){
-         $n = CheckController::getNotifications();
+
         $user = User::find($id);
-        $c=CheckController::checkConnection($id,$circle_id);
-        return view("profileviews.viewvideos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        if ($user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($id,$circle_id);
+            return view("profileviews.viewvideos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        }
+
     }
     public function viewfriends($id, $circle_id){
         $user = User::find($id);
-        $c=CheckController::checkConnection($id,$circle_id);
+        if ($user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $c=CheckController::checkConnection($id,$circle_id);
          $n = CheckController::getNotifications();
         return view("profileviews.viewfriends")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        }
     }
     public function viewabout($id, $circle_id){
-         $n = CheckController::getNotifications();
+
+
         $user = User::find($id);
-        $c=CheckController::checkConnection($id,$circle_id);
-        return view("profileviews.viewabout")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        if ($user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($id,$circle_id);
+            return view("profileviews.viewabout")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        }
+
     }
     //FAMILY
     public function viewprofilefamily($id, $circle_id){
-         $n = CheckController::getNotifications();
-         $user = User::find($id);
-         $c=CheckController::checkConnection($id,$circle_id);
-         $content="You Viewed ".$user->family_user->name."'s Family profile.";
 
-        if ($c!=2) {
-            CheckController::createActivity($circle_id,$content);
+         $user = User::find($id);
+         if ($user==null || $user->family_user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($id,$circle_id);
+            $content="You Viewed ".$user->family_user->name."'s Family profile.";
+
+           if ($c!=2) {
+               CheckController::createActivity($circle_id,$content);
+           }
+
+
+           return view("profileviewsfamily.viewprofile")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
 
-
-        return view("profileviewsfamily.viewprofile")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
     }
     public function viewphotosfamily($id, $circle_id){
-         $n = CheckController::getNotifications();
+
         $user = User::find($id);
-        $c=CheckController::checkConnection($id,$circle_id);
-        return view("profileviewsfamily.viewphotos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        if ($user==null || $user->family_user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($id,$circle_id);
+            return view("profileviewsfamily.viewphotos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        }
+
     }
     public function viewvideosfamily($id, $circle_id){
-         $n = CheckController::getNotifications();
+
         $user = User::find($id);
-        $c=CheckController::checkConnection($id,$circle_id);
-        return view("profileviewsfamily.viewvideos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        if ($user==null || $user->family_user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($id,$circle_id);
+            return view("profileviewsfamily.viewvideos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        }
+
     }
     public function viewfamily($id, $circle_id){
-         $n = CheckController::getNotifications();
+
         $user = User::find($id);
-        $c=CheckController::checkConnection($id,$circle_id);
-        return view("profileviewsfamily.viewfamily")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        if ($user==null || $user->family_user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($id,$circle_id);
+            return view("profileviewsfamily.viewfamily")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        }
+
     }
     public function viewaboutfamily($id, $circle_id){
-         $n = CheckController::getNotifications();
+
         $user = User::find($id);
-        $c=CheckController::checkConnection($id,$circle_id);
-        return view("profileviewsfamily.viewabout")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        if ($user==null || $user->family_user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($id,$circle_id);
+            return view("profileviewsfamily.viewabout")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        }
+
     }
     //BUSINESS
     public function viewprofilebusiness($id, $circle_id){
-         $n = CheckController::getNotifications();
+
         $user = User::find($id);
-        $c=CheckController::checkConnection($id,$circle_id);
-        $content="You Viewed ".$user->business_user->name."'s Business profile.";
-        if ($c!=2) {
-            CheckController::createActivity($circle_id,$content);
+        if ($user==null || $user->business_user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
         }
-        return view("profileviewsbusiness.viewprofile")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($id,$circle_id);
+            $content="You Viewed ".$user->business_user->name."'s Business profile.";
+            if ($c!=2) {
+                CheckController::createActivity($circle_id,$content);
+            }
+            return view("profileviewsbusiness.viewprofile")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        }
     }
     public function viewphotosbusiness($id, $circle_id){
-         $n = CheckController::getNotifications();
+
         $user = User::find($id);
-        $c=CheckController::checkConnection($id,$circle_id);
-        return view("profileviewsbusiness.viewphotos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        if ($user==null || $user->business_user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($id,$circle_id);
+            return view("profileviewsbusiness.viewphotos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        }
+
     }
     public function viewvideosbusiness($id, $circle_id){
-         $n = CheckController::getNotifications();
+
         $user = User::find($id);
-        $c=CheckController::checkConnection($id,$circle_id);
-        return view("profileviewsbusiness.viewvideos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        if ($user==null || $user->business_user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($id,$circle_id);
+            return view("profileviewsbusiness.viewvideos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        }
+
     }
     public function viewbusiness($id, $circle_id){
-         $n = CheckController::getNotifications();
+
         $user = User::find($id);
-        $c=CheckController::checkConnection($id,$circle_id);
-        return view("profileviewsbusiness.viewbusiness")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        if ($user==null || $user->business_user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($id,$circle_id);
+            return view("profileviewsbusiness.viewbusiness")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        }
     }
     public function viewaboutbusiness($id, $circle_id){
-         $n = CheckController::getNotifications();
+
         $user = User::find($id);
-        $c=CheckController::checkConnection($id,$circle_id);
-        return view("profileviewsbusiness.viewabout")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        if ($user==null || $user->business_user==null) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($id,$circle_id);
+            return view("profileviewsbusiness.viewabout")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+        }
     }
     //ADD NEW CIRCLE
     public function addnewcircle($circle_id){
@@ -323,22 +455,38 @@ class CheckController extends Controller
     }
     //EDIT INFO
     public function editinfofriends($circle_id){
-         $n = CheckController::getNotifications();
+
         $user = Auth::user();
+        $n = CheckController::getNotifications();
        $c=CheckController::checkConnection($user->user_id,$circle_id);
         return view("editinfo.editinfofriends")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
     }
     public function editinfofamily($circle_id){
-         $n = CheckController::getNotifications();
+
         $user = Auth::user();
-       $c=CheckController::checkConnection($user->user_id,$circle_id);
-        return view("editinfo.editinfofamily")->with('c',$c)->with('user',$user)->with('profile_id',$user->user_id)->with('circle_id',$circle_id)->with('notifications',$n);
+        if($user->family_user==null){
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($user->user_id,$circle_id);
+            return view("editinfo.editinfofamily")->with('c',$c)->with('user',$user)->with('profile_id',$user->user_id)->with('circle_id',$circle_id)->with('notifications',$n);
+        }
+
     }
     public function editinfobusiness($circle_id){
-         $n = CheckController::getNotifications();
         $user = Auth::user();
-       $c=CheckController::checkConnection($user->user_id,$circle_id);
-        return view("editinfo.editinfobusiness")->with('c',$c)->with('user',$user)->with('profile_id',$user->user_id)->with('circle_id',$circle_id)->with('notifications',$n);
+        if($user->business_user==null){
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($user->user_id,$circle_id);
+            return view("editinfo.editinfobusiness")->with('c',$c)->with('user',$user)->with('profile_id',$user->user_id)->with('circle_id',$circle_id)->with('notifications',$n);
+        }
+
     }
     //MAIN SETTINGS
     public function mainsettings($circle_id){
@@ -368,19 +516,33 @@ class CheckController extends Controller
         return view("activitylog.activityfriends")->with('activities',$activities)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
     }
     public function activityfamily($circle_id){
-         $n = CheckController::getNotifications();
         $user = Auth::user();
-       $c=CheckController::checkConnection($user->user_id,$circle_id);
-       $activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get();
-        return view("activitylog.activityfamily")->with('activities',$activities)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+        if($user->family_user==null){
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($user->user_id,$circle_id);
+            $activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get();
+             return view("activitylog.activityfamily")->with('activities',$activities)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+        }
+
     }
     public function activitybusiness($circle_id){
-         $n = CheckController::getNotifications();
         $user = Auth::user();
-       $c=CheckController::checkConnection($user->user_id,$circle_id);
-       $activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get();
-        return view("activitylog.activitybusiness")->with('activities',$activities)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+        if($user->business_user==null){
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($user->user_id,$circle_id);
+            $activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get();
+            return view("activitylog.activitybusiness")->with('activities',$activities)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+        }
     }
+
     //MESSAGE
     public function messagefriends($circle_id){
          $n = CheckController::getNotifications();
@@ -389,16 +551,29 @@ class CheckController extends Controller
         return view("messages.messagefriends")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
     }
     public function messagefamily($circle_id){
-         $n = CheckController::getNotifications();
         $user = Auth::user();
-       $c=CheckController::checkConnection($user->user_id,$circle_id);
-        return view("messages.messagefamily")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+        if($user->family_user==null){
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($user->user_id,$circle_id);
+            return view("messages.messagefamily")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+        }
+
     }
     public function inbox($circle_id){
-         $n = CheckController::getNotifications();
         $user = Auth::user();
-       $c=CheckController::checkConnection($user->user_id,$circle_id);
-        return view("messages.inbox")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+        if($user->business_user==null){
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($user->user_id,$circle_id);
+            return view("messages.inbox")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+        }
     }
     //NEARBY
     public function nearbyfriends($circle_id){
@@ -408,16 +583,29 @@ class CheckController extends Controller
         return view("nearby.nearbyfriends")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
     }
     public function nearbyfamily($circle_id){
-         $n = CheckController::getNotifications();
         $user = Auth::user();
-       $c=CheckController::checkConnection($user->user_id,$circle_id);
-        return view("nearby.nearbyfamily")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+        if($user->family_user==null){
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($user->user_id,$circle_id);
+            return view("nearby.nearbyfamily")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+        }
+
     }
     public function nearbyconnections($circle_id){
-         $n = CheckController::getNotifications();
         $user = Auth::user();
-       $c=CheckController::checkConnection($user->user_id,$circle_id);
-        return view("nearby.nearbyconnections")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+        if($user->business_user==null){
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($user->user_id,$circle_id);
+            return view("nearby.nearbyconnections")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+        }
     }
     //NOTIFICATION
     public function notification(){
