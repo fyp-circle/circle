@@ -363,19 +363,21 @@ class CheckController extends Controller
        $activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get();
     //    return $activities;
 
-        return view("activitylog.activityfriends")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+        return view("activitylog.activityfriends")->with('activities',$activities)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
     }
     public function activityfamily($circle_id){
          $n = CheckController::getNotifications();
         $user = Auth::user();
        $c=CheckController::checkConnection($user->user_id,$circle_id);
-        return view("activitylog.activityfamily")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+       $activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get();
+        return view("activitylog.activityfamily")->with('activities',$activities)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
     }
     public function activitybusiness($circle_id){
          $n = CheckController::getNotifications();
         $user = Auth::user();
        $c=CheckController::checkConnection($user->user_id,$circle_id);
-        return view("activitylog.activitybusiness")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+       $activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get();
+        return view("activitylog.activitybusiness")->with('activities',$activities)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
     }
     //MESSAGE
     public function messagefriends($circle_id){
