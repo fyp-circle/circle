@@ -17,7 +17,7 @@
                                     <a href="#basic" class="nav-link active" data-toggle="tab">Basic info</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#work" class="nav-link" data-toggle="tab">work and education</a>
+                                    <a href="#work" class="nav-link" data-toggle="tab">Work</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#interest" class="nav-link" data-toggle="tab">Skills</a>
@@ -71,21 +71,14 @@
                                 <div class="tab-pane fade" id="work" role="tabpanel">
                                     <div>
                                         <form method="post">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" checked="checked"><i
-                                                        class="check-box"></i>Graduate
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" checked="checked"><i
-                                                        class="check-box"></i>Masters
-                                                </label>
+                                            <div class="form-group">
+                                                <input type="text" id="input" required="required" />
+                                                <label class="control-label" for="input">Position</label><i
+                                                    class="mtrl-select"></i>
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" id="input" required="required" />
-                                                <label class="control-label" for="input">Studying at</label><i
+                                                <label class="control-label" for="input">Working at</label><i
                                                     class="mtrl-select"></i>
                                             </div>
                                             <div class="form-group half">

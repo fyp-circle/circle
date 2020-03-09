@@ -17,7 +17,7 @@
                                     <a href="#basic" class="nav-link active" data-toggle="tab">Basic info</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#work" class="nav-link" data-toggle="tab">work and education</a>
+                                    <a href="#work" class="nav-link" data-toggle="tab">Education</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#interest" class="nav-link" data-toggle="tab">interests</a>
