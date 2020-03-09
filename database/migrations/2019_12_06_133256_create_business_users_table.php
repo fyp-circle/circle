@@ -16,9 +16,9 @@ class CreateBusinessUsersTable extends Migration
         Schema::create('business_users', function (Blueprint $table) {
             $table->bigIncrements('business_user_id');
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email')->nullable();;
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('phone')->unique()->nullable();
+            $table->string('phone')->nullable();
             $table->string('about_me')->nullable();
             $table->string('profile_picture')->default('images/users/Business/Profile_Pictures/default.png');
             $table->string('cover_picture')->default('images/users/Business/Cover_Pictures/default.jpg');

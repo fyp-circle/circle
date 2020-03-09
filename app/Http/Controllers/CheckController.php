@@ -300,7 +300,7 @@ class CheckController extends Controller
     public function viewprofilefamily($id, $circle_id){
 
          $user = User::find($id);
-         if ($user==null || $user->family_user==null) {
+         if (Auth::user()->family_user==null || $user==null || $user->family_user==null) {
             alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
             return redirect()->to('/');
         }
@@ -321,7 +321,7 @@ class CheckController extends Controller
     public function viewphotosfamily($id, $circle_id){
 
         $user = User::find($id);
-        if ($user==null || $user->family_user==null) {
+        if (Auth::user()->family_user==null || $user==null || $user->family_user==null) {
             alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
             return redirect()->to('/');
         }
@@ -335,7 +335,7 @@ class CheckController extends Controller
     public function viewvideosfamily($id, $circle_id){
 
         $user = User::find($id);
-        if ($user==null || $user->family_user==null) {
+        if (Auth::user()->family_user==null || $user==null || $user->family_user==null) {
             alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
             return redirect()->to('/');
         }
@@ -349,7 +349,7 @@ class CheckController extends Controller
     public function viewfamily($id, $circle_id){
 
         $user = User::find($id);
-        if ($user==null || $user->family_user==null) {
+        if (Auth::user()->family_user==null || $user==null || $user->family_user==null) {
             alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
             return redirect()->to('/');
         }
@@ -363,7 +363,7 @@ class CheckController extends Controller
     public function viewaboutfamily($id, $circle_id){
 
         $user = User::find($id);
-        if ($user==null || $user->family_user==null) {
+        if (Auth::user()->family_user==null || $user==null || $user->family_user==null) {
             alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
             return redirect()->to('/');
         }
@@ -379,7 +379,7 @@ class CheckController extends Controller
     public function viewprofilebusiness($id, $circle_id){
 
         $user = User::find($id);
-        if ($user==null || $user->business_user==null) {
+        if (Auth::user()->business_user==null || $user==null || $user->business_user==null) {
             alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
             return redirect()->to('/');
         }
@@ -396,7 +396,7 @@ class CheckController extends Controller
     public function viewphotosbusiness($id, $circle_id){
 
         $user = User::find($id);
-        if ($user==null || $user->business_user==null) {
+        if (Auth::user()->business_user==null || $user==null || $user->business_user==null) {
             alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
             return redirect()->to('/');
         }
@@ -410,7 +410,7 @@ class CheckController extends Controller
     public function viewvideosbusiness($id, $circle_id){
 
         $user = User::find($id);
-        if ($user==null || $user->business_user==null) {
+        if (Auth::user()->business_user==null || $user==null || $user->business_user==null) {
             alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
             return redirect()->to('/');
         }
@@ -424,7 +424,7 @@ class CheckController extends Controller
     public function viewbusiness($id, $circle_id){
 
         $user = User::find($id);
-        if ($user==null || $user->business_user==null) {
+        if (Auth::user()->business_user==null || $user==null || $user->business_user==null) {
             alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
             return redirect()->to('/');
         }
@@ -437,7 +437,7 @@ class CheckController extends Controller
     public function viewaboutbusiness($id, $circle_id){
 
         $user = User::find($id);
-        if ($user==null || $user->business_user==null) {
+        if (Auth::user()->business_user==null || $user==null || $user->business_user==null) {
             alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
             return redirect()->to('/');
         }
@@ -553,7 +553,7 @@ class CheckController extends Controller
     public function messagefamily($circle_id){
         $user = Auth::user();
         if($user->family_user==null){
-            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+                alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
             return redirect()->to('/');
         }
         else{

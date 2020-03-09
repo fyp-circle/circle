@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->integer('month')->nullable();
             $table->integer('year')->nullable();
             $table->string('gender')->nullable();
-            $table->string('phone')->unique()->nullable();
+            $table->string('phone')->nullable();
             $table->string('country')->nullable();
             $table->string('city')->nullable();
             $table->string('about_me')->nullable();
