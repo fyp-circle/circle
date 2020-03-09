@@ -58,6 +58,8 @@ Route::group([
 
     Route::post('createpost/{circle_id}', ['as' => 'createpost', 'uses' => 'PostController@createPost'])->where('circle_id', '[0-9]+');
 
+
+
     Route::group([
         'prefix' => '/',
         'where'  => [
@@ -96,6 +98,7 @@ Route::group([
         Route::post('editinfofamily/{id}/{circle_id}', ['as' => 'editinfofamilypost', 'uses' => 'ProfileController@editprofilefamily'])->where('circle_id', '[0-9]+');
         Route::post('editinfobusiness/{id}/{circle_id}', ['as' => 'editinfobusinesspost', 'uses' => 'ProfileController@editprofilebusiness'])->where('circle_id', '[0-9]+');
 
+        Route::post('addintofamily/{id}/{circle_id}', ['as' => 'add.into.family', 'uses' => 'FamilyController@addintofamily'])->where('circle_id', '[0-9]+');
 
 
     });

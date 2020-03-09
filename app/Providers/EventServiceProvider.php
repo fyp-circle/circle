@@ -30,6 +30,10 @@ class EventServiceProvider extends ServiceProvider
          'App\Events\SentRequestEventB' => [
             'App\Listeners\CreateSentRequestNotification',
          ],
+
+         'App\Events\SentRequestEventF' => [
+            'App\Listeners\CreateSentRequestNotificationF',
+         ],
     ];
 
     /**

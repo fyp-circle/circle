@@ -17,6 +17,7 @@ class CreateConnectionsTable extends Migration
             $table->bigIncrements('connection_id');
             $table->boolean('con_ini')->nullable();
             $table->boolean('approve')->nullable();
+            $table->string('relation')->nullable();
             $table->integer('user1_id')->references('user_id')->on('users')->nullable();
             $table->integer('user2_id')->references('user_id')->on('users')->nullable();
             $table->integer('circle_id')->references('circle_id')->on('circles')->nullable();
