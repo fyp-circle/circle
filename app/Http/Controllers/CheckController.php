@@ -308,13 +308,14 @@ class CheckController extends Controller
             $n = CheckController::getNotifications();
             $c=CheckController::checkConnection($id,$circle_id);
             $content="You Viewed ".$user->family_user->name."'s Family profile.";
+            $my_posts=CheckController::getMyPosts($circle_id,$id);
 
            if ($c!=2) {
                CheckController::createActivity($circle_id,$content);
            }
 
 
-           return view("profileviewsfamily.viewprofile")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+           return view("profileviewsfamily.viewprofile")->with('posts',$my_posts)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
 
     }

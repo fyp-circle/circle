@@ -1,5 +1,5 @@
 @extends('layouts.profile_lay_fam')
-
+@if ($c==1 || $c == 2)
 @section('profilecontent')
 <div class="row">
     <div class="col-lg-12">
@@ -494,5 +494,5 @@
         </div>
     </div>
 </div>
-
+@endif
 @endsection

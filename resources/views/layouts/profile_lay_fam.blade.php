@@ -3,7 +3,13 @@
 @section('content')
 <section>
     <div class="feature-photo">
-        <figure><img src="/{{$user->family_user->cover_picture}}" alt="User Cover Picture" style="height: 350px; width: 1100%; object-fit: cover;"> </figure>
+        @if ($c==1 || $c==2 )
+            <figure><img src="/{{$user->family_user->cover_picture}}" alt="User Cover Picture" style="height: 350px; width: 1100%; object-fit: cover;"> </figure>
+        @else
+        <figure><img src="/{{$user->family_user->cover_picture}}" alt="User Cover Picture" style="height: 350px; width: 1100%; object-fit: cover;filter: blur(7px);"> </figure>
+
+        @endif
+
         @if ($c==0)
             {{-- Add --}}
 
@@ -35,8 +41,15 @@
                 <div class="col-lg-2 col-sm-3">
                     <div class="user-avatar" style="width: 170px; height: 170px; margin-top:-6.9rem">
                         <figure>
+                            @if ($c==1 || $c==2 )
                             <img src="/{{$user->family_user->profile_picture}}" alt="User Profile Image"
-                                style="height:170px; width: 170px;object-fit: cover;">
+                            style="height:170px; width: 170px;object-fit: cover;">
+                            @else
+                            <img src="/{{$user->family_user->profile_picture}}" alt="User Profile Image"
+                            style="height:170px; width: 170px;object-fit: cover;filter: blur(7px);">
+
+                            @endif
+
                             {{-- <form class="edit-phto" action="{{ route('user.profile.picture.upload') }}"
                             method="POST" enctype="multipart/form-data" >
                             @csrf
