@@ -99,13 +99,13 @@
                                 <a class="" href="{{ route('viewprofilebusiness',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">time
                                     line</a>
-                                <a class="" href="{{ route('viewphotosbusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewphotosbusiness',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">Photos</a>
-                                <a class="" href="{{ route('viewvideosbusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewvideosbusiness',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">Videos</a>
-                                <a class="" href="{{ route('viewbusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewbusiness',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">Business Circle</a>
-                                <a class="" href="{{ route('viewaboutbusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                <a class="" href="{{ route('viewaboutbusiness',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">About</a>
                                 <a class="" href="" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">More</a>

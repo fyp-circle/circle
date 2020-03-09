@@ -1,6 +1,7 @@
 @extends('layouts.profile_lay_bus')
 
 @section('profilecontent')
+@if ($c==1 || $c == 2)
 <div class="row">
     <div class="col-lg-12">
         <div class="row merged20" id="page-contents">
@@ -224,5 +225,5 @@
         </div>
     </div>
 </div>
-
+@endif
 @endsection

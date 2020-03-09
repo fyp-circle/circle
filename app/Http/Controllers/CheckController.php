@@ -390,7 +390,11 @@ class CheckController extends Controller
             if ($c!=2) {
                 CheckController::createActivity($circle_id,$content);
             }
-            return view("profileviewsbusiness.viewprofile")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+            if($c!=1 && $c!=2){
+                // event(new StalkingEvent($circle_id,$id));
+            }
+            $my_posts=CheckController::getMyPosts($circle_id,$id);
+            return view("profileviewsbusiness.viewprofile")->with('posts',$my_posts)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
     }
     public function viewphotosbusiness($id, $circle_id){
