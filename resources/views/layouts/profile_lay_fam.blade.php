@@ -12,7 +12,9 @@
 
         @if ($c==0)
             {{-- Add --}}
-
+            <div class="add-btn" style="bottom:25%; right:4%;">
+                <a id = "AddConnectionButton" href="#" title="" data-ripple="" style="background-color: black; -webkit-text-fill-color: white;">Add into Family</a>
+            </div>
         @else
             @if ($c==1)
                 {{-- Connected --}}
