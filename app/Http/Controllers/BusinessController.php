@@ -56,7 +56,7 @@ class BusinessController extends Controller
             $user=User::find($id);
 
             $notif = new Notif;
-            $notif->title = "Friend Request Cancelled.";
+            $notif->title = "Business Request Cancelled.";
             $notif->content= $sender->business_user->name." cancelled your request in Circle Business.";
             $notif->read = 0;
             $notif->user_id =$id;
@@ -99,7 +99,7 @@ class BusinessController extends Controller
             $content="You have disconnected ".$user->business_user->name."'s Business profile.";
         BusinessController::createActivity(3,$content);
 
-        alert()->success('Connection Successfully Removed.','You have successfully removed '.$user->business_user->name.' from your business')->position('top-end')->toToast()->width('24rem');
+        alert()->success('Connection Successfully Removed.','You have successfully removed '.$user->business_user->name.' from your Business Circle.')->position('top-end')->toToast()->width('24rem');
         return Redirect::back();
     }
 
@@ -123,7 +123,7 @@ class BusinessController extends Controller
             $sender=User::find($sender_id);
 
             $notif = new Notif;
-            $notif->title = "Friend Request Accepted.";
+            $notif->title = "Business Request Accepted.";
             $notif->content= $sender->business_user->name." accepted your request in Circle Business.";
             $notif->read = 0;
             $notif->user_id =$id;

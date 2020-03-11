@@ -6,36 +6,90 @@
         @if ($c==1 || $c==2 )
             <figure><img src="/{{$user->family_user->cover_picture}}" alt="User Cover Picture" style="height: 350px; width: 1100%; object-fit: cover;"> </figure>
         @else
-        <figure><img src="/{{$user->family_user->cover_picture}}" alt="User Cover Picture" style="height: 350px; width: 1100%; object-fit: cover;filter: blur(7px);"> </figure>
+        <script language="JavaScript" Type="text/javascript">
+            <!--
+            function popupMsg(theMsg) {
+            alert(theMsg);
+            }
+            //-->
+        </script>
+        <figure><img src="/{{$user->family_user->cover_picture}}" alt="User Cover Picture" style="height: 350px; width: 1100%; object-fit: cover;filter: blur(7px);"  onMouseDown="popupMsg('You can not Download the Image Sorry.')"> </figure>
 
         @endif
 
         @if ($c==0)
             {{-- Add --}}
             <div class="add-btn" style="bottom:25%; right:4%;">
-                <a id = "AddConnectionButton" href="#" title="" data-ripple="" style="background-color: black; -webkit-text-fill-color: white;" data-toggle="modal" data-target="#add-family-modal">Add into Family</a>
+                <a id = "AddFamilyButton" href="#" title="" data-ripple="" style="background-color: black; -webkit-text-fill-color: white;" data-toggle="modal" data-target="#add-family-modal">Add into Family</a>
+
             </div>
         @else
             @if ($c==1)
                 {{-- Connected --}}
+                <div class="add-btn" style="bottom:35%; right:7%;">
+                    @if ($con[0]->con_ini== Auth::user()->user_id)
+                        <a href="" title="" data-ripple="" style="background-color: white; -webkit-text-fill-color: black;pointer-events: none; cursor: default;">You are {{$user->family_user->name}}'s {{$con[0]->relation}}. </a>
+                    @else
+                        <a href="" title="" data-ripple="" style="background-color: white; -webkit-text-fill-color: black;pointer-events: none; cursor: default;">{{$user->family_user->name}} is your {{$con[0]->relation}}. </a>
+                    @endif
+                </div>
                 <div class="add-btn" style="bottom:25%; right:4%;">
-                    <a href="#" title="" data-ripple="" style="background-color: transparent; -webkit-text-fill-color: white;">Family <i class="ti-user"></i></a>
+                    <a href="#" title="" data-ripple="" style="background-color: transparent; -webkit-text-fill-color: white;">Family Member <i class="ti-user"></i></a>
+                    <a id = "RemoveButton" href="#" title="" data-ripple="" style="background-color: red; -webkit-text-fill-color: white;">Remove from Family. <i class="ti-close"></i></a>
+                    <script type="text/javascript">
+                        document.getElementById("RemoveButton").onclick = function () {
+                            var profile_id = "{{ $profile_id }}";
+                            location.href = "/removefromfamily/" + profile_id+"/{{Auth::user()->user_id}}";
+                        };
+
+                    </script>
                 </div>
             @else
                 @if ($c ==2)
                     {{-- Myself --}}
                 @else
                     @if ($c==3)
+                    <div class="add-btn" style="bottom:35%; right:7%;">
+                        <a href="" title="" data-ripple="" style="background-color: white; -webkit-text-fill-color: black;pointer-events: none; cursor: default;">{{$user->family_user->name}} is your {{$con[0]->relation}} ? </a>
+                    </div>
                         {{-- Accept or Reject --}}
                         <div class="add-btn" style="bottom:25%; right:4%;">
-                            <a id = "AcceptRequestButton" href="#" title="" data-ripple="" style="background-color: white; -webkit-text-fill-color: black;">Accept Request</a>
-                            <a id = "CancelRequestButton" href="#" title="" data-ripple="" style="background-color: red; -webkit-text-fill-color: white;">Cancel Request</a>
+
+                            <a id = "acceptfamilybutton" href="#" title="" data-ripple="" style="background-color: white; -webkit-text-fill-color: black;">Accept Request</a>
+                            <a id = "cancelfamilybutton" href="#" title="" data-ripple="" style="background-color: red; -webkit-text-fill-color: white;">Cancel Request</a>
+
+                            <script type="text/javascript">
+                                document.getElementById("cancelfamilybutton").onclick = function () {
+                                    var profile_id = "{{ $profile_id }}";
+                                    location.href = "/cancelrequestfamily/" + profile_id+"/{{Auth::user()->user_id}}";
+                                };
+
+                            </script>
+
+                            <script type="text/javascript">
+                                document.getElementById("acceptfamilybutton").onclick = function () {
+                                    var profile_id = "{{ $profile_id }}";
+                                    location.href = "/acceptrequestfamily/"+ profile_id+"/{{Auth::user()->user_id}}";
+                                };
+
+                            </script>
                         </div>
                     @else
                         @if ($c==4)
+                            <div class="add-btn" style="bottom:35%; right:7%;">
+                                <a href="" title="" data-ripple="" style="background-color: white; -webkit-text-fill-color: black;pointer-events: none; cursor: default;">You are {{$user->family_user->name}}'s {{$con[0]->relation}}. </a>
+                            </div>
                             {{-- Request Sent --}}
                             <div class="add-btn" style="bottom:25%; right:4%;">
                                 <a href="#" title="" data-ripple="" style="background-color: transparent; -webkit-text-fill-color: white;">Request Already Sent <i class="ti-timer"></i></a>
+                                <a id = "FamilyCancelRequestButton1" href="#" title="" data-ripple="" style="background-color: red; -webkit-text-fill-color: white;">Cancel Request</a>
+                                <script type="text/javascript">
+                                    document.getElementById("FamilyCancelRequestButton1").onclick = function () {
+                                        var profile_id = "{{ $profile_id }}";
+                                        location.href = "/cancelrequestfamily/" + profile_id+"/{{Auth::user()->user_id}}";
+                                    };
+
+                                </script>
                             </div>
                         @else
                         @endif
@@ -53,7 +107,7 @@
                             style="height:170px; width: 170px;object-fit: cover;">
                             @else
                             <img src="/{{$user->family_user->profile_picture}}" alt="User Profile Image"
-                            style="height:170px; width: 170px;object-fit: cover;filter: blur(7px);">
+                            style="height:170px; width: 170px;object-fit: cover;filter: blur(7px);" onMouseDown="popupMsg('You can not Download the Image Sorry.')">
 
                             @endif
 

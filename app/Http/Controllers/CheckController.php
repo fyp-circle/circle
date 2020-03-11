@@ -77,6 +77,46 @@ class CheckController extends Controller
         return $first;
     }
 
+    public function getConnection($id,$circle_id){
+        $c=0;
+        $a=1;
+        if($id==Auth::user()->user_id){
+            $c=2; //means user is auth user means show 'Nothing'
+        }
+        else{
+            $a=DB::table('connections')
+            ->where([
+                ['user1_id', $id],
+                ['user2_id', Auth::user()->user_id],
+                ['circle_id', $circle_id],
+            ])
+            ->orWhere([
+                ['user2_id', $id],
+                ['user1_id', Auth::user()->user_id],
+                ['circle_id', $circle_id],
+            ])
+            ->get();
+
+            if (!$a->isEmpty()) {
+                if($a[0]->approve==1){
+                    $c = 1; //means connection exists means show 'You are already friends Button'
+                }
+                else{
+                    if($a[0]->con_ini==Auth::user()->user_id){
+                        $c = 4; //means Auth user has sent request means show 'Request Already Sent'
+                    }
+                    else{
+                        $c=3; //request is pending means show 'Accept request' and 'cancel request' button
+                    }
+
+                }
+            } else {
+                $c = 0;  //means connection do not exists means show 'Add Friend Button'
+            }
+        }
+        return $a;
+    }
+
     public function checkConnection($id,$circle_id){
         $c=0;
 
@@ -307,6 +347,7 @@ class CheckController extends Controller
         else{
             $n = CheckController::getNotifications();
             $c=CheckController::checkConnection($id,$circle_id);
+            $con=CheckController::getConnection($id,$circle_id);
             $content="You Viewed ".$user->family_user->name."'s Family profile.";
             $my_posts=CheckController::getMyPosts($circle_id,$id);
 
@@ -314,8 +355,7 @@ class CheckController extends Controller
                CheckController::createActivity($circle_id,$content);
            }
 
-
-           return view("profileviewsfamily.viewprofile")->with('posts',$my_posts)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+           return view("profileviewsfamily.viewprofile")->with('con',$con)->with('posts',$my_posts)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
 
     }

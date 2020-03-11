@@ -75,7 +75,7 @@ Route::group([
 
 
         Route::get('/requestsentbusiness/{id}', ['as' => 'request.sent.b', 'uses' => 'BusinessController@sentRequest']);
-        Route::get('/cancelrequestbusiness/{id}/{sender_id}', ['as' => 'cancel.request.b', 'uses' => 'BusinessController@cancelRequest']);
+        Route::get('/cancelrequestbusiness/{id}/{sender_id}', ['as' => 'cancel.request.b', 'uses' => 'BusinessController@cancelRequest'])->where('sender_id', '[0-9]+');
         Route::get('/acceptrequestbusiness/{id}/{sender_id}', ['as' => 'accept.request.b', 'uses' => 'BusinessController@acceptRequest'])->where('sender_id', '[0-9]+');
         Route::get('/disconnect/{id}/{sender_id}', ['as' => 'unfriend.b', 'uses' => 'BusinessController@disconnect'])->where('sender_id', '[0-9]+');
 
@@ -99,7 +99,9 @@ Route::group([
         Route::post('editinfobusiness/{id}/{circle_id}', ['as' => 'editinfobusinesspost', 'uses' => 'ProfileController@editprofilebusiness'])->where('circle_id', '[0-9]+');
 
         Route::post('addintofamily/{id}/{circle_id}', ['as' => 'add.into.family', 'uses' => 'FamilyController@addintofamily'])->where('circle_id', '[0-9]+');
-
+        Route::get('/cancelrequestfamily/{id}/{sender_id}', ['as' => 'cancel.request.f', 'uses' => 'FamilyController@cancelRequest'])->where('sender_id', '[0-9]+');
+        Route::get('/acceptrequestfamily/{id}/{sender_id}', ['as' => 'accept.request.f', 'uses' => 'FamilyController@acceptRequest'])->where('sender_id', '[0-9]+');
+        Route::get('/removefromfamily/{id}/{sender_id}', ['as' => 'remove.f', 'uses' => 'FamilyController@remove'])->where('sender_id', '[0-9]+');
 
     });
 
