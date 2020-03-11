@@ -82,7 +82,7 @@
                     <div class="central-meta new-pst item">
                         <div class="new-postbox">
                             <figure>
-                                <img src="{{$user->profile_picture}}" alt="">
+                                <img src="/{{$user->profile_picture}}" alt="">
                             </figure>
                             <div class="newpst-input">
                                 <form method="post" action="{{ route('createpost',['circle_id'=>$circle_id]) }}" enctype="multipart/form-data">
