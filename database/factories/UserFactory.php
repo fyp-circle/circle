@@ -26,6 +26,8 @@ $factory->define(User::class, function (Faker $faker) {
         'city' => $faker->city,
         'password' => Hash::make('Fyp123Fyp'),
         'about_me' => $faker->realText($maxNbChars = 150, $indexSize = 2),
+        // 'profile_picture' => $faker->imageUrl($width = 640, $height = 480),
+        // 'cover_picture' => $faker->imageUrl($width = 640, $height = 480),
         'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         'email_verified_at' => Carbon::now()->format('Y-m-d H:i:s'),
     ];

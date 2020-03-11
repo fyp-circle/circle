@@ -33,9 +33,9 @@
                                             <figure>
 
                                                 @if ($con->user1_id!=Auth::user()->user_id)
-                                                <a href="{{ route('viewprofile',['id'=>$con->user1->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="/{{$con->user1->profile_picture}}" alt=""></a>
+                                                <a href="{{ route('viewprofile',['id'=>$con->user1->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$con->user1->profile_picture}}" alt=""></a>
                                                 @else
-                                                <a href="{{ route('viewprofile',['id'=>$con->user2->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="/{{$con->user2->profile_picture}}" alt=""></a>
+                                                <a href="{{ route('viewprofile',['id'=>$con->user2->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$con->user2->profile_picture}}" alt=""></a>
                                                 @endif
                                             </figure>
                                             <div class="pepl-info">
@@ -82,9 +82,9 @@
                                         <div class="nearly-pepls">
                                             <figure>
                                                 @if ($req->user1_id!=Auth::user()->user_id)
-                                                <a href="{{ route('viewprofile',['id'=>$req->user1->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="/{{$req->user1->profile_picture}}" alt=""></a>
+                                                <a href="{{ route('viewprofile',['id'=>$req->user1->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$req->user1->profile_picture}}" alt=""></a>
                                                 @else
-                                                <a href="{{ route('viewprofile',['id'=>$req->user2->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="/{{$req->user2->profile_picture}}" alt=""></a>
+                                                <a href="{{ route('viewprofile',['id'=>$req->user2->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$req->user2->profile_picture}}" alt=""></a>
                                                 @endif
                                             </figure>
                                             <div class="pepl-info">
@@ -118,9 +118,9 @@
                                         <div class="nearly-pepls">
                                             <figure>
                                                 @if ($sreq->user1_id!=Auth::user()->user_id)
-                                                <a href="{{ route('viewprofile',['id'=>$sreq->user1->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="/{{$sreq->user1->profile_picture}}" alt=""></a>
+                                                <a href="{{ route('viewprofile',['id'=>$sreq->user1->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$sreq->user1->profile_picture}}" alt=""></a>
                                                 @else
-                                                <a href="{{ route('viewprofile',['id'=>$sreq->user2->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="/{{$sreq->user2->profile_picture}}" alt=""></a>
+                                                <a href="{{ route('viewprofile',['id'=>$sreq->user2->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$sreq->user2->profile_picture}}" alt=""></a>
                                                 @endif
                                             </figure>
                                             <div class="pepl-info">

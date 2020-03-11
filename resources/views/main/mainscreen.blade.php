@@ -283,7 +283,7 @@
                             <div class="central-meta new-pst">
                                 <div class="new-postbox">
                                     <figure>
-                                        <img src="/{{Auth::user()->profile_picture}}" alt="" style="width:60px; height:52px; object-fit:cover">
+                                        <img src="{{Auth::user()->profile_picture}}" alt="" style="width:60px; height:52px; object-fit:cover">
                                     </figure>
                                     <div class="newpst-input">
                                         <form method="post" action="{{ route('createpost',['circle_id'=>$circle_id]) }}" enctype="multipart/form-data">
@@ -333,7 +333,7 @@
                             <div class="user-post">
                                 <div class="friend-info">
                                     <figure>
-                                        <a href="{{ route('viewprofile',['id'=>$post->user->user_id,'circle_id'=>$circle_id]) }}"><img src="/{{$post->user->profile_picture}}" alt=""></a>
+                                        <a href="{{ route('viewprofile',['id'=>$post->user->user_id,'circle_id'=>$circle_id]) }}"><img src="{{$post->user->profile_picture}}" alt=""></a>
                                     </figure>
                                     <div class="friend-name">
                                         <ins><a href="{{ route('viewprofile',['id'=>$post->user->user_id,'circle_id'=>$circle_id]) }}" title="">{{$post->user->name}}</a></ins>
@@ -347,7 +347,7 @@
                                             </p>
                                         </div>
                                         @if ($post->picture!=null)
-                                            <img src="/{{$post->picture}}" alt="">
+                                            <img src="{{$post->picture}}" alt="">
                                         @else
 
                                         @endif

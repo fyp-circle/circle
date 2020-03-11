@@ -103,12 +103,12 @@ class PostController extends Controller
         if($request->hasFile('image'))
         {
             if ($circle_id==1) {
-                $post->picture = 'images/posts/Friend/'.$i;
+                $post->picture = '/images/posts/Friend/'.$i;
             } else {
                 if ($circle_id==2) {
-                    $post->picture = 'images/posts/Family/'.$i;
+                    $post->picture = '/images/posts/Family/'.$i;
                 } else {
-                    $post->picture = 'images/posts/Business/'.$i;
+                    $post->picture = '/images/posts/Business/'.$i;
                 }
 
             }

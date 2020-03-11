@@ -142,7 +142,7 @@
                         <li>
                             <a href="https://www.youtube.com/watch?v=MIbbtEjdYrc" title="" data-strip-group="mygroup"
                                 class="strip" data-strip-options="width: 700,height: 450,youtube: { autoplay: 1 }"><img
-                                    src="images/resources/photo1.jpg" alt="">
+                                    src="/images/resources/photo1.jpg" alt="">
                                 <i>
                                     <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px"
@@ -159,7 +159,7 @@
                         <li>
                             <a href="https://www.youtube.com/watch?v=MIbbtEjdYrc" title="" data-strip-group="mygroup"
                                 class="strip" data-strip-options="width: 700,height: 450,youtube: { autoplay: 1 }"><img
-                                    src="images/resources/photo2.jpg" alt="">
+                                    src="/images/resources/photo2.jpg" alt="">
                                 <i>
                                     <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px"
@@ -176,7 +176,7 @@
                         <li>
                             <a href="https://www.youtube.com/watch?v=MIbbtEjdYrc" title="" data-strip-group="mygroup"
                                 class="strip" data-strip-options="width: 700,height: 450,youtube: { autoplay: 1 }"><img
-                                    src="images/resources/photo3.jpg" alt="">
+                                    src="/images/resources/photo3.jpg" alt="">
                                 <i>
                                     <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px"
@@ -193,7 +193,7 @@
                         <li>
                             <a href="https://www.youtube.com/watch?v=MIbbtEjdYrc" title="" data-strip-group="mygroup"
                                 class="strip" data-strip-options="width: 700,height: 450,youtube: { autoplay: 1 }"><img
-                                    src="images/resources/photo4.jpg" alt="">
+                                    src="/images/resources/photo4.jpg" alt="">
                                 <i>
                                     <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px"
@@ -210,7 +210,7 @@
                         <li>
                             <a href="https://www.youtube.com/watch?v=MIbbtEjdYrc" title="" data-strip-group="mygroup"
                                 class="strip" data-strip-options="width: 700,height: 450,youtube: { autoplay: 1 }"><img
-                                    src="images/resources/photo5.jpg" alt="">
+                                    src="/images/resources/photo5.jpg" alt="">
                                 <i>
                                     <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px"
@@ -227,7 +227,7 @@
                         <li>
                             <a href="https://www.youtube.com/watch?v=MIbbtEjdYrc" title="" data-strip-group="mygroup"
                                 class="strip" data-strip-options="width: 700,height: 450,youtube: { autoplay: 1 }"><img
-                                    src="images/resources/photo6.jpg" alt="">
+                                    src="/images/resources/photo6.jpg" alt="">
                                 <i>
                                     <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px"
@@ -244,7 +244,7 @@
                         <li>
                             <a href="https://www.youtube.com/watch?v=MIbbtEjdYrc" title="" data-strip-group="mygroup"
                                 class="strip" data-strip-options="width: 700,height: 450,youtube: { autoplay: 1 }"><img
-                                    src="images/resources/photo7.jpg" alt="">
+                                    src="/images/resources/photo7.jpg" alt="">
                                 <i>
                                     <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px"
@@ -261,7 +261,7 @@
                         <li>
                             <a href="https://www.youtube.com/watch?v=MIbbtEjdYrc" title="" data-strip-group="mygroup"
                                 class="strip" data-strip-options="width: 700,height: 450,youtube: { autoplay: 1 }"><img
-                                    src="images/resources/photo8.jpg" alt="">
+                                    src="/images/resources/photo8.jpg" alt="">
                                 <i>
                                     <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px"
@@ -278,7 +278,7 @@
                         <li>
                             <a href="https://www.youtube.com/watch?v=MIbbtEjdYrc" title="" data-strip-group="mygroup"
                                 class="strip" data-strip-options="width: 700,height: 450,youtube: { autoplay: 1 }"><img
-                                    src="images/resources/photo9.jpg" alt="">
+                                    src="/images/resources/photo9.jpg" alt="">
                                 <i>
                                     <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px"
@@ -295,7 +295,7 @@
                         <li>
                             <a href="https://www.youtube.com/watch?v=MIbbtEjdYrc" title="" data-strip-group="mygroup"
                                 class="strip" data-strip-options="width: 700,height: 450,youtube: { autoplay: 1 }"><img
-                                    src="images/resources/photo10.jpg" alt="">
+                                    src="/images/resources/photo10.jpg" alt="">
                                 <i>
                                     <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px"
@@ -312,7 +312,7 @@
                         <li>
                             <a href="https://www.youtube.com/watch?v=MIbbtEjdYrc" title="" data-strip-group="mygroup"
                                 class="strip" data-strip-options="width: 700,height: 450,youtube: { autoplay: 1 }"><img
-                                    src="images/resources/photo11.jpg" alt="">
+                                    src="/images/resources/photo11.jpg" alt="">
                                 <i>
                                     <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px"
@@ -329,7 +329,7 @@
                         <li>
                             <a href="https://www.youtube.com/watch?v=MIbbtEjdYrc" title="" data-strip-group="mygroup"
                                 class="strip" data-strip-options="width: 700,height: 450,youtube: { autoplay: 1 }"><img
-                                    src="images/resources/photo12.jpg" alt="">
+                                    src="/images/resources/photo12.jpg" alt="">
                                 <i>
                                     <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px"

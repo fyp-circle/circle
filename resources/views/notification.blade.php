@@ -28,7 +28,7 @@
                                                     @default
                                                     <a href="#" title="">
                                                 @endswitch
-                                                <figure><img src="/{{$i->sender['profile_picture']}}" alt=""></figure>
+                                                <figure><img src="{{$i->sender['profile_picture']}}" alt=""></figure>
                                                 <div class="notifi-meta">
                                                     <p>{{$i->content}}</p>
                                                     <span>{{$i->created_at}}</span>

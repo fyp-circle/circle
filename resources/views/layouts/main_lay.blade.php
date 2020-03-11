@@ -229,7 +229,7 @@
                     <li>
                         <div class="author-thmb">
                             <a href="{{ route('mainscreen',['circle_id'=>1]) }}">
-                            <img src="/{{Auth::user()->profile_picture}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
+                            <img src="{{Auth::user()->profile_picture}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
                                 <span class="status f-online" style="bottom: 32px; background: black"></span>
                             </a>
                         </div>
@@ -238,7 +238,7 @@
                         <li>
                             <div class="author-thmb">
                                 <a href="{{ route('mainscreenfamily',['circle_id'=>2]) }}">
-                                    <img src="/{{Auth::user()->family_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
+                                    <img src="{{Auth::user()->family_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
                                     <span class="status f-online" style="bottom: 32px; background-color: red"></span>
                                 </a>
                             </div>
@@ -250,7 +250,7 @@
                         <li>
                             <div class="author-thmb">
                                 <a href="{{ route('mainscreenbusiness',['circle_id'=>3]) }}">
-                                    <img src="/{{Auth::user()->business_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
+                                    <img src="{{Auth::user()->business_user['profile_picture']}}" alt="" style="border-radius:50%; width:45px; height:45px; object-fit:cover">
                                     <span class="status f-online" style="bottom: 32px; background-color:cornflowerblue"></span>
                                 </a>
                             </div>
@@ -309,7 +309,7 @@
                                         @default
                                         <a href="#" title="">
                                     @endswitch
-                                            <img src="/{{$i->sender['profile_picture']}}" alt="">
+                                            <img src="{{$i->sender['profile_picture']}}" alt="">
                                             <div class="mesg-meta">
                                                 <h6>{{$i->title}}</h6>
                                                 <span>{{$i->content}}</span>
@@ -344,7 +344,7 @@
                             <ul class="drops-menu">
                                 <li>
                                     <a href="{{url('messagefriends')}}" title="">
-                                        <img src="images/resources/thumb-1.jpg" alt="">
+                                        <img src="/images/resources/thumb-1.jpg" alt="">
                                         <div class="mesg-meta">
                                             <h6>sarah Loren</h6>
                                             <span>Hi, how r u dear ...?</span>
@@ -381,7 +381,7 @@
                     </li>
                 </ul>
                 <div class="user-img" style="left: 10px">
-                    <img src="/{{Auth::user()->profile_picture}}" alt="" style="width:45px; height:45px; object-fit:cover">
+                    <img src="{{Auth::user()->profile_picture}}" alt="" style="width:45px; height:45px; object-fit:cover">
                     {{-- <span class="status f-online"></span> --}}
                     {{Auth::user()->name}}
                     <div class="user-setting">
@@ -464,7 +464,7 @@
             var newNotificationHtml = `
             <li>
             <a href="{{ route('notification') }}" title="">
-                    <img src="/`+data.sender.business_user.profile_picture+`" alt="">
+                    <img src="`+data.sender.business_user.profile_picture+`" alt="">
                     <div class="mesg-meta">
                         <h6>`+data.title+`</h6>
                         <span>`+data.content+`</span>
@@ -516,7 +516,7 @@
             var newNotificationHtml = `
             <li>
             <a href="{{ route('notification') }}" title="">
-                    <img src="/`+data.sender.profile_picture+`" alt="">
+                    <img src="`+data.sender.profile_picture+`" alt="">
                     <div class="mesg-meta">
                         <h6>`+data.title+`</h6>
                         <span>`+data.content+`</span>
@@ -569,7 +569,7 @@
             var newNotificationHtml = `
             <li>
             <a href="{{ route('notification') }}" title="">
-                    <img src="/`+data.sender.profile_picture+`" alt="">
+                    <img src="`+data.sender.profile_picture+`" alt="">
                     <div class="mesg-meta">
                         <h6>`+data.title+`</h6>
                         <span>`+data.content+`</span>

@@ -89,7 +89,7 @@
                         <li>
                             <a class="strip" href="#" title="" data-strip-group="mygroup"
                                 data-strip-group-options="loop: false">
-                                <img src="/{{$post->picture}}" alt=""></a>
+                                <img src="{{$post->picture}}" alt=""></a>
                         </li>
                         @endif
                         @endforeach

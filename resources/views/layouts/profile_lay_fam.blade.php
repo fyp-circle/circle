@@ -4,7 +4,7 @@
 <section>
     <div class="feature-photo">
         @if ($c==1 || $c==2 )
-            <figure><img src="/{{$user->family_user->cover_picture}}" alt="User Cover Picture" style="height: 350px; width: 1100%; object-fit: cover;"> </figure>
+            <figure><img src="{{$user->family_user->cover_picture}}" alt="User Cover Picture" style="height: 350px; width: 1100%; object-fit: cover;"> </figure>
         @else
         <script language="JavaScript" Type="text/javascript">
             <!--
@@ -13,7 +13,7 @@
             }
             //-->
         </script>
-        <figure><img src="/{{$user->family_user->cover_picture}}" alt="User Cover Picture" style="height: 350px; width: 1100%; object-fit: cover;filter: blur(7px);"  onMouseDown="popupMsg('You can not Download the Image Sorry.')"> </figure>
+        <figure><img src="{{$user->family_user->cover_picture}}" alt="User Cover Picture" style="height: 350px; width: 1100%; object-fit: cover;filter: blur(7px);"  onMouseDown="popupMsg('You can not Download the Image Sorry.')"> </figure>
 
         @endif
 
@@ -103,10 +103,10 @@
                     <div class="user-avatar" style="width: 170px; height: 170px; margin-top:-6.9rem">
                         <figure>
                             @if ($c==1 || $c==2 )
-                            <img src="/{{$user->family_user->profile_picture}}" alt="User Profile Image"
+                            <img src="{{$user->family_user->profile_picture}}" alt="User Profile Image"
                             style="height:170px; width: 170px;object-fit: cover;">
                             @else
-                            <img src="/{{$user->family_user->profile_picture}}" alt="User Profile Image"
+                            <img src="{{$user->family_user->profile_picture}}" alt="User Profile Image"
                             style="height:170px; width: 170px;object-fit: cover;filter: blur(7px);" onMouseDown="popupMsg('You can not Download the Image Sorry.')">
 
                             @endif

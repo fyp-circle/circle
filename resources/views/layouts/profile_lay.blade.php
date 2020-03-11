@@ -3,7 +3,7 @@
 @section('content')
 <section>
     <div class="feature-photo">
-        <figure><img src="/{{$user->cover_picture}}" alt="User Cover Picture" style="height: 350px; width: 100%; object-fit:cover;"> </figure>
+        <figure><img src="{{$user->cover_picture}}" alt="User Cover Picture" style="height: 350px; width: 100%; object-fit:cover;"> </figure>
 
         @if ($c==0)
             {{-- Add --}}
@@ -90,7 +90,7 @@
                 <div class="col-lg-2 col-sm-3">
                     <div class="user-avatar" style="width: 170px; height: 170px; margin-top:-6.9rem">
                         <figure>
-                            <img src="/{{$user->profile_picture}}" alt="User Profile Image"
+                            <img src="{{$user->profile_picture}}" alt="User Profile Image"
                                 style="height:170px; width: 170px;object-fit: cover;">
                             {{-- <form class="edit-phto" action="{{ route('user.profile.picture.upload') }}"
                             method="POST" enctype="multipart/form-data" >

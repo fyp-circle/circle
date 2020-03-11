@@ -343,7 +343,7 @@
                         <ul id="people-list" class="friendz-list">
                             <li>
                                 <figure>
-                                    <img src="//images/resources/friend-avatar.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">bucky barnes</a>
@@ -351,7 +351,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img src="//images/resources/friend-avatar2.jpg" alt="">
+                                    <img src="/images/resources/friend-avatar2.jpg" alt="">
                                 </figure>
                                 <div class="friendz-meta">
                                     <a href="time-line.html">Sarah Loren</a>

@@ -94,12 +94,12 @@ class ProfileController extends Controller
         }
         if($request->hasFile('dp'))
         {
-            $user->profile_picture = 'images/users/Friend/Profile_Pictures/'.$dpName;
+            $user->profile_picture = '/images/users/Friend/Profile_Pictures/'.$dpName;
 
         }
         if($request->hasFile('cover'))
         {
-            $user->cover_picture = 'images/users/Friend/Cover_Pictures/'.$coverName;
+            $user->cover_picture = '/images/users/Friend/Cover_Pictures/'.$coverName;
 
         }
         alert()->success('Profile Updated','You have successfully Updated your Profile.')->position('top-end')->toToast()->width('24rem');
@@ -159,12 +159,12 @@ class ProfileController extends Controller
         }
         if($request->hasFile('dp'))
         {
-            $f_user->profile_picture = 'images/users/Family/Profile_Pictures/'.$dpName;
+            $f_user->profile_picture = '/images/users/Family/Profile_Pictures/'.$dpName;
 
         }
         if($request->hasFile('cover'))
         {
-            $f_user->cover_picture = 'images/users/Family/Cover_Pictures/'.$coverName;
+            $f_user->cover_picture = '/images/users/Family/Cover_Pictures/'.$coverName;
 
         }
         alert()->success('Family Profile Updated','You have successfully Updated your Family Profile.')->position('top-end')->toToast()->width('24rem');
@@ -223,12 +223,12 @@ class ProfileController extends Controller
         }
         if($request->hasFile('dp'))
         {
-            $b_user->profile_picture = 'images/users/Business/Profile_Pictures/'.$dpName;
+            $b_user->profile_picture = '/images/users/Business/Profile_Pictures/'.$dpName;
 
         }
         if($request->hasFile('cover'))
         {
-            $b_user->cover_picture = 'images/users/Business/Cover_Pictures/'.$coverName;
+            $b_user->cover_picture = '/images/users/Business/Cover_Pictures/'.$coverName;
 
         }
         alert()->success('Business Profile Updated','You have successfully Updated your Business Profile.')->position('top-end')->toToast()->width('24rem');
