@@ -15,7 +15,19 @@
                                         <ul>
                                             @foreach ($notifications as $i)
                                             <li>
-                                                <a href="{{ route('viewprofile',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
+                                                @switch($i->circle_id)
+                                                    @case(1)
+                                                    <a href="{{ route('viewprofile',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
+                                                        @break
+                                                    @case(2)
+                                                    <a href="{{ route('viewprofilefamily',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
+                                                        @break
+                                                    @case(3)
+                                                    <a href="{{ route('viewprofilebusines',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
+                                                        @break
+                                                    @default
+                                                    <a href="#" title="">
+                                                @endswitch
                                                 <figure><img src="/{{$i->sender['profile_picture']}}" alt=""></figure>
                                                 <div class="notifi-meta">
                                                     <p>{{$i->content}}</p>

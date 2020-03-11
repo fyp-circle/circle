@@ -77,6 +77,35 @@ class CheckController extends Controller
         return $first;
     }
 
+
+    public function getConnections($id,$circle_id){
+        $cons1 = User::find($id)->connections1()->where('circle_id',$circle_id)->where('approve',1)->get();
+        // return $cons1;
+        $cons2 = User::find($id)->connections2()->where('circle_id',$circle_id)->where('approve',1)->get();
+
+        $cons= $cons1->merge($cons2);
+        return $cons;
+    }
+
+    public function getFriendRequests($id,$circle_id){
+        $cons1 = User::find($id)->connections1()->where('circle_id',$circle_id)->where('con_ini','!=',$id)->where('approve',0)->get();
+        // return $cons1;
+        $cons2 = User::find($id)->connections2()->where('circle_id',$circle_id)->where('con_ini','!=',$id)->where('approve',0)->get();
+
+        $cons= $cons1->merge($cons2);
+        return $cons;
+    }
+
+    public function getSentRequests($id,$circle_id){
+        $cons1 = User::find($id)->connections1()->where('circle_id',$circle_id)->where('con_ini',$id)->where('approve',0)->get();
+        // return $cons1;
+        $cons2 = User::find($id)->connections2()->where('circle_id',$circle_id)->where('con_ini',$id)->where('approve',0)->get();
+
+        $cons= $cons1->merge($cons2);
+        return $cons;
+    }
+
+
     public function getConnection($id,$circle_id){
         $c=0;
         $a=1;
@@ -291,7 +320,8 @@ class CheckController extends Controller
         else{
             $n = CheckController::getNotifications();
             $c=CheckController::checkConnection($id,$circle_id);
-            return view("profileviews.viewphotos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+            $my_posts=CheckController::getMyPosts($circle_id,$id);
+            return view("profileviews.viewphotos")->with('posts',$my_posts)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
 
     }
@@ -318,7 +348,11 @@ class CheckController extends Controller
         else{
             $c=CheckController::checkConnection($id,$circle_id);
          $n = CheckController::getNotifications();
-        return view("profileviews.viewfriends")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+         $cons=CheckController::getConnections($id,$circle_id);
+         $reqs=CheckController::getFriendRequests($id,$circle_id);
+         $sreqs=CheckController::getSentRequests($id,$circle_id);
+        //  return $cons;
+        return view("profileviews.viewfriends")->with('sreqs',$sreqs)->with('cons',$cons)->with('reqs',$reqs)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
     }
     public function viewabout($id, $circle_id){

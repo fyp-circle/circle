@@ -37,7 +37,7 @@
                                                     class="mtrl-select"></i>
                                             </div>
                                             <div class="form-group">
-                                                <input disabled type="text" required="required" name="email" value= "{{Auth::user()->email}}"/>
+                                                <input disabled type="text" name="email" value= "{{Auth::user()->email}}"/>
                                                 <label class="control-label" for="input">Email@</label><i
                                                     class="mtrl-select"></i>
                                             </div>

@@ -126,12 +126,14 @@
                                     style="-webkit-text-fill-color: black">Photos</a>
                                 <a class="" href="{{ route('viewvideos',['id'=>$profile_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">Videos</a>
+                                @if (Auth::user()->user_id==$profile_id)
                                 <a class="" href="{{ route('viewfriends',['id'=>$profile_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
-                                    style="-webkit-text-fill-color: black">Friends Circle</a>
+                                    style="-webkit-text-fill-color: black">My Friends Circle</a>
+                                @endif
                                 <a class="" href="{{ route('viewabout',['id'=>$profile_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">About</a>
-                                <a class="" href="" title="" data-ripple=""
-                                    style="-webkit-text-fill-color: black">More</a>
+                                {{-- <a class="" href="" title="" data-ripple=""
+                                    style="-webkit-text-fill-color: black">More</a> --}}
                             </li>
                         </ul>
                     </div>

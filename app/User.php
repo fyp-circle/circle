@@ -63,11 +63,11 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     public function connections1(){
-        return $this->hasMany('App\Connection','user1_id','user1_id');
+        return $this->hasMany('App\Connection','user1_id','user_id');
     }
 
     public function connections2(){
-        return $this->hasMany('App\Connection','user2_id','user2_id');
+        return $this->hasMany('App\Connection','user2_id','user_id');
     }
 
     public function comments(){

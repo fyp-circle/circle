@@ -296,7 +296,19 @@
                             <ul class="drops-menu" id="test2" class="dropdown-menu">
                                 @foreach ($notifications as $i)
                                 <li>
-                                    <a href="{{ route('viewprofile',['id'=>$i->sender_id,'circle_id'=>$i->circle_id]) }}" title="">
+                                    @switch($i->circle_id)
+                                        @case(1)
+                                        <a href="{{ route('viewprofile',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
+                                            @break
+                                        @case(2)
+                                        <a href="{{ route('viewprofilefamily',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
+                                            @break
+                                        @case(3)
+                                        <a href="{{ route('viewprofilebusines',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
+                                            @break
+                                        @default
+                                        <a href="#" title="">
+                                    @endswitch
                                             <img src="/{{$i->sender['profile_picture']}}" alt="">
                                             <div class="mesg-meta">
                                                 <h6>{{$i->title}}</h6>
@@ -304,18 +316,20 @@
                                                 <i>{{$i->created_at}}</i>
                                             </div>
                                         </a>
-                                        @if ($i->circle_id==1)
-
+                                        @switch($i->circle_id)
+                                            @case(1)
                                             <span class="tag green" style="background-color:black;-webkit-text-fill-color: white">Friend</span>
-                                        @else
-                                            @if ($i->circle_id==3)
-
-                                            <span class="tag green" style="background-color:cornflowerblue;-webkit-text-fill-color: white">Business</span>
-                                            @else
-
+                                                @break
+                                            @case(2)
                                             <span class="tag green" style="background-color:red;-webkit-text-fill-color: white">Family</span>
-                                            @endif
-                                        @endif
+                                                @break
+                                            @case(3)
+                                            <span class="tag green" style="background-color:cornflowerblue;-webkit-text-fill-color: white">Business</span>
+                                                @break
+                                            @default
+                                            <a href="#" title="">
+                                        @endswitch
+
                                     </li>
                                 @endforeach
                             </ul>

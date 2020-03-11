@@ -1,7 +1,7 @@
 @extends('layouts.profile_lay')
 
 @section('profilecontent')
-@if ($c==1 || $c == 2)
+@if ($c == 2)
 <div class="row">
     <div class="col-lg-12">
         <div class="row merged20" id="page-contents">
@@ -10,198 +10,135 @@
                 <div class="central-meta">
                     <div class="frnds">
                         <ul class="nav nav-tabs">
-                            <li class="nav-item"><a class="active" href="#frends" data-toggle="tab">My Friends</a>
-                                <span>55</span></li>
+                        <li class="nav-item"><a class="active" href="#frends" data-toggle="tab">My Friends Circle(<span>{{count($cons)}}</span>)</a>
+                            </li>
+
                             <li class="nav-item"><a class="" href="#frends-req" data-toggle="tab">Friend
-                                    Requests</a><span>60</span></li>
+                                    Requests(<span>{{count($reqs)}}</span>)</a></li>
+
+                                    <li class="nav-item"><a class="" href="#sent-req" data-toggle="tab">Sent
+                                        Requests(<span>{{count($sreqs)}}</span>)</a></li>
                         </ul>
 
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div class="tab-pane active fade show " id="frends">
+                                @if (count($cons)==0)
+                                    No Friends Yet.
+                                @else
                                 <ul class="nearby-contct">
+                                    @foreach ($cons as $con)
                                     <li>
                                         <div class="nearly-pepls">
                                             <figure>
-                                                <a href="time-line.html" title=""><img
-                                                        src="/images/resources/friend-avatar9.jpg" alt=""></a>
+
+                                                @if ($con->user1_id!=Auth::user()->user_id)
+                                                <a href="{{ route('viewprofile',['id'=>$con->user1->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="/{{$con->user1->profile_picture}}" alt=""></a>
+                                                @else
+                                                <a href="{{ route('viewprofile',['id'=>$con->user2->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="/{{$con->user2->profile_picture}}" alt=""></a>
+                                                @endif
                                             </figure>
                                             <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">jhon kates</a></h4>
-                                                <span>ftv model</span>
-                                                <a href="#" title="" class="add-butn more-action"
-                                                    data-ripple="" style="right: 0">unfriend</a>
+                                                <h4>
+                                                    @if ($con->user1_id!=Auth::user()->user_id)
+                                                    <a href="{{ route('viewprofile',['id'=>$con->user1->user_id,'circle_id'=>$circle_id]) }}" title="">{{$con->user1->name}}</a>
+                                                    @else
+                                                    <a href="{{ route('viewprofile',['id'=>$con->user2->user_id,'circle_id'=>$circle_id]) }}" title="">{{$con->user2->name}}</a>
+                                                    @endif
+                                                </h4>
+                                                {{-- <span>ftv model</span> --}}
+
+                                                <a id = "UnfriendButton1" href="#" title="" class="add-butn more-action" data-ripple="" style="right: 0">Unfriend</a>
+                                                <script type="text/javascript">
+                                                    document.getElementById("UnfriendButton1").onclick = function () {
+                                                        var auth_id = "{{ Auth::user()->user_id}}";
+                                                        if ($con->user1_id!=auth_id) {
+                                                            var profile_id="{{$con->user1->user_id}}";
+
+                                                        } else {
+                                                            var profile_id="{{$con->user2->user_id}}";
+                                                        }
+                                                        location.href = "/unfriend/" + profile_id+"/{{Auth::user()->user_id}}";
+
+
+                                                    };
+                                                </script>
+
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img
-                                                        src="/images/resources/nearly1.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">sophia Gate</a></h4>
-                                                <span>tv actresses</span>
-                                                <a href="#" title="" class="add-butn more-action"
-                                                    data-ripple="" style="right: 0">unfriend</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img
-                                                        src="/images/resources/nearly2.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">sara grey</a></h4>
-                                                <span>work at IBM</span>
-                                                <a href="#" title="" class="add-butn more-action"
-                                                    data-ripple="" style="right: 0">unfriend</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img
-                                                        src="/images/resources/nearly2.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">Ema watson</a></h4>
-                                                <span>personal business</span>
-                                                <a href="#" title="" class="add-butn more-action"
-                                                    data-ripple="" style="right: 0">unfriend</a>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    @endforeach
                                 </ul>
+                                @endif
                                 <div class="lodmore"><button class="btn-view btn-load-more"></button></div>
                             </div>
                             <div class="tab-pane fade" id="frends-req">
+                                @if (count($reqs)==0)
+                                    No Friend Requests.
+                                @else
                                 <ul class="nearby-contct">
+                                    @foreach ($reqs as $req)
                                     <li>
                                         <div class="nearly-pepls">
                                             <figure>
-                                                <a href="time-line.html" title=""><img
-                                                        src="/images/resources/nearly5.jpg" alt=""></a>
+                                                @if ($req->user1_id!=Auth::user()->user_id)
+                                                <a href="{{ route('viewprofile',['id'=>$req->user1->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="/{{$req->user1->profile_picture}}" alt=""></a>
+                                                @else
+                                                <a href="{{ route('viewprofile',['id'=>$req->user2->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="/{{$req->user2->profile_picture}}" alt=""></a>
+                                                @endif
                                             </figure>
                                             <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">Amy watson</a></h4>
-                                                <span>ftv model</span>
+                                                <h4>
+                                                    @if ($req->user1_id!=Auth::user()->user_id)
+                                                    <a href="{{ route('viewprofile',['id'=>$req->user1->user_id,'circle_id'=>$circle_id]) }}" title="">{{$req->user1->name}}</a>
+                                                    @else
+                                                    <a href="{{ route('viewprofile',['id'=>$req->user2->user_id,'circle_id'=>$circle_id]) }}" title="">{{$req->user2->name}}</a>
+                                                    @endif
+                                                </h4>
+                                                {{-- <span>ftv model</span> --}}
                                                 <a href="#" title="" class="add-butn more-action" data-ripple="">delete
                                                     Request</a>
                                                 <a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img
-                                                        src="/images/resources/nearly1.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">sophia Gate</a></h4>
-                                                <span>ftv model</span>
-                                                <a href="#" title="" class="add-butn more-action" data-ripple="">delete
-                                                    Request</a>
-                                                <a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img
-                                                        src="/images/resources/nearly6.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">caty lasbo</a></h4>
-                                                <span>ftv model</span>
-                                                <a href="#" title="" class="add-butn more-action" data-ripple="">delete
-                                                    Request</a>
-                                                <a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img
-                                                        src="/images/resources/friend-avatar9.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">jhon kates</a></h4>
-                                                <span>ftv model</span>
-                                                <a href="#" title="" class="add-butn more-action" data-ripple="">delete
-                                                    Request</a>
-                                                <a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img
-                                                        src="/images/resources/nearly2.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">sara grey</a></h4>
-                                                <span>ftv model</span>
-                                                <a href="#" title="" class="add-butn more-action" data-ripple="">delete
-                                                    Request</a>
-                                                <a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img
-                                                        src="/images/resources/nearly4.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">Sara grey</a></h4>
-                                                <span>ftv model</span>
-                                                <a href="#" title="" class="add-butn more-action" data-ripple="">delete
-                                                    Request</a>
-                                                <a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img
-                                                        src="/images/resources/nearly3.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">Sexy cat</a></h4>
-                                                <span>ftv model</span>
-                                                <a href="#" title="" class="add-butn more-action" data-ripple="">delete
-                                                    Request</a>
-                                                <a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img
-                                                        src="/images/resources/friend-avatar9.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">jhon kates</a></h4>
-                                                <span>ftv model</span>
-                                                <a href="#" title="" class="add-butn more-action" data-ripple="">delete
-                                                    Request</a>
-                                                <a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    @endforeach
                                 </ul>
+                                @endif
+                                <button class="btn-view btn-load-more"></button>
+                            </div>
+
+                            <div class="tab-pane fade" id="sent-req">
+                                @if (count($sreqs)==0)
+                                    No Sent Requests.
+                                @else
+                                <ul class="nearby-contct">
+                                    @foreach ($sreqs as $sreq)
+                                    <li>
+                                        <div class="nearly-pepls">
+                                            <figure>
+                                                @if ($sreq->user1_id!=Auth::user()->user_id)
+                                                <a href="{{ route('viewprofile',['id'=>$sreq->user1->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="/{{$sreq->user1->profile_picture}}" alt=""></a>
+                                                @else
+                                                <a href="{{ route('viewprofile',['id'=>$sreq->user2->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="/{{$sreq->user2->profile_picture}}" alt=""></a>
+                                                @endif
+                                            </figure>
+                                            <div class="pepl-info">
+                                                <h4>
+                                                    @if ($sreq->user1_id!=Auth::user()->user_id)
+                                                    <a href="{{ route('viewprofile',['id'=>$sreq->user1->user_id,'circle_id'=>$circle_id]) }}" title="">{{$sreq->user1->name}}</a>
+                                                    @else
+                                                    <a href="{{ route('viewprofile',['id'=>$sreq->user2->user_id,'circle_id'=>$circle_id]) }}" title="">{{$sreq->user2->name}}</a>
+                                                    @endif
+                                                </h4>
+                                                {{-- <span>ftv model</span> --}}
+                                                <a href="#" title="" class="add-butn more-action" data-ripple="">Unsend Request</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                                @endif
                                 <button class="btn-view btn-load-more"></button>
                             </div>
                         </div>

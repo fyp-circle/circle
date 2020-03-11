@@ -16,7 +16,7 @@ class ProfileController extends Controller
         $request->validate([
 
             'name' => 'required',
-            'email' => ['required', 'string', 'email', 'max:255'],
+            // 'email' => ['string', 'email', 'max:255'],
             // 'phone' => ['required'],
             // 'country' => ['required'],
             // 'city' => ['required'],
