@@ -49,32 +49,52 @@ class CheckController extends Controller
             return $posts;
     }
 
-    public function getFriendsPosts($circle_id){
-        $con=DB::table('connections')
-            ->where([
-                ['user2_id', Auth::user()->user_id],
-                ['circle_id', $circle_id],
-            ])
-            ->orWhere([
-                ['user1_id', Auth::user()->user_id],
-                ['circle_id', $circle_id],
-            ])
-            ->get();
-            // $items=collect();
-            foreach ($con as $c) {
-                if ($c->user1_id != Auth::user()->user_id) {
-                    $first[]=(User::find($c->user1_id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get());
-                } else {
-                    $first[]=(User::find($c->user2_id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get());
-                }
-                // $items->push($first);
+    public function getCirclePosts($circle_id){
+        $cons1 = User::find(Auth::user()->user_id)->connections1()->where('circle_id',$circle_id)->where('approve',1)->get();
+        // return $cons1;
+        $cons2 = User::find(Auth::user()->user_id)->connections2()->where('circle_id',$circle_id)->where('approve',1)->get();
 
+        $cons= $cons1->merge($cons2);
+        $all_posts= collect();
+        foreach ($cons as $con) {
+            if ($con->user1->user_id!=Auth::user()->user_id) {
+                $posts = User::find($con->user1->user_id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get();
+                $all_posts= $all_posts->merge($posts);
             }
-            $first[]=(User::find(Auth::user()->user_id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get());
-            // $items=$items->sortBy('updated_at');
-            // $items->toJson();
-            dd($first);
-        return $first;
+            else {
+                $posts = User::find($con->user2->user_id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get();
+                $all_posts= $all_posts->merge($posts);
+            }
+        }
+        $posts = User::find(Auth::user()->user_id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get();
+        $all_posts= $all_posts->merge($posts);
+        $sorted_posts = $all_posts->sortByDesc('updated_at',);
+        return $sorted_posts;
+        // $con=DB::table('connections')
+        //     ->where([
+        //         ['user2_id', Auth::user()->user_id],
+        //         ['circle_id', $circle_id],
+        //     ])
+        //     ->orWhere([
+        //         ['user1_id', Auth::user()->user_id],
+        //         ['circle_id', $circle_id],
+        //     ])
+        //     ->get();
+        //     // $items=collect();
+        //     foreach ($con as $c) {
+        //         if ($c->user1_id != Auth::user()->user_id) {
+        //             $first[]=(User::find($c->user1_id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get());
+        //         } else {
+        //             $first[]=(User::find($c->user2_id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get());
+        //         }
+        //         // $items->push($first);
+
+        //     }
+        //     $first[]=(User::find(Auth::user()->user_id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get());
+        //     // $items=$items->sortBy('updated_at');
+        //     // $items->toJson();
+        //     dd($first);
+        // return $first;
     }
 
 
@@ -245,9 +265,9 @@ class CheckController extends Controller
         //$user = User::find($id);
         $id=Auth::user()->user_id;
         $n = CheckController::getNotifications();
-        // $my_posts=CheckController::getFriendsPosts($circle_id);
+        $my_posts=CheckController::getCirclePosts($circle_id);
         // return $my_posts;
-        $my_posts=CheckController::getMyPosts($circle_id,$id);
+        // $my_posts=CheckController::getMyPosts($circle_id,$id);
         $c=CheckController::checkConnection($id,$circle_id);
         return view("main.mainscreen")->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
     }
@@ -261,7 +281,7 @@ class CheckController extends Controller
             // return $circle_id;
             $n = CheckController::getNotifications();
             $c=CheckController::checkConnection($id,$circle_id);
-            $my_posts=CheckController::getMyPosts($circle_id,$id);
+            $my_posts=CheckController::getCirclePosts($circle_id);
             return view("main.mainscreenfamily")->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
         }
 
@@ -278,7 +298,7 @@ class CheckController extends Controller
         // return $circle_id;
         $n = CheckController::getNotifications();
         $c=CheckController::checkConnection($id,$circle_id);
-        $my_posts=CheckController::getMyPosts($circle_id,$id);
+        $my_posts=CheckController::getCirclePosts($circle_id);
         return view("main.mainscreenbusiness")->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
         }
 
