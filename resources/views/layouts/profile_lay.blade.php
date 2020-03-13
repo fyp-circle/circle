@@ -118,6 +118,7 @@
 
                                 {{-- <span>Group Admin</span> --}}
                             </li>
+                            @if ($c==2 || $c==1)
                             <li>
                                 <a class="" href="{{ route('viewprofile',['id'=>$profile_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">time
@@ -135,6 +136,7 @@
                                 {{-- <a class="" href="" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">More</a> --}}
                             </li>
+                            @endif
                         </ul>
                     </div>
                 </div>

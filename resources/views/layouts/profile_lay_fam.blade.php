@@ -135,6 +135,7 @@
 
                                 {{-- <span>Group Admin</span> --}}
                             </li>
+                            @if ($c==2 || $c==1)
                             <li>
                                 <a class="" href="{{ route('viewprofilefamily',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">time
@@ -143,13 +144,16 @@
                                     style="-webkit-text-fill-color: black">Photos</a>
                                 <a class="" href="{{ route('viewvideosfamily',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">Videos</a>
-                                <a class="" href="{{ route('viewfamily',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
-                                    style="-webkit-text-fill-color: black">Family Circle</a>
+                                    @if (Auth::user()->user_id==$profile_id)
+                                    <a class="" href="{{ route('viewfamily',['id'=>$profile_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
+                                        style="-webkit-text-fill-color: black">My Family Circle</a>
+                                    @endif
                                 <a class="" href="{{ route('viewaboutfamily',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">About</a>
-                                <a class="" href="" title="" data-ripple=""
-                                    style="-webkit-text-fill-color: black">More</a>
+                                {{-- <a class="" href="" title="" data-ripple=""
+                                    style="-webkit-text-fill-color: black">More</a> --}}
                             </li>
+                            @endif
                         </ul>
                     </div>
                 </div>

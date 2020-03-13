@@ -423,7 +423,9 @@ class CheckController extends Controller
         else{
             $n = CheckController::getNotifications();
             $c=CheckController::checkConnection($id,$circle_id);
-            return view("profileviewsfamily.viewphotos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+            $my_posts=CheckController::getMyPosts($circle_id,$id);
+            $con=CheckController::getConnection($id,$circle_id);
+            return view("profileviewsfamily.viewphotos")->with('con',$con)->with('posts',$my_posts)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
 
     }
@@ -437,7 +439,8 @@ class CheckController extends Controller
         else{
             $n = CheckController::getNotifications();
             $c=CheckController::checkConnection($id,$circle_id);
-            return view("profileviewsfamily.viewvideos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+            $con=CheckController::getConnection($id,$circle_id);
+            return view("profileviewsfamily.viewvideos")->with('con',$con)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
 
     }
@@ -451,7 +454,11 @@ class CheckController extends Controller
         else{
             $n = CheckController::getNotifications();
             $c=CheckController::checkConnection($id,$circle_id);
-            return view("profileviewsfamily.viewfamily")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+            $cons=CheckController::getConnections($id,$circle_id);
+            $reqs=CheckController::getFriendRequests($id,$circle_id);
+            $sreqs=CheckController::getSentRequests($id,$circle_id);
+            $con=CheckController::getConnection($id,$circle_id);
+            return view("profileviewsfamily.viewfamily")->with('con',$con)->with('sreqs',$sreqs)->with('cons',$cons)->with('reqs',$reqs)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
 
     }
@@ -466,7 +473,8 @@ class CheckController extends Controller
         else{
             $n = CheckController::getNotifications();
             $c=CheckController::checkConnection($id,$circle_id);
-            return view("profileviewsfamily.viewabout")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+            $con=CheckController::getConnection($id,$circle_id);
+            return view("profileviewsfamily.viewabout")->with('con',$con)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
 
     }

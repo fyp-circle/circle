@@ -41,7 +41,7 @@
                         <div class="personal">
                             <h5 class="f-title"><i class="ti-info-alt"></i> Personal Info</h5>
                             <p>
-                                {{Auth::user()->family_user['about_me']}}
+                                {{$user->family_user['about_me']}}
                             </p>
                         </div>
                         <div class="d-flex flex-row mt-2">
@@ -62,10 +62,12 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="basic">
                                     <ul class="basics">
-                                        <li><i class="ti-user"></i>{{Auth::user()->family_user['name']}}</li>
-                                        <li><i class="ti-map-alt"></i>{{Auth::user()->city}} , {{Auth::user()->country}}</li>
-                                        <li><i class="ti-mobile"></i>{{Auth::user()->family_user['phone']}}</li>
-                                        <li><i class="ti-email"></i>{{Auth::user()->family_user['email']}}</li>
+                                        <li><i class="ti-user"></i>{{$user->family_user['name']}}</li>
+                                        <li><i class="ti-map-alt"></i>{{$user->city}} , {{$user->country}}</li>
+                                        <li><i class="ti-mobile"></i>{{$user->family_user['phone']}}</li>
+                                        @if ($user->user_id==Auth::user()->user_id)
+                                        <li><i class="ti-email"></i>{{$user->family_user['email']}}</li>
+                                        @endif
                                         <li><i class="ti-world"></i>www.yoursite.com</li>
                                     </ul>
                                 </div>
