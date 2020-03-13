@@ -16,7 +16,7 @@ use App\User;
 use Carbon\Carbon;
 
 
-class SentRequestEventF
+class SentRequestEventF implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -38,7 +38,7 @@ class SentRequestEventF
     {
 
         $this->title = "New Family Request.";
-        $this->content = Auth::user()->family_user['name']." sent you a Request as ".Auth::user()->family_user['name']." is your ".$rel;
+        $this->content = Auth::user()->family_user['name']." sent you a Request as ".Auth::user()->family_user['name']." is your ".$rel.".";
         $this->user_id = Auth::user()->user_id;
         $this->circle_id = 2;
         $this->dest_id=$dest_id;
@@ -59,6 +59,6 @@ class SentRequestEventF
 
     public function broadcastAs()
     {
-        return 'fr-event';
+        return 'my-event';
     }
 }
