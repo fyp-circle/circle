@@ -16,6 +16,7 @@ use App\Events\SentRequestEventB;
 use App\Events\StalkingEvent;
 use Illuminate\Support\Facades\Redirect;
 use App\Events\CancelRequest;
+use App\Events\AcceptRequest;
 
 class BusinessController extends Controller
 {
@@ -114,17 +115,8 @@ class BusinessController extends Controller
             ]);
 
             $sender=User::find($sender_id);
-
-            $notif = new Notif;
-            $notif->title = "Business Request Accepted.";
-            $notif->content= $sender->business_user->name." accepted your request in Circle Business.";
-            $notif->read = 0;
-            $notif->user_id =$id;
-            $notif->sender_id =Auth::user()->user_id;
-            $notif->circle_id = 3;
-            $notif->save();
-
             $user=User::find($id);
+            event(new AcceptRequest($id,3));
 
             $content="You have accepted request from ".$user->business_user->name."'s Business profile.";
         BusinessController::createActivity(3,$content);

@@ -18,6 +18,7 @@ use App\Events\StalkingEvent;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use App\Events\CancelRequest;
+use App\Events\AcceptRequest;
 
 
 class CheckController extends Controller
@@ -857,17 +858,8 @@ class CheckController extends Controller
             ]);
 
             $sender=User::find($sender_id);
-
-            $notif = new Notif;
-            $notif->title = "Friend Request Accepted.";
-            $notif->content= $sender->name." accepted your request in Circle Friend.";
-            $notif->read = 0;
-            $notif->user_id =$id;
-            $notif->sender_id =Auth::user()->user_id;
-            $notif->circle_id = 1;
-            $notif->save();
-
             $user=User::find($id);
+            event(new AcceptRequest($id,1));
             $content="You accepted the request from ".$user->name."'s Friend profile.";
         CheckController::createActivity(1,$content);
             alert()->success('You and '.$user->name.' are now connected through Friend Circle','')->position('top-end')->toToast()->width('24rem');

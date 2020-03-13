@@ -13,7 +13,7 @@ use Auth;
 use App\User;
 use Carbon\Carbon;
 
-class CancelRequest implements ShouldBroadcast
+class AcceptRequest implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -35,16 +35,16 @@ class CancelRequest implements ShouldBroadcast
     {
         switch ($circle_id) {
             case '1':
-                $this->title = "Friend Request Cancelled.";
-                $this->content = Auth::user()->name." cancelled your request in Friend Circle.";
+                $this->title = "Friend Request Accepted.";
+                $this->content = Auth::user()->name." accepted your request in Friend Circle.";
                 break;
             case '2':
-                $this->title = "Family Request Cancelled.";
-                $this->content = Auth::user()->family_user->name." cancelled your request in Family Circle.";
+                $this->title = "Family Request Accepted.";
+                $this->content = Auth::user()->family_user->name." accepted your request in Family Circle.";
                 break;
             case '3':
-                $this->content = Auth::user()->business_user->name." cancelled your request in Business Circle.";
-                $this->title = "Business Request Cancelled.";
+                $this->content = Auth::user()->business_user->name." accepted your request in Business Circle.";
+                $this->title = "Business Request Accepted.";
                 break;
             default:
                 # code...

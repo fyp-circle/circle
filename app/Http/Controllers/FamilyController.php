@@ -14,6 +14,7 @@ Use Alert;
 use Auth;
 use App\Events\MyEvent;
 use App\Events\CancelRequest;
+use App\Events\AcceptRequest;
 use App\Events\StalkingEvent;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
@@ -82,18 +83,8 @@ class FamilyController extends Controller
             ]);
 
             $sender=User::find($sender_id);
-
-            $notif = new Notif;
-            $notif->title = "Family Request Accepted.";
-            $notif->content= $sender->family_user->name." accepted your request in Circle Family.";
-            $notif->read = 0;
-            $notif->user_id =$id;
-            $notif->sender_id =Auth::user()->user_id;
-            $notif->circle_id = 2;
-            $notif->save();
-
             $user=User::find($id);
-
+            event(new AcceptRequest($id,2));
             $content="You have accepted request from ".$user->family_user->name."'s Family profile.";
             FamilyController::createActivity(2,$content);
             alert()->success('You and '.$user->family_user->name.' are now connected through Family Circle','')->position('top-end')->toToast()->width('24rem');

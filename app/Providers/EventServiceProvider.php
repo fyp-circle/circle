@@ -38,6 +38,10 @@ class EventServiceProvider extends ServiceProvider
          'App\Events\CancelRequest' => [
             'App\Listeners\CreateCancelRequestNotification',
          ],
+
+         'App\Events\AcceptRequest' => [
+            'App\Listeners\CreateAcceptRequestNotification',
+         ],
     ];
 
     /**
