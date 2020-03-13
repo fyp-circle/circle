@@ -435,7 +435,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         var notificationsWrapper   = $('.dropdown-notifications');
         var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
         var notificationsCountElem = notificationsToggle.find('i[data-count]');
@@ -485,7 +485,7 @@
 
 
 
-      </script>
+    </script> --}}
 
     <script type="text/javascript">
         var notificationsWrapper   = $('.dropdown-notifications');
@@ -509,9 +509,10 @@
         // Subscribe to the channel we specified in our Laravel Event
         var user_id="{{Auth::user()->user_id}}";
         // var profile_id = "{{$profile_id ?? ''}}";
-            var channel = pusher.subscribe('user_id_'+user_id);
-            // Bind a function to a Event (the full Laravel class)
-            channel.bind('my-event', function(data) {
+        var channel = pusher.subscribe('user_id_'+user_id);
+        // Bind a function to a Event (the full Laravel class)
+
+        var addnotif=function(data) {
 
             var existingNotifications = $("#test2").html();
             //   var avatar = Math.floor(Math.random() * (71 - 20 + 1)) + 20;
@@ -533,13 +534,20 @@
             notificationsCountElem.attr('data-count', notificationsCount);
             notificationsWrapper.find('.notif-count').text(notificationsCount);
             notificationsWrapper.show();
-            });
+        }
+
+
+        channel.bind('my-event',addnotif);
 
 
 
-      </script>
 
 
+
+
+    </script>
+
+{{--
 <script type="text/javascript">
     var notificationsWrapper   = $('.dropdown-notifications');
     var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
@@ -591,7 +599,7 @@
 
 
 
-  </script>
+</script> --}}
 
 
 

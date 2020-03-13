@@ -21,13 +21,13 @@ class ConnectionsTableSeeder extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
-        DB::table('connections')->insert([
-            'user1_id'     => '1',
-            'user2_id'     => '3',
-            'circle_id'     => '3',
-            'approve'     => '1',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-        ]);
+        // DB::table('connections')->insert([
+        //     'user1_id'     => '1',
+        //     'user2_id'     => '3',
+        //     'circle_id'     => '3',
+        //     'approve'     => '1',
+        //     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+        // ]);
 
         DB::table('connections')->insert([
             'user1_id'     => '1',

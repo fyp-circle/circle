@@ -14,7 +14,7 @@ use Auth;
 use App\User;
 use Carbon\Carbon;
 
-class SentRequestEventB
+class SentRequestEventB implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -57,6 +57,6 @@ class SentRequestEventB
 
     public function broadcastAs()
     {
-        return 'br-event';
+        return 'my-event';
     }
 }
