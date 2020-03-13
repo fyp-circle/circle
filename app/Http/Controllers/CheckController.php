@@ -17,6 +17,7 @@ use App\Events\MyEvent;
 use App\Events\StalkingEvent;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
+use App\Events\CancelRequest;
 
 
 class CheckController extends Controller
@@ -800,15 +801,7 @@ class CheckController extends Controller
 
             $sender=User::find($sender_id);
             $user=User::find($id);
-
-            $notif = new Notif;
-            $notif->title = "Friend Request Cancelled.";
-            $notif->content= $sender->name." cancelled your request in Circle Friend.";
-            $notif->read = 0;
-            $notif->user_id =$id;
-            $notif->sender_id =Auth::user()->user_id;
-            $notif->circle_id = 1;
-            $notif->save();
+            event(new CancelRequest($id,1));
             $content="You cancelled request which was sent to ".$user->name."'s Friend profile.";
             CheckController::createActivity(1,$content);
         alert()->success('Request Cancelled Successfully.','You have successfully cancelled request of '.$user->name.' in friend Circle.')->position('top-end')->toToast()->width('24rem');

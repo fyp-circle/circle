@@ -15,6 +15,7 @@ use App\Activity;
 use App\Events\SentRequestEventB;
 use App\Events\StalkingEvent;
 use Illuminate\Support\Facades\Redirect;
+use App\Events\CancelRequest;
 
 class BusinessController extends Controller
 {
@@ -54,15 +55,7 @@ class BusinessController extends Controller
 
             $sender=User::find($sender_id);
             $user=User::find($id);
-
-            $notif = new Notif;
-            $notif->title = "Business Request Cancelled.";
-            $notif->content= $sender->business_user->name." cancelled your request in Circle Business.";
-            $notif->read = 0;
-            $notif->user_id =$id;
-            $notif->sender_id =Auth::user()->user_id;
-            $notif->circle_id = 3;
-            $notif->save();
+            event(new CancelRequest($id,3));
             $content="You cancel request which was sent to ".$user->business_user->name."'s Business profile.";
             BusinessController::createActivity(3,$content);
         alert()->success('Request Cancelled Successfully.','You have successfully cancelled request of '.$user->business_user->name.' in Business Circle.')->position('top-end')->toToast()->width('24rem');
