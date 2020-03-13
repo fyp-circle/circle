@@ -654,6 +654,15 @@ class CheckController extends Controller
             return view("activitylog.activitybusiness")->with('activities',$activities)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
         }
     }
+    public function allactivities($circle_id){
+        $user = Auth::user();
+        $n = CheckController::getNotifications();
+        $c=CheckController::checkConnection($user->user_id,$circle_id);
+        $activities=User::find(Auth::user()->user_id)->activities()->orderBy('updated_at','desc')->get();
+        return view("activitylog.allactivities")->with('activities',$activities)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+
+    }
+
 
     //MESSAGE
     public function messagefriends($circle_id){

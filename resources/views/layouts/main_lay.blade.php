@@ -389,6 +389,8 @@
                         <a href="#" title=""><span class="status f-away"></span>away</a>
                         <a href="#" title=""><span class="status f-off"></span>offline</a>
                     <a href="{{ route('main.settings',['circle_id'=>1]) }}" title=""><i class="ti-settings"></i>account setting</a>
+                    <a href="{{ route('allactivities',['circle_id'=>1]) }}" title=""><i class="fa fa-bar-chart-o"></i>Activity Log</a>
+
                         <a href="{{ route('logout') }}" title="" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();"><i class="ti-power-off"></i>log out</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
