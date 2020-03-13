@@ -57,7 +57,15 @@
                         @if ($c==4)
                             <div class="add-btn" style="bottom:25%; right:4%;">
                                 <a href="#" title="" data-ripple="" style="background-color: transparent; -webkit-text-fill-color: white;">Request Already Sent <i class="ti-timer"></i></a>
+                                <a id = "CancelRequestButton1" href="#" title="" data-ripple="" style="background-color: red; -webkit-text-fill-color: white;">Cancel Request</a>
                             </div>
+                            <script type="text/javascript">
+                                document.getElementById("CancelRequestButton1").onclick = function () {
+                                    var profile_id = "{{ $profile_id }}";
+                                    location.href = "/cancelrequestbusiness/" + profile_id+"/{{Auth::user()->user_id}}";
+                                };
+
+                            </script>
                         @else
                         @endif
                     @endif
@@ -95,6 +103,7 @@
 
                                 {{-- <span>Group Admin</span> --}}
                             </li>
+                            @if ($c==1 || $c==2)
                             <li>
                                 <a class="" href="{{ route('viewprofilebusiness',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">time
@@ -103,13 +112,16 @@
                                     style="-webkit-text-fill-color: black">Photos</a>
                                 <a class="" href="{{ route('viewvideosbusiness',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">Videos</a>
+                                @if ($c==2)
                                 <a class="" href="{{ route('viewbusiness',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
-                                    style="-webkit-text-fill-color: black">Business Circle</a>
+                                    style="-webkit-text-fill-color: black">My Business Circle</a>
+                                @endif
                                 <a class="" href="{{ route('viewaboutbusiness',['id'=>$user->user_id,'circle_id'=>$circle_id]) }}" title="" data-ripple=""
                                     style="-webkit-text-fill-color: black">About</a>
-                                <a class="" href="" title="" data-ripple=""
-                                    style="-webkit-text-fill-color: black">More</a>
+                                {{-- <a class="" href="" title="" data-ripple=""
+                                    style="-webkit-text-fill-color: black">More</a> --}}
                             </li>
+                            @endif
                         </ul>
                     </div>
                 </div>

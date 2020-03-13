@@ -23,7 +23,7 @@
                                                     <a href="{{ route('viewprofilefamily',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
                                                         @break
                                                     @case(3)
-                                                    <a href="{{ route('viewprofilebusines',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
+                                                    <a href="{{ route('viewprofilebusiness',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
                                                         @break
                                                     @default
                                                     <a href="#" title="">

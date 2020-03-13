@@ -41,7 +41,7 @@
                         <div class="personal">
                             <h5 class="f-title"><i class="ti-info-alt"></i> Personal Info</h5>
                             <p>
-                                {{Auth::user()->about_me}}
+                                {{$user->about_me}}
                             </p>
                         </div>
                         <div class="d-flex flex-row mt-2">

@@ -299,6 +299,7 @@ class CheckController extends Controller
         $n = CheckController::getNotifications();
         $c=CheckController::checkConnection($id,$circle_id);
         $my_posts=CheckController::getCirclePosts($circle_id);
+        // return $my_posts;
         return view("main.mainscreenbusiness")->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
         }
 
@@ -510,7 +511,8 @@ class CheckController extends Controller
         else{
             $n = CheckController::getNotifications();
             $c=CheckController::checkConnection($id,$circle_id);
-            return view("profileviewsbusiness.viewphotos")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+            $my_posts=CheckController::getMyPosts($circle_id,$id);
+            return view("profileviewsbusiness.viewphotos")->with('posts',$my_posts)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
 
     }
@@ -538,7 +540,10 @@ class CheckController extends Controller
         else{
             $n = CheckController::getNotifications();
             $c=CheckController::checkConnection($id,$circle_id);
-            return view("profileviewsbusiness.viewbusiness")->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+            $cons=CheckController::getConnections($id,$circle_id);
+            $reqs=CheckController::getFriendRequests($id,$circle_id);
+            $sreqs=CheckController::getSentRequests($id,$circle_id);
+            return view("profileviewsbusiness.viewbusiness")->with('sreqs',$sreqs)->with('cons',$cons)->with('reqs',$reqs)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
     }
     public function viewaboutbusiness($id, $circle_id){
