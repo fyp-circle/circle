@@ -42,6 +42,10 @@ class EventServiceProvider extends ServiceProvider
          'App\Events\AcceptRequest' => [
             'App\Listeners\CreateAcceptRequestNotification',
          ],
+
+         'App\Events\RemoveRequest' => [
+            'App\Listeners\CreateRemoveRequestNotification',
+         ],
     ];
 
     /**

@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use App\Events\CancelRequest;
 use App\Events\AcceptRequest;
+use App\Events\RemoveRequest;
 
 
 class CheckController extends Controller
@@ -822,18 +823,11 @@ class CheckController extends Controller
                 ['circle_id', 1],
             ])
             ->delete();
-
+            event(new RemoveRequest($id,1));
             $sender=User::find($sender_id);
             $user=User::find($id);
 
-            $notif = new Notif;
-            $notif->title = "Unfriended.";
-            $notif->content= $sender->name." remove you from Friends List.";
-            $notif->read = 0;
-            $notif->user_id =$id;
-            $notif->sender_id =Auth::user()->user_id;
-            $notif->circle_id = 1;
-            $notif->save();
+
             $content="You unfriended ".$user->name."'s Friend profile.";
             CheckController::createActivity(1,$content);
         alert()->success('Friend Successfully Removed.','You have successfully removed '.$user->name.' from your friend list')->position('top-end')->toToast()->width('24rem');

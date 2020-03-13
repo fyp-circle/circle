@@ -17,6 +17,7 @@ use App\Events\StalkingEvent;
 use Illuminate\Support\Facades\Redirect;
 use App\Events\CancelRequest;
 use App\Events\AcceptRequest;
+use App\Events\RemoveRequest;
 
 class BusinessController extends Controller
 {
@@ -80,14 +81,7 @@ class BusinessController extends Controller
             $sender=User::find($sender_id);
             $user=User::find($id);
 
-            $notif = new Notif;
-            $notif->title = "Unfriended.";
-            $notif->content=  $sender->business_user->name." removed you from Business Circle.";
-            $notif->read = 0;
-            $notif->user_id =$id;
-            $notif->sender_id =Auth::user()->user_id;
-            $notif->circle_id =3;
-            $notif->save();
+            event(new RemoveRequest($id,3));
 
 
             $content="You have disconnected ".$user->business_user->name."'s Business profile.";

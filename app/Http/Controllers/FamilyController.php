@@ -15,6 +15,7 @@ use Auth;
 use App\Events\MyEvent;
 use App\Events\CancelRequest;
 use App\Events\AcceptRequest;
+use App\Events\RemoveRequest;
 use App\Events\StalkingEvent;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
@@ -108,14 +109,7 @@ class FamilyController extends Controller
             $sender=User::find($sender_id);
             $user=User::find($id);
 
-            $notif = new Notif;
-            $notif->title = "Removed From Family.";
-            $notif->content=  $sender->family_user->name." removed you from Family Circle.";
-            $notif->read = 0;
-            $notif->user_id =$id;
-            $notif->sender_id =Auth::user()->user_id;
-            $notif->circle_id =2;
-            $notif->save();
+            event(new RemoveRequest($id,2));
 
 
             $content="You have removed ".$user->family_user->name."'s from your Family profile.";
