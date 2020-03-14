@@ -111,13 +111,13 @@
 <div class="fixed-sidebar left">
     <div class="menu-left">
         <ul class="left-menu">
-            <li><a href="{{ url('/') }}" title="Newsfeed Page" data-toggle="tooltip" data-placement="right"><i
+            <li><a href="{{ route('mainscreen',['circle_id'=>$circle_id]) }}" title="Newsfeed Page" data-toggle="tooltip" data-placement="right"><i
                         class="ti-magnet"></i></a></li>
             <li><a href="{{ route('activityfriends',['circle_id'=>$circle_id]) }}" title="Activity"
                     data-toggle="tooltip" data-placement="right"><i class="ti-stats-up"></i></a></li>
            <li><a href="{{ route('messagefriends',['circle_id'=>$circle_id]) }}" title="Messages" data-toggle="tooltip"
                     data-placement="right"><i class="ti-comment-alt"></i></a></li>
-            <li><a href="{{ route('editinfofriends',['circle_id'=>$circle_id]) }}"
+            <li><a href="{{ route('main.settings',['circle_id'=>1]) }}"
                     title="Setting" data-toggle="tooltip" data-placement="right"><i class="ti-panel"></i></a></li>
             <li><a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
                     title="Friends" data-toggle="tooltip" data-placement="right"><i class="ti-themify-favicon"></i></a>
@@ -139,7 +139,7 @@
                                     <ul class="naves">
                                         <li>
                                             <i class="ti-clipboard"></i>
-                                            <a href="{{ url('/') }}" title="">News feed</a>
+                                            <a href="{{ route('mainscreen',['circle_id'=>$circle_id]) }}" title="">News feed</a>
                                         </li>
                                         <li>
                                             <i class="ti-user"></i>

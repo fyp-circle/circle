@@ -111,14 +111,14 @@
 <div class="fixed-sidebar left">
     <div class="menu-left">
         <ul class="left-menu">
-            <li><a href="{{ url('/') }}" title="Newsfeed Page" data-toggle="tooltip" data-placement="right"><i
+            <li><a href="{{ route('mainscreenfamily',['circle_id'=>$circle_id]) }}" title="Newsfeed Page" data-toggle="tooltip" data-placement="right"><i
                         class="ti-magnet" style="-webkit-text-fill-color: red"></i></a></li>
             <li><a href="{{ route('activityfamily',['circle_id'=>$circle_id]) }}" title="Activity" data-toggle="tooltip"
                     data-placement="right"><i class="ti-stats-up" style="-webkit-text-fill-color: red"></i></a></li>
             {{-- <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right"><i class="ti-import"></i></a></li> --}}
             <li><a href="{{ route('messagefamily',['circle_id'=>$circle_id]) }}" title="Messages" data-toggle="tooltip"
                     data-placement="right"><i class="ti-comment-alt" style="-webkit-text-fill-color: red"></i></a></li>
-            <li><a href="{{ route('editinfofamily',['circle_id'=>$circle_id]) }}"
+            <li><a href="{{ route('main.settings',['circle_id'=>1]) }}"
                     title="Setting" data-toggle="tooltip" data-placement="right"><i class="ti-panel" style="-webkit-text-fill-color: red"></i></a></li>
             <li><a href="{{ route('viewfamily',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="
                     Friends" data-toggle="tooltip" data-placement="right"><i class="ti-themify-favicon" style="-webkit-text-fill-color: red"></i></a></li>
@@ -139,7 +139,7 @@
                                     <ul class="naves">
                                         <li>
                                             <i class="ti-clipboard"></i>
-                                            <a href="{{ url('/') }}" title="">News feed</a>
+                                            <a href="{{ route('mainscreenfamily',['circle_id'=>$circle_id]) }}" title="">News feed</a>
                                         </li>
                                         <li>
                                             <i class="ti-user"></i>
