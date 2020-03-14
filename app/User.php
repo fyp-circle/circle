@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Cache;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -88,5 +89,9 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function family_user(){
         return $this->belongsTo('App\FamilyUser','family_user_id','family_user_id');
+    }
+
+    public function isOnline(){
+        return  Cache::has('user-is-online'.$this->user_id);
     }
 }

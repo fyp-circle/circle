@@ -271,8 +271,9 @@ class CheckController extends Controller
         $my_posts=CheckController::getCirclePosts($circle_id);
         // return $my_posts;
         // $my_posts=CheckController::getMyPosts($circle_id,$id);
+        $cons=CheckController::getConnections($id,$circle_id);
         $c=CheckController::checkConnection($id,$circle_id);
-        return view("main.mainscreen")->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
+        return view("main.mainscreen")->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
     }
     public function mainscreenfamily($circle_id){
         if (Auth::user()->family_user==null) {

@@ -4,74 +4,34 @@
 <div class="fixed-sidebar right">
     <div class="chat-friendz">
         <ul class="chat-users">
-            <li>
-                <div class="author-thmb" style="width: 66%">
-                    <img src="/images/resources/users/default.png" alt="" style="">
-                    <span class="status f-online"></span>
-                </div>
-            </li>
-            <li>
-                <div class="author-thmb" style="width: 66%">
-                    <img src="/images/resources/users/default.png" alt="">
-                    <span class="status f-away"></span>
-                </div>
-            </li>
-            <li>
-                <div class="author-thmb" style="width: 66%">
-                    <img src="/images/resources/users/default.png" alt="">
-                    <span class="status f-online"></span>
-                </div>
-            </li>
-            <li>
-                <div class="author-thmb" style="width: 66%">
-                    <img src="/images/resources/users/default.png" alt="">
-                    <span class="status f-offline"></span>
-                </div>
-            </li>
-            <li>
-                <div class="author-thmb" style="width: 66%">
-                    <img src="/images/resources/users/default.png" alt="">
-                    <span class="status f-online"></span>
-                </div>
-            </li>
-            <li>
-                <div class="author-thmb" style="width: 66%">
-                    <img src="/images/resources/users/default.png" alt="">
-                    <span class="status f-online"></span>
-                </div>
-            </li>
-            <li>
-                <div class="author-thmb" style="width: 66%">
-                    <img src="/images/resources/users/default.png" alt="">
-                    <span class="status f-offline"></span>
-                </div>
-            </li>
-            <li>
-                <div class="author-thmb" style="width: 66%">
-                    <img src="/images/resources/users/default.png" alt="">
-                    <span class="status f-online"></span>
-                </div>
-            </li>
-            <li>
-                <div class="author-thmb" style="width: 66%">
-                    <img src="/images/resources/users/default.png" alt="">
-                    <span class="status f-away"></span>
-                </div>
-            </li>
-            <li>
-                <div class="author-thmb" style="width: 66%">
-                    <img src="/images/resources/users/default.png" alt="">
-                    <span class="status f-away"></span>
-                </div>
-            </li>
-            <li>
-                <div class="author-thmb" style="width: 66%">
-                    <img src="/images/resources/users/default.png" alt="">
-                    <span class="status f-online"></span>
-                </div>
-            </li>
+            @foreach ($cons as $con)
+                <li>
+                    <div class="author-thmb" style="width: 66%">
+                        @if ($con->user1_id!=Auth::user()->user_id)
+                        <a href="" title=""><img src="{{$con->user1->profile_picture}}" alt=""></a>
+                        @else
+                        <a href="" title=""><img src="{{$con->user2->profile_picture}}" alt=""></a>
+                        @endif
+
+                        @if ($con->user1_id!=Auth::user()->user_id)
+                            @if ($con->user1->isOnline())
+                                <span class="status f-online"></span>
+                            @else
+                                <span class="status f-offline"></span>
+                            @endif
+                        @else
+                            @if ($con->user2->isOnline())
+                                <span class="status f-online"></span>
+                            @else
+                                <span class="status f-offline"></span>
+                            @endif
+                        @endif
+
+                    </div>
+                </li>
+            @endforeach
         </ul>
-        <div class="chat-box">
+        {{-- <div class="chat-box">
             <div class="chat-head">
                 <span class="status f-online"></span>
                 <h6>Bucky Barnes</h6>
@@ -144,7 +104,7 @@
                     <button type="submit"></button>
                 </form>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div><!-- right sidebar user chat -->
 
