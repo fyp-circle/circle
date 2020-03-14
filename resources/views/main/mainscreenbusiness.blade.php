@@ -156,7 +156,7 @@
             <li><a href="{{ route('activitybusiness',['circle_id'=>$circle_id]) }}" title="Activity"
                     data-toggle="tooltip" data-placement="right"><i class="ti-stats-up" style="-webkit-text-fill-color:cornflowerblue "></i></a></li>
             {{-- <li><a href="inbox.html" title="inbox" data-toggle="tooltip" data-placement="right"><i class="ti-import"></i></a></li> --}}
-            <li><a href="{{ route('inbox',['circle_id'=>$circle_id]) }}" title="Messages" data-toggle="tooltip"
+            <li><a href="{{ route('messagebusiness',['circle_id'=>$circle_id]) }}" title="Messages" data-toggle="tooltip"
                     data-placement="right"><i class="ti-comment-alt" style="-webkit-text-fill-color:cornflowerblue "></i></a></li>
             <li><a href="{{ route('editinfobusiness',['circle_id'=>$circle_id]) }}"
                     title="Setting" data-toggle="tooltip" data-placement="right"><i class="ti-panel" style="-webkit-text-fill-color:cornflowerblue "></i></a></li>
@@ -183,11 +183,11 @@
                                         </li>
                                         <li>
                                             <i class="ti-user"></i>
-                                            <a href="{{ route('viewbusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Friends</a>
+                                            <a href="{{ route('viewbusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Business Circle</a>
                                         </li>
                                         <li>
                                             <i class="ti-comments-smiley"></i>
-                                            <a href="{{ route('inbox',['circle_id'=>$circle_id]) }}" title="">Inbox</a>
+                                            <a href="{{ route('messagebusiness',['circle_id'=>$circle_id]) }}" title="">Inbox</a>
                                         </li>
                                         <li>
                                             <i class="ti-bell"></i>

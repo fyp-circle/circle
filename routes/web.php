@@ -87,9 +87,13 @@ Route::group([
 
         Route::get('activity/{circle_id}', ['as' => 'allactivities', 'uses' => 'CheckController@allactivities'])->where('circle_id', '[0-9]+');
 
-        Route::get('messagefriends/{circle_id}', ['as' => 'messagefriends', 'uses' => 'CheckController@messagefriends']);
-        Route::get('messagefamily/{circle_id}', ['as' => 'messagefamily', 'uses' => 'CheckController@messagefamily']);
-        Route::get('inbox/{circle_id}', ['as' => 'inbox', 'uses' => 'CheckController@inbox'])->where('id', '[0-9]+');
+        Route::get('messagefriends/{circle_id}', ['as' => 'messagefriends', 'uses' => 'CheckController@messagefriends'])->where('circle_id', '1');
+
+        Route::get('message/{id}/{circle_id}', ['as' => 'message', 'uses' => 'MessageController@indmessage'])->where('circle_id', '[0-9]+');
+
+        Route::get('messagefamily/{circle_id}', ['as' => 'messagefamily', 'uses' => 'CheckController@messagefamily'])->where('circle_id', '2');
+        Route::get('messagebusiness/{circle_id}', ['as' => 'messagebusiness', 'uses' => 'CheckController@messagebusiness'])->where('circle_id', '3');
+        // Route::get('inbox/{circle_id}', ['as' => 'inbox', 'uses' => 'CheckController@inbox'])->where('circle_id', '3');
 
         Route::get('nearbyfriends/{circle_id}', ['as' => 'nearbyfriends', 'uses' => 'CheckController@nearbyfriends']);
         Route::get('nearbyfamily/{circle_id}', ['as' => 'nearbyfamily', 'uses' => 'CheckController@nearbyfamily']);

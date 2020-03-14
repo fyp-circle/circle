@@ -10,95 +10,43 @@
                         <div class="col-lg-12">
                             <div class="central-meta">
                                 <div class="messages">
-                                    <h5 class="f-title"><i class="ti-bell"></i>All Messages <span class="more-options"><i class="fa fa-ellipsis-h"></i></span></h5>
+                                    <h5 class="f-title"><i class="ti-bell"></i>All Friends Messages <span class="more-options"><i class="fa fa-ellipsis-h"></i></span></h5>
                                     <div class="message-box">
                                         <ul class="peoples">
+                                            @foreach ($cons as $con)
                                             <li>
-
                                                 <figure>
-                                                    <img src="//images/resources/friend-avatar2.jpg" alt="">
-                                                    <span class="status f-online"></span>
+                                                    @if ($con->user1_id!=Auth::user()->user_id)
+                                                    <a href="{{ route('message',['id'=>$con->user1_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$con->user1->profile_picture}}" alt=""></a>
+                                                    @else
+                                                    <a href="{{ route('message',['id'=>$con->user2_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$con->user2->profile_picture}}" alt=""></a>
+                                                    @endif
+                                                    @if ($con->user1_id!=Auth::user()->user_id)
+                                                        @if ($con->user1->isOnline())
+                                                            <span class="status f-online"></span>
+                                                        @else
+                                                            <span class="status f-offline"></span>
+                                                        @endif
+                                                    @else
+                                                        @if ($con->user2->isOnline())
+                                                            <span class="status f-online"></span>
+                                                        @else
+                                                            <span class="status f-offline"></span>
+                                                        @endif
+                                                    @endif
                                                 </figure>
                                                 <div class="people-name">
-                                                    <span>Molly cyrus</span>
+                                                    @if ($con->user1_id!=Auth::user()->user_id)
+                                                    <a href="{{ route('message',['id'=>$con->user1_id,'circle_id'=>$circle_id]) }}" title=""><span>{{$con->user1->name}}</span></a>
+                                                    @else
+                                                    <a href="{{ route('message',['id'=>$con->user2_id,'circle_id'=>$circle_id]) }}" title=""><span>{{$con->user2->name}}</span></a>
+                                                    @endif
+
                                                 </div>
                                             </li>
-                                            <li>
-
-                                                <figure><img src="//images/resources/friend-avatar3.jpg" alt="">
-                                                    <span class="status f-away"></span>
-                                                </figure>
-                                                <div class="people-name">
-                                                    <span>Andrew</span>
-                                                </div>
-                                            </li>
-                                            <li>
-
-                                                <figure>
-                                                    <img src="/images/resources/friend-avatar.jpg" alt="">
-                                                    <span class="status f-online"></span>
-                                                </figure>
-
-                                                <div class="people-name">
-                                                    <span>jason bourne</span>
-                                                </div>
-                                            </li>
-                                            <li>
-
-                                                <figure><img src="/images/resources/friend-avatar4.jpg" alt="">
-                                                    <span class="status off-online"></span>
-                                                </figure>
-                                                <div class="people-name">
-                                                    <span>Sarah Grey</span>
-                                                </div>
-                                            </li>
-                                            <li>
-
-                                                <figure><img src="//images/resources/friend-avatar5.jpg" alt="">
-                                                    <span class="status f-online"></span>
-                                                </figure>
-                                                <div class="people-name">
-                                                    <span>bill doe</span>
-                                                </div>
-                                            </li>
-                                            <li>
-
-                                                <figure><img src="//images/resources/friend-avatar6.jpg" alt="">
-                                                    <span class="status f-away"></span>
-                                                </figure>
-                                                <div class="people-name">
-                                                    <span>shen cornery</span>
-                                                </div>
-                                            </li>
-                                            <li>
-
-                                                <figure><img src="//images/resources/friend-avatar7.jpg" alt="">
-                                                    <span class="status off-online"></span>
-                                                </figure>
-                                                <div class="people-name">
-                                                    <span>kill bill</span>
-                                                </div>
-                                            </li>
-                                            <li>
-
-                                                <figure><img src="//images/resources/friend-avatar8.jpg" alt="">
-                                                    <span class="status f-online"></span>
-                                                </figure>
-                                                <div class="people-name">
-                                                    <span>jasmin walia</span>
-                                                </div>
-                                            </li>
-                                            <li>
-
-                                                <figure><img src="/images/resources/friend-avatar6.jpg" alt="">
-                                                    <span class="status f-online"></span>
-                                                </figure>
-                                                <div class="people-name">
-                                                    <span>neclos cage</span>
-                                                </div>
-                                            </li>
+                                            @endforeach
                                         </ul>
-                                        <div class="peoples-mesg-box">
+                                        {{-- <div class="peoples-mesg-box">
                                             <div class="conversation-head">
                                                 <figure><img src="/images/resources/friend-avatar.jpg" alt=""></figure>
                                                 <span>jason bourne <i>online</i></span>
@@ -139,7 +87,7 @@
                                                     <button title="send" style="right:5%"><i class="fa fa-paper-plane"></i></button>
                                                 </form>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>

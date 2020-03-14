@@ -376,7 +376,19 @@
                                     <span class="tag blue" style="background-color:cornflowerblue">Business</span>
                                 </li>
                             </ul>
-                            <a href="{{url('notification')}}" title="" class="more-mesg">view more</a>
+                            @switch($circle_id)
+                                @case(1)
+                                <a href="{{ route('messagefriends',['circle_id'=>$circle_id]) }}"  title="" class="more-mesg">View more</a>
+                                    @break
+                                @case(2)
+                                <a href="{{ route('messagefamily',['circle_id'=>$circle_id]) }}"  title="" class="more-mesg">View more</a>
+                                    @break
+                                @case(3)
+                                <a href="{{ route('messagebusiness',['circle_id'=>$circle_id]) }}"  title="" class="more-mesg">View more</a>
+                                    @break
+                                @default
+
+                            @endswitch
                         </div>
                     </li>
                 </ul>

@@ -672,8 +672,9 @@ class CheckController extends Controller
     public function messagefriends($circle_id){
          $n = CheckController::getNotifications();
         $user = Auth::user();
-       $c=CheckController::checkConnection($user->user_id,$circle_id);
-        return view("messages.messagefriends")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+        $c=CheckController::checkConnection($user->user_id,$circle_id);
+        $cons=CheckController::getConnections($user->user_id,$circle_id);
+        return view("messages.messagefriends")->with('cons',$cons)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
     }
     public function messagefamily($circle_id){
         $user = Auth::user();
@@ -684,7 +685,22 @@ class CheckController extends Controller
         else{
             $n = CheckController::getNotifications();
             $c=CheckController::checkConnection($user->user_id,$circle_id);
-            return view("messages.messagefamily")->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+            $cons=CheckController::getConnections($user->user_id,$circle_id);
+            return view("messages.messagefamily")->with('cons',$cons)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+        }
+
+    }
+    public function messagebusiness($circle_id){
+        $user = Auth::user();
+        if($user->business_user==null){
+                alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        }
+        else{
+            $n = CheckController::getNotifications();
+            $c=CheckController::checkConnection($user->user_id,$circle_id);
+            $cons=CheckController::getConnections($user->user_id,$circle_id);
+            return view("messages.messagebusiness")->with('cons',$cons)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
         }
 
     }

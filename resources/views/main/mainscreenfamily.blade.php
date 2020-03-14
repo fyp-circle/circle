@@ -183,7 +183,7 @@
                                         </li>
                                         <li>
                                             <i class="ti-user"></i>
-                                            <a href="{{ route('viewfamily',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Friends</a>
+                                            <a href="{{ route('viewfamily',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Family Circle</a>
                                         </li>
                                         <li>
                                             <i class="ti-comments-smiley"></i>

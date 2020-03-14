@@ -143,7 +143,7 @@
                                         </li>
                                         <li>
                                             <i class="ti-user"></i>
-                                            <a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Friends</a>
+                                            <a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Friends Circle</a>
                                         </li>
                                         <li>
                                             <i class="ti-comments-smiley"></i>

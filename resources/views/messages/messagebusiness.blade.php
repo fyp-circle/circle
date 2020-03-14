@@ -10,16 +10,16 @@
                         <div class="col-lg-12">
                             <div class="central-meta">
                                 <div class="messages">
-                                    <h5 class="f-title"><i class="ti-bell"></i>All Family Messages <span class="more-options"><i class="fa fa-ellipsis-h"></i></span></h5>
+                                    <h5 class="f-title"><i class="ti-bell"></i>All Business Messages <span class="more-options"><i class="fa fa-ellipsis-h"></i></span></h5>
                                     <div class="message-box">
                                         <ul class="peoples">
                                             @foreach ($cons as $con)
                                             <li>
                                                 <figure>
                                                     @if ($con->user1_id!=Auth::user()->user_id)
-                                                    <a href="{{ route('message',['id'=>$con->user1_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$con->user1->family_user->profile_picture}}" alt=""></a>
+                                                    <a href="{{ route('message',['id'=>$con->user1_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$con->user1->business_user->profile_picture}}" alt=""></a>
                                                     @else
-                                                    <a href="{{ route('message',['id'=>$con->user2_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$con->user2->family_user->profile_picture}}" alt=""></a>
+                                                    <a href="{{ route('message',['id'=>$con->user2_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$con->user2->business_user->profile_picture}}" alt=""></a>
                                                     @endif
                                                     @if ($con->user1_id!=Auth::user()->user_id)
                                                         @if ($con->user1->isOnline())
@@ -37,9 +37,9 @@
                                                 </figure>
                                                 <div class="people-name">
                                                     @if ($con->user1_id!=Auth::user()->user_id)
-                                                    <a href="{{ route('message',['id'=>$con->user1_id,'circle_id'=>$circle_id]) }}" title=""><span>{{$con->user1->family_user->name}}</span></a>
+                                                    <a href="{{ route('message',['id'=>$con->user1_id,'circle_id'=>$circle_id]) }}" title=""><span>{{$con->user1->business_user->name}}</span></a>
                                                     @else
-                                                    <a href="{{ route('message',['id'=>$con->user2_id,'circle_id'=>$circle_id]) }}" title=""><span>{{$con->user2->family_user->name}}</span></a>
+                                                    <a href="{{ route('message',['id'=>$con->user2_id,'circle_id'=>$circle_id]) }}" title=""><span>{{$con->user2->business_user->name}}</span></a>
                                                     @endif
 
                                                 </div>
