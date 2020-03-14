@@ -8,9 +8,9 @@
                 <li>
                     <div class="author-thmb" style="width: 66%">
                         @if ($con->user1_id!=Auth::user()->user_id)
-                        <a href="" title=""><img src="{{$con->user1->profile_picture}}" alt=""></a>
+                        <a href="{{ route('message',['id'=>$con->user1_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$con->user1->profile_picture}}" alt=""></a>
                         @else
-                        <a href="" title=""><img src="{{$con->user2->profile_picture}}" alt=""></a>
+                        <a href="{{ route('message',['id'=>$con->user2_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$con->user2->profile_picture}}" alt=""></a>
                         @endif
 
                         @if ($con->user1_id!=Auth::user()->user_id)
