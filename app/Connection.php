@@ -22,4 +22,8 @@ class Connection extends Model
     public function circle(){
         return $this->belongsTo('App\Circle','circle_id','circle_id');
     }
+
+    public function conversations(){
+        return $this->belongsTo('App\Conversation','conversation_id','conversation_id');
+    }
 }

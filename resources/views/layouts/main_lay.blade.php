@@ -269,7 +269,7 @@
                     <li>
                         <a href="" ><i class="ti-search"></i></a>
                         <div class="searched">
-                            <form action="{{ route('search') }}" method="POST" role="search" class="form-search">
+                            <form action="{{ route('search',['circle_id'=>$circle_id]) }}" method="POST" role="search" class="form-search">
                                 @csrf
                                 <input type="text" name="q" placeholder="Search Friend">
                                 <button type="submit"><i class="ti-search"></i></button>
@@ -333,7 +333,7 @@
                                     </li>
                                 @endforeach
                             </ul>
-                            <a href="{{ route('notification') }}" title="" class="more-mesg">view more</a>
+                            <a href="{{ route('notification',['circle_id'=>1]) }}" title="" class="more-mesg">view more</a>
                         </div>
                         @endif
                     </li>
@@ -530,7 +530,7 @@
             //   var avatar = Math.floor(Math.random() * (71 - 20 + 1)) + 20;
             var newNotificationHtml = `
             <li>
-            <a href="{{ route('notification') }}" title="">
+            <a href="{{ route('notification',['circle_id'=>1]) }}" title="">
                     <img src="`+data.sender.profile_picture+`" alt="">
                     <div class="mesg-meta">
                         <h6>`+data.title+`</h6>

@@ -14,8 +14,10 @@ class CreateConversationsTable extends Migration
     public function up()
     {
         Schema::create('conversations', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('conversation_id');
             $table->integer('circle_id')->references('circle_id')->on('circles')->nullable();
+            $table->integer('user1_id')->references('user_id')->on('users')->nullable();
+            $table->integer('user2_id')->references('user_id')->on('users')->nullable();
             $table->timestamps();
         });
     }

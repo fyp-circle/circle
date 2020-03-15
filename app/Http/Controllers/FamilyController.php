@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Post;
 use App\Connection;
+use App\Conversation;
 use App\Circle;
 use App\Notif;
 use App\Activity;
@@ -67,6 +68,27 @@ class FamilyController extends Controller
     }
 
     public function acceptRequest($id,$sender_id){
+
+
+        $conversation = new Conversation;
+        $conversation->user1_id= $id;
+        $conversation->user2_id= Auth::user()->user_id;
+        $conversation->circle_id= 2;
+        $conversation->save();
+
+        $conv=DB::table('conversations')
+            ->where([
+                ['user1_id', $id],
+                ['user2_id', Auth::user()->user_id],
+                ['circle_id', 2],
+            ])
+            ->orWhere([
+                ['user2_id', $id],
+                ['user1_id', Auth::user()->user_id],
+                ['circle_id', 2],
+            ])
+            ->get();
+
         DB::table('connections')
             ->where([
                 ['user1_id', $id],
@@ -81,6 +103,7 @@ class FamilyController extends Controller
             ->update([
                 'approve' => '1',
                 // 'con_ini' => null,
+                'conversation_id'=> $conv[0]->conversation_id,
             ]);
 
             $sender=User::find($sender_id);

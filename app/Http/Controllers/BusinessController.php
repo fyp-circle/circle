@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Post;
 use App\Connection;
+use App\Conversation;
 use App\Circle;
 use App\Notif;
 use Illuminate\Support\Facades\DB;
@@ -92,6 +93,26 @@ class BusinessController extends Controller
     }
 
     public function acceptRequest($id,$sender_id){
+        $conversation = new Conversation;
+        $conversation->user1_id= $id;
+        $conversation->user2_id= Auth::user()->user_id;
+        $conversation->circle_id= 3;
+        $conversation->save();
+
+        $conv=DB::table('conversations')
+            ->where([
+                ['user1_id', $id],
+                ['user2_id', Auth::user()->user_id],
+                ['circle_id', 3],
+            ])
+            ->orWhere([
+                ['user2_id', $id],
+                ['user1_id', Auth::user()->user_id],
+                ['circle_id', 3],
+            ])
+            ->get();
+
+
         DB::table('connections')
             ->where([
                 ['user1_id', $id],
@@ -106,14 +127,19 @@ class BusinessController extends Controller
             ->update([
                 'approve' => '1',
                 'con_ini' => null,
+                'conversation_id'=>$conv[0]->conversation_id,
             ]);
+
+
+
+
 
             $sender=User::find($sender_id);
             $user=User::find($id);
             event(new AcceptRequest($id,3));
 
             $content="You have accepted request from ".$user->business_user->name."'s Business profile.";
-        BusinessController::createActivity(3,$content);
+            BusinessController::createActivity(3,$content);
             alert()->success('You and '.$user->business_user->name.' are now connected through Business Circle','')->position('top-end')->toToast()->width('24rem');
             return Redirect::back();
     }

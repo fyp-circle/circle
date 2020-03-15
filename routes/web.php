@@ -44,10 +44,10 @@ Route::group([
     Route::get('privacysettings/{circle_id}', ['as' => 'privacy.settings', 'uses' => 'CheckController@privacysettings'])->where('circle_id', '1');
     Route::get('changepassword/{circle_id}', ['as' => 'change.password', 'uses' => 'CheckController@changepassword'])->where('circle_id', '1');
 
-    Route::get('notification', ['as' => 'notification', 'uses' => 'CheckController@notification']);
+    Route::get('notification/{circle_id}', ['as' => 'notification', 'uses' => 'CheckController@notification']);
 
-    Route::get('/search', ['as' => 'search', 'uses' => 'CheckController@search']);
-    Route::post('/search', ['as' => 'search', 'uses' => 'CheckController@hello']);
+    Route::get('/search/{circle_id}', ['as' => 'search', 'uses' => 'CheckController@search']);
+    Route::post('/search/{circle_id}', ['as' => 'search', 'uses' => 'CheckController@hello']);
 
     Route::get('sweetalertcheck', ['as' => 'sweetalertcheck', 'uses' => 'CheckController@sweetalertcheck']);
 

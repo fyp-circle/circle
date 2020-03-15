@@ -21,6 +21,7 @@ class CreateConnectionsTable extends Migration
             $table->integer('user1_id')->references('user_id')->on('users')->nullable();
             $table->integer('user2_id')->references('user_id')->on('users')->nullable();
             $table->integer('circle_id')->references('circle_id')->on('circles')->nullable();
+            $table->integer('conversation_id')->references('conversation_id')->on('conversations')->nullable();
             $table->timestamps();
         });
     }

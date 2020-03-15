@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Post;
 use App\Connection;
+use App\Conversation;
 use App\Circle;
 use App\Notif;
 use App\Activity;
@@ -750,11 +751,11 @@ class CheckController extends Controller
         }
     }
     //NOTIFICATION
-    public function notification(){
+    public function notification($circle_id){
         $user = Auth::user();
          $n = CheckController::getNotifications();
          $c=CheckController::checkConnection($user->user_id,1);
-        return view("notification")->with('user',$user)->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n);
+        return view("notification")->with('user',$user)->with('c',$c)->with('profile_id',$user->user_id)->with('circle_id',$circle_id)->with('notifications',$n);
     }
     //SEARCH
     // public function search(){
@@ -763,11 +764,11 @@ class CheckController extends Controller
     //     $c=CheckController::checkConnection($user->user_id);
     //     return view("search")->with('user',$user)->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n);
     // }
-    public function search(){
+    public function search($circle_id){
         $user = Auth::user();
         $n = CheckController::getNotifications();
         $c=CheckController::checkConnection($user->user_id,1);
-        return view('search')->with('user',$user)->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n);
+        return view('search')->with('user',$user)->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
 
         // $q = Request::get ( 'q' );
         // $n = CheckController::getNotifications();
@@ -778,13 +779,13 @@ class CheckController extends Controller
         // else return view ('search')->withMessage('No Details found. Try to search again !')->with('user',$user)->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n);
     }
 
-    public function hello(Request $request){
+    public function hello(Request $request,$circle_id){
         $f=$request->q;
         $user = Auth::user();
         $n = CheckController::getNotifications();
         $c=CheckController::checkConnection($user->user_id,1);
         $searchuser = user::where('name','LIKE','%'.$f.'%')->get();
-        return view('search')->withDetails($searchuser)->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n)->with('query', $f);
+        return view('search')->withDetails($searchuser)->with('circle_id',$circle_id)->with('c',$c)->with('profile_id',$user->user_id)->with('notifications',$n)->with('query', $f);
 
         // $q = Request::get ( 'q' );
         // $n = CheckController::getNotifications();
@@ -853,6 +854,26 @@ class CheckController extends Controller
     }
 
     public function acceptRequest($id,$sender_id){
+
+        $conversation = new Conversation;
+        $conversation->user1_id= $id;
+        $conversation->user2_id= Auth::user()->user_id;
+        $conversation->circle_id= 1;
+        $conversation->save();
+
+        $conv=DB::table('conversations')
+            ->where([
+                ['user1_id', $id],
+                ['user2_id', Auth::user()->user_id],
+                ['circle_id', 1],
+            ])
+            ->orWhere([
+                ['user2_id', $id],
+                ['user1_id', Auth::user()->user_id],
+                ['circle_id', 1],
+            ])
+            ->get();
+            // return $conv;
         DB::table('connections')
             ->where([
                 ['user1_id', $id],
@@ -867,6 +888,7 @@ class CheckController extends Controller
             ->update([
                 'approve' => '1',
                 'con_ini' => null,
+                'conversation_id'=>$conv[0]->conversation_id,
             ]);
 
             $sender=User::find($sender_id);
