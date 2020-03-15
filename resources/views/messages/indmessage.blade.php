@@ -158,7 +158,9 @@
                                                 @if (count($messages)==0)
                                                     No Messages Uptil now.
                                                 @else
+                                                <div id ="conversation_id" style="display:none;">{{$messages[0]->conversation_id}}</div>
                                                     @foreach ($messages as $message)
+
                                                         @if ($message->sender_id!=Auth::user()->user_id)
 
                                                         <li class="me">
@@ -174,10 +176,14 @@
                                                     @endforeach
                                                 @endif
                                             </ul>
+                                            <div id="success">
+
+                                            </div>
                                             <div class="message-text-container">
-                                                <form method="post">
-                                                    <textarea></textarea>
-                                                    <button title="send" style="right:5%"><i class="fa fa-paper-plane"></i></button>
+                                                <form method="post"  enctype="multipart/form-data">
+                                                    @csrf
+                                                    <textarea name="content" id="messagecontent"></textarea>
+                                                    <button title="send" id="sendmessage" style="right:5%"><i class="fa fa-paper-plane"></i></button>
                                                 </form>
                                             </div>
                                         </div>

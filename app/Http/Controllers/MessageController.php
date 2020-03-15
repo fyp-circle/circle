@@ -9,6 +9,7 @@ use App\Connection;
 use App\Circle;
 use App\Notif;
 use App\Activity;
+use App\Message;
 use Illuminate\Support\Facades\DB;
 Use Alert;
 use Auth;
@@ -247,6 +248,17 @@ class MessageController extends Controller
             // return $messages;
             return view("messages.indmessage")->with('messages',$messages)->with('current',$current)->with('cons',$cons)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
         }
+
+    }
+
+    public function sendMessage(Request $request,$circle_id){
+
+        $m = new Message;
+        $m->content= $request->content;
+        $m->conversation_id = $request->conversation_id;
+        $m->sender_id = Auth::user()->user_id;
+        $m->save();
+        echo $request->content;
 
     }
 }

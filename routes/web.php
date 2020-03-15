@@ -58,6 +58,7 @@ Route::group([
 
     Route::post('createpost/{circle_id}', ['as' => 'createpost', 'uses' => 'PostController@createPost'])->where('circle_id', '[0-9]+');
 
+    Route::post('sendmessage/{circle_id}', ['as' => 'sendmessage', 'uses' => 'MessageController@sendMessage'])->where('circle_id', '[0-9]+');
 
 
     Route::group([
