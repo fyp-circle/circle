@@ -155,34 +155,24 @@
 
                                             </div>
                                             <ul class="chatting-area">
-                                                <li class="you">
-                                                    <figure><img src="/images/resources/userlist-2.jpg" alt=""></figure>
-                                                    <p>what's liz short for? :)</p>
-                                                </li>
-                                                <li class="me">
-                                                    <figure><img src="/images/resources/userlist-1.jpg" alt=""></figure>
-                                                    <p>Elizabeth lol</p>
-                                                </li>
-                                                <li class="me">
-                                                    <figure><img src="/images/resources/userlist-1.jpg" alt=""></figure>
-                                                    <p>wanna know whats my second guess was?</p>
-                                                </li>
-                                                <li class="you">
-                                                    <figure><img src="/images/resources/userlist-2.jpg" alt=""></figure>
-                                                    <p>yes</p>
-                                                </li>
-                                                <li class="me">
-                                                    <figure><img src="/images/resources/userlist-1.jpg" alt=""></figure>
-                                                    <p>Disney's the lizard king</p>
-                                                </li>
-                                                <li class="me">
-                                                    <figure><img src="/images/resources/userlist-1.jpg" alt=""></figure>
-                                                    <p>i know him 5 years ago</p>
-                                                </li>
-                                                <li class="you">
-                                                    <figure><img src="/images/resources/userlist-2.jpg" alt=""></figure>
-                                                    <p>coooooooooool dude ;)</p>
-                                                </li>
+                                                @if (count($messages)==0)
+                                                    No Messages Uptil now.
+                                                @else
+                                                    @foreach ($messages as $message)
+                                                        @if ($message->sender_id!=Auth::user()->user_id)
+
+                                                        <li class="me">
+                                                            <figure><img src="{{$message->sender->profile_picture}}" alt=""></figure>
+                                                            <p>{{$message->content}}</p>
+                                                        </li>
+                                                        @else
+                                                        <li class="you">
+                                                            <figure><img src="{{$message->sender->profile_picture}}" alt=""></figure>
+                                                            <p>{{$message->content}}</p>
+                                                        </li>
+                                                        @endif
+                                                    @endforeach
+                                                @endif
                                             </ul>
                                             <div class="message-text-container">
                                                 <form method="post">

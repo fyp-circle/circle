@@ -106,6 +106,29 @@ class MessageController extends Controller
         return $cons;
     }
 
+    public function getParticularConnection($id,$circle_id){
+
+        $sender=Auth::user();
+        $receiver=User::find($id);
+        $con = Connection::Where(function($query) use ($sender, $receiver,$circle_id)
+        {
+            $query->where("user1_id",$sender->user_id)
+                ->where("user2_id",$receiver->user_id)
+                ->Where("circle_id",$circle_id)
+                ->Where("approve",1);
+        })
+        ->orWhere(function($query) use ($sender, $receiver,$circle_id)
+        {
+            $query->Where("user1_id",$receiver->user_id)
+                ->Where("user2_id",$sender->user_id)
+                ->Where("circle_id",$circle_id)
+                ->Where("approve",1);
+
+        })
+        ->get();
+        return $con;
+    }
+
     public function getFriendRequests($id,$circle_id){
         $cons1 = User::find($id)->connections1()->where('circle_id',$circle_id)->where('con_ini','!=',$id)->where('approve',0)->get();
         // return $cons1;
@@ -218,7 +241,11 @@ class MessageController extends Controller
         else{
             $cons=MessageController::getConnections($user->user_id,$circle_id);
             $current=User::find($id);
-            return view("messages.indmessage")->with('current',$current)->with('cons',$cons)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
+
+            $con_par=MessageController::getParticularConnection($id,$circle_id);
+            $messages=$con_par[0]->conversations->messages;
+            // return $messages;
+            return view("messages.indmessage")->with('messages',$messages)->with('current',$current)->with('cons',$cons)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
         }
 
     }
