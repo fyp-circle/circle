@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Cache;
+use Auth;
 
 class Connection extends Model
 {
@@ -25,5 +27,14 @@ class Connection extends Model
 
     public function conversations(){
         return $this->belongsTo('App\Conversation','conversation_id','conversation_id');
+    }
+
+    public function isOnline(){
+        if($this->user1_id!=Auth::user()->user_id){
+            return  Cache::has('user-is-online'.$this->user1_id);
+        }
+        else{
+            return  Cache::has('user-is-online'.$this->user2_id);
+        }
     }
 }

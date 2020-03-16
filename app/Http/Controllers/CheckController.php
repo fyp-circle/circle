@@ -274,6 +274,19 @@ class CheckController extends Controller
         // return $my_posts;
         // $my_posts=CheckController::getMyPosts($circle_id,$id);
         $cons=CheckController::getConnections($id,$circle_id);
+
+        $count = count($cons);
+        for ($i = 0; $i < $count; $i++) {
+            for ($j = $i + 1; $j < $count; $j++) {
+                if (!$cons[$i]->isOnline()) {
+                    $temp = $cons[$i];
+                    $cons[$i] = $cons[$j];
+                    $cons[$j] = $temp;
+                }
+            }
+        }
+
+
         $c=CheckController::checkConnection($id,$circle_id);
         $recent_activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->take(4)->get();
 
@@ -291,6 +304,19 @@ class CheckController extends Controller
             $c=CheckController::checkConnection($id,$circle_id);
             $my_posts=CheckController::getCirclePosts($circle_id);
             $cons=CheckController::getConnections($id,$circle_id);
+
+
+            $count = count($cons);
+            for ($i = 0; $i < $count; $i++) {
+                for ($j = $i + 1; $j < $count; $j++) {
+                    if (!$cons[$i]->isOnline()) {
+                        $temp = $cons[$i];
+                        $cons[$i] = $cons[$j];
+                        $cons[$j] = $temp;
+                    }
+                }
+            }
+
             $recent_activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->take(4)->get();
             return view("main.mainscreenfamily")->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
         }
@@ -310,6 +336,18 @@ class CheckController extends Controller
         $c=CheckController::checkConnection($id,$circle_id);
         $my_posts=CheckController::getCirclePosts($circle_id);
         $cons=CheckController::getConnections($id,$circle_id);
+
+        $count = count($cons);
+        for ($i = 0; $i < $count; $i++) {
+            for ($j = $i + 1; $j < $count; $j++) {
+                if (!$cons[$i]->isOnline()) {
+                    $temp = $cons[$i];
+                    $cons[$i] = $cons[$j];
+                    $cons[$j] = $temp;
+                }
+            }
+        }
+
         $recent_activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->take(4)->get();
         return view("main.mainscreenbusiness")->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
         }
@@ -681,6 +719,18 @@ class CheckController extends Controller
         $user = Auth::user();
         $c=CheckController::checkConnection($user->user_id,$circle_id);
         $cons=CheckController::getConnections($user->user_id,$circle_id);
+
+        $count = count($cons);
+        for ($i = 0; $i < $count; $i++) {
+            for ($j = $i + 1; $j < $count; $j++) {
+                if (!$cons[$i]->isOnline()) {
+                    $temp = $cons[$i];
+                    $cons[$i] = $cons[$j];
+                    $cons[$j] = $temp;
+                }
+            }
+        }
+
         return view("messages.messagefriends")->with('cons',$cons)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
     }
     public function messagefamily($circle_id){
@@ -693,6 +743,18 @@ class CheckController extends Controller
             $n = CheckController::getNotifications();
             $c=CheckController::checkConnection($user->user_id,$circle_id);
             $cons=CheckController::getConnections($user->user_id,$circle_id);
+
+            $count = count($cons);
+            for ($i = 0; $i < $count; $i++) {
+                for ($j = $i + 1; $j < $count; $j++) {
+                    if (!$cons[$i]->isOnline()) {
+                        $temp = $cons[$i];
+                        $cons[$i] = $cons[$j];
+                        $cons[$j] = $temp;
+                    }
+                }
+            }
+
             return view("messages.messagefamily")->with('cons',$cons)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
         }
 
@@ -707,6 +769,19 @@ class CheckController extends Controller
             $n = CheckController::getNotifications();
             $c=CheckController::checkConnection($user->user_id,$circle_id);
             $cons=CheckController::getConnections($user->user_id,$circle_id);
+
+
+            $count = count($cons);
+            for ($i = 0; $i < $count; $i++) {
+                for ($j = $i + 1; $j < $count; $j++) {
+                    if (!$cons[$i]->isOnline()) {
+                        $temp = $cons[$i];
+                        $cons[$i] = $cons[$j];
+                        $cons[$j] = $temp;
+                    }
+                }
+            }
+
             return view("messages.messagebusiness")->with('cons',$cons)->with('c',$c)->with('user',$user)->with('circle_id',$circle_id)->with('profile_id',$user->user_id)->with('notifications',$n);
         }
 

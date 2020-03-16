@@ -243,6 +243,19 @@ class MessageController extends Controller
         }
         else{
             $cons=MessageController::getConnections($user->user_id,$circle_id);
+
+            $count = count($cons);
+            for ($i = 0; $i < $count; $i++) {
+                for ($j = $i + 1; $j < $count; $j++) {
+                    if (!$cons[$i]->isOnline()) {
+                        $temp = $cons[$i];
+                        $cons[$i] = $cons[$j];
+                        $cons[$j] = $temp;
+                    }
+                }
+            }
+
+
             $current=User::find($id);
 
             $con_par=MessageController::getParticularConnection($id,$circle_id);
