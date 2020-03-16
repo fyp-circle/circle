@@ -12,6 +12,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+
+        //------------------------------------------------------------------------------------------
+
+
         DB::table('users')->insert([
             'name'     => 'Basit',
             'email'    => 'basitalikhatri98@gmail.com',
@@ -24,6 +28,19 @@ class UsersTableSeeder extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
 
         ]);
+
+        DB::table('notifs')->insert([
+            'title'     => 'Welcome to Circle.',
+            'content'   => 'You Have Successfully Created your Friends Circle...',
+            'read' => '0',
+            'user_id'     => '1',
+            'sender_id'     => '1',
+            'circle_id'     => '1',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+        ]);
+
+
+        //------------------------------------------------------------------------------------------
 
         DB::table('users')->insert([
             'name'     => 'Munir Hassan',
@@ -38,6 +55,18 @@ class UsersTableSeeder extends Seeder
 
         ]);
 
+        DB::table('notifs')->insert([
+            'title'     => 'Welcome to Circle.',
+            'content'   => 'You Have Successfully Created your Friends Circle...',
+            'read' => '0',
+            'user_id'     => '2',
+            'sender_id'     => '2',
+            'circle_id'     => '1',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+        ]);
+
+        //------------------------------------------------------------------------------------------
+
         DB::table('users')->insert([
             'name'     => 'Malik Obaid',
             'email'    => 'k163767@nu.edu.pk',
@@ -49,6 +78,16 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('Fyp123Fyp'),
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
 
+        ]);
+
+        DB::table('notifs')->insert([
+            'title'     => 'Welcome to Circle.',
+            'content'   => 'You Have Successfully Created your Friends Circle...',
+            'read' => '0',
+            'user_id'     => '3',
+            'sender_id'     => '3',
+            'circle_id'     => '1',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
         factory(App\User::class, 50)->create();
