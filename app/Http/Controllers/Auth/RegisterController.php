@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Notif;
+use Auth;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -63,10 +65,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+
+        $user =new User;
+        $user->name=$data['name'];
+        $user->email= $data['email'];
+        $user->password=Hash::make($data['password']);
+        $user->save();
+
+
+        $notif = new Notif;
+        $notif->title = "Welcome to Circle.";
+        $notif->content= "You Have Successfully Created your Friend's Circle.";
+        $notif->read = 0;
+        $notif->user_id = $user->user_id;
+        $notif->sender_id = $user->user_id;
+        $notif->circle_id = 1;
+        $notif->save();
+
+        return $user;
     }
 }
