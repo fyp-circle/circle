@@ -22,7 +22,7 @@ $factory->define(User::class, function (Faker $faker) {
 
 
     $u=new User;
-    $u->name=$faker->name;
+    $u->name=$faker->firstName." ".$faker->lastName;
     $u->email= $faker->unique()->safeEmail;
     $u->phone=$faker->unique()->phoneNumber;
     $u->country=$faker->country;
@@ -44,6 +44,13 @@ $factory->define(User::class, function (Faker $faker) {
     $notif->sender_id = $u->user_id;
     $notif->circle_id = 1;
     $notif->save();
+
+
+
+    factory(App\Post::class, 5)->create([
+        'user_id' =>$u->user_id,
+        'circle_id' =>1,
+    ]);
 
     // return [
     //     'name' => $faker->name,

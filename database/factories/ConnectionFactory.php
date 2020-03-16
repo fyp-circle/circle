@@ -14,6 +14,13 @@ $factory->define(Connection::class, function (Faker $faker) {
     $c= new Connection;
     $c->user1_id=$faker->numberBetween($min = 1, $max = 50);
     $c->user2_id=$faker->numberBetween($min = 1, $max = 50);
+
+    if ($c->user1_id==$c->user2_id) {
+        while ($c->user2_id!=$c->user1_id) {
+            $c->user2_id=$faker->numberBetween($min = 1, $max = 50);
+        }
+    }
+
     $c->approve=1;
     // $c->circle_id= $faker->numberBetween($min = 1, $max = 3);
     $c->circle_id=1;

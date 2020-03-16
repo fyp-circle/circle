@@ -39,6 +39,11 @@ class UsersTableSeeder extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
+        factory(App\Post::class, 5)->create([
+            'user_id' =>1,
+            'circle_id' =>1,
+        ]);
+
 
         //------------------------------------------------------------------------------------------
 
@@ -65,6 +70,12 @@ class UsersTableSeeder extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
+        factory(App\Post::class, 5)->create([
+            'user_id' =>2,
+            'circle_id' =>1,
+        ]);
+
+
         //------------------------------------------------------------------------------------------
 
         DB::table('users')->insert([
@@ -89,6 +100,12 @@ class UsersTableSeeder extends Seeder
             'circle_id'     => '1',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
+
+        factory(App\Post::class, 5)->create([
+            'user_id' =>3,
+            'circle_id' =>1,
+        ]);
+
 
         factory(App\User::class, 50)->create();
     }
