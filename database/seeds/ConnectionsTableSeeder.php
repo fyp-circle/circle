@@ -109,5 +109,8 @@ class ConnectionsTableSeeder extends Seeder
         //     'approve'     => '1',
         //     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         // ]);
+
+
+        factory(App\Connection::class, 500)->create();
     }
 }
