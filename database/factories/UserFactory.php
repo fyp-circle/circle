@@ -34,7 +34,7 @@ $factory->define(User::class, function (Faker $faker) {
     $u->about_me=$faker->realText($maxNbChars = 150, $indexSize = 2);
     $u->created_at=Carbon::now()->format('Y-m-d H:i:s');
     $u->email_verified_at=Carbon::now()->format('Y-m-d H:i:s');
-
+    $u->save();
 
     $notif = new Notif;
     $notif->title = "Welcome to Circle.";
