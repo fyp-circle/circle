@@ -11,6 +11,7 @@ use App\Conversation;
 use App\Circle;
 use App\Notif;
 use App\Activity;
+use App\Message;
 use Illuminate\Support\Facades\DB;
 Use Alert;
 use Auth;
@@ -890,6 +891,13 @@ class CheckController extends Controller
                 'con_ini' => null,
                 'conversation_id'=>$conv[0]->conversation_id,
             ]);
+
+
+            $m = new Message;
+            $m->content= "Welcome to My Friends Circle.";
+            $m->conversation_id = $conv[0]->conversation_id;
+            $m->sender_id = Auth::user()->user_id;
+            $m->save();
 
             $sender=User::find($sender_id);
             $user=User::find($id);

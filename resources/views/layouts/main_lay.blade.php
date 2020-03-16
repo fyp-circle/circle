@@ -299,17 +299,20 @@
                                     @switch($i->circle_id)
                                         @case(1)
                                         <a href="{{ route('viewprofile',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
+                                            <img src="{{$i->sender['profile_picture']}}" alt="">
                                             @break
                                         @case(2)
                                         <a href="{{ route('viewprofilefamily',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
+                                            <img src="{{$i->sender->family_user->profile_picture}}" alt="">
                                             @break
                                         @case(3)
                                         <a href="{{ route('viewprofilebusiness',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
+                                            <img src="{{$i->sender->business_user->profile_picture}}" alt="">
                                             @break
                                         @default
                                         <a href="#" title="">
                                     @endswitch
-                                            <img src="{{$i->sender['profile_picture']}}" alt="">
+
                                             <div class="mesg-meta">
                                                 <h6>{{$i->title}}</h6>
                                                 <span>{{$i->content}}</span>
@@ -427,7 +430,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="{{asset('/js/postjs.js')}}"></script>
+    <script src="{{asset('/js/message.js')}}"></script>
     <script>
         $(document).ready(function () {
             //Preloader

@@ -18,17 +18,19 @@
                                                 @switch($i->circle_id)
                                                     @case(1)
                                                     <a href="{{ route('viewprofile',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
+                                                        <figure><img src="{{$i->sender['profile_picture']}}" alt=""></figure>
                                                         @break
                                                     @case(2)
                                                     <a href="{{ route('viewprofilefamily',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
+                                                        <figure><img src="{{$i->sender->family_user->profile_picture}}" alt=""></figure>
                                                         @break
                                                     @case(3)
                                                     <a href="{{ route('viewprofilebusiness',['id'=>$i->sender,'circle_id'=>$i->circle_id]) }}" title="">
+                                                        <figure><img src="{{$i->sender->business_user->profile_picture}}" alt=""></figure>
                                                         @break
                                                     @default
                                                     <a href="#" title="">
                                                 @endswitch
-                                                <figure><img src="{{$i->sender['profile_picture']}}" alt=""></figure>
                                                 <div class="notifi-meta">
                                                     <p>{{$i->content}}</p>
                                                     <span>{{$i->created_at}}</span>

@@ -8,6 +8,7 @@ use App\Post;
 use App\Connection;
 use App\Conversation;
 use App\Circle;
+use App\Message;
 use App\Notif;
 use Illuminate\Support\Facades\DB;
 Use Alert;
@@ -132,6 +133,12 @@ class BusinessController extends Controller
 
 
 
+
+            $m = new Message;
+            $m->content= "Welcome to My Business Circle.";
+            $m->conversation_id = $conv[0]->conversation_id;
+            $m->sender_id = Auth::user()->user_id;
+            $m->save();
 
 
             $sender=User::find($sender_id);

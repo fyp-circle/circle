@@ -53,10 +53,10 @@
                                                             <img src="{{$con->user2->profile_picture}}" alt="">
                                                                 @break
                                                             @case(2)
-                                                            <img src="{{$con->user2->family_picture->profile_picture}}" alt="">
+                                                            <img src="{{$con->user2->family_user->profile_picture}}" alt="">
                                                                 @break
                                                             @case(3)
-                                                                <img src="{{$con->user2->business_picture->profile_picture}}" alt="">
+                                                                <img src="{{$con->user2->business_user->profile_picture}}" alt="">
                                                                 @break
                                                             @default
 
@@ -154,22 +154,47 @@
                                                     @endif
 
                                             </div>
-                                            <ul class="chatting-area">
+                                            <ul class="chatting-area" id="newmessages">
                                                 @if (count($messages)==0)
                                                     No Messages Uptil now.
                                                 @else
                                                 <div id ="conversation_id" style="display:none;">{{$messages[0]->conversation_id}}</div>
+                                                <div id ="circle_id" style="display:none;">{{$circle_id}}</div>
                                                     @foreach ($messages as $message)
 
                                                         @if ($message->sender_id!=Auth::user()->user_id)
 
                                                         <li class="me">
-                                                            <figure><img src="{{$message->sender->profile_picture}}" alt=""></figure>
+                                                            @switch($circle_id)
+                                                                @case(1)
+                                                                <figure><img src="{{$message->sender->profile_picture}}" alt=""></figure>
+                                                                    @break
+                                                                @case(2)
+                                                                <figure><img src="{{$message->sender->family_user->profile_picture}}" alt=""></figure>
+                                                                    @break
+                                                                @case(3)
+                                                                <figure><img src="{{$message->sender->business_user->profile_picture}}" alt=""></figure>
+                                                                    @break
+                                                                    @default
+
+                                                            @endswitch
                                                             <p>{{$message->content}}</p>
                                                         </li>
                                                         @else
                                                         <li class="you">
-                                                            <figure><img src="{{$message->sender->profile_picture}}" alt=""></figure>
+                                                            @switch($circle_id)
+                                                                @case(1)
+                                                                <figure><img src="{{$message->sender->profile_picture}}" alt=""></figure>
+                                                                    @break
+                                                                @case(2)
+                                                                <figure><img src="{{$message->sender->family_user->profile_picture}}" alt=""></figure>
+                                                                    @break
+                                                                @case(3)
+                                                                <figure><img src="{{$message->sender->business_user->profile_picture}}" alt=""></figure>
+                                                                    @break
+                                                                    @default
+
+                                                            @endswitch
                                                             <p>{{$message->content}}</p>
                                                         </li>
                                                         @endif
@@ -180,7 +205,7 @@
 
                                             </div>
                                             <div class="message-text-container">
-                                                <form method="post"  enctype="multipart/form-data">
+                                                <form method="post" id="sendmessageform" enctype="multipart/form-data" >
                                                     @csrf
                                                     <textarea name="content" id="messagecontent"></textarea>
                                                     <button title="send" id="sendmessage" style="right:5%"><i class="fa fa-paper-plane"></i></button>

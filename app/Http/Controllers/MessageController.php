@@ -9,6 +9,8 @@ use App\Connection;
 use App\Circle;
 use App\Notif;
 use App\Activity;
+use App\FamilyUser;
+use App\BusinessUser;
 use App\Message;
 use Illuminate\Support\Facades\DB;
 Use Alert;
@@ -258,7 +260,25 @@ class MessageController extends Controller
         $m->conversation_id = $request->conversation_id;
         $m->sender_id = Auth::user()->user_id;
         $m->save();
-        echo $request->content;
+        $msender=Auth::user();
+        $msenderf=null;
+        $msenderb=null;
+        if($msender->family_user!=null){
+            $msenderf = FamilyUser::find($msender->family_user_id);
+            // $msenderf=$msender->family_user();
+        }
+        if($msender->business_user!=null){
+            $msenderb = BusinessUser::find($msender->business_user_id);
+            // $msenderb=$msender->business_user();
+        }
+        $data = array(
+            'content' => $request->content,
+            'circle_id' => $circle_id,
+            'msender' => $msender,
+            'msenderf' => $msenderf,
+            'msenderb' => $msenderb,
+          );
+        return $data;
 
     }
 }
