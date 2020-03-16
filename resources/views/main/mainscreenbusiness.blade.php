@@ -194,44 +194,31 @@
                                     @endif
                                 </div><!-- recent activites -->
                                 <div class="widget stick-widget">
-                                    <h4 class="widget-title">Friend Requests</h4>
+                                    <h4 class="widget-title">Business Requests</h4>
+                                    @if (count($reqs)==0)
+                                        No Business Requests.
+                                    @else
                                     <ul class="followers">
+                                        @foreach ($reqs as $req)
                                         <li>
-                                            <figure><img src="/images/resources/users/81.jpg" alt=""></figure>
+                                            @if ($req->user1_id!=Auth::user()->user_id)
+                                            <a href="{{ route('viewprofilebusiness',['id'=>$req->user1->user_id,'circle_id'=>$circle_id]) }}" title=""><figure><img src="{{$req->user1->business_user->profile_picture}}" alt=""></figure></a>
+                                            @else
+                                            <a href="{{ route('viewprofilebusiness',['id'=>$req->user1->user_id,'circle_id'=>$circle_id]) }}" title=""><figure><img src="{{$req->user2->business_user->profile_picture}}" alt=""></figure></a>
+                                            @endif
                                             <div class="friend-meta">
-                                                <h4><a href="time-line.html" title="">Kelly Bill</a></h4>
-                                                <a href="#" title="" class="underline">Add Friend</a>
+                                                @if ($req->user1_id!=Auth::user()->user_id)
+                                                <h4><a href="{{ route('viewprofilebusiness',['id'=>$req->user1->user_id,'circle_id'=>$circle_id]) }}" title="">{{$req->user1->business_user->name}}</a></h4>
+                                                @else
+                                                <h4><a href="{{ route('viewprofilebusiness',['id'=>$req->user2->user_id,'circle_id'=>$circle_id]) }}" title="">{{$req->user2->business_user->name}}</a></h4>
+                                                @endif
+
+                                                {{-- <a href="#" title="" class="underline">Add Friend</a> --}}
                                             </div>
                                         </li>
-                                        <li>
-                                            <figure><img src="/images/resources/users/13.jpg" alt=""></figure>
-                                            <div class="friend-meta">
-                                                <h4><a href="time-line.html" title="">Issabel</a></h4>
-                                                <a href="#" title="" class="underline">Add Friend</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure><img src="/images/resources/users/40.jpg" alt=""></figure>
-                                            <div class="friend-meta">
-                                                <h4><a href="time-line.html" title="">Andrew</a></h4>
-                                                <a href="#" title="" class="underline">Add Friend</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure><img src="/images/resources/users/11.jpg" alt=""></figure>
-                                            <div class="friend-meta">
-                                                <h4><a href="time-line.html" title="">Sophia</a></h4>
-                                                <a href="#" title="" class="underline">Add Friend</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure><img src="/images/resources/users/71.jpg" alt=""></figure>
-                                            <div class="friend-meta">
-                                                <h4><a href="time-line.html" title="">Allen</a></h4>
-                                                <a href="#" title="" class="underline">Add Friend</a>
-                                            </div>
-                                        </li>
+                                        @endforeach
                                     </ul>
+                                    @endif
                                 </div><!-- Friend Requests -->
                             </aside>
                         </div><!-- sidebar -->

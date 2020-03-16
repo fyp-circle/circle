@@ -286,11 +286,11 @@ class CheckController extends Controller
             }
         }
 
-
+        $reqs=CheckController::getFriendRequests($id,$circle_id);
         $c=CheckController::checkConnection($id,$circle_id);
         $recent_activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->take(4)->get();
 
-        return view("main.mainscreen")->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
+        return view("main.mainscreen")->with('reqs',$reqs)->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
     }
     public function mainscreenfamily($circle_id){
         if (Auth::user()->family_user==null) {
@@ -316,9 +316,9 @@ class CheckController extends Controller
                     }
                 }
             }
-
+            $reqs=CheckController::getFriendRequests($id,$circle_id);
             $recent_activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->take(4)->get();
-            return view("main.mainscreenfamily")->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
+            return view("main.mainscreenfamily")->with('reqs',$reqs)->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
         }
 
 
@@ -347,9 +347,9 @@ class CheckController extends Controller
                 }
             }
         }
-
+        $reqs=CheckController::getFriendRequests($id,$circle_id);
         $recent_activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->take(4)->get();
-        return view("main.mainscreenbusiness")->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
+        return view("main.mainscreenbusiness")->with('reqs',$reqs)->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
         }
 
 
