@@ -178,29 +178,20 @@
                                 </div><!-- Shortcuts -->
                                 <div class="widget">
                                     <h4 class="widget-title">Recent Activity</h4>
+                                    @if (count($recent_activities)==0)
+                                        No Activities Found.
+                                    @else
                                     <ul class="activitiez">
+                                        @foreach ($recent_activities as $recent_activity)
                                         <li>
                                             <div class="activity-meta">
-                                                <i>10 hours Ago</i>
-                                                <span><a href="#" title="">Commented on Video posted </a></span>
-                                                <h6>by <a href="time-line.html">black demon.</a></h6>
+                                                <i>{{$recent_activity->updated_at}}</i>
+                                                <span><a href="#" title="">{{$recent_activity->content}}</a></span>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="activity-meta">
-                                                <i>30 Days Ago</i>
-                                                <span><a href="#" title="">Posted your status. “Hello guys, how are
-                                                        you?”</a></span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="activity-meta">
-                                                <i>2 Years Ago</i>
-                                                <span><a href="#" title="">Share a video on her timeline.</a></span>
-                                                <h6>"<a href="#">you are so funny mr.been.</a>"</h6>
-                                            </div>
-                                        </li>
+                                        @endforeach
                                     </ul>
+                                    @endif
                                 </div><!-- recent activites -->
                                 <div class="widget stick-widget">
                                     <h4 class="widget-title">Friend Requests</h4>
