@@ -28,6 +28,11 @@
                         @endif
 
                     </div>
+                    @if ($con->user1_id!=Auth::user()->user_id)
+                    <a href="{{ route('message',['id'=>$con->user1_id,'circle_id'=>$circle_id]) }}" title=""><span>{{$con->user1->business_user->name}}</span></a>
+                    @else
+                    <a href="{{ route('message',['id'=>$con->user2_id,'circle_id'=>$circle_id]) }}" title=""><span>{{$con->user2->business_user->name}}</span></a>
+                    @endif
                 </li>
             @endforeach
         </ul>
