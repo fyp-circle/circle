@@ -70,7 +70,7 @@ class MessageController extends Controller
         }
         $posts = User::find(Auth::user()->user_id)->posts()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->get();
         $all_posts= $all_posts->merge($posts);
-        $sorted_posts = $all_posts->sortByDesc('updated_at',);
+        $sorted_posts = $all_posts->sortByDesc('updated_at');
         return $sorted_posts;
         // $con=DB::table('connections')
         //     ->where([
