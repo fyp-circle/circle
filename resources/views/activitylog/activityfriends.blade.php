@@ -24,9 +24,10 @@
                                                 @foreach ($activities as $activity)
                                                 <div class="vertical-timeline-item vertical-timeline-element">
                                                     <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-success"> </i></span>
-                                                    <div class="vertical-timeline-element-content bounce-in"><p style="color:black;">{{$activity->content}}</p>
+                                                    <div class="vertical-timeline-element-content bounce-in">
+                                                        <p style="color:black;">{{$activity->content}}</p>
                                                             {{-- <p>XYZ shared a post of ABC...</p> --}}
-                                                            <span class="vertical-timeline-element-date">{{$activity->updated_at}}</span></div>
+                                                        <span class="vertical-timeline-element-date">{{$activity->updated_at}}</span></div>
                                                     </div>
                                                 </div>
 
