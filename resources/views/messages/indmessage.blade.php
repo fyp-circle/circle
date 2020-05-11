@@ -118,13 +118,13 @@
                                                 <figure>
                                                     @switch($circle_id)
                                                             @case(1)
-                                                            <a href="{{ route('viewprofile',['id'=>$con->user2_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$current->profile_picture}}" alt=""></a>
+                                                            <a href="{{ route('viewprofile',['id'=>$current->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$current->profile_picture}}" alt=""></a>
                                                                 @break
                                                             @case(2)
-                                                            <a href="{{ route('viewprofilefamily',['id'=>$con->user2_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$current->family_user->profile_picture}}" alt=""></a>
+                                                            <a href="{{ route('viewprofilefamily',['id'=>$current->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$current->family_user->profile_picture}}" alt=""></a>
                                                                 @break
                                                             @case(3)
-                                                            <a href="{{ route('viewprofilebusiness',['id'=>$con->user2_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$current->business_user->profile_picture}}" alt=""></a>
+                                                            <a href="{{ route('viewprofilebusiness',['id'=>$current->user_id,'circle_id'=>$circle_id]) }}" title=""><img src="{{$current->business_user->profile_picture}}" alt=""></a>
                                                                 @break
                                                             @default
 
@@ -134,13 +134,13 @@
 
                                                 @switch($circle_id)
                                                     @case(1)
-                                                    <a href="{{ route('viewprofile',['id'=>$con->user2_id,'circle_id'=>$circle_id]) }}" title=""><span>{{$current->name}}</a>
+                                                    <a href="{{ route('viewprofile',['id'=>$current->user_id,'circle_id'=>$circle_id]) }}" title=""><span>{{$current->name}}</a>
                                                         @break
                                                     @case(2)
-                                                    <a href="{{ route('viewprofilefamily',['id'=>$con->user2_id,'circle_id'=>$circle_id]) }}" title=""><span>{{$current->family_user->name}}</a>
+                                                    <a href="{{ route('viewprofilefamily',['id'=>$current->user_id,'circle_id'=>$circle_id]) }}" title=""><span>{{$current->family_user->name}}</a>
                                                         @break
                                                     @case(3)
-                                                    <a href="{{ route('viewprofilebusiness',['id'=>$con->user2_id,'circle_id'=>$circle_id]) }}" title=""><span>{{$current->business_user->name}}</a>
+                                                    <a href="{{ route('viewprofilebusiness',['id'=>$current->user_id,'circle_id'=>$circle_id]) }}" title=""><span>{{$current->business_user->name}}</a>
                                                         @break
                                                     @default
 
