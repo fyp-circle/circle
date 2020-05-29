@@ -228,7 +228,13 @@
                         </div>
                     </div> <!--posts --> --}}
                     @if (count($posts)==0)
-                        <div><p>No Posts Found</p></div>
+                    <div class="central-meta item">
+                        <div class="user-post">
+                            <div class="friend-info">
+                                <p>No Posts Found</p>
+                            </div>
+                        </div>
+                    </div>
                     @else
                         @foreach ($posts as $post)
                         <div class="central-meta item">

@@ -267,7 +267,7 @@
                 </ul>
                 <ul class="setting-area">
                     <li>
-                        <a href="" ><i class="ti-search"></i></a>
+                        <a href="" ><i class="fas fa-search"></i></a>
                         <div class="searched">
                             <form action="{{ route('search',['circle_id'=>$circle_id]) }}" method="POST" role="search" class="form-search">
                                 @csrf
@@ -276,11 +276,11 @@
                             </form>
                         </div>
                     </li>
-                    <li><a href="{{ route('mainscreen',['circle_id'=>1]) }}"><i class="ti-home"></i></a></li>
+                    <li><a href="{{ route('mainscreen',['circle_id'=>1]) }}"><i class="fas fa-home"></i></a></li>
                     <li class= "dropdown-notifications">
                         {{-- <a  href="#notifications-panel" title="Notification" data-ripple="" class="dropdown-toggle" data-toggle="dropdown"> --}}
                             <a href="#" title="Notification" data-ripple="" class="dropdown-toggle" href="#notifications-panel" data-toggle="dropdown">
-                            <i class="ti-bell" data-count="{{count($notifications)}}"></i><span class="notif-count">{{count($notifications)}}</span>
+                            <i class="fas fa-bell" data-count="{{count($notifications)}}"></i><span class="notif-count">{{count($notifications)}}</span>
                         </a>
                         @if (count($notifications) ==0)
                         <div class="dropdowns">
@@ -341,7 +341,7 @@
                         @endif
                     </li>
                     <li>
-                        <a href="#" title="Messages" data-ripple=""><i class="ti-comment"></i><span>3</span></a>
+                        <a href="#" title="Messages" data-ripple=""><i class="fas fa-envelope"></i><span>3</span></a>
                         <div class="dropdowns">
                             <span>3 New Messages</span>
                             <ul class="drops-menu">
@@ -418,7 +418,7 @@
         </div><!-- topbar -->
         @include('sweetalert::alert')
         @yield('content')
-
+        
     <script src="/js/main.min.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/map-init.js"></script>

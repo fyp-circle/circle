@@ -23,8 +23,16 @@
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div class="tab-pane active fade show " id="frends">
-                                @if (count($cons)==0)
-                                    No Business Connections Yet.
+                                @if (count($cons)==0) 
+                                    <ul class="nearby-contct">
+                                        <li>
+                                            <div class="nearly-pepls">
+                                                <div class="pepl-info">
+                                                   <p>No Business Connections Yet.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 @else
                                 <ul class="nearby-contct">
                                     @foreach ($cons as $con)
@@ -60,8 +68,16 @@
                                 <div class="lodmore"><button class="btn-view btn-load-more"></button></div>
                             </div>
                             <div class="tab-pane fade" id="frends-req">
-                                @if (count($reqs)==0)
-                                    No Business Connection Requests.
+                                @if (count($reqs)==0)     
+                                    <ul class="nearby-contct">
+                                        <li>
+                                            <div class="nearly-pepls">
+                                                <div class="pepl-info">
+                                                   <p>No Business Connection Requests.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 @else
                                 <ul class="nearby-contct">
                                     @foreach ($reqs as $req)
@@ -96,8 +112,16 @@
                             </div>
 
                             <div class="tab-pane fade" id="sent-req">
-                                @if (count($sreqs)==0)
-                                    No Sent Requests.
+                                @if (count($sreqs)==0) 
+                                    <ul class="nearby-contct">
+                                        <li>
+                                            <div class="nearly-pepls">
+                                                <div class="pepl-info">
+                                                   <p>No Sent Requests..</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 @else
                                 <ul class="nearby-contct">
                                     @foreach ($sreqs as $sreq)

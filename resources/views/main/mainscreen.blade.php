@@ -30,13 +30,13 @@
                     @endif
 
                 </div>
-                @if ($con->user1_id!=Auth::user()->user_id)
+                {{-- @if ($con->user1_id!=Auth::user()->user_id)
                 <a href="{{ route('message',['id'=>$con->user1_id,'circle_id'=>$circle_id]) }}"
                     title=""><span>{{$con->user1->name}}</span></a>
                 @else
                 <a href="{{ route('message',['id'=>$con->user2_id,'circle_id'=>$circle_id]) }}"
                     title=""><span>{{$con->user2->name}}</span></a>
-                @endif
+                @endif --}}
             </li>
             @endforeach
         </ul>
@@ -123,15 +123,25 @@
             <li><a href="{{ route('mainscreen',['circle_id'=>$circle_id]) }}" title="Newsfeed Page"
                     data-toggle="tooltip" data-placement="right"><i class="far fa-newspaper" aria-hidden="true"></i></a>
             </li>
-            <li><a href="{{ route('activityfriends',['circle_id'=>$circle_id]) }}" title="Activity"
-                    data-toggle="tooltip" data-placement="right"><i class="fas fa-tasks"></i></a></li>
             <li><a href="{{ route('messagefriends',['circle_id'=>$circle_id]) }}" title="Messages" data-toggle="tooltip"
-                    data-placement="right"><i class="fas fa-envelope"></i></a></li>
-            <li><a href="{{ route('main.settings',['circle_id'=>1]) }}" title="Main Setting" data-toggle="tooltip"
-                    data-placement="right"><i class="fas fa-cogs"></i></a></li>
+                data-placement="right"><i class="fas fa-envelope"></i></a></li>
             <li><a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
-                    title="Friends" data-toggle="tooltip" data-placement="right"><i class="fas fa-users"></i></a>
+                    title="Friends Circle" data-toggle="tooltip" data-placement="right"><i class="fas fa-users"></i></a>
             </li>
+            <li><a href="{{ route('viewprofile',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
+                title="View Profile" data-toggle="tooltip" data-placement="right"><i class="fas fa-user"></i></a>
+            </li>
+            <li><a href="{{ route('nearbyfriends',['circle_id'=>$circle_id]) }}"
+                title="Nearby Friends" data-toggle="tooltip" data-placement="right"><i class="fas fa-street-view"></i></a>
+            </li>
+            <li><a href="{{ route('activityfriends',['circle_id'=>$circle_id]) }}" title="Activity"
+                data-toggle="tooltip" data-placement="right"><i class="fas fa-tasks"></i></a></li>
+            <li><a href="{{ route('editinfofriends',['circle_id'=>$circle_id]) }}" title="Edit Profile Info"
+                    data-toggle="tooltip" data-placement="right"><i class="fas fa-user-edit"></i></a></li>
+            <li><a href="{{ route('main.settings',['circle_id'=>1]) }}" title="Main Setting" data-toggle="tooltip"
+                data-placement="right"><i class="fas fa-cogs"></i></a></li>
+            
+
         </ul>
     </div>
 </div><!-- left sidebar menu -->
@@ -148,41 +158,41 @@
                                     <h4 class="widget-title">Shortcuts</h4>
                                     <ul class="naves">
                                         <li>
-                                            <i class="ti-clipboard"></i>
+                                            <i class="far fa-newspaper"></i>
                                             <a href="{{ route('mainscreen',['circle_id'=>$circle_id]) }}" title="">News
                                                 feed</a>
                                         </li>
                                         <li>
-                                            <i class="ti-user"></i>
+                                            <i class="fas fa-users"></i>
                                             <a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
                                                 title="">Friends Circle</a>
                                         </li>
                                         <li>
-                                            <i class="ti-comments-smiley"></i>
+                                            <i class="fas fa-envelope"></i>
                                             <a href="{{ route('messagefriends',['circle_id'=>$circle_id]) }}"
-                                                title="">Inbox</a>
+                                                title="">Messages</a>
                                         </li>
                                         <li>
-                                            <i class="ti-bell"></i>
+                                            <i class="fas fa-bell"></i>
                                             <a href="{{url('notification')}}" title="">Notifications</a>
                                         </li>
                                         <li>
-                                            <i class="ti-share"></i>
+                                            <i class="fas fa-street-view"></i>
                                             <a href="{{ route('nearbyfriends',['circle_id'=>$circle_id]) }}"
                                                 title="">People Nearby</a>
                                         </li>
                                         <li>
-                                            <i class="fa fa-bar-chart-o"></i>
+                                            <i class="fas fa-tasks"></i>
                                             <a href="{{ route('activityfriends',['circle_id'=>$circle_id]) }}"
                                                 title="">Activity Log</a>
                                         </li>
                                         <li>
-                                            <i class="ti-face-smile"></i>
+                                            <i class="fas fa-user"></i>
                                             <a href="{{ route('viewprofile',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
                                                 title="">View Profile</a>
                                         </li>
                                         <li>
-                                            <i class="ti-pencil-alt"></i>
+                                            <i class="fas fa-user-edit"></i>
                                             <a href="{{ route('editinfofriends',['circle_id'=>$circle_id]) }}"
                                                 title="">Edit Info</a>
                                         </li>
@@ -272,27 +282,21 @@
                                             <div class="attachments">
                                                 <ul>
                                                     <li>
-                                                        <i class="fa fa-music"></i>
+                                                        <i class="fas fa-music"></i>
                                                         <label class="fileContainer">
                                                             <input type="file" name="audio" accept="audio/*">
                                                         </label>
                                                     </li>
                                                     <li>
-                                                        <i class="fa fa-image"></i>
+                                                        <i class="fas fa-image"></i>
                                                         <label class="fileContainer">
                                                             <input type="file" name="image" accept="image/*">
                                                         </label>
                                                     </li>
                                                     <li>
-                                                        <i class="fa fa-video-camera"></i>
+                                                        <i class="fas fa-video-camera"></i>
                                                         <label class="fileContainer">
                                                             <input type="file" name="video" accept="video/*">
-                                                        </label>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fa fa-camera"></i>
-                                                        <label class="fileContainer">
-                                                            <input type="file" name="cam" accept="image/*">
                                                         </label>
                                                     </li>
                                                     <li>
@@ -344,34 +348,30 @@
                                                     <ul>
 
                                                         <li>
-                                                            <span class="views" data-toggle="tooltip" title="views">
-                                                                <i class="fa fa-eye"></i>
+                                                            <span class="views" data-toggle="tooltip" title="views" style="color:grey ">
+                                                                <i class="fas fa-eye"></i>
                                                                 <ins>1.2k</ins>
                                                             </span>
                                                         </li>
                                                         <li>
+                                                            {{-- jab comment nhi hoga to i class = far fa-comments --}}
                                                             <span class="comment" data-toggle="tooltip"
-                                                                title="Comments">
-                                                                <i class="fa fa-comments-o"></i>
-                                                                <ins>52</ins>
+                                                                title="Comments" style="color:rgb(206, 177, 12) ">
+                                                                <i class="fas fa-comments"></i>
+                                                                <ins>12</ins>
                                                             </span>
                                                         </li>
                                                         <li>
+                                                            {{-- jab like nhi hoga to i class = far fa-heart --}}
                                                             <span class="like" id="likebutton" data-toggle="tooltip"
                                                                 title="like">
-                                                                <i class="ti-heart"></i>
-                                                                <ins id="test">2.2k</ins>
+                                                                <i class="fas fa-heart"></i>
+                                                                <ins id="test">34</ins>
                                                             </span>
                                                         </li>
-                                                        <li>
-                                                            <span class="dislike" data-toggle="tooltip" title="dislike">
-                                                                <i class="ti-heart-broken"></i>
-                                                                <ins>200</ins>
-                                                            </span>
-                                                        </li>
-                                                        <li class="social-media">
+                                                        {{-- <li class="social-media">
                                                             <div class="menu">
-                                                                <div class="btn trigger"><i class="fa fa-share-alt"></i>
+                                                                <div class=""><i class="fas fa-share-square"></i>
                                                                 </div>
                                                                 <div class="rotater">
                                                                     <div class="btn btn-icon"><a href="#" title=""><i
@@ -410,6 +410,13 @@
                                                                 </div>
 
                                                             </div>
+                                                        </li> --}}
+                                                        <li>
+                                                            <span class="like" id="sharebutton" data-toggle="tooltip"
+                                                                title="share" style="color:black ">
+                                                                <i class="fas fa-share-square"></i>
+                                                                <ins>2</ins>
+                                                            </span>
                                                         </li>
                                                     </ul>
                                                 </div>

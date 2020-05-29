@@ -24,7 +24,15 @@
                         <div class="tab-content">
                             <div class="tab-pane active fade show " id="frends">
                                 @if (count($cons)==0)
-                                    No Friends Yet.
+                                    <ul class="nearby-contct">
+                                        <li>
+                                            <div class="nearly-pepls">
+                                                <div class="pepl-info">
+                                                   <p>No Friends Yet.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 @else
                                 <ul class="nearby-contct">
                                     @foreach ($cons as $con)
@@ -74,7 +82,15 @@
                             </div>
                             <div class="tab-pane fade" id="frends-req">
                                 @if (count($reqs)==0)
-                                    No Friend Requests.
+                                    <ul class="nearby-contct">
+                                        <li>
+                                            <div class="nearly-pepls">
+                                                <div class="pepl-info">
+                                                   <p>No Friends Requests.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 @else
                                 <ul class="nearby-contct">
                                     @foreach ($reqs as $req)
@@ -96,7 +112,7 @@
                                                     @endif
                                                 </h4>
                                                 {{-- <span>ftv model</span> --}}
-                                                <a href="#" title="" class="add-butn more-action" data-ripple="">delete
+                                                <a href="#" title="" class="add-butn more-action" data-ripple="">Delete
                                                     Request</a>
                                                 <a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
                                             </div>
@@ -110,7 +126,15 @@
 
                             <div class="tab-pane fade" id="sent-req">
                                 @if (count($sreqs)==0)
-                                    No Sent Requests.
+                                    <ul class="nearby-contct">
+                                        <li>
+                                            <div class="nearly-pepls">
+                                                <div class="pepl-info">
+                                                   <p>No Sent Requests.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 @else
                                 <ul class="nearby-contct">
                                     @foreach ($sreqs as $sreq)
