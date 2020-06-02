@@ -8,72 +8,36 @@
         <div class="row merged20" id="page-contents">
             <div class="col-lg-3">
                 <aside class="sidebar static">
-                    {{-- <div class="widget">
-                        <h4 class="widget-title">Activity Log</h4>
-                        <ul class="activitiez">
-                            <li>
-                                <div class="activity-meta">
-                                    <i>10 hours Ago</i>
-                                    <span><a href="#" title="">Commented on Video posted </a></span>
-                                    <h6>by <a href="newsfeed.html">black demon.</a></h6>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="activity-meta">
-                                    <i>30 Days Ago</i>
-                                    <span><a href="newsfeed.html" title="">Posted your status. “Hello guys, how are
-                                            you?”</a></span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="activity-meta">
-                                    <i>2 Years Ago</i>
-                                    <span><a href="#" title="">Share a video on her timeline.</a></span>
-                                    <h6>"<a href="newsfeed.html">you are so funny mr.been.</a>"</h6>
-                                </div>
-                            </li>
-                        </ul>
-                    </div><!-- recent activites --> --}}
+                
                     <div class="widget stick-widget">
-                        <h4 class="widget-title">Who's follownig</h4>
-                        <ul class="followers">
+                        <h4 class="widget-title">Shortcuts</h4>
+                        <ul class="naves">
                             <li>
-                                <figure><img src="/images/resources/friend-avatar2.jpg" alt=""></figure>
-                                <div class="friend-meta">
-                                    <h4><a href="time-line.html" title="">Kelly Bill</a></h4>
-                                    <a href="#" title="" class="underline">Add Friend</a>
-                                </div>
+                                <i class="fas fa-stream"></i>
+                                <a href="{{ route('viewprofile',['id'=>$profile_id,'circle_id'=>$circle_id]) }}" title="">Timeline</a>
                             </li>
                             <li>
-                                <figure><img src="/images/resources/friend-avatar4.jpg" alt=""></figure>
-                                <div class="friend-meta">
-                                    <h4><a href="time-line.html" title="">Issabel</a></h4>
-                                    <a href="#" title="" class="underline">Add Friend</a>
-                                </div>
+                                <i class="far fa-images"></i>
+                                <a href="{{ route('viewphotos',['id'=>$profile_id,'circle_id'=>$circle_id]) }}"
+                                    title="">Photos</a>
                             </li>
                             <li>
-                                <figure><img src="/images/resources/friend-avatar6.jpg" alt=""></figure>
-                                <div class="friend-meta">
-                                    <h4><a href="time-line.html" title="">Andrew</a></h4>
-                                    <a href="#" title="" class="underline">Add Friend</a>
-                                </div>
+                                <i class="fas fa-film"></i>
+                                <a href="{{ route('viewvideos',['id'=>$profile_id,'circle_id'=>$circle_id]) }}"
+                                    title="">Videos</a>
                             </li>
+                            @if (Auth::user()->user_id==$profile_id)
                             <li>
-                                <figure><img src="/images/resources/friend-avatar8.jpg" alt=""></figure>
-                                <div class="friend-meta">
-                                    <h4><a href="time-line.html" title="">Sophia</a></h4>
-                                    <a href="#" title="" class="underline">Add Friend</a>
-                                </div>
+                                <i class="fas fa-users"></i>
+                                <a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Friends Circle</a>
                             </li>
+                            @endif
                             <li>
-                                <figure><img src="/images/resources/friend-avatar3.jpg" alt=""></figure>
-                                <div class="friend-meta">
-                                    <h4><a href="time-line.html" title="">Allen</a></h4>
-                                    <a href="#" title="" class="underline">Add Friend</a>
-                                </div>
+                                <i class="fas fa-info-circle"></i>
+                                <a href="{{ route('viewabout',['id'=>$profile_id,'circle_id'=>$circle_id]) }}" title="">About</a>
                             </li>
                         </ul>
-                    </div><!-- who's following -->
+                    </div><!-- Shortcuts -->
                 </aside>
             </div><!-- sidebar -->
             <div class="col-lg-6">
@@ -91,27 +55,21 @@
                                     <div class="attachments">
                                         <ul>
                                             <li>
-                                                <i class="fa fa-music"></i>
+                                                <i class="fas fa-music"></i>
                                                 <label class="fileContainer">
                                                     <input type="file" name="audio" accept="audio/*">
                                                 </label>
                                             </li>
                                             <li>
-                                                <i class="fa fa-image"></i>
+                                                <i class="fas fa-image"></i>
                                                 <label class="fileContainer">
                                                     <input type="file" name="image" accept="image/*">
                                                 </label>
                                             </li>
                                             <li>
-                                                <i class="fa fa-video-camera"></i>
+                                                <i class="fas fa-video-camera"></i>
                                                 <label class="fileContainer">
-                                                    <input type="file" name="video"  accept="video/*">
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-camera"></i>
-                                                <label class="fileContainer">
-                                                    <input type="file" name="cam"  accept="image/*" >
+                                                    <input type="file" name="video" accept="video/*">
                                                 </label>
                                             </li>
                                             <li>
@@ -241,10 +199,13 @@
                             <div class="user-post">
                                 <div class="friend-info">
                                     <figure>
-                                        <img src="{{$post->user->profile_picture}}" alt="">
+                                        <a
+                                            href="{{ route('viewprofile',['id'=>$post->user->user_id,'circle_id'=>$circle_id]) }}"><img
+                                                src="{{$post->user->profile_picture}}" alt=""></a>
                                     </figure>
-                                    <div class="friend-name">
-                                        <ins><a href="time-line.html" title="">{{$post->user->name}}</a></ins>
+                                    <div class="friend-name" style="width: 86%; ">
+                                        <ins><a href="{{ route('viewprofile',['id'=>$post->user->user_id,'circle_id'=>$circle_id]) }}"
+                                                title="">{{$post->user->name}}</a></ins>
                                         <span>published: {{$post->created_at}}</span>
                                     </div>
                                     <div class="post-meta">
@@ -255,40 +216,43 @@
                                             </p>
                                         </div>
                                         @if ($post->picture!=null)
-                                            <img src="{{$post->picture}}" alt="">
+                                        <img src="{{$post->picture}}" alt="">
                                         @else
 
                                         @endif
+                                        
                                         <div class="we-video-info">
+                                            <div>
+                                                <hr style="margin-top: 10px; margin-bottom:10px; ">
+                                            </div>
                                             <ul>
-
                                                 <li>
-                                                    <span class="views" data-toggle="tooltip" title="views">
-                                                        <i class="fa fa-eye"></i>
+                                                    <span class="Views" data-toggle="tooltip" title="views"
+                                                        style="color:grey ">
+                                                        <i class="fas fa-eye"></i>
                                                         <ins>1.2k</ins>
                                                     </span>
                                                 </li>
                                                 <li>
-                                                    <span class="comment" data-toggle="tooltip" title="Comments">
-                                                        <i class="fa fa-comments-o"></i>
-                                                        <ins>52</ins>
+                                                    {{-- jab comment nhi hoga to i class = far fa-comments --}}
+                                                    <span class="comment" data-toggle="tooltip" title="Comments"
+                                                        style="color:rgb(206, 177, 12) ">
+                                                        <i class="fas fa-comments"></i>
+                                                        <ins>12</ins>
                                                     </span>
                                                 </li>
                                                 <li>
-                                                    <span class="like" data-toggle="tooltip" title="like">
-                                                        <i class="ti-heart"></i>
-                                                        <ins>2.2k</ins>
+                                                    {{-- jab like nhi hoga to i class = far fa-heart --}}
+                                                    <span class="like" id="likebutton" data-toggle="tooltip"
+                                                        title="Like">
+                                                        <i class="fas fa-heart"></i>
+                                                        <ins id="test">34</ins>
                                                     </span>
                                                 </li>
-                                                <li>
-                                                    <span class="dislike" data-toggle="tooltip" title="dislike">
-                                                        <i class="ti-heart-broken"></i>
-                                                        <ins>200</ins>
-                                                    </span>
-                                                </li>
-                                                <li class="social-media">
+                                                {{-- <li class="social-media">
                                                     <div class="menu">
-                                                        <div class="btn trigger"><i class="fa fa-share-alt"></i></div>
+                                                        <div class=""><i class="fas fa-share-square"></i>
+                                                        </div>
                                                         <div class="rotater">
                                                             <div class="btn btn-icon"><a href="#" title=""><i
                                                                         class="fa fa-html5"></i></a></div>
@@ -326,13 +290,29 @@
                                                         </div>
 
                                                     </div>
+                                                </li> --}}
+                                                <li>
+                                                    <span class="like" id="sharebutton" data-toggle="tooltip"
+                                                        title="Share" style="color:black ">
+                                                        <i class="fas fa-share-square"></i>
+                                                        <ins>2</ins>
+                                                    </span>
+                                                </li>
+                                                <li style="margin-right:0; margin-left:40%;">
+                                                    <span class="like" id="sharebutton" data-toggle="tooltip"
+                                                        title="Report" style="color:rgb(107, 0, 0) ">
+                                                        <i class="fas fa-exclamation-triangle"></i>
+                                                    </span>
                                                 </li>
                                             </ul>
                                         </div>
-
+                                        
                                     </div>
                                 </div>
-                                {{-- <div class="coment-area">
+                                <div>
+                                    <hr style="margin-top: 0; margin-bottom:10px; ">
+                                </div>
+                                <div class="coment-area">
                                     <ul class="we-comet">
                                         <li>
                                             <div class="comet-avatar">
@@ -342,61 +322,10 @@
                                                 <div class="coment-head">
                                                     <h5><a href="time-line.html" title="">Jason borne</a></h5>
                                                     <span>1 year ago</span>
-                                                    <a class="we-reply" href="#" title="Reply"><i
-                                                            class="fa fa-reply"></i></a>
                                                 </div>
-                                                <p>we are working for the dance and sing songs. this car is very awesome for
+                                                <p>we are working for the dance and sing songs. this car is very
+                                                    awesome for
                                                     the youngster. please vote this car and like our post</p>
-                                            </div>
-                                            <ul>
-                                                <li>
-                                                    <div class="comet-avatar">
-                                                        <img src="/images/resources/comet-2.jpg" alt="">
-                                                    </div>
-                                                    <div class="we-comment">
-                                                        <div class="coment-head">
-                                                            <h5><a href="time-line.html" title="">alexendra dadrio</a></h5>
-                                                            <span>1 month ago</span>
-                                                            <a class="we-reply" href="#" title="Reply"><i
-                                                                    class="fa fa-reply"></i></a>
-                                                        </div>
-                                                        <p>yes, really very awesome car i see the features of this car in
-                                                            the official website of <a href="#" title="">#Mercedes-Benz</a>
-                                                            and really impressed :-)</p>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="comet-avatar">
-                                                        <img src="/images/resources/comet-3.jpg" alt="">
-                                                    </div>
-                                                    <div class="we-comment">
-                                                        <div class="coment-head">
-                                                            <h5><a href="time-line.html" title="">Olivia</a></h5>
-                                                            <span>16 days ago</span>
-                                                            <a class="we-reply" href="#" title="Reply"><i
-                                                                    class="fa fa-reply"></i></a>
-                                                        </div>
-                                                        <p>i like lexus cars, lexus cars are most beautiful with the awesome
-                                                            features, but this car is really outstanding than lexus</p>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <div class="comet-avatar">
-                                                <img src="/images/resources/comet-4.jpg" alt="">
-                                            </div>
-                                            <div class="we-comment">
-                                                <div class="coment-head">
-                                                    <h5><a href="time-line.html" title="">Donald Trump</a></h5>
-                                                    <span>1 week ago</span>
-                                                    <a class="we-reply" href="#" title="Reply"><i
-                                                            class="fa fa-reply"></i></a>
-                                                </div>
-                                                <p>we are working for the dance and sing songs. this video is very awesome
-                                                    for the youngster. please vote this video and like our channel
-                                                    <i class="em em-smiley"></i>
-                                                </p>
                                             </div>
                                         </li>
                                         <li>
@@ -408,198 +337,111 @@
                                             </div>
                                             <div class="post-comt-box">
                                                 <form method="post">
-                                                    <textarea placeholder="Post your comment"></textarea>
-                                                    <div class="add-smiles">
-                                                        <span class="em em-expressionless" title="add icon"></span>
-                                                    </div>
-                                                    <div class="smiles-bunch">
-                                                        <i class="em em---1"></i>
-                                                        <i class="em em-smiley"></i>
-                                                        <i class="em em-anguished"></i>
-                                                        <i class="em em-laughing"></i>
-                                                        <i class="em em-angry"></i>
-                                                        <i class="em em-astonished"></i>
-                                                        <i class="em em-blush"></i>
-                                                        <i class="em em-disappointed"></i>
-                                                        <i class="em em-worried"></i>
-                                                        <i class="em em-kissing_heart"></i>
-                                                        <i class="em em-rage"></i>
-                                                        <i class="em em-stuck_out_tongue"></i>
-                                                    </div>
-                                                    <button type="submit"></button>
+                                                <textarea placeholder="Post your comment"></textarea>
+                                                <div class="add-smiles">
+                                                    <span title="add icon">&#128515;</span>
+                                                </div>
+                                                <div class="smiles-bunch">
+                                                    <a href="#" style="text-decoration: none;">&#128512;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128513;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128514;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128515;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128516;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128517;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128518;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128519;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128520;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128521;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128522;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128523;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128524;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128525;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128526;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128527;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128528;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128529;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128530;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128531;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128532;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128533;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128534;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128535;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128536;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128537;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128538;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128539;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128540;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128541;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128542;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128543;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128544;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128545;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128546;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128547;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128548;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128549;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128550;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128551;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128552;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128553;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128554;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128555;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128556;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128557;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128558;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128559;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128560;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128561;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128562;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128563;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128564;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128565;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128566;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128567;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128577;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128578;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128579;</a>
+                                                    <a href="#" style="text-decoration: none;">&#128580;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129296;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129297;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129298;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129299;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129300;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129301;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129312;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129313;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129314;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129315;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129316;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129317;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129319;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129320;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129321;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129322;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129323;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129324;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129325;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129326;</a>
+                                                    <a href="#" style="text-decoration: none;">&#129327;</a>
+
+                                                    
+                                                </div>
+                                                    {{-- <p class="lead emoji-picker-container">
+                                                        <textarea class="form-control textarea-control"
+                                                            placeholder="Textarea with emoji image input"
+                                                            data-emojiable="true"></textarea>
+                                                    </p> --}}
+                                                    {{-- <button type="submit"></button> --}}
+                                                
                                                 </form>
                                             </div>
                                         </li>
                                     </ul>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                         @endforeach
                     @endif
-                    {{-- <div class="central-meta item">
-                        <div class="user-post">
-                            <div class="friend-info">
-                                <figure>
-                                    <img src="/images/resources/friend-avatar10.jpg" alt="">
-                                </figure>
-                                <div class="friend-name">
-                                    <ins><a href="time-line.html" title="">{{$user->name}}</a></ins>
-                                    <span>published: june,2 2018 19:PM</span>
-                                </div>
-                                <div class="post-meta">
-                                    <iframe width="" height="285" src="https://www.youtube.com/embed/_-StQsHSTz0"
-                                        frameborder="0" allowfullscreen></iframe>
-                                    <div class="we-video-info">
-                                        <ul>
-
-                                            <li>
-                                                <span class="views" data-toggle="tooltip" title="views">
-                                                    <i class="fa fa-eye"></i>
-                                                    <ins>1.2k</ins>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="comment" data-toggle="tooltip" title="Comments">
-                                                    <i class="fa fa-comments-o"></i>
-                                                    <ins>52</ins>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="like" data-toggle="tooltip" title="like">
-                                                    <i class="ti-heart"></i>
-                                                    <ins>2.2k</ins>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="dislike" data-toggle="tooltip" title="dislike">
-                                                    <i class="ti-heart-broken"></i>
-                                                    <ins>200</ins>
-                                                </span>
-                                            </li>
-                                            <li class="social-media">
-                                                <div class="menu">
-                                                    <div class="btn trigger"><i class="fa fa-share-alt"></i></div>
-                                                    <div class="rotater">
-                                                        <div class="btn btn-icon"><a href="#" title=""><i
-                                                                    class="fa fa-html5"></i></a></div>
-                                                    </div>
-                                                    <div class="rotater">
-                                                        <div class="btn btn-icon"><a href="#" title=""><i
-                                                                    class="fa fa-facebook"></i></a></div>
-                                                    </div>
-                                                    <div class="rotater">
-                                                        <div class="btn btn-icon"><a href="#" title=""><i
-                                                                    class="fa fa-google-plus"></i></a></div>
-                                                    </div>
-                                                    <div class="rotater">
-                                                        <div class="btn btn-icon"><a href="#" title=""><i
-                                                                    class="fa fa-twitter"></i></a></div>
-                                                    </div>
-                                                    <div class="rotater">
-                                                        <div class="btn btn-icon"><a href="#" title=""><i
-                                                                    class="fa fa-css3"></i></a></div>
-                                                    </div>
-                                                    <div class="rotater">
-                                                        <div class="btn btn-icon"><a href="#" title=""><i
-                                                                    class="fa fa-instagram"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rotater">
-                                                        <div class="btn btn-icon"><a href="#" title=""><i
-                                                                    class="fa fa-dribbble"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rotater">
-                                                        <div class="btn btn-icon"><a href="#" title=""><i
-                                                                    class="fa fa-pinterest"></i></a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="description">
-
-                                        <p>
-                                            Lonely Cat Enjoying in Summer Curabitur <a href="#" title="">#mypage</a>
-                                            ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus,
-                                            tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing
-                                            sem neque sed ipsum. Nam quam nunc,
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="coment-area">
-                                <ul class="we-comet">
-                                    <li>
-                                        <div class="comet-avatar">
-                                            <img src="/images/resources/comet-1.jpg" alt="">
-                                        </div>
-                                        <div class="we-comment">
-                                            <div class="coment-head">
-                                                <h5><a href="time-line.html" title="">Jason borne</a></h5>
-                                                <span>1 year ago</span>
-                                                <a class="we-reply" href="#" title="Reply"><i
-                                                        class="fa fa-reply"></i></a>
-                                            </div>
-                                            <p>we are working for the dance and sing songs. this video is very awesome
-                                                for the youngster. please vote this video and like our channel</p>
-                                        </div>
-
-                                    </li>
-                                    <li>
-                                        <div class="comet-avatar">
-                                            <img src="/images/resources/comet-2.jpg" alt="">
-                                        </div>
-                                        <div class="we-comment">
-                                            <div class="coment-head">
-                                                <h5><a href="time-line.html" title="">Sophia</a></h5>
-                                                <span>1 week ago</span>
-                                                <a class="we-reply" href="#" title="Reply"><i
-                                                        class="fa fa-reply"></i></a>
-                                            </div>
-                                            <p>we are working for the dance and sing songs. this video is very awesome
-                                                for the youngster.
-                                                <i class="em em-smiley"></i>
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="" class="showmore underline">more comments</a>
-                                    </li>
-                                    <li class="post-comment">
-                                        <div class="comet-avatar">
-                                            <img src="/images/resources/comet-2.jpg" alt="">
-                                        </div>
-                                        <div class="post-comt-box">
-                                            <form method="post">
-                                                <textarea placeholder="Post your comment"></textarea>
-                                                <div class="add-smiles">
-                                                    <span class="em em-expressionless" title="add icon"></span>
-                                                </div>
-                                                <div class="smiles-bunch">
-                                                    <i class="em em---1"></i>
-                                                    <i class="em em-smiley"></i>
-                                                    <i class="em em-anguished"></i>
-                                                    <i class="em em-laughing"></i>
-                                                    <i class="em em-angry"></i>
-                                                    <i class="em em-astonished"></i>
-                                                    <i class="em em-blush"></i>
-                                                    <i class="em em-disappointed"></i>
-                                                    <i class="em em-worried"></i>
-                                                    <i class="em em-kissing_heart"></i>
-                                                    <i class="em em-rage"></i>
-                                                    <i class="em em-stuck_out_tongue"></i>
-                                                </div>
-                                                <button type="submit"></button>
-                                            </form>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
             </div><!-- centerl meta -->
             <div class="col-lg-3">
