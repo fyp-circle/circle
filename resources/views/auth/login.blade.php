@@ -116,7 +116,7 @@
                         <div class="log-reg-area sign">
                             <h2 class="log-title">Login</h2>
                             <p>
-                                Don’t use Circle Yet? <a href="#" title=""><button class="signup">Join now</button></a>
+                                Don’t use Circle Yet? <a href="#" title="" class="sign-up">Join now</a>
                             </p>
                             <form method="post"  action="{{ route('login') }}">
                                 @csrf
@@ -167,7 +167,7 @@
                         <div class="log-reg-area reg">
                             <h2 class="log-title">Register</h2>
                             <p>
-                                Don’t know how Circle works? <a href="#" title="">Take the tour</a>
+                                Don’t know how Circle works? <a href="{{ url('tour') }}" title="">Take the tour</a>
                             </p>
                             <form method="POST" id="UserRegistration" action="{{ route('register') }}">
                                     @csrf
@@ -210,10 +210,10 @@
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" checked="checked" name="agree" /><i class="check-box"></i>Accept Terms
-                                        & Conditions ?
+                                        & Conditions?
                                     </label>
                                 </div>
-                                <a href="#" title="" class="already-have">Already have an account</a>
+                                <a href="#" title="" class="already-have">Already have an account?</a>
                                 <div class="submit-btns">
                                         <button type="submit" class="mtr-btn btn-primary">
                                                 <span>Register</span>

@@ -266,6 +266,10 @@ class CheckController extends Controller
     public function resetpwd(){
         return view("resetpwd");
     }
+    public function tourguide(){
+        return view("tour");
+    }
+
     public function mainscreen($circle_id){
         //$user = User::find($id);
         $id=Auth::user()->user_id;
