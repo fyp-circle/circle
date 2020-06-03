@@ -15,9 +15,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/color.css">
     <link rel="stylesheet" href="/css/responsive.css">
-    <link rel="stylesheet" href="/css/introjs.css">
-    <link rel="stylesheet" href="/css/introjs-rtl.css">
-
+    <link href="https://introjs.com/minified/introjs.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="/css/main.8d288f825d8dffbbe55e.css">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/spinner_wrapper.css') }}" rel="stylesheet">
@@ -243,7 +241,7 @@
                 <ul class="main-menu">
                     <li>
                         <div class="author-thmb">
-                            <a href="" onclick="">
+                            <a href="#" id = "#start" onclick="introJs('.author-thmb').start();">
                                 <img src="{{ asset('/images/default.png') }}" alt=""
                                     style="border-radius:50%; width:45px; height:45px; object-fit:cover">
                                 <span class="status f-online" style="bottom: 32px; background: black"></span>
@@ -996,11 +994,20 @@
 
         </script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://introjs.com/minified/intro.min.js"></script>
         <script src="//js.pusher.com/3.1/pusher.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
         </script>
 
+        <script>
+            $(document).ready(function () {
+                $('#start').on('click', function () {
+                    href("javascript:void(0);"),
+                        onclick("javascript:introJs().setOption('showProgress', true).start();")
+                });
+            });
+        </script>
 
 
 
