@@ -1529,7 +1529,7 @@ form button {
 }
 
 .we-video-info>ul li span.like {
-    color: green;
+    color: red;
     cursor: pointer;
     transition: all 0.2s linear 0s;
 }
@@ -1545,7 +1545,7 @@ form button {
 .menu,
 .menu .btn .fa,
 .menu .btn.trigger .line {
-    color: #fff;
+    /* color: #fff; */
     line-height: 25px;
     position: relative;
     right: 0;
@@ -1973,13 +1973,13 @@ li.post-comment .comet-avatar {
 .smiles-bunch {
     background: #eaeaea none repeat scroll 0 0;
     border-radius: 5px;
-    top: -63px;
-    font-size: 13px;
+    bottom: 100%;
+    font-size: 11pt;
     padding: 5px;
     position: absolute;
     right: 0;
     text-align: center;
-    width: 150px;
+    width: 50%;
     display: none;
 }
 

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/color.css">
     <link rel="stylesheet" href="/css/responsive.css">
+    
     <link rel="stylesheet" href="/css/main.8d288f825d8dffbbe55e.css">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/spinner_wrapper.css') }}" rel="stylesheet">
@@ -25,6 +26,27 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://kit.fontawesome.com/d1bf4e5d94.js" crossorigin="anonymous"></script>
+    
+    {{-- AJAX KI SCRIPT --}}
+    <script>
+        function showResult(str) {
+          if (str.length==0) {
+            document.getElementById("livesearch").innerHTML="";
+            document.getElementById("livesearch").style.border="0px";
+            return;
+          }
+          var xmlhttp=new XMLHttpRequest();
+          xmlhttp.onreadystatechange=function() {
+            if (this.readyState==4 && this.status==200) {
+              document.getElementById("livesearch").innerHTML=this.responseText;
+              document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+            }
+          }
+          xmlhttp.open("GET","livesearch.php?q="+str,true);
+          xmlhttp.send();
+        }
+        </script>
+
 </head>
 
 <body>
@@ -267,20 +289,21 @@
                 </ul>
                 <ul class="setting-area">
                     <li>
-                        <a href="" ><i class="ti-search"></i></a>
+                        <a href="" ><i class="fas fa-search"></i></a>
                         <div class="searched">
                             <form action="{{ route('search',['circle_id'=>$circle_id]) }}" method="POST" role="search" class="form-search">
                                 @csrf
-                                <input type="text" name="q" placeholder="Search Friend">
-                                <button type="submit"><i class="ti-search"></i></button>
+                                <input type="text" size="30" onkeyup="showResult(this.value)" name="q" placeholder="Search Friend">
+                                <div id="livesearch"></div>
+                                <button type="submit"><i class="fas fa-search"></i></button>
                             </form>
                         </div>
                     </li>
-                    <li><a href="{{ route('mainscreen',['circle_id'=>1]) }}"><i class="ti-home"></i></a></li>
+                    <li><a href="{{ route('mainscreen',['circle_id'=>1]) }}"><i class="fas fa-home"></i></a></li>
                     <li class= "dropdown-notifications">
                         {{-- <a  href="#notifications-panel" title="Notification" data-ripple="" class="dropdown-toggle" data-toggle="dropdown"> --}}
                             <a href="#" title="Notification" data-ripple="" class="dropdown-toggle" href="#notifications-panel" data-toggle="dropdown">
-                            <i class="ti-bell" data-count="{{count($notifications)}}"></i><span class="notif-count">{{count($notifications)}}</span>
+                            <i class="fas fa-bell" data-count="{{count($notifications)}}"></i><span class="notif-count">{{count($notifications)}}</span>
                         </a>
                         @if (count($notifications) ==0)
                         <div class="dropdowns">
@@ -341,7 +364,7 @@
                         @endif
                     </li>
                     <li>
-                        <a href="#" title="Messages" data-ripple=""><i class="ti-comment"></i><span>3</span></a>
+                        <a href="#" title="Messages" data-ripple=""><i class="fas fa-envelope"></i><span>3</span></a>
                         <div class="dropdowns">
                             <span>3 New Messages</span>
                             <ul class="drops-menu">
@@ -418,7 +441,7 @@
         </div><!-- topbar -->
         @include('sweetalert::alert')
         @yield('content')
-
+        
     <script src="/js/main.min.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/map-init.js"></script>
@@ -431,6 +454,8 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="{{asset('/js/message.js')}}"></script>
+    <script>
+    
     <script>
         $(document).ready(function () {
             //Preloader

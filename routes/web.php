@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('tour', ['as' => 'tour.guide', 'uses' => 'CheckController@tourguide']);
 
 Route::get('/request', function () {
     return view('request');
@@ -35,6 +35,9 @@ Route::group([
 
     Route::get('forgetpassword', ['as' => 'forget.pwd', 'uses' => 'CheckController@forget']);
     Route::get('resetpwd', ['as' => 'reset.pwd', 'uses' => 'CheckController@resetpwd']);
+    
+    
+
 
     Route::get('mainscreen/{circle_id}', ['as' => 'mainscreen', 'uses' => 'CheckController@mainscreen'])->where('circle_id', '1');
     Route::get('mainscreenfamily/{circle_id}', ['as' => 'mainscreenfamily', 'uses' => 'CheckController@mainscreenfamily'])->where('circle_id', '2');
@@ -239,3 +242,8 @@ Route::group([
 
 
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

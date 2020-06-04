@@ -5,138 +5,40 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="row merged20" id="page-contents">
-            {{-- <div class="col-lg-3">
+            <div class="col-lg-3">
                 <aside class="sidebar static">
-                    <div class="widget">
-                        <h4 class="widget-title">Your page</h4>
-                        <div class="your-page">
-                            <figure>
-                                <a title="" href="#"><img alt="" src="images/resources/friend-avatar9.jpg"></a>
-                            </figure>
-                            <div class="page-meta">
-                                <a class="underline" title="" href="#">My page</a>
-                                <span><i class="ti-comment"></i>Messages <em>9</em></span>
-                                <span><i class="ti-bell"></i>Notifications <em>2</em></span>
-                            </div>
-                            <div class="page-likes">
-                                <ul class="nav nav-tabs likes-btn">
-                                    <li class="nav-item"><a data-toggle="tab" href="#link1" class="active">likes</a>
-                                    </li>
-                                    <li class="nav-item"><a data-toggle="tab" href="#link2" class="">views</a></li>
-                                </ul>
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div id="link1" class="tab-pane active fade show">
-                                        <span><i class="ti-heart"></i>884</span>
-                                        <a title="weekly-likes" href="#">35 new likes this week</a>
-                                        <div class="users-thumb-list">
-                                            <a data-toggle="tooltip" title="" href="#" data-original-title="Anderw">
-                                                <img alt="" src="images/resources/userlist-1.jpg">
-                                            </a>
-                                            <a data-toggle="tooltip" title="" href="#" data-original-title="frank">
-                                                <img alt="" src="images/resources/userlist-2.jpg">
-                                            </a>
-                                            <a data-toggle="tooltip" title="" href="#" data-original-title="Sara">
-                                                <img alt="" src="images/resources/userlist-3.jpg">
-                                            </a>
-                                            <a data-toggle="tooltip" title="" href="#" data-original-title="Amy">
-                                                <img alt="" src="images/resources/userlist-4.jpg">
-                                            </a>
-                                            <a data-toggle="tooltip" title="" href="#" data-original-title="Ema">
-                                                <img alt="" src="images/resources/userlist-5.jpg">
-                                            </a>
-                                            <a data-toggle="tooltip" title="" href="#" data-original-title="Sophie">
-                                                <img alt="" src="images/resources/userlist-6.jpg">
-                                            </a>
-                                            <a data-toggle="tooltip" title="" href="#" data-original-title="Maria">
-                                                <img alt="" src="images/resources/userlist-7.jpg">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div id="link2" class="tab-pane fade">
-                                        <span><i class="ti-eye"></i>445</span>
-                                        <a title="weekly-likes" href="#">440 new views this week</a>
-                                        <div class="users-thumb-list">
-                                            <a data-toggle="tooltip" title="" href="#" data-original-title="Anderw">
-                                                <img alt="" src="images/resources/userlist-1.jpg">
-                                            </a>
-                                            <a data-toggle="tooltip" title="" href="#" data-original-title="frank">
-                                                <img alt="" src="images/resources/userlist-2.jpg">
-                                            </a>
-                                            <a data-toggle="tooltip" title="" href="#" data-original-title="Sara">
-                                                <img alt="" src="images/resources/userlist-3.jpg">
-                                            </a>
-                                            <a data-toggle="tooltip" title="" href="#" data-original-title="Amy">
-                                                <img alt="" src="images/resources/userlist-4.jpg">
-                                            </a>
-                                            <a data-toggle="tooltip" title="" href="#" data-original-title="Ema">
-                                                <img alt="" src="images/resources/userlist-5.jpg">
-                                            </a>
-                                            <a data-toggle="tooltip" title="" href="#" data-original-title="Sophie">
-                                                <img alt="" src="images/resources/userlist-6.jpg">
-                                            </a>
-                                            <a data-toggle="tooltip" title="" href="#" data-original-title="Maria">
-                                                <img alt="" src="images/resources/userlist-7.jpg">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="widget">
+                    <div class="widget stick-widget">
                         <h4 class="widget-title">Shortcuts</h4>
                         <ul class="naves">
                             <li>
-                                <i class="ti-clipboard"></i>
-                                <a href="newsfeed.html" title="">News feed</a>
+                                <i class="fas fa-stream"></i>
+                                <a href="{{ route('viewprofile',['id'=>$profile_id,'circle_id'=>$circle_id]) }}" title="">Timeline</a>
                             </li>
                             <li>
-                                <i class="ti-mouse-alt"></i>
-                                <a href="inbox.html" title="">Inbox</a>
+                                <i class="far fa-images"></i>
+                                <a href="{{ route('viewphotos',['id'=>$profile_id,'circle_id'=>$circle_id]) }}"
+                                    title="">Photos</a>
                             </li>
                             <li>
-                                <i class="ti-files"></i>
-                                <a href="fav-page.html" title="">My pages</a>
+                                <i class="fas fa-film"></i>
+                                <a href="{{ route('viewvideos',['id'=>$profile_id,'circle_id'=>$circle_id]) }}"
+                                    title="">Videos</a>
                             </li>
+                            @if (Auth::user()->user_id==$profile_id)
                             <li>
-                                <i class="ti-user"></i>
-                                <a href="timeline-friends.html" title="">friends</a>
+                                <i class="fas fa-users"></i>
+                                <a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}" title="">Friends Circle</a>
                             </li>
+                            @endif
                             <li>
-                                <i class="ti-image"></i>
-                                <a href="timeline-photos.html" title="">images</a>
-                            </li>
-                            <li>
-                                <i class="ti-video-camera"></i>
-                                <a href="timeline-videos.html" title="">videos</a>
-                            </li>
-                            <li>
-                                <i class="ti-comments-smiley"></i>
-                                <a href="messages.html" title="">Messages</a>
-                            </li>
-                            <li>
-                                <i class="ti-bell"></i>
-                                <a href="notifications.html" title="">Notifications</a>
-                            </li>
-                            <li>
-                                <i class="ti-share"></i>
-                                <a href="people-nearby.html" title="">People Nearby</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-bar-chart-o"></i>
-                                <a href="insights.html" title="">insights</a>
-                            </li>
-                            <li>
-                                <i class="ti-power-off"></i>
-                                <a href="landing.html" title="">Logout</a>
+                                <i class="fas fa-info-circle"></i>
+                                <a href="{{ route('viewabout',['id'=>$profile_id,'circle_id'=>$circle_id]) }}" title="">About</a>
                             </li>
                         </ul>
                     </div><!-- Shortcuts -->
-
                 </aside>
-            </div><!-- sidebar --> --}}
-            <div class="col-md-12">
+            </div><!-- sidebar -->
+            <div class="col-md-9">
                 <div class="central-meta">
                     <ul class="photos">
                         <li>
@@ -347,215 +249,6 @@
                     <div class="lodmore"><button class="btn-view btn-load-more"></button></div>
                 </div><!-- photos -->
             </div><!-- centerl meta -->
-            {{-- <div class="col-lg-3">
-                <aside class="sidebar static">
-                    <div class="widget">
-                        <h4 class="widget-title">Twitter feed</h4>
-                        <ul class="twiter-feed">
-                            <li>
-                                <i class="fa fa-twitter"></i>
-                                <span>
-                                    <i>jhon william</i>
-                                    @jhonwilliam
-                                </span>
-                                <p>tomorrow with the company we were working and 5 child run away from the working
-                                    place. <a href="#" title="">#daydream5k</a> </p>
-                                <em>2 hours ago</em>
-                            </li>
-                            <li>
-                                <i class="fa fa-twitter"></i>
-                                <span>
-                                    <i>Kelly watson</i>
-                                    @kelly
-                                </span>
-                                <p>tomorrow with the company we were working and 5 child run away from the working
-                                    place. <a href="#" title="">#daydream5k</a> </p>
-                                <em>2 hours ago</em>
-                            </li>
-                            <li>
-                                <i class="fa fa-twitter"></i>
-                                <span>
-                                    <i>Jony bravo</i>
-                                    @jonibravo
-                                </span>
-                                <p>tomorrow with the company we were working and 5 child run away from the working
-                                    place. <a href="#" title="">#daydream5k</a> </p>
-                                <em>2 hours ago</em>
-                            </li>
-                        </ul>
-                    </div><!-- twitter feed-->
-                    <div class="widget friend-list stick-widget">
-                        <h4 class="widget-title">Friends</h4>
-                        <div id="searchDir"></div>
-                        <ul id="people-list" class="friendz-list">
-                            <li>
-                                <figure>
-                                    <img src="//images/resources/friend-avatar.jpg" alt="">
-                                    <span class="status f-online"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">bucky barnes</a>
-                                    <i>wintersolder@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="//images/resources/friend-avatar2.jpg" alt="">
-                                    <span class="status f-away"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">Sarah Loren</a>
-                                    <i>barnes@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="/images/resources/friend-avatar3.jpg" alt="">
-                                    <span class="status f-off"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">jason borne</a>
-                                    <i>jasonb@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="/images/resources/friend-avatar4.jpg" alt="">
-                                    <span class="status f-off"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">Cameron diaz</a>
-                                    <i>jasonb@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-
-                                <figure>
-                                    <img src="/images/resources/friend-avatar5.jpg" alt="">
-                                    <span class="status f-online"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">daniel warber</a>
-                                    <i>jasonb@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-
-                                <figure>
-                                    <img src="/images/resources/friend-avatar6.jpg" alt="">
-                                    <span class="status f-away"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">andrew</a>
-                                    <i>jasonb@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-
-                                <figure>
-                                    <img src="/images/resources/friend-avatar7.jpg" alt="">
-                                    <span class="status f-off"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">amy watson</a>
-                                    <i>jasonb@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-
-                                <figure>
-                                    <img src="/images/resources/friend-avatar5.jpg" alt="">
-                                    <span class="status f-online"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">daniel warber</a>
-                                    <i>jasonb@gmail.com</i>
-                                </div>
-                            </li>
-                            <li>
-
-                                <figure>
-                                    <img src="/images/resources/friend-avatar2.jpg" alt="">
-                                    <span class="status f-away"></span>
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">Sarah Loren</a>
-                                    <i>barnes@gmail.com</i>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="chat-box">
-                            <div class="chat-head">
-                                <span class="status f-online"></span>
-                                <h6>Bucky Barnes</h6>
-                                <div class="more">
-                                    <span><i class="ti-more-alt"></i></span>
-                                    <span class="close-mesage"><i class="ti-close"></i></span>
-                                </div>
-                            </div>
-                            <div class="chat-list">
-                                <ul>
-                                    <li class="me">
-                                        <div class="chat-thumb"><img src="/images/resources/chatlist1.jpg" alt=""></div>
-                                        <div class="notification-event">
-                                            <span class="chat-message-item">
-                                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be
-                                                handling the gifts and Jake’s gonna get the drinks
-                                            </span>
-                                            <span class="notification-date"><time datetime="2004-07-24T18:18"
-                                                    class="entry-date updated">Yesterday at 8:10pm</time></span>
-                                        </div>
-                                    </li>
-                                    <li class="you">
-                                        <div class="chat-thumb"><img src="/images/resources/chatlist2.jpg" alt=""></div>
-                                        <div class="notification-event">
-                                            <span class="chat-message-item">
-                                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be
-                                                handling the gifts and Jake’s gonna get the drinks
-                                            </span>
-                                            <span class="notification-date"><time datetime="2004-07-24T18:18"
-                                                    class="entry-date updated">Yesterday at 8:10pm</time></span>
-                                        </div>
-                                    </li>
-                                    <li class="me">
-                                        <div class="chat-thumb"><img src="/images/resources/chatlist1.jpg" alt=""></div>
-                                        <div class="notification-event">
-                                            <span class="chat-message-item">
-                                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be
-                                                handling the gifts and Jake’s gonna get the drinks
-                                            </span>
-                                            <span class="notification-date"><time datetime="2004-07-24T18:18"
-                                                    class="entry-date updated">Yesterday at 8:10pm</time></span>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <form class="text-box">
-                                    <textarea placeholder="Post enter to post..."></textarea>
-                                    <div class="add-smiles">
-                                        <span title="add icon" class="em em-expressionless"></span>
-                                    </div>
-                                    <div class="smiles-bunch">
-                                        <i class="em em---1"></i>
-                                        <i class="em em-smiley"></i>
-                                        <i class="em em-anguished"></i>
-                                        <i class="em em-laughing"></i>
-                                        <i class="em em-angry"></i>
-                                        <i class="em em-astonished"></i>
-                                        <i class="em em-blush"></i>
-                                        <i class="em em-disappointed"></i>
-                                        <i class="em em-worried"></i>
-                                        <i class="em em-kissing_heart"></i>
-                                        <i class="em em-rage"></i>
-                                        <i class="em em-stuck_out_tongue"></i>
-                                    </div>
-                                    <button type="submit"></button>
-                                </form>
-                            </div>
-                        </div>
-                    </div><!-- friends list sidebar -->
-
-                </aside>
-            </div><!-- sidebar --> --}}
         </div>
     </div>
 </div>

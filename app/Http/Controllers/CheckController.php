@@ -170,7 +170,74 @@ class CheckController extends Controller
         }
         return $a;
     }
+    public function recommendFriends($id,$circle_id){
+        $my_friends=CheckController::getConnections($id,$circle_id);
+        $cons1 =[];
+        $cons=[];
+        $cons2 = [];
 
+        
+        foreach ($my_friends as $my_friend) {
+            if($my_friend->user1_id != Auth::user()->user_id){
+                $cons1=CheckController::getConnections($my_friend->user1_id,$circle_id);
+                $cons= $cons1->merge($cons);
+                
+            }
+            else{
+                $cons2=CheckController::getConnections($my_friend->user2_id,$circle_id);
+
+                $cons= $cons2->merge($cons);
+            }
+        }
+        
+        // return $cons;
+        // foreach ($cons as $con ) {
+        //     if($con->user1_id!= Auth::user()->user_id && $con->user2_id!= Auth::user()->user_id){
+        //         $cons->unset($con);
+        //     }
+        // }
+        $cons = $cons->filter(function($item) {
+            return ($item->user1_id != Auth::user()->user_id && $item->user2_id != Auth::user()->user_id);
+        });
+        // return $cons[0]->user1;
+        $user1 =[];
+        $user2=[];
+        $users=collect();
+        foreach ($cons as $con) {
+            # code...
+                $user1=$con->user1;
+                $user2=$con->user2;
+                $users->push($user1);
+                $users->push($user2);
+            
+        }
+        // $users = $users->filter(function($item) {
+        //     return ($item->city== Auth::user()->city);
+        // });
+        $omg =$users->unique();
+        $change=false;
+        $my_friends=CheckController::getConnections(Auth::user()->user_id,$circle_id);
+        $tb=collect();
+        
+
+        return count($my_friends);
+
+        for ($i=0; $i < count($omg); $i++) { 
+            for ($j=0; $j < count($my_friends); $j++) { 
+                if($omg[$i]->user_id==$my_friends[$j]->user1_id || $omg[$i]->user_id==$my_friends[$j]->user2_id ){
+                    $change=true;
+                }
+            }
+            if(!$change){
+                $tb->push($omg[$i]);
+               
+            }
+            $change=false;
+        }
+
+
+        return $tb;
+    }   
     public function checkConnection($id,$circle_id){
         $c=0;
 
@@ -266,6 +333,10 @@ class CheckController extends Controller
     public function resetpwd(){
         return view("resetpwd");
     }
+    public function tourguide(){
+        return view("tour");
+    }
+
     public function mainscreen($circle_id){
         //$user = User::find($id);
         $id=Auth::user()->user_id;
@@ -288,6 +359,8 @@ class CheckController extends Controller
 
         $reqs=CheckController::getFriendRequests($id,$circle_id);
         $c=CheckController::checkConnection($id,$circle_id);
+        $suggestions=CheckController::recommendFriends($id,$circle_id);
+        return $suggestions;
         $recent_activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->take(4)->get();
 
         return view("main.mainscreen")->with('reqs',$reqs)->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
