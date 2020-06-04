@@ -217,14 +217,19 @@ class CheckController extends Controller
         //     return ($item->city== Auth::user()->city);
         // });
         $fb=collect();
+        $extra=collect();
         for ($i=0; $i < count($users); $i++) {
             if ($users[$i]->city==Auth::user()->city) {
                 $fb->push($users[$i]);
+            }
+            else{
+                $extra->push($users[$i]);
             }
         }
 
         // return $fb;
         $omg =$fb->unique()->values()->all();
+        $other_users =$extra->unique()->values()->all();
         // $omg=$users;
         // return $omg;
         $change=false;
@@ -246,9 +251,31 @@ class CheckController extends Controller
             }
             $change=false;
         }
+        $rb=collect();
+        for ($i=0; $i < count($other_users); $i++) {
+            for ($j=0; $j < count($my_friends); $j++) {
+                if($other_users[$i]->user_id==$my_friends[$j]->user1_id || $other_users[$i]->user_id==$my_friends[$j]->user2_id ){
+                    $change=true;
+                }
+            }
+            if(!$change){
+                $rb->push($other_users[$i]);
+
+            }
+            $change=false;
+        }
 
 
-        return $tb;
+
+        if(count($tb)<15){
+            $k=0;
+            for ($i=count($tb); $i < 15; $i++) {
+                $tb->push($rb[$k++]);
+            }
+
+        }
+        $randomized_users= $tb->shuffle();
+        return $randomized_users;
     }
     public function checkConnection($id,$circle_id){
         $c=0;
@@ -372,7 +399,7 @@ class CheckController extends Controller
         $reqs=CheckController::getFriendRequests($id,$circle_id);
         $c=CheckController::checkConnection($id,$circle_id);
         $suggestions=CheckController::recommendFriends($id,$circle_id);
-        // return $suggestions;
+        return $suggestions;
         $recent_activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->take(4)->get();
 
         return view("main.mainscreen")->with('reqs',$reqs)->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
