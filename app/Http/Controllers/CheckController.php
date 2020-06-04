@@ -176,12 +176,12 @@ class CheckController extends Controller
         $cons=[];
         $cons2 = [];
 
-        
+
         foreach ($my_friends as $my_friend) {
             if($my_friend->user1_id != Auth::user()->user_id){
                 $cons1=CheckController::getConnections($my_friend->user1_id,$circle_id);
                 $cons= $cons1->merge($cons);
-                
+
             }
             else{
                 $cons2=CheckController::getConnections($my_friend->user2_id,$circle_id);
@@ -189,7 +189,7 @@ class CheckController extends Controller
                 $cons= $cons2->merge($cons);
             }
         }
-        
+
         // return $cons;
         // foreach ($cons as $con ) {
         //     if($con->user1_id!= Auth::user()->user_id && $con->user2_id!= Auth::user()->user_id){
@@ -199,6 +199,7 @@ class CheckController extends Controller
         $cons = $cons->filter(function($item) {
             return ($item->user1_id != Auth::user()->user_id && $item->user2_id != Auth::user()->user_id);
         });
+        // return $cons;
         // return $cons[0]->user1;
         $user1 =[];
         $user2=[];
@@ -209,35 +210,73 @@ class CheckController extends Controller
                 $user2=$con->user2;
                 $users->push($user1);
                 $users->push($user2);
-            
+
         }
+
         // $users = $users->filter(function($item) {
         //     return ($item->city== Auth::user()->city);
         // });
-        $omg =$users->unique();
+        $fb=collect();
+        $extra=collect();
+        for ($i=0; $i < count($users); $i++) {
+            if ($users[$i]->city==Auth::user()->city) {
+                $fb->push($users[$i]);
+            }
+            else{
+                $extra->push($users[$i]);
+            }
+        }
+
+        // return $fb;
+        $omg =$fb->unique()->values()->all();
+        $other_users =$extra->unique()->values()->all();
+        // $omg=$users;
+        // return $omg;
         $change=false;
         $my_friends=CheckController::getConnections(Auth::user()->user_id,$circle_id);
         $tb=collect();
-        
 
-        return count($my_friends);
 
-        for ($i=0; $i < count($omg); $i++) { 
-            for ($j=0; $j < count($my_friends); $j++) { 
+        // return count($omg);
+
+        for ($i=0; $i < count($omg); $i++) {
+            for ($j=0; $j < count($my_friends); $j++) {
                 if($omg[$i]->user_id==$my_friends[$j]->user1_id || $omg[$i]->user_id==$my_friends[$j]->user2_id ){
                     $change=true;
                 }
             }
             if(!$change){
                 $tb->push($omg[$i]);
-               
+
+            }
+            $change=false;
+        }
+        $rb=collect();
+        for ($i=0; $i < count($other_users); $i++) {
+            for ($j=0; $j < count($my_friends); $j++) {
+                if($other_users[$i]->user_id==$my_friends[$j]->user1_id || $other_users[$i]->user_id==$my_friends[$j]->user2_id ){
+                    $change=true;
+                }
+            }
+            if(!$change){
+                $rb->push($other_users[$i]);
+
             }
             $change=false;
         }
 
 
-        return $tb;
-    }   
+
+        if(count($tb)<15){
+            $k=0;
+            for ($i=count($tb); $i < 15; $i++) {
+                $tb->push($rb[$k++]);
+            }
+
+        }
+        $randomized_users= $tb->shuffle();
+        return $randomized_users;
+    }
     public function checkConnection($id,$circle_id){
         $c=0;
 
