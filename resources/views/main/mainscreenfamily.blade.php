@@ -154,6 +154,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row merged20" id="page-contents">
+                        <div class = "myownclass">
                         <div class="col-lg-3">
                             <aside class="sidebar static">
                                 <div class="widget">
@@ -269,6 +270,7 @@
                                 </div><!-- Friend Requests -->
                             </aside>
                         </div><!-- sidebar -->
+                        </div>
                         <div class="col-lg-6">
                             <div class="central-meta new-pst">
                                 <div class="new-postbox">
@@ -573,6 +575,7 @@
 
                             </div>
                         </div><!-- centerl meta -->
+                        <div class = "myownclass">
                         <div class="col-lg-3">
                             <aside class="sidebar static">
                                 <div class="widget friend-list stick-widget">
@@ -822,6 +825,7 @@
                                 </div><!-- page like widget --> --}}
                             </aside>
                         </div><!-- sidebar -->
+                        </div>
                     </div>
                 </div>
             </div>

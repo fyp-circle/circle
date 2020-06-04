@@ -87,7 +87,19 @@
                     <a class="fa fa-sliders" href="#shoppingbag"></a>
                 </span>
             </div>
-            <div class="mh-head second mh-sticky">
+            @switch($circle_id)
+                @case(1)
+                    <div class="mh-head second mh-sticky">
+                    @break
+                @case(2)
+                    <div class="mh-head second mh-sticky" style="background-color:red;">
+                    @break
+                @case(3)
+                    <div class="mh-head second mh-sticky" style="background-color:cornflowerblue;">
+                    @break
+                @default
+                    
+            @endswitch
                 <form class="mh-form" action="{{ route('search',['circle_id'=>$circle_id]) }}" method="POST" role="search">
                     @csrf
                     <div class="row">
@@ -95,47 +107,122 @@
                             <input type="text"  name="q" placeholder="search" />
                         </div>
                         <div class="col-2" style="text-align: right; padding-right: 4%; align-self:center;">
-                            <a href="#" onclick="$(this).closest('form').submit()" class="fas fa-search" style=""></a>
+                            <a href="#" onclick="$(this).closest('form').submit()" class="fas fa-search" style="-webkit-text-fill-color: white;"></a>
                         </div>
                     </div>
-                    
-
                 </form>
                 
             </div>
             <nav id="menu" class="res-menu">
-                <ul>
-                    <li>
-                        <a href="{{ route('mainscreen',['circle_id'=>$circle_id]) }}" title="">Newsfeed</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
-                            title="">Friends Circle</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('messagefriends',['circle_id'=>$circle_id]) }}"
-                            title="">Messages</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('notification',['circle_id'=>$circle_id]) }}" title="">Notifications</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('nearbyfriends',['circle_id'=>$circle_id]) }}"
-                            title="">People Nearby</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('activityfriends',['circle_id'=>$circle_id]) }}"
-                            title="">Activity Log</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('viewprofile',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
-                            title="">View Profile</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('editinfofriends',['circle_id'=>$circle_id]) }}"
-                            title="">Edit Info</a>
-                    </li>
-                </ul>
+                @switch($circle_id)
+                    @case(1)
+                        <ul>
+                            <li>
+                                <a href="{{ route('mainscreen',['circle_id'=>$circle_id]) }}" title="">Newsfeed</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
+                                    title="">Friends Circle</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('messagefriends',['circle_id'=>$circle_id]) }}"
+                                    title="">Messages</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('notification',['circle_id'=>$circle_id]) }}" title="">Notifications</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('nearbyfriends',['circle_id'=>$circle_id]) }}"
+                                    title="">People Nearby</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('activityfriends',['circle_id'=>$circle_id]) }}"
+                                    title="">Activity Log</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('viewprofile',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
+                                    title="">View Profile</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('editinfofriends',['circle_id'=>$circle_id]) }}"
+                                    title="">Edit Info</a>
+                            </li>
+                        </ul>
+                        @break
+                    @case(2)
+                        <ul>
+                            <li>
+                                <a href="{{ route('mainscreenfamily',['circle_id'=>$circle_id]) }}"
+                                    title="">Newsfeed</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('viewfamily',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
+                                    title="">Family Circle</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('messagefamily',['circle_id'=>$circle_id]) }}"
+                                    title="">Messages</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('notification',['circle_id'=>$circle_id]) }}" title="">Notifications</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('nearbyfamily',['circle_id'=>$circle_id]) }}"
+                                    title="">People Nearby</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('activityfamily',['circle_id'=>$circle_id]) }}"
+                                    title="">Activity Log</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('viewprofilefamily',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
+                                    title="">View Profile</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('editinfofamily',['circle_id'=>$circle_id]) }}"
+                                    title="">Edit Info</a>
+                            </li>
+                        </ul>
+                        @break
+                    @case(3)
+                        <ul>
+                            <li>
+                                <a href="{{ route('mainscreenbusiness',['circle_id'=>$circle_id]) }}"
+                                    title="">News feed</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('viewbusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
+                                    title="">Business Circle</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('messagebusiness',['circle_id'=>$circle_id]) }}"
+                                    title="">Inbox</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('notification',['circle_id'=>$circle_id]) }}" title="">Notifications</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('nearbyconnections',['circle_id'=>$circle_id]) }}"
+                                    title="">People Nearby</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('activitybusiness',['circle_id'=>$circle_id]) }}"
+                                    title="">Insights</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('viewprofilebusiness',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
+                                    title="">View Profile</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('editinfobusiness',['circle_id'=>$circle_id]) }}"
+                                    title="">Edit Info</a>
+                            </li>
+                        </ul>
+                        @break
+                    @default
+                        
+                @endswitch
+                
             </nav>
             <nav id="shoppingbag">
                 <div>
