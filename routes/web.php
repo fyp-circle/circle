@@ -35,8 +35,8 @@ Route::group([
 
     Route::get('forgetpassword', ['as' => 'forget.pwd', 'uses' => 'CheckController@forget']);
     Route::get('resetpwd', ['as' => 'reset.pwd', 'uses' => 'CheckController@resetpwd']);
-    
-    
+
+
 
 
     Route::get('mainscreen/{circle_id}', ['as' => 'mainscreen', 'uses' => 'CheckController@mainscreen'])->where('circle_id', '1');
@@ -242,8 +242,3 @@ Route::group([
 
 
 
-
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
