@@ -7,18 +7,17 @@
     .user-avatar {
         margin-top: -135px;
     }
-	.add-btn {
-		right: 288px;
-	}
+    .add-btn {
+        right: 288px;
+    }
     #people-list figure {
         width: 14.7%;
     }
-    .photos > li {
+    .photos>li {
         min-width: 211px;
         width: 211px;
     }
-    
-    .page-infos > span {
+    .page-infos>span {
         font-weight: 600;
     }
     .editing-interest form input {
@@ -33,10 +32,12 @@
     .sidebar .widget ul.recent-photos li {
         width: 18.9%;
     }
-    .timeline-info > ul li a::after {
+    .timeline-info>ul li a::after {
         bottom: -17px;
     }
-    .videobg-meta{left: 400px;}
+    .videobg-meta {
+        left: 400px;
+    }
 }
 
 @media screen and (max-width: 1600px) and (min-width: 1400px) {
@@ -59,23 +60,23 @@
 }
 
 @media screen and (max-width: 1281px) and (min-width: 1024px) {
-    .photos > li {
+    .photos>li {
         min-width: 32.2%;
         width: 32.2%;
     }
     .timeline-info {
         line-height: 51px;
     }
-    .timeline-info .admin-name > span {
+    .timeline-info .admin-name>span {
         line-height: 0;
     }
     footer .widget-title h4 {
         font-size: 14px;
     }
-    .timeline-info .admin-name > h5 {
+    .timeline-info .admin-name>h5 {
         font-size: 20px;
     }
-    .sidebar .widget li > a {
+    .sidebar .widget li>a {
         font-size: 14px;
     }
     .user-avatar {
@@ -90,14 +91,14 @@
     .pepl-info {
         width: 87%;
     }
-    .liked-pages > li {
+    .liked-pages>li {
         min-width: 32.4%;
         max-width: 32.4%;
     }
     .peoples-mesg-box {
         width: 63.4%;
     }
-    .conversation-head > span {
+    .conversation-head>span {
         width: 82%;
     }
     .sidebar .widget ul.recent-photos li {
@@ -115,23 +116,23 @@
     .topbar {
         padding: 0 18px;
     }
-    .top-area > ul.main-menu > li {
+    .top-area>ul.main-menu>li {
         margin-right: 20px;
         padding-right: 20px;
     }
-    .top-area > ul.main-menu > li::after {
+    .top-area>ul.main-menu>li::after {
         right: 5px;
     }
     .add-btn {
         bottom: 148px;
         right: 20px;
     }
-	.top-area > ul {
-	    margin-right: 0;
-	}
-	.top-area > ul > li > a {
-	    padding: 0 10px;
-	}
+    .top-area>ul {
+        margin-right: 0;
+    }
+    .top-area>ul>li>a {
+        padding: 0 10px;
+    }
     .edit-phto {
         bottom: 148px;
     }
@@ -139,12 +140,12 @@
         width: 88.4%;
         padding-left: 5px;
     }
-    .nearly-pepls > figure {
+    .nearly-pepls>figure {
         min-width: 40px;
         max-width: 40px;
         width: 40px;
     }
-    .pepl-info > h4 {
+    .pepl-info>h4 {
         font-size: 13px;
         margin-bottom: 0;
         width: 25%;
@@ -170,28 +171,28 @@
     .peoples {
         width: 150px;
     }
-    .peoples > li figure {
+    .peoples>li figure {
         max-width: 25px;
         min-width: 25px;
         width: 25px;
     }
-    .conversation-head > span {
+    .conversation-head>span {
         width: 74%;
     }
-    .followers > li figure {
+    .followers>li figure {
         max-width: 40px;
         min-width: 40px;
         width: 40px;
     }
-    .top-area > ul.main-menu {
+    .top-area>ul.main-menu {
         margin-left: 0;
     }
-    .liked-pages > li {
+    .liked-pages>li {
         width: 48.8%;
         min-width: 48.8%;
         max-width: 48.8%;
     }
-    .photos > li {
+    .photos>li {
         min-width: 210px;
         width: 210px;
     }
@@ -208,7 +209,7 @@
     .post-meta .detail {
         width: 60%;
     }
-    .timeline-info > ul li {
+    .timeline-info>ul li {
         margin-right: 38px;
     }
     .user-avatar {
@@ -227,7 +228,7 @@
         top: auto;
         left: 0 !important;
     }
-    .photos > li {
+    .photos>li {
         min-width: 31.9%;
         width: 31.9%;
     }
@@ -237,16 +238,16 @@
     .user-avatar {
         width: 100%;
     }
-    .inbox-panel-head > img {
+    .inbox-panel-head>img {
         margin-right: 10px;
     }
     .user-setting {
         left: -50px;
     }
-    .post-meta .detail > span {
+    .post-meta .detail>span {
         font-size: 20px;
     }
-    .pepl-info > em {
+    .pepl-info>em {
         vertical-align: bottom;
         margin-left: 25px;
     }
@@ -255,13 +256,13 @@
         text-align: left;
         width: 100%;
     }
-    .career-page .post-filter-sec > form {
+    .career-page .post-filter-sec>form {
         width: 100%;
     }
     .career-page .purify .chosen-container {
         width: 35.5% !important;
     }
-    .post-filter-sec > form {
+    .post-filter-sec>form {
         width: 100%;
     }
     .purify {
@@ -272,7 +273,7 @@
     .l-post-meta {
         padding: 20px;
     }
-    .l-post .l-post-meta > h4 {
+    .l-post .l-post-meta>h4 {
         font-size: 20px;
     }
     .right-pading {
@@ -284,7 +285,7 @@
     .baner-inf {
         width: 62%;
     }
-    .baner-inf > span {
+    .baner-inf>span {
         font-size: 45px;
         margin-right: 20px;
     }
@@ -292,7 +293,7 @@
         margin-top: -40px;
         width: 30%;
     }
-    .detail-meta > h2 {
+    .detail-meta>h2 {
         max-width: 100%;
     }
     .fixed-sidebar {
@@ -305,13 +306,15 @@
     .company-intro {
         margin-top: 30px;
     }
-
 }
 
 
 /*--- tablet view ---*/
 
 @media screen and (max-width: 980px) {
+    .myownclass {
+        display: none;
+    }
     .gap {
         padding: 40px 0;
     }
@@ -325,16 +328,16 @@
     .responsive-header {
         display: block;
     }
-    .timeline-info > ul li {
+    .timeline-info>ul li {
         margin-right: 15px;
     }
-    .timeline-info > ul li:last-child {
+    .timeline-info>ul li:last-child {
         margin-right: 0px;
     }
-    .timeline-info .admin-name > h5 {
+    .timeline-info .admin-name>h5 {
         font-size: 17px;
     }
-    .timeline-info > ul li a {
+    .timeline-info>ul li a {
         font-size: 11px;
         margin-right: 13px;
     }
@@ -352,7 +355,7 @@
     .add-btn {
         bottom: 140px;
     }
-    .timeline-info > ul li a {
+    .timeline-info>ul li a {
         font-size: 13px;
         margin-right: 30px;
     }
@@ -368,12 +371,12 @@
     footer .widget {
         margin-top: 50px;
     }
-    footer .row > div:nth-child(1) .widget,
-    footer .row > div:nth-child(2) .widget,
-    footer .row > div:nth-child(3) .widget {
+    footer .row>div:nth-child(1) .widget,
+    footer .row>div:nth-child(2) .widget,
+    footer .row>div:nth-child(3) .widget {
         margin-top: 0;
     }
-    .location > li p {
+    .location>li p {
         width: 83%;
     }
     .editing-interest form input {
@@ -385,10 +388,10 @@
     .knowldeg-box {
         padding: 20px 10px;
     }
-    .knowldeg-box > span {
+    .knowldeg-box>span {
         font-size: 20px;
     }
-    .knowldeg-box > p {
+    .knowldeg-box>p {
         font-size: 14px;
     }
     .log-reg-area {
@@ -401,7 +404,7 @@
     .peoples-mesg-box {
         width: 76.5%;
     }
-    .peoples > li figure {
+    .peoples>li figure {
         max-width: 30px;
         min-width: 30px;
         width: 30px;
@@ -409,12 +412,12 @@
     .message-text-container form button {
         right: 25px;
     }
-    .liked-pages > li {
+    .liked-pages>li {
         width: 32.5%;
         min-width: 32.5%;
         max-width: 32.5%;
     }
-    .photos > li {
+    .photos>li {
         min-width: 24%;
         width: 24%;
     }
@@ -474,7 +477,7 @@
     .accordion {
         width: 100%;
     }
-    .top-banner > h1 {
+    .top-banner>h1 {
         width: 100%;
         font-size: 40px;
     }
@@ -494,7 +497,7 @@
     .cntct-adres {
         padding: 30px;
     }
-    .cntct-adres > ul > li span {
+    .cntct-adres>ul>li span {
         font-size: 12px;
         width: 77%;
     }
@@ -510,7 +513,7 @@
         text-align: left;
         width: 100%;
     }
-    .post-filter-sec > form {
+    .post-filter-sec>form {
         width: 100%;
     }
     .purify .chosen-container {
@@ -528,11 +531,11 @@
     .baner-inf {
         text-align: center;
     }
-    .baner-inf > span {
+    .baner-inf>span {
         font-size: 40px;
         margin-right: 20px;
     }
-    .baner-inf > a {
+    .baner-inf>a {
         font-size: 14px;
         padding: 6px 30px;
     }
@@ -549,13 +552,13 @@
     .about-picture {
         margin-top: 30px;
     }
-    .about-picture > img {
+    .about-picture>img {
         width: 100%;
     }
     .gap100 {
         padding: 60px 0;
     }
-    .news-letter > form input {
+    .news-letter>form input {
         width: 380px;
     }
     .videobg-meta {
@@ -564,13 +567,13 @@
         width: 85%;
         top: 42%;
     }
-    .videobg-meta > h3 {
+    .videobg-meta>h3 {
         font-size: 35px;
     }
     .bv-video-wrap {
         height: 500px !important;
     }
-    .info > a {
+    .info>a {
         margin-top: 15px;
     }
     .price-table {
@@ -579,7 +582,7 @@
     aside.sidebar.full-style .widget {
         margin-top: 30px;
     }
-    .topic-data > span {
+    .topic-data>span {
         width: 80px;
     }
     .fixed-sidebar {
@@ -600,10 +603,10 @@
     }
     .add-btn {
         bottom: 90px;
-    right: 15px;
-    top: auto;
+        right: 15px;
+        top: auto;
     }
-    .timeline-info > ul li a {
+    .timeline-info>ul li a {
         font-size: 12px;
         margin-right: 11px;
     }
@@ -626,7 +629,7 @@
     .user-avatar {
         margin: 0;
     }
-    .feature-photo > figure {
+    .feature-photo>figure {
         margin-bottom: 10px;
     }
     .user-avatar {
@@ -638,7 +641,7 @@
     .fileContainer {
         font-size: 10px;
     }
-    .feature-photo > .edit-phto {
+    .feature-photo>.edit-phto {
         bottom: auto;
         font-size: 13px;
         left: 20px !important;
@@ -656,7 +659,7 @@
         z-index: 9;
         right: 30px;
     }
-    .add-btn > a {
+    .add-btn>a {
         font-size: 11px;
         padding: 3px 13px;
     }
@@ -672,22 +675,22 @@
     .post-meta .detail {
         width: 100%;
     }
-    .we-video-info > ul li span {
+    .we-video-info>ul li span {
         font-size: 14px;
     }
-    .we-video-info > ul li span ins {
+    .we-video-info>ul li span ins {
         font-size: 10px;
     }
-    .we-video-info > ul li.social-media {
+    .we-video-info>ul li.social-media {
         margin-right: 0;
     }
     .we-comment {
         width: 30%;
     }
-    .we-comet > li ul {
+    .we-comet>li ul {
         margin-left: 20px;
     }
-    .we-comet > li ul .we-comment {
+    .we-comet>li ul .we-comment {
         width: 21%;
     }
     .post-comt-box {
@@ -700,7 +703,7 @@
     .sidebar .widget:last-child {
         margin-bottom: 0;
     }
-    .error-meta > h1 {
+    .error-meta>h1 {
         font-size: 55px;
     }
     .error-meta span {
@@ -709,10 +712,10 @@
     .cntct-adres {
         padding: 40px 30px;
     }
-    .cntct-adres > ul > li span {
+    .cntct-adres>ul>li span {
         width: 79%;
     }
-    .cntct-adres > ul {
+    .cntct-adres>ul {
         margin-bottom: 0;
     }
     .contact-form form .form-group {
@@ -742,7 +745,7 @@
     .friend-name {
         width: 86%;
     }
-    .friend-info > figure {
+    .friend-info>figure {
         width: 11.6%;
     }
     .editing-interest form input {
@@ -758,7 +761,7 @@
     form .dob .form-group {
         width: 100%;
     }
-    .form-radio > .radio {
+    .form-radio>.radio {
         width: 30%;
     }
     .d-flex {
@@ -771,14 +774,14 @@
     .accordion {
         width: 100%;
     }
-    .top-banner > i {
+    .top-banner>i {
         max-width: 43px;
         width: 43px;
     }
-    .faq-top > h1 {
+    .faq-top>h1 {
         font-size: 40px;
     }
-    .faq-top > form {
+    .faq-top>form {
         max-width: 100%;
     }
     .main-title {
@@ -798,7 +801,7 @@
     .education {
         padding-left: 0;
     }
-    .education > li i {
+    .education>li i {
         margin-right: 5px;
     }
     #people-list figure {
@@ -814,31 +817,31 @@
     .peoples-mesg-box {
         width: 72%;
     }
-    .people-name > side-panel {
+    .people-name>side-panel {
         font-size: 12px;
     }
     .message-text-container form button {
         right: 15px;
     }
-    .photos > li {
+    .photos>li {
         border: 2px solid #fff;
         float: left;
         margin: 0;
         min-width: 50%;
         width: 50%;
     }
-    .photos > li a {
+    .photos>li a {
         overflow: unset;
     }
     .colla-apps {
         margin-bottom: 0;
     }
-    .timeline-info > ul li.admin-name {
+    .timeline-info>ul li.admin-name {
         left: -150px;
         position: absolute;
         top: -80px;
     }
-    .timeline-info .admin-name > h5 {
+    .timeline-info .admin-name>h5 {
         color: #fff;
         font-size: 22px;
         text-shadow: 0 2px 0 #4a4a4a;
@@ -852,10 +855,10 @@
         position: fixed;
         bottom: 30px;
     }
-    .page-infos > h5 {
+    .page-infos>h5 {
         font-size: 14px;
     }
-    .timeline-info .admin-name > span {
+    .timeline-info .admin-name>span {
         color: #eee;
     }
     .sidebar {
@@ -864,7 +867,7 @@
     .post-meta .detail {
         width: 61%;
     }
-    .list-style > li {
+    .list-style>li {
         width: 32.7%;
     }
     footer {
@@ -873,14 +876,14 @@
     .vid-links {
         margin-top: 20px;
     }
-    .colla-apps > li {
+    .colla-apps>li {
         width: 32.7%;
     }
-    footer .row > div:nth-child(2) .widget,
-    footer .row > div:nth-child(3) .widget {
+    footer .row>div:nth-child(2) .widget,
+    footer .row>div:nth-child(3) .widget {
         margin-top: 50px;
     }
-    .inbox-panel-head > ul {
+    .inbox-panel-head>ul {
         margin-right: 20px;
         margin-top: 10px;
     }
@@ -892,7 +895,7 @@
     .feature-photo .container-fluid {
         padding: 0 30px;
     }
-    .timeline-info > ul li a {
+    .timeline-info>ul li a {
         font-size: 13px;
         margin-right: 33px;
     }
@@ -906,12 +909,12 @@
     .pepl-info {
         width: 91%;
     }
-    .liked-pages > li {
+    .liked-pages>li {
         width: 32.4%;
         min-width: 32.4%;
         max-width: 32.4%;
     }
-    .feature-photo > figure {
+    .feature-photo>figure {
         margin-bottom: 0;
     }
     .faq-top form button {
@@ -920,10 +923,10 @@
     .d-flex .tab-content {
         margin-top: 15px;
     }
-    .cnt-title > span {
+    .cnt-title>span {
         font-size: 18px;
     }
-    .map-meta > h1 {
+    .map-meta>h1 {
         font-size: 30px;
     }
     .know-box {
@@ -932,7 +935,7 @@
     .knowldeg-box {
         margin-bottom: 10px;
     }
-    .single-btn > li {
+    .single-btn>li {
         margin-right: 10px;
     }
     .cart-sec table tr td {
@@ -942,7 +945,7 @@
         overflow: unset;
         padding-left: 0;
     }
-    .cart-meta > span {
+    .cart-meta>span {
         font-size: 12px;
         line-height: 16px;
         max-width: 100%;
@@ -970,7 +973,7 @@
         margin-top: 60px;
         width: 100%;
     }
-    .total-area > ul {
+    .total-area>ul {
         width: 100%;
     }
     .purify .chosen-container {
@@ -983,7 +986,7 @@
         margin-bottom: 10px;
         width: 100% !important;
     }
-    .container .purify > span {
+    .container .purify>span {
         display: inline-block;
         margin-bottom: 15px;
         margin-right: 0;
@@ -996,19 +999,19 @@
         position: unset;
         width: 100%;
     }
-    .social-connect > li {
+    .social-connect>li {
         margin: 8px 0;
         width: 50%;
     }
-    .social-connect > li:nth-last-child(1),
-    .social-connect > li:nth-last-child(2) {
+    .social-connect>li:nth-last-child(1),
+    .social-connect>li:nth-last-child(2) {
         margin-bottom: 20px;
     }
-    .social-connect > li:nth-last-child(1),
-    .social-connect > li:nth-last-child(2) {
+    .social-connect>li:nth-last-child(1),
+    .social-connect>li:nth-last-child(2) {
         margin-bottom: 0;
     }
-    .baner-inf > span {
+    .baner-inf>span {
         font-size: 30px;
         margin-bottom: 10px;
         margin-right: 0;
@@ -1020,20 +1023,20 @@
         margin-bottom: 40px;
         margin-top: 20px;
     }
-    .detail-meta > h2 {
+    .detail-meta>h2 {
         font-size: 23px;
     }
-    .admin-postmeta > h4 {
+    .admin-postmeta>h4 {
         font-size: 20px;
         margin-bottom: 0;
     }
-    .admin-postmeta > span {
+    .admin-postmeta>span {
         display: inline-block;
         font-size: 12px;
         margin-left: 0;
         width: 100%;
     }
-    .admin-postmeta > p {
+    .admin-postmeta>p {
         font-size: 14px;
     }
     .site-admin {
@@ -1042,31 +1045,33 @@
     .gap.ext-bottom {
         padding-bottom: 60px;
     }
-    .is-helpful > em {
+    .is-helpful>em {
         float: left;
         margin-top: 20px;
         width: 100%;
     }
-    .option-set.icon-style > li {
+    .option-set.icon-style>li {
         padding: 0 16px;
     }
-    .price-table > span {
+    .price-table>span {
         font-size: 22px;
     }
-    .price-table > h3 {
+    .price-table>h3 {
         font-size: 20px;
     }
-    .price-table > span i {
+    .price-table>span i {
         font-size: 15px;
     }
-    .job-detail > ul li span{width: 94%;}
+    .job-detail>ul li span {
+        width: 94%;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .user-avatar {
         width: 30%;
     }
-    .header-inner > h2 {
+    .header-inner>h2 {
         font-size: 16px;
         padding-left: 0;
     }
@@ -1083,7 +1088,7 @@
     .notifi-meta {
         width: 77%;
     }
-    .notification-box > ul li > i.del {
+    .notification-box>ul li>i.del {
         width: 100%;
     }
     #people-list figure {
@@ -1111,30 +1116,30 @@
     .message-text-container form button {
         right: 15px;
     }
-    .friend-logo > span::before,
-    .friend-logo > span::after {
+    .friend-logo>span::before,
+    .friend-logo>span::after {
         top: -15px;
     }
-    .friend-logo > span {
+    .friend-logo>span {
         font-size: 140px;
     }
-    .we-comet > li ul {
+    .we-comet>li ul {
         margin-left: 0;
     }
     .comet-avatar {
         max-width: 5.3%;
         width: 5.3%;
     }
-    .timeline-info > ul li.admin-name {
+    .timeline-info>ul li.admin-name {
         left: 190px;
         position: absolute;
         top: -95px;
     }
-    .timeline-info .admin-name > h5 {
+    .timeline-info .admin-name>h5 {
         color: #424242;
         text-shadow: none;
     }
-    .liked-pages > li {
+    .liked-pages>li {
         max-width: 48.4%;
         min-width: 48.4%;
         width: 48.4%;
@@ -1158,19 +1163,19 @@
     footer .widget-title h4::before {
         width: 10%;
     }
-    .timeline-info .admin-name > span {
+    .timeline-info .admin-name>span {
         color: #333;
         display: block;
         line-height: 20px;
         position: unset;
     }
-    .list-style > li {
+    .list-style>li {
         width: 49%;
     }
     .post-meta .detail {
         width: 48%;
     }
-    .post-meta .detail > span {
+    .post-meta .detail>span {
         display: inline-block;
         font-size: 18px;
         width: 100%;
@@ -1181,20 +1186,20 @@
         margin-top: 0;
         width: 100%;
     }
-    footer .row > div:last-child .widget {
+    footer .row>div:last-child .widget {
         margin-bottom: 0;
     }
     .advertisment-box,
     .advertisment-box img {
         width: 100%;
     }
-    .we-video-info > ul li span {
+    .we-video-info>ul li span {
         font-size: 14px;
     }
-    .we-video-info > ul li span ins {
+    .we-video-info>ul li span ins {
         font-size: 10px;
     }
-    .timeline-info > ul li a {
+    .timeline-info>ul li a {
         margin-right: 17px;
         margin-bottom: 8px;
     }
@@ -1208,10 +1213,10 @@
     .inbox-navigation {
         padding-bottom: 0;
     }
-    .add-btn > span {
+    .add-btn>span {
         font-size: 12px;
     }
-    .inbox-panel-head > ul {
+    .inbox-panel-head>ul {
         display: inline-block;
         float: none;
         margin-right: 0;
@@ -1219,7 +1224,7 @@
         vertical-align: middle;
         width: auto;
     }
-    .timeline-info > ul {
+    .timeline-info>ul {
         padding-left: 0;
         line-height: initial;
     }
@@ -1230,29 +1235,29 @@
         margin-left: 0;
         margin-right: 0;
     }
-    .timeline-info > ul li a::after {
+    .timeline-info>ul li a::after {
         border-bottom: 5px solid;
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
         bottom: -5px;
     }
-    .page-eror .error-meta > h1 {
+    .page-eror .error-meta>h1 {
         font-size: 38px;
     }
     .gap100 {
         padding: 60px 0;
     }
-    .single-btn > li {
+    .single-btn>li {
         margin-right: 5px;
     }
-    .single-btn > li > a {
+    .single-btn>li>a {
         font-size: 12px;
         padding: 7px 15px;
     }
-    .section-heading > h2 {
+    .section-heading>h2 {
         font-size: 30px;
     }
-    .top-banner > h1 {
+    .top-banner>h1 {
         font-size: 30px;
     }
     a.btn2 {
@@ -1261,7 +1266,7 @@
         line-height: 37px;
         width: 145px;
     }
-    .full-postmeta > h4 {
+    .full-postmeta>h4 {
         font-size: 26px;
     }
     .tab-content .comment-text {
@@ -1286,19 +1291,19 @@
     .star-rating {
         margin-left: 9px;
     }
-    .tab-content .commentlist > li {
+    .tab-content .commentlist>li {
         width: 100%;
     }
-    .tab-content .comment-text > p {
+    .tab-content .comment-text>p {
         font-size: 14px;
     }
     .comment-respond {
         width: 100%;
     }
-    .logout-meta > p {
+    .logout-meta>p {
         max-width: 100%;
     }
-    .purify > span {
+    .purify>span {
         display: inline-block;
         margin-bottom: 10px;
         margin-right: 0;
@@ -1307,14 +1312,14 @@
     .purify .chosen-container {
         width: 38.5% !important;
     }
-    .carrer-title > h2 {
+    .carrer-title>h2 {
         font-size: 30px;
     }
     .contct-info2 .contact-form form .form-group {
         width: 100%;
     }
-    .l-post > figure,
-    .l-post > figure img {
+    .l-post>figure,
+    .l-post>figure img {
         width: 100%;
     }
     .l-post-meta {
@@ -1330,41 +1335,41 @@
     .alignright img {
         width: 100%;
     }
-    .detail-meta > ul {
+    .detail-meta>ul {
         padding-left: 10px;
         margin-bottom: 0;
     }
     nav.breadcrumb {
         width: 100%;
     }
-    .about-winku > h4 {
+    .about-winku>h4 {
         font-size: 24px;
     }
-    .news-letter > h2 {
+    .news-letter>h2 {
         font-size: 30px;
     }
-    .news-letter > form input {
+    .news-letter>form input {
         width: 310px;
     }
     .our-teambox figure img {
         width: 100%;
     }
-    .getquot-baner > span {
+    .getquot-baner>span {
         font-size: 21px;
     }
     .getquot-baner {
         text-align: center;
     }
-    .getquot-baner > a {
+    .getquot-baner>a {
         display: inline-block;
         float: none;
         margin-top: 20px;
         padding: 10px 40px;
     }
-    .news-letter > form input {
+    .news-letter>form input {
         width: 100%;
     }
-    .news-letter > form button {
+    .news-letter>form button {
         margin-left: 0;
         margin-top: 20px;
         padding: 14px 20px;
@@ -1372,7 +1377,7 @@
     figure.sign-author {
         width: 35%;
     }
-    .videobg-meta > h3 {
+    .videobg-meta>h3 {
         font-size: 26px;
     }
     .info {
@@ -1382,13 +1387,13 @@
         font-size: 15px;
         padding-top: 0;
     }
-    .option-set.icon-style > li {
+    .option-set.icon-style>li {
         padding: 0 12px;
     }
-    .portfolio-box > img {
+    .portfolio-box>img {
         width: 100%;
     }
-    .section-heading > p {
+    .section-heading>p {
         max-width: 100%;
     }
     .forum-list table tbody tr td p {
@@ -1397,13 +1402,13 @@
     .forum-open .table tr td p {
         width: 300px;
     }
-    .date-n-reply > span {
+    .date-n-reply>span {
         width: 200px;
     }
     .forum-open .table tr td p {
         width: 300px;
     }
-    .date-n-reply > span {
+    .date-n-reply>span {
         width: 200px;
     }
     .forum-list table tbody tr td h6 {
@@ -1413,10 +1418,9 @@
         font-size: 26px;
         margin-top: 10px;
     }
-    .job-detail > h3 {
+    .job-detail>h3 {
         font-size: 22px;
     }
-
 }
 
 @media screen and (max-width: 420px) and (min-width: 361px) {
@@ -1430,13 +1434,13 @@
     .linked-image img {
         width: 100%;
     }
-    .we-video-info > ul {
+    .we-video-info>ul {
         padding-left: 0;
     }
-    .timeline-info > ul li a {
+    .timeline-info>ul li a {
         margin-right: 20px;
     }
-    .shop-filter-sec > span {
+    .shop-filter-sec>span {
         width: 100%;
         margin-bottom: 20px;
     }
@@ -1444,10 +1448,10 @@
         float: left;
         width: 100%;
     }
-    .colla-apps > li {
+    .colla-apps>li {
         width: 32.6%;
     }
-    .colla-apps > li {
+    .colla-apps>li {
         width: 100%;
     }
     .slider-nav-gold {
@@ -1457,16 +1461,16 @@
         margin-top: 20px;
         transform: translate(0);
     }
-    .slider-for-gold .slick-track > li img {
+    .slider-for-gold .slick-track>li img {
         max-width: 100%;
         width: 100%;
         min-width: 100%;
     }
-    .single-btn > li > a {
+    .single-btn>li>a {
         font-size: 11px;
         padding: 7px 10px;
     }
-    .logout-meta > h2 {
+    .logout-meta>h2 {
         font-size: 28px;
     }
     .purify .chosen-container {
@@ -1491,7 +1495,7 @@
     .comment-box {
         padding: 20px;
     }
-    .comments > li > ul {
+    .comments>li>ul {
         padding-left: 0;
     }
     .help-assistant {
@@ -1513,13 +1517,13 @@
     .videobg-meta {
         left: 20px;
     }
-    .videobg-meta > h3 {
+    .videobg-meta>h3 {
         font-size: 24px;
     }
-    .job-detail > ul li span {
+    .job-detail>ul li span {
         width: 90%;
     }
-    .sociaz-media > li {
+    .sociaz-media>li {
         margin: 0 0 4px;
     }
 }
@@ -1541,7 +1545,7 @@
     .peoples-mesg-box {
         padding: 10px;
     }
-    .coment-head > h5 {
+    .coment-head>h5 {
         white-space: nowrap;
         max-width: 45%;
         overflow: hidden;
@@ -1550,22 +1554,22 @@
     .we-reply {
         vertical-align: super;
     }
-    .coment-head > span {
+    .coment-head>span {
         vertical-align: top;
     }
-    .timeline-info > ul li.admin-name {
+    .timeline-info>ul li.admin-name {
         left: 153px;
         margin-right: 0;
         position: absolute;
         top: -100px;
     }
-    .timeline-info > ul li {
+    .timeline-info>ul li {
         margin-right: 0;
     }
     .feature-photo .container-fluid {
         padding: 0 15px;
     }
-    .timeline-info .admin-name > h5 {
+    .timeline-info .admin-name>h5 {
         color: #424242;
         text-shadow: none;
     }
@@ -1573,23 +1577,23 @@
         max-width: 7.3%;
         width: 7.3%;
     }
-    .liked-pages > li {
+    .liked-pages>li {
         max-width: 48.2%;
         min-width: 48.2%;
         width: 48.2%;
     }
-    .page-infos > h5 {
+    .page-infos>h5 {
         font-size: 13px;
     }
     .add-btn {
         top: 69px;
         right: 20px;
     }
-    .linked-image > a {
+    .linked-image>a {
         display: inline-block;
         width: 100%;
     }
-    .linked-image > a img {
+    .linked-image>a img {
         width: 100%;
     }
     .align-left {
@@ -1599,13 +1603,13 @@
     .post-meta .detail {
         width: 100%;
     }
-    .we-video-info > ul {
+    .we-video-info>ul {
         padding-left: 5px;
     }
-    .editing-interest form ol > li {
+    .editing-interest form ol>li {
         width: 49%;
     }
-    .colla-apps > li {
+    .colla-apps>li {
         width: 100%;
     }
     .top-banner {
@@ -1614,7 +1618,7 @@
     .frnds .nav-tabs .nav-item {
         margin-right: 28px;
     }
-    .pepl-info > em {
+    .pepl-info>em {
         float: right;
         margin-left: 0px;
         vertical-align: sub;
@@ -1624,7 +1628,7 @@
         font-size: 10px;
         padding: 5px 6px;
     }
-    .pepl-info > h4 {
+    .pepl-info>h4 {
         width: auto;
     }
     .pepl-info {
@@ -1633,7 +1637,7 @@
     #frends a.add-butn.more-action {
         right: 65px;
     }
-    .frnds .nav-tabs .nav-item > span {
+    .frnds .nav-tabs .nav-item>span {
         font-size: 11px;
     }
     .frnds .nav-tabs .nav-item {
@@ -1649,11 +1653,11 @@
     .add_to_wishlist {
         margin-left: 0;
     }
-    .single-btn > li {
+    .single-btn>li {
         margin-right: 0;
         width: 100%;
     }
-    .single-btn > li > a {
+    .single-btn>li>a {
         margin-bottom: 10px;
     }
     .nav.nav-tabs.single-btn {
@@ -1669,10 +1673,10 @@
     .more-branches {
         padding: 30px 20px 20px;
     }
-    .l-post .l-post-meta > h4 {
+    .l-post .l-post-meta>h4 {
         font-size: 18px;
     }
-    .tags > a {
+    .tags>a {
         font-size: 13px;
     }
     .commenter-photo {
@@ -1690,7 +1694,7 @@
     .comment-box {
         padding: 20px;
     }
-    .comments > li > ul {
+    .comments>li>ul {
         padding-left: 0;
     }
     .help-topic {
@@ -1714,26 +1718,25 @@
     .getquot-baner {
         padding: 35px 25px;
     }
-    .videobg-meta > h3 {
+    .videobg-meta>h3 {
         font-size: 23px;
     }
     .videobg-meta {
         left: 20px;
     }
-    .job-detail > ul li span {
+    .job-detail>ul li span {
         width: 90%;
     }
-    .sociaz-media > li {
+    .sociaz-media>li {
         margin: 0 0 4px;
     }
-    .employer-info > ul li > i {
+    .employer-info>ul li>i {
         display: inline-block;
         width: 100%;
     }
-    .employer-info > ul li {
+    .employer-info>ul li {
         margin-bottom: 15px;
     }
-
 }
 
 @media screen and (max-width: 320px) {
@@ -1747,14 +1750,14 @@
         width: 32.1%;
         margin-bottom: 4px;
     }
-    .friend-logo > span {
+    .friend-logo>span {
         font-size: 170px;
     }
     .frnds .nav-tabs .nav-item {
         font-size: 14px;
         margin-right: 15px;
     }
-    .timeline-info > ul li.admin-name {
+    .timeline-info>ul li.admin-name {
         left: 128px;
         top: -95px;
     }
@@ -1762,13 +1765,13 @@
         right: 6px;
         top: 57px;
     }
-    .feature-photo > .edit-phto {
+    .feature-photo>.edit-phto {
         top: 10px;
     }
-    .timeline-info .admin-name > span {
+    .timeline-info .admin-name>span {
         color: #333;
     }
-    .timeline-info .admin-name > h5 {
+    .timeline-info .admin-name>h5 {
         color: #424242;
         font-size: 20px;
     }
@@ -1776,21 +1779,21 @@
         max-width: 10%;
         width: 10%;
     }
-    .liked-pages > li {
+    .liked-pages>li {
         max-width: 48%;
         min-width: 48%;
         width: 48%;
     }
-    .nearby-contct > li {
+    .nearby-contct>li {
         padding: 10px;
     }
     .pepl-info {
         width: 81%;
     }
-    .pepl-info > h4 {
+    .pepl-info>h4 {
         width: auto;
     }
-    .we-video-info > ul li.social-media {
+    .we-video-info>ul li.social-media {
         position: absolute;
         right: 20px;
         top: -41px;
@@ -1807,6 +1810,8 @@
     nav.breadcrumb {
         width: 100%;
     }
-    .apply-bttons > a{font-size: 13px; padding: 8px 14px;}
-
+    .apply-bttons>a {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
 }

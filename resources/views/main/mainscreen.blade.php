@@ -152,120 +152,122 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row merged20" id="page-contents">
-                        <div class="col-lg-3">
-                            <aside class="sidebar static">
-                                <div class="widget">
-                                    <h4 class="widget-title">Shortcuts</h4>
-                                    <ul class="naves">
-                                        <li>
-                                            <i class="far fa-newspaper"></i>
-                                            <a href="{{ route('mainscreen',['circle_id'=>$circle_id]) }}" title="">News
-                                                feed</a>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-users"></i>
-                                            <a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
-                                                title="">Friends Circle</a>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-envelope"></i>
-                                            <a href="{{ route('messagefriends',['circle_id'=>$circle_id]) }}"
-                                                title="">Messages</a>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-bell"></i>
-                                            <a href="{{ route('notification',['circle_id'=>$circle_id]) }}" title="">Notifications</a>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-street-view"></i>
-                                            <a href="{{ route('nearbyfriends',['circle_id'=>$circle_id]) }}"
-                                                title="">People Nearby</a>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-tasks"></i>
-                                            <a href="{{ route('activityfriends',['circle_id'=>$circle_id]) }}"
-                                                title="">Activity Log</a>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-user"></i>
-                                            <a href="{{ route('viewprofile',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
-                                                title="">View Profile</a>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-user-edit"></i>
-                                            <a href="{{ route('editinfofriends',['circle_id'=>$circle_id]) }}"
-                                                title="">Edit Info</a>
-                                        </li>
-                                    </ul>
-                                </div><!-- Shortcuts -->
-                                <div class="widget">
-                                    <h4 class="widget-title">Recent Activity</h4>
-                                    @if (count($recent_activities)==0)
-                                    <ul class="activitiez">
-                                        <li>
-                                            <div class="activity-meta">
-                                                <i></i>
-                                                <span><a href="" title="">No Recent Activity</a></span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    @else
-                                    <ul class="activitiez">
-                                        @foreach ($recent_activities as $recent_activity)
+                        <div class = "myownclass">
+                            <div class="col-lg-3">
+                                <aside class="sidebar static">
+                                    <div class="widget">
+                                        <h4 class="widget-title">Shortcuts</h4>
+                                        <ul class="naves">
+                                            <li>
+                                                <i class="far fa-newspaper"></i>
+                                                <a href="{{ route('mainscreen',['circle_id'=>$circle_id]) }}" title="">News
+                                                    feed</a>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-users"></i>
+                                                <a href="{{ route('viewfriends',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
+                                                    title="">Friends Circle</a>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-envelope"></i>
+                                                <a href="{{ route('messagefriends',['circle_id'=>$circle_id]) }}"
+                                                    title="">Messages</a>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-bell"></i>
+                                                <a href="{{ route('notification',['circle_id'=>$circle_id]) }}" title="">Notifications</a>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-street-view"></i>
+                                                <a href="{{ route('nearbyfriends',['circle_id'=>$circle_id]) }}"
+                                                    title="">People Nearby</a>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-tasks"></i>
+                                                <a href="{{ route('activityfriends',['circle_id'=>$circle_id]) }}"
+                                                    title="">Activity Log</a>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-user"></i>
+                                                <a href="{{ route('viewprofile',['id'=>Auth::user()->user_id,'circle_id'=>$circle_id]) }}"
+                                                    title="">View Profile</a>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-user-edit"></i>
+                                                <a href="{{ route('editinfofriends',['circle_id'=>$circle_id]) }}"
+                                                    title="">Edit Info</a>
+                                            </li>
+                                        </ul>
+                                    </div><!-- Shortcuts -->
+                                    <div class="widget">
+                                        <h4 class="widget-title">Recent Activity</h4>
+                                        @if (count($recent_activities)==0)
+                                        <ul class="activitiez">
+                                            <li>
+                                                <div class="activity-meta">
+                                                    <i></i>
+                                                    <span><a href="" title="">No Recent Activity</a></span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        @else
+                                        <ul class="activitiez">
+                                            @foreach ($recent_activities as $recent_activity)
 
-                                        <li>
-                                            <div class="activity-meta">
-                                                <i>{{$recent_activity->updated_at}}</i>
-                                                <span><a href="#" title="">{{$recent_activity->content}}</a></span>
-                                            </div>
-                                        </li>
-                                        @endforeach
-                                    </ul>
-                                    @endif
-                                </div><!-- recent activites -->
-                                <div class="widget stick-widget">
-                                    <h4 class="widget-title">Friend Requests</h4>
-                                    @if (count($reqs)==0)
-                                    <ul class="followers">
-                                        <li>
-                                            <div class="friend-meta">
-                                                <h4><a href="" title="">No Friend Request</a></h4>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    @else
-                                    <ul class="followers">
-                                        @foreach ($reqs as $req)
-                                        <li>
-                                            @if ($req->user1_id!=Auth::user()->user_id)
-                                            <a href="{{ route('viewprofile',['id'=>$req->user1->user_id,'circle_id'=>$circle_id]) }}"
-                                                title="">
-                                                <figure><img src="{{$req->user1->profile_picture}}" alt=""></figure>
-                                            </a>
-                                            @else
-                                            <a href="{{ route('viewprofile',['id'=>$req->user1->user_id,'circle_id'=>$circle_id]) }}"
-                                                title="">
-                                                <figure><img src="{{$req->user2->profile_picture}}" alt=""></figure>
-                                            </a>
-                                            @endif
-                                            <div class="friend-meta">
+                                            <li>
+                                                <div class="activity-meta">
+                                                    <i>{{$recent_activity->updated_at}}</i>
+                                                    <span><a href="#" title="">{{$recent_activity->content}}</a></span>
+                                                </div>
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                        @endif
+                                    </div><!-- recent activites -->
+                                    <div class="widget stick-widget">
+                                        <h4 class="widget-title">Friend Requests</h4>
+                                        @if (count($reqs)==0)
+                                        <ul class="followers">
+                                            <li>
+                                                <div class="friend-meta">
+                                                    <h4><a href="" title="">No Friend Request</a></h4>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        @else
+                                        <ul class="followers">
+                                            @foreach ($reqs as $req)
+                                            <li>
                                                 @if ($req->user1_id!=Auth::user()->user_id)
-                                                <h4><a href="{{ route('viewprofile',['id'=>$req->user1->user_id,'circle_id'=>$circle_id]) }}"
-                                                        title="">{{$req->user1->name}}</a></h4>
+                                                <a href="{{ route('viewprofile',['id'=>$req->user1->user_id,'circle_id'=>$circle_id]) }}"
+                                                    title="">
+                                                    <figure><img src="{{$req->user1->profile_picture}}" alt=""></figure>
+                                                </a>
                                                 @else
-                                                <h4><a href="{{ route('viewprofile',['id'=>$req->user2->user_id,'circle_id'=>$circle_id]) }}"
-                                                        title="">{{$req->user2->name}}</a></h4>
+                                                <a href="{{ route('viewprofile',['id'=>$req->user1->user_id,'circle_id'=>$circle_id]) }}"
+                                                    title="">
+                                                    <figure><img src="{{$req->user2->profile_picture}}" alt=""></figure>
+                                                </a>
                                                 @endif
+                                                <div class="friend-meta">
+                                                    @if ($req->user1_id!=Auth::user()->user_id)
+                                                    <h4><a href="{{ route('viewprofile',['id'=>$req->user1->user_id,'circle_id'=>$circle_id]) }}"
+                                                            title="">{{$req->user1->name}}</a></h4>
+                                                    @else
+                                                    <h4><a href="{{ route('viewprofile',['id'=>$req->user2->user_id,'circle_id'=>$circle_id]) }}"
+                                                            title="">{{$req->user2->name}}</a></h4>
+                                                    @endif
 
-                                                {{-- <a href="#" title="" class="underline">Add Friend</a> --}}
-                                            </div>
-                                        </li>
-                                        @endforeach
-                                    </ul>
-                                    @endif
-                                </div><!-- Friend Requests -->
-                            </aside>
-                        </div><!-- sidebar -->
+                                                    {{-- <a href="#" title="" class="underline">Add Friend</a> --}}
+                                                </div>
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                        @endif
+                                    </div><!-- Friend Requests -->
+                                </aside>
+                            </div><!-- sidebar -->
+                        </div>
                         <div class="col-lg-6">
                             <div class="central-meta new-pst">
                                 <div class="new-postbox">
@@ -569,193 +571,195 @@
 
                             </div>
                         </div><!-- centerl meta -->
-                        <div class="col-lg-3">
-                            <aside class="sidebar static">
-                                {{-- <div class="widget">
-                                    <div class="banner medium-opacity bluesh">
-                                        <div class="bg-image"
-                                            style="background-image: url(images/resources/baner-widgetbg.jpg)">
+                        <div class = "myownclass">
+                            <div class="col-lg-3">
+                                <aside class="sidebar static">
+                                    {{-- <div class="widget">
+                                        <div class="banner medium-opacity bluesh">
+                                            <div class="bg-image"
+                                                style="background-image: url(images/resources/baner-widgetbg.jpg)">
+                                            </div>
+                                            <div class="baner-top">
+                                                <span><img alt="" src="images/book-icon.png"></span>
+                                                <i class="fa fa-ellipsis-h"></i>
+                                            </div>
+                                            <div class="banermeta">
+                                                <p>
+                                                    create your own favourit page.
+                                                </p>
+                                                <span>like them all</span>
+                                                <a data-ripple="" title="" href="#">start now!</a>
+                                            </div>
                                         </div>
-                                        <div class="baner-top">
-                                            <span><img alt="" src="images/book-icon.png"></span>
-                                            <i class="fa fa-ellipsis-h"></i>
-                                        </div>
-                                        <div class="banermeta">
-                                            <p>
-                                                create your own favourit page.
-                                            </p>
-                                            <span>like them all</span>
-                                            <a data-ripple="" title="" href="#">start now!</a>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                <div class="widget friend-list stick-widget">
-                                    <h4 class="widget-title">Suggestions</h4>
-                                    <div id="searchDir"></div>
-                                    <ul id="people-list">
-                                        <li>
-                                            <figure>
-                                                <img src="/images/resources/users/71.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="{{ url('viewprofile')}}">bucky barnes</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="/images/resources/users/2.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="#">Sarah Loren</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="/images/resources/users/75.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="#">jason borne</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="/images/resources/users/80.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="#">Cameron diaz</a>
-                                            </div>
-                                        </li>
-                                        <li>
+                                    </div> --}}
+                                    <div class="widget friend-list stick-widget">
+                                        <h4 class="widget-title">Suggestions</h4>
+                                        <div id="searchDir"></div>
+                                        <ul id="people-list">
+                                            <li>
+                                                <figure>
+                                                    <img src="/images/resources/users/71.jpg" alt="">
+                                                </figure>
+                                                <div class="friendz-meta">
+                                                    <a href="{{ url('viewprofile')}}">bucky barnes</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <figure>
+                                                    <img src="/images/resources/users/2.jpg" alt="">
+                                                </figure>
+                                                <div class="friendz-meta">
+                                                    <a href="#">Sarah Loren</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <figure>
+                                                    <img src="/images/resources/users/75.jpg" alt="">
+                                                </figure>
+                                                <div class="friendz-meta">
+                                                    <a href="#">jason borne</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <figure>
+                                                    <img src="/images/resources/users/80.jpg" alt="">
+                                                </figure>
+                                                <div class="friendz-meta">
+                                                    <a href="#">Cameron diaz</a>
+                                                </div>
+                                            </li>
+                                            <li>
 
-                                            <figure>
-                                                <img src="/images/resources/users/40.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="#">daniel warber</a>
-                                            </div>
-                                        </li>
-                                        <li>
+                                                <figure>
+                                                    <img src="/images/resources/users/40.jpg" alt="">
+                                                </figure>
+                                                <div class="friendz-meta">
+                                                    <a href="#">daniel warber</a>
+                                                </div>
+                                            </li>
+                                            <li>
 
-                                            <figure>
-                                                <img src="/images/resources/users/17.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="#">andrew</a>
-                                            </div>
-                                        </li>
-                                        <li>
+                                                <figure>
+                                                    <img src="/images/resources/users/17.jpg" alt="">
+                                                </figure>
+                                                <div class="friendz-meta">
+                                                    <a href="#">andrew</a>
+                                                </div>
+                                            </li>
+                                            <li>
 
-                                            <figure>
-                                                <img src="/images/resources/users/37.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="#">amy watson</a>
-                                            </div>
-                                        </li>
-                                        <li>
+                                                <figure>
+                                                    <img src="/images/resources/users/37.jpg" alt="">
+                                                </figure>
+                                                <div class="friendz-meta">
+                                                    <a href="#">amy watson</a>
+                                                </div>
+                                            </li>
+                                            <li>
 
-                                            <figure>
-                                                <img src="/images/resources/users/60.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="#">daniel warber</a>
-                                            </div>
-                                        </li>
-                                        <li>
+                                                <figure>
+                                                    <img src="/images/resources/users/60.jpg" alt="">
+                                                </figure>
+                                                <div class="friendz-meta">
+                                                    <a href="#">daniel warber</a>
+                                                </div>
+                                            </li>
+                                            <li>
 
+                                                <figure>
+                                                    <img src="/images/resources/users/65.jpg" alt="">
+                                                </figure>
+                                                <div class="friendz-meta">
+                                                    <a href="#">Sarah Loren</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div><!-- Suggestions -->
+                                    {{-- <div class="widget">
+                                        <h4 class="widget-title">Your page</h4>
+                                        <div class="your-page">
                                             <figure>
-                                                <img src="/images/resources/users/65.jpg" alt="">
+                                                <a href="#" title=""><img src="images/resources/friend-avatar9.jpg"
+                                                        alt=""></a>
                                             </figure>
-                                            <div class="friendz-meta">
-                                                <a href="#">Sarah Loren</a>
+                                            <div class="page-meta">
+                                                <a href="#" title="" class="underline">My page</a>
+                                                <span><i class="ti-comment"></i><a href="insight.html" title="">Messages
+                                                        <em>9</em></a></span>
+                                                <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications
+                                                        <em>2</em></a></span>
                                             </div>
-                                        </li>
-                                    </ul>
-                                </div><!-- Suggestions -->
-                                {{-- <div class="widget">
-                                    <h4 class="widget-title">Your page</h4>
-                                    <div class="your-page">
-                                        <figure>
-                                            <a href="#" title=""><img src="images/resources/friend-avatar9.jpg"
-                                                    alt=""></a>
-                                        </figure>
-                                        <div class="page-meta">
-                                            <a href="#" title="" class="underline">My page</a>
-                                            <span><i class="ti-comment"></i><a href="insight.html" title="">Messages
-                                                    <em>9</em></a></span>
-                                            <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications
-                                                    <em>2</em></a></span>
-                                        </div>
-                                        <div class="page-likes">
-                                            <ul class="nav nav-tabs likes-btn">
-                                                <li class="nav-item"><a class="active" href="#link1"
-                                                        data-toggle="tab">likes</a>
-                                                </li>
-                                                <li class="nav-item"><a class="" href="#link2"
-                                                        data-toggle="tab">views</a></li>
-                                            </ul>
-                                            <!-- Tab panes -->
-                                            <div class="tab-content">
-                                                <div class="tab-pane active fade show " id="link1">
-                                                    <span><i class="ti-heart"></i>884</span>
-                                                    <a href="#" title="weekly-likes">35 new likes this week</a>
-                                                    <div class="users-thumb-list">
-                                                        <a href="#" title="Anderw" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-1.jpg" alt="">
-                                                        </a>
-                                                        <a href="#" title="frank" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-2.jpg" alt="">
-                                                        </a>
-                                                        <a href="#" title="Sara" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-3.jpg" alt="">
-                                                        </a>
-                                                        <a href="#" title="Amy" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-4.jpg" alt="">
-                                                        </a>
-                                                        <a href="#" title="Ema" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-5.jpg" alt="">
-                                                        </a>
-                                                        <a href="#" title="Sophie" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-6.jpg" alt="">
-                                                        </a>
-                                                        <a href="#" title="Maria" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-7.jpg" alt="">
-                                                        </a>
+                                            <div class="page-likes">
+                                                <ul class="nav nav-tabs likes-btn">
+                                                    <li class="nav-item"><a class="active" href="#link1"
+                                                            data-toggle="tab">likes</a>
+                                                    </li>
+                                                    <li class="nav-item"><a class="" href="#link2"
+                                                            data-toggle="tab">views</a></li>
+                                                </ul>
+                                                <!-- Tab panes -->
+                                                <div class="tab-content">
+                                                    <div class="tab-pane active fade show " id="link1">
+                                                        <span><i class="ti-heart"></i>884</span>
+                                                        <a href="#" title="weekly-likes">35 new likes this week</a>
+                                                        <div class="users-thumb-list">
+                                                            <a href="#" title="Anderw" data-toggle="tooltip">
+                                                                <img src="images/resources/userlist-1.jpg" alt="">
+                                                            </a>
+                                                            <a href="#" title="frank" data-toggle="tooltip">
+                                                                <img src="images/resources/userlist-2.jpg" alt="">
+                                                            </a>
+                                                            <a href="#" title="Sara" data-toggle="tooltip">
+                                                                <img src="images/resources/userlist-3.jpg" alt="">
+                                                            </a>
+                                                            <a href="#" title="Amy" data-toggle="tooltip">
+                                                                <img src="images/resources/userlist-4.jpg" alt="">
+                                                            </a>
+                                                            <a href="#" title="Ema" data-toggle="tooltip">
+                                                                <img src="images/resources/userlist-5.jpg" alt="">
+                                                            </a>
+                                                            <a href="#" title="Sophie" data-toggle="tooltip">
+                                                                <img src="images/resources/userlist-6.jpg" alt="">
+                                                            </a>
+                                                            <a href="#" title="Maria" data-toggle="tooltip">
+                                                                <img src="images/resources/userlist-7.jpg" alt="">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="link2">
+                                                        <span><i class="ti-eye"></i>440</span>
+                                                        <a href="#" title="weekly-likes">440 new views this week</a>
+                                                        <div class="users-thumb-list">
+                                                            <a href="#" title="Anderw" data-toggle="tooltip">
+                                                                <img src="images/resources/userlist-1.jpg" alt="">
+                                                            </a>
+                                                            <a href="#" title="frank" data-toggle="tooltip">
+                                                                <img src="images/resources/userlist-2.jpg" alt="">
+                                                            </a>
+                                                            <a href="#" title="Sara" data-toggle="tooltip">
+                                                                <img src="images/resources/userlist-3.jpg" alt="">
+                                                            </a>
+                                                            <a href="#" title="Amy" data-toggle="tooltip">
+                                                                <img src="images/resources/userlist-4.jpg" alt="">
+                                                            </a>
+                                                            <a href="#" title="Ema" data-toggle="tooltip">
+                                                                <img src="images/resources/userlist-5.jpg" alt="">
+                                                            </a>
+                                                            <a href="#" title="Sophie" data-toggle="tooltip">
+                                                                <img src="images/resources/userlist-6.jpg" alt="">
+                                                            </a>
+                                                            <a href="#" title="Maria" data-toggle="tooltip">
+                                                                <img src="images/resources/userlist-7.jpg" alt="">
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="link2">
-                                                    <span><i class="ti-eye"></i>440</span>
-                                                    <a href="#" title="weekly-likes">440 new views this week</a>
-                                                    <div class="users-thumb-list">
-                                                        <a href="#" title="Anderw" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-1.jpg" alt="">
-                                                        </a>
-                                                        <a href="#" title="frank" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-2.jpg" alt="">
-                                                        </a>
-                                                        <a href="#" title="Sara" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-3.jpg" alt="">
-                                                        </a>
-                                                        <a href="#" title="Amy" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-4.jpg" alt="">
-                                                        </a>
-                                                        <a href="#" title="Ema" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-5.jpg" alt="">
-                                                        </a>
-                                                        <a href="#" title="Sophie" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-6.jpg" alt="">
-                                                        </a>
-                                                        <a href="#" title="Maria" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-7.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div><!-- page like widget --> --}}
-                            </aside>
-                        </div><!-- sidebar -->
+                                    </div><!-- page like widget --> --}}
+                                </aside>
+                            </div><!-- sidebar -->
+                        </div>
                     </div>
                 </div>
             </div>

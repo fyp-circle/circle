@@ -4639,8 +4639,8 @@ canvas {
 }
 
 .mh-head {
-    background: #4bb5ef;
-    color: #fff;
+    background: black;
+    -webkit-text-fill-color: black;
     height: auto;
 }
 

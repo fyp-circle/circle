@@ -14,7 +14,6 @@
         "laravel/tinker": "^1.0",
         "pusher/pusher-php-server": "^4.1",
         "realrashid/sweet-alert": "^3.0",
-        "tcg/voyager": "^1.4",
         "test-hook": "^1.0"
     },
     "require-dev": {
@@ -63,10 +62,5 @@
             "@php artisan key:generate --ansi"
         ]
     },
-    "repositories": {
-        "hooks": {
-            "type": "composer",
-            "url": "https://larapack.io"
-        }
-    }
+    "repositories": {}
 }
