@@ -268,9 +268,11 @@ class CheckController extends Controller
 
 
         if(count($tb)<15){
-            $k=0;
-            for ($i=count($tb); $i < 15; $i++) {
-                $tb->push($rb[$k++]);
+            if((count($rb)+count($tb))>15){
+                $k=0;
+                for ($i=count($tb); $i < 15; $i++) {
+                    $tb->push($rb[$k++]);
+                }
             }
 
         }
@@ -573,8 +575,8 @@ class CheckController extends Controller
            if ($c!=2) {
                CheckController::createActivity($circle_id,$content);
            }
-           //$suggestions=CheckController::recommendFriends($id,$circle_id);
-           return view("profileviewsfamily.viewprofile")->with('con',$con)->with('posts',$my_posts)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+           $suggestions=CheckController::recommendFriends($id,$circle_id);
+           return view("profileviewsfamily.viewprofile")->with('suggestions',$suggestions)->with('con',$con)->with('posts',$my_posts)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
 
     }
@@ -662,8 +664,8 @@ class CheckController extends Controller
                 // event(new StalkingEvent($circle_id,$id));
             }
             $my_posts=CheckController::getMyPosts($circle_id,$id);
-            //$suggestions=CheckController::recommendFriends($id,$circle_id);
-            return view("profileviewsbusiness.viewprofile")->with('posts',$my_posts)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+            $suggestions=CheckController::recommendFriends($id,$circle_id);
+            return view("profileviewsbusiness.viewprofile")->with('suggestions',$suggestions)->with('posts',$my_posts)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
     }
     public function viewphotosbusiness($id, $circle_id){
