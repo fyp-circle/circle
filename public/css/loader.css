@@ -13,18 +13,18 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 140pt;
-    height: 140pt;
+    width: 120pt;
+    height: 120pt;
 }
 
 .loader {
     padding: 16px;
     width: calc(100% - 0px);
     height: calc(100% - 0px);
-    border-top: 45px solid black;
-    border-left: 45px solid black;
-    border-right: 45px solid white;
-    border-bottom: 45px solid black;
+    border-top: 35px solid black;
+    border-left: 35px solid black;
+    border-right: 35px solid white;
+    border-bottom: 35px solid black;
     border-radius: 50%;
     animation: rotate 1s linear;
 }
