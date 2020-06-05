@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/color.css">
     <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/loader.css">
     
     <link rel="stylesheet" href="/css/main.8d288f825d8dffbbe55e.css">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
@@ -51,15 +52,14 @@
 
 <body>
     {{-- If you want to remove the laoder then just umcomment the follwing 8 lines --}}
-    {{-- <div class="spinner-wrapper">
-            <div class="sk-folding-cube">
-                <div class="sk-cube1 sk-cube"></div>
-                <div class="sk-cube2 sk-cube"></div>
-                <div class="sk-cube4 sk-cube"></div>
-                <div class="sk-cube3 sk-cube"></div>
+    <div class="background">
+            <div class="circle">
+                <div class="loader">
+                    <div class="dot"></div>
+                </div>
             </div>
-        </div> --}}
-    <!--<div class="se-pre-con"></div>-->
+    </div>
+    <div class="se-pre-con"></div>
     <div class="theme-layout">
         <div class="postoverlay"></div>
         <div class="responsive-header" data-spy="affix" data-offset-top="0">
@@ -481,7 +481,6 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="{{asset('/js/message.js')}}"></script>
-    <script>
     
     <script>
         $(document).ready(function () {
@@ -490,7 +489,7 @@
                 preloaderFadeOutTime = 1;
 
                 function hidePreloader() {
-                    var preloader = $('.spinner-wrapper');
+                    var preloader = $('.background');
                     preloader.fadeOut(preloaderFadeOutTime);
                 }
                 hidePreloader();
