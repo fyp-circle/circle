@@ -55,7 +55,20 @@
     <div class="background">
             <div class="circle">
                 <div class="loader">
-                    <div class="dot"></div>
+                    @switch($circle_id)
+                        @case(1)
+                            <div class="dot" style="background-color: gray"></div>
+                            @break
+                        @case(2)
+                            <div class="dot" style="background-color: red"></div>
+                            @break
+                        @case(2)
+                            <div class="dot" style="background-color:cornflowerblue"></div>
+                            @break
+                        @default
+                            
+                    @endswitch
+                    
                 </div>
             </div>
     </div>
@@ -270,7 +283,7 @@
 
         <div class="topbar stick">
             <div class="logo">
-                <a title="Home" href="{{ url('/') }}"><img src="/images/logo.png" alt=""></a>
+                <a title="Home" href="{{ route('mainscreen',['circle_id'=>1]) }}"><img src="/images/logo.png" alt=""></a>
             </div>
 
             <div class="top-area">
