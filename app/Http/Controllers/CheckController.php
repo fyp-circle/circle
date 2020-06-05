@@ -429,9 +429,9 @@ class CheckController extends Controller
                 }
             }
             $reqs=CheckController::getFriendRequests($id,$circle_id);
-            $suggestions=CheckController::recommendFriends($id,$circle_id);
+            //$suggestions=CheckController::recommendFriends($id,$circle_id);
             $recent_activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->take(4)->get();
-            return view("main.mainscreenfamily")->with('suggestions',$suggestions)->with('reqs',$reqs)->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
+            return view("main.mainscreenfamily")->with('reqs',$reqs)->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
         }
 
 
@@ -461,9 +461,9 @@ class CheckController extends Controller
             }
         }
         $reqs=CheckController::getFriendRequests($id,$circle_id);
-        $suggestions=CheckController::recommendFriends($id,$circle_id);
+        //$suggestions=CheckController::recommendFriends($id,$circle_id);
         $recent_activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->take(4)->get();
-        return view("main.mainscreenbusiness")->with('suggestions',$suggestions)->with('reqs',$reqs)->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
+        return view("main.mainscreenbusiness")->with('reqs',$reqs)->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
         }
 
 
@@ -573,8 +573,8 @@ class CheckController extends Controller
            if ($c!=2) {
                CheckController::createActivity($circle_id,$content);
            }
-           $suggestions=CheckController::recommendFriends($id,$circle_id);
-           return view("profileviewsfamily.viewprofile")->with('suggestions',$suggestions)->with('con',$con)->with('posts',$my_posts)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+           //$suggestions=CheckController::recommendFriends($id,$circle_id);
+           return view("profileviewsfamily.viewprofile")->with('con',$con)->with('posts',$my_posts)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
 
     }
@@ -662,8 +662,8 @@ class CheckController extends Controller
                 // event(new StalkingEvent($circle_id,$id));
             }
             $my_posts=CheckController::getMyPosts($circle_id,$id);
-            $suggestions=CheckController::recommendFriends($id,$circle_id);
-            return view("profileviewsbusiness.viewprofile")->with('suggestions',$suggestions)->with('posts',$my_posts)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
+            //$suggestions=CheckController::recommendFriends($id,$circle_id);
+            return view("profileviewsbusiness.viewprofile")->with('posts',$my_posts)->with('user',$user)->with('c',$c)->with('profile_id',$id)->with('circle_id',$circle_id)->with('notifications',$n);
         }
     }
     public function viewphotosbusiness($id, $circle_id){
