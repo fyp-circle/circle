@@ -540,7 +540,7 @@
                                     <h4 class="widget-title">Suggestions</h4>
                                     <div id="searchDir"></div>
                                     <ul id="people-list">
-                                        {{-- @foreach ($suggestions as $i)
+                                        @foreach ($suggestions as $i)
                                             <li>
                                                 <figure>
                                                     <img src="{{$i->profile_picture}}" alt="">
@@ -549,15 +549,7 @@
                                                     <a href="{{ route('viewprofile',['id'=>$i->user_id,'circle_id'=>$circle_id]) }}">{{$i->name}}</a>
                                                 </div>
                                             </li>
-                                        @endforeach --}}
-                                        <li>
-                                            <figure>
-                                            <img src="{{ asset('/images/default.png') }}" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">bucky barnes</a>
-                                            </div>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                     <div class="chat-box">
                                         <div class="chat-head">

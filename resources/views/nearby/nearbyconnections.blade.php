@@ -36,90 +36,20 @@
                         <div class="col-lg-12">
                             <div class="central-meta">
                                 <ul class="nearby-contct">
-                                    <li>
-                                        <div class="nearly-pepls">
+                                    @foreach ($suggestions as $i)
+                                        <li>
+                                            <div class="nearly-pepls">
                                             <figure>
-                                                <a href="time-line.html" title=""><img src="/images/resources/friend-avatar9.jpg" alt=""></a>
+                                                <img src="{{$i->profile_picture}}" alt="">
                                             </figure>
                                             <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">jhon kates</a></h4>
-                                                <span>ftv model</span>
-                                                <a href="#" title="" class="add-butn" data-ripple="">add friend</a>
+                                                <h4>
+                                                <a href="{{ route('viewprofilebusiness',['id'=>$i->user_id,'circle_id'=>$circle_id]) }}">{{$i->name}}</a>
+                                                </h4>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img src="/images/resources/nearly1.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">sophia Gate</a></h4>
-                                                <span>ftv model</span>
-                                                <a href="#" title="" class="add-butn" data-ripple="">add friend</a>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img src="/images/resources/nearly2.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">sara grey</a></h4>
-                                                <span>ftv model</span>
-                                                <a href="#" title="" class="add-butn" data-ripple="">add friend</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img src="/images/resources/nearly3.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">William Son</a></h4>
-                                                <span>ftv model</span>
-                                                <a href="#" title="" class="add-butn" data-ripple="">add friend</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img src="/images/resources/nearly4.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">Sara grey</a></h4>
-                                                <span>ftv model</span>
-                                                <a href="#" title="" class="add-butn" data-ripple="">add friend</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img src="/images/resources/nearly5.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">Amy watson</a></h4>
-                                                <span>ftv model</span>
-                                                <a href="#" title="" class="add-butn" data-ripple="">add friend</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="nearly-pepls">
-                                            <figure>
-                                                <a href="time-line.html" title=""><img src="/images/resources/nearly6.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="pepl-info">
-                                                <h4><a href="time-line.html" title="">caty lasbo</a></h4>
-                                                <span>ftv model</span>
-                                                <a href="#" title="" class="add-butn" data-ripple="">add friend</a>
-                                            </div>
-                                        </div>
-                                    </li>
+                                        </li>
+                                    @endforeach
 
                                 </ul>
                             </div><!-- photos -->
