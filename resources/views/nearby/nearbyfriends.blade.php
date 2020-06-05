@@ -53,6 +53,7 @@
                                         </li>
                                     @endforeach
                                 </ul>
+                                {{-- nn --}}
                             </div><!-- photos -->
                         </div><!-- centerl meta -->
                     </div>
