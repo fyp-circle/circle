@@ -152,8 +152,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row merged20" id="page-contents">
-                        <div class = "myownclass">
-                            <div class="col-lg-3">
+                        <div class = "col-lg-3 myownclass">
                                 <aside class="sidebar static">
                                     <div class="widget">
                                         <h4 class="widget-title">Shortcuts</h4>
@@ -266,7 +265,6 @@
                                         @endif
                                     </div><!-- Friend Requests -->
                                 </aside>
-                            </div><!-- sidebar -->
                         </div>
                         <div class="col-lg-6">
                             <div class="central-meta new-pst">
@@ -351,86 +349,43 @@
                                                     <div>
                                                         <hr style="margin-top: 10px; margin-bottom:10px; ">
                                                     </div>
-                                                    <ul>
-                                                        <li>
-                                                            <span class="Views" data-toggle="tooltip" title="views"
-                                                                style="color:grey ">
+                                                    <div class="row">
+                                                        <div class="col-2">
+                                                            <span class="Views" data-toggle="tooltip" title="views" style="color:grey ">
                                                                 <i class="fas fa-eye"></i>
                                                                 <ins>1.2k</ins>
                                                             </span>
-                                                        </li>
-                                                        <li>
+                                                        </div>
+                                                        <div class="col-2">
                                                             {{-- jab comment nhi hoga to i class = far fa-comments --}}
                                                             <span class="comment" data-toggle="tooltip" title="Comments"
-                                                                style="color:rgb(206, 177, 12) ">
-                                                                <i class="fas fa-comments"></i>
-                                                                <ins>12</ins>
-                                                            </span>
-                                                        </li>
-                                                        <li>
+                                                            style="color:rgb(206, 177, 12) ">
+                                                            <i class="fas fa-comments"></i>
+                                                            <ins>12</ins>
+                                                            </span>      
+                                                        </div>
+                                                        <div class="col-2">
                                                             {{-- jab like nhi hoga to i class = far fa-heart --}}
                                                             <span class="like" id="likebutton" data-toggle="tooltip"
-                                                                title="Like">
-                                                                <i class="fas fa-heart"></i>
+                                                                title="Like" style="color:red ">
+                                                                <i class="fas fa-heart" ></i>
                                                                 <ins id="test">34</ins>
                                                             </span>
-                                                        </li>
-                                                        {{-- <li class="social-media">
-                                                            <div class="menu">
-                                                                <div class=""><i class="fas fa-share-square"></i>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-html5"></i></a></div>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-facebook"></i></a></div>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-google-plus"></i></a></div>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-twitter"></i></a></div>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-css3"></i></a></div>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-instagram"></i></a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-dribbble"></i></a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-pinterest"></i></a>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                        </li> --}}
-                                                        <li>
+                                                        </div>
+                                                        <div class="col-2">
                                                             <span class="like" id="sharebutton" data-toggle="tooltip"
                                                                 title="Share" style="color:black ">
                                                                 <i class="fas fa-share-square"></i>
                                                                 <ins>2</ins>
                                                             </span>
-                                                        </li>
-                                                        <li style="margin-right:0; margin-left:40%;">
+                                                        </div>
+                                                        <div class="col-4" style="text-align: right; padding-right: 4%">
                                                             <span class="like" id="sharebutton" data-toggle="tooltip"
                                                                 title="Report" style="color:rgb(107, 0, 0) ">
                                                                 <i class="fas fa-exclamation-triangle"></i>
                                                             </span>
-                                                        </li>
-                                                    </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 
                                             </div>
@@ -571,194 +526,25 @@
 
                             </div>
                         </div><!-- centerl meta -->
-                        <div class = "myownclass">
-                            <div class="col-lg-3">
+                        <div class = "col-lg-3 myownclass">
                                 <aside class="sidebar static">
-                                    {{-- <div class="widget">
-                                        <div class="banner medium-opacity bluesh">
-                                            <div class="bg-image"
-                                                style="background-image: url(images/resources/baner-widgetbg.jpg)">
-                                            </div>
-                                            <div class="baner-top">
-                                                <span><img alt="" src="images/book-icon.png"></span>
-                                                <i class="fa fa-ellipsis-h"></i>
-                                            </div>
-                                            <div class="banermeta">
-                                                <p>
-                                                    create your own favourit page.
-                                                </p>
-                                                <span>like them all</span>
-                                                <a data-ripple="" title="" href="#">start now!</a>
-                                            </div>
-                                        </div>
-                                    </div> --}}
                                     <div class="widget friend-list stick-widget">
                                         <h4 class="widget-title">Suggestions</h4>
                                         <div id="searchDir"></div>
                                         <ul id="people-list">
-                                            <li>
-                                                <figure>
-                                                    <img src="/images/resources/users/71.jpg" alt="">
-                                                </figure>
-                                                <div class="friendz-meta">
-                                                    <a href="{{ url('viewprofile')}}">bucky barnes</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <figure>
-                                                    <img src="/images/resources/users/2.jpg" alt="">
-                                                </figure>
-                                                <div class="friendz-meta">
-                                                    <a href="#">Sarah Loren</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <figure>
-                                                    <img src="/images/resources/users/75.jpg" alt="">
-                                                </figure>
-                                                <div class="friendz-meta">
-                                                    <a href="#">jason borne</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <figure>
-                                                    <img src="/images/resources/users/80.jpg" alt="">
-                                                </figure>
-                                                <div class="friendz-meta">
-                                                    <a href="#">Cameron diaz</a>
-                                                </div>
-                                            </li>
-                                            <li>
-
-                                                <figure>
-                                                    <img src="/images/resources/users/40.jpg" alt="">
-                                                </figure>
-                                                <div class="friendz-meta">
-                                                    <a href="#">daniel warber</a>
-                                                </div>
-                                            </li>
-                                            <li>
-
-                                                <figure>
-                                                    <img src="/images/resources/users/17.jpg" alt="">
-                                                </figure>
-                                                <div class="friendz-meta">
-                                                    <a href="#">andrew</a>
-                                                </div>
-                                            </li>
-                                            <li>
-
-                                                <figure>
-                                                    <img src="/images/resources/users/37.jpg" alt="">
-                                                </figure>
-                                                <div class="friendz-meta">
-                                                    <a href="#">amy watson</a>
-                                                </div>
-                                            </li>
-                                            <li>
-
-                                                <figure>
-                                                    <img src="/images/resources/users/60.jpg" alt="">
-                                                </figure>
-                                                <div class="friendz-meta">
-                                                    <a href="#">daniel warber</a>
-                                                </div>
-                                            </li>
-                                            <li>
-
-                                                <figure>
-                                                    <img src="/images/resources/users/65.jpg" alt="">
-                                                </figure>
-                                                <div class="friendz-meta">
-                                                    <a href="#">Sarah Loren</a>
-                                                </div>
-                                            </li>
+                                            @foreach ($suggestions as $i)
+                                                <li>
+                                                    <figure>
+                                                        <img src="{{$i->profile_picture}}" alt="">
+                                                    </figure>
+                                                    <div class="friendz-meta">
+                                                        <a href="{{ route('viewprofile',['id'=>$i->user_id,'circle_id'=>$circle_id]) }}">{{$i->name}}</a>
+                                                    </div>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </div><!-- Suggestions -->
-                                    {{-- <div class="widget">
-                                        <h4 class="widget-title">Your page</h4>
-                                        <div class="your-page">
-                                            <figure>
-                                                <a href="#" title=""><img src="images/resources/friend-avatar9.jpg"
-                                                        alt=""></a>
-                                            </figure>
-                                            <div class="page-meta">
-                                                <a href="#" title="" class="underline">My page</a>
-                                                <span><i class="ti-comment"></i><a href="insight.html" title="">Messages
-                                                        <em>9</em></a></span>
-                                                <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications
-                                                        <em>2</em></a></span>
-                                            </div>
-                                            <div class="page-likes">
-                                                <ul class="nav nav-tabs likes-btn">
-                                                    <li class="nav-item"><a class="active" href="#link1"
-                                                            data-toggle="tab">likes</a>
-                                                    </li>
-                                                    <li class="nav-item"><a class="" href="#link2"
-                                                            data-toggle="tab">views</a></li>
-                                                </ul>
-                                                <!-- Tab panes -->
-                                                <div class="tab-content">
-                                                    <div class="tab-pane active fade show " id="link1">
-                                                        <span><i class="ti-heart"></i>884</span>
-                                                        <a href="#" title="weekly-likes">35 new likes this week</a>
-                                                        <div class="users-thumb-list">
-                                                            <a href="#" title="Anderw" data-toggle="tooltip">
-                                                                <img src="images/resources/userlist-1.jpg" alt="">
-                                                            </a>
-                                                            <a href="#" title="frank" data-toggle="tooltip">
-                                                                <img src="images/resources/userlist-2.jpg" alt="">
-                                                            </a>
-                                                            <a href="#" title="Sara" data-toggle="tooltip">
-                                                                <img src="images/resources/userlist-3.jpg" alt="">
-                                                            </a>
-                                                            <a href="#" title="Amy" data-toggle="tooltip">
-                                                                <img src="images/resources/userlist-4.jpg" alt="">
-                                                            </a>
-                                                            <a href="#" title="Ema" data-toggle="tooltip">
-                                                                <img src="images/resources/userlist-5.jpg" alt="">
-                                                            </a>
-                                                            <a href="#" title="Sophie" data-toggle="tooltip">
-                                                                <img src="images/resources/userlist-6.jpg" alt="">
-                                                            </a>
-                                                            <a href="#" title="Maria" data-toggle="tooltip">
-                                                                <img src="images/resources/userlist-7.jpg" alt="">
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tab-pane fade" id="link2">
-                                                        <span><i class="ti-eye"></i>440</span>
-                                                        <a href="#" title="weekly-likes">440 new views this week</a>
-                                                        <div class="users-thumb-list">
-                                                            <a href="#" title="Anderw" data-toggle="tooltip">
-                                                                <img src="images/resources/userlist-1.jpg" alt="">
-                                                            </a>
-                                                            <a href="#" title="frank" data-toggle="tooltip">
-                                                                <img src="images/resources/userlist-2.jpg" alt="">
-                                                            </a>
-                                                            <a href="#" title="Sara" data-toggle="tooltip">
-                                                                <img src="images/resources/userlist-3.jpg" alt="">
-                                                            </a>
-                                                            <a href="#" title="Amy" data-toggle="tooltip">
-                                                                <img src="images/resources/userlist-4.jpg" alt="">
-                                                            </a>
-                                                            <a href="#" title="Ema" data-toggle="tooltip">
-                                                                <img src="images/resources/userlist-5.jpg" alt="">
-                                                            </a>
-                                                            <a href="#" title="Sophie" data-toggle="tooltip">
-                                                                <img src="images/resources/userlist-6.jpg" alt="">
-                                                            </a>
-                                                            <a href="#" title="Maria" data-toggle="tooltip">
-                                                                <img src="images/resources/userlist-7.jpg" alt="">
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- page like widget --> --}}
                                 </aside>
-                            </div><!-- sidebar -->
                         </div>
                     </div>
                 </div>

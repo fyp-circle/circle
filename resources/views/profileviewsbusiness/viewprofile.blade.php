@@ -447,84 +447,17 @@
                     <div class="widget friend-list stick-widget">
                         <h4 class="widget-title">Suggestions</h4>
                         <div id="searchDir"></div>
-                        <ul id="people-list" class="friendz-list">
-                            <li>
-                                <figure>
-                                    <img src="/images/resources/friend-avatar.jpg" alt="">
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">bucky barnes</a>
-                                </div>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="/images/resources/friend-avatar2.jpg" alt="">
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">Sarah Loren</a>
-                                </div>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="/images/resources/friend-avatar3.jpg" alt="">
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">jason borne</a>
-                                </div>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="/images/resources/friend-avatar4.jpg" alt="">
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">Cameron diaz</a>
-                                </div>
-                            </li>
-                            <li>
-
-                                <figure>
-                                    <img src="/images/resources/friend-avatar5.jpg" alt="">
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">daniel warber</a>
-                                </div>
-                            </li>
-                            <li>
-
-                                <figure>
-                                    <img src="/images/resources/friend-avatar6.jpg" alt="">
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">andrew</a>
-                                </div>
-                            </li>
-                            <li>
-
-                                <figure>
-                                    <img src="/images/resources/friend-avatar7.jpg" alt="">
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">amy watson</a>
-                                </div>
-                            </li>
-                            <li>
-
-                                <figure>
-                                    <img src="/images/resources/friend-avatar5.jpg" alt="">
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">daniel warber</a>
-                                </div>
-                            </li>
-                            <li>
-
-                                <figure>
-                                    <img src="/images/resources/friend-avatar2.jpg" alt="">
-                                </figure>
-                                <div class="friendz-meta">
-                                    <a href="time-line.html">Sarah Loren</a>
-                                </div>
-                            </li>
+                        <ul id="people-list">
+                            @foreach ($suggestions as $i)
+                                <li>
+                                    <figure>
+                                        <img src="{{$i->profile_picture}}" alt="">
+                                    </figure>
+                                    <div class="friendz-meta">
+                                        <a href="{{ route('viewprofile',['id'=>$i->user_id,'circle_id'=>$circle_id]) }}">{{$i->name}}</a>
+                                    </div>
+                                </li>
+                            @endforeach
                         </ul>
                         <div class="chat-box">
                             <div class="chat-head">

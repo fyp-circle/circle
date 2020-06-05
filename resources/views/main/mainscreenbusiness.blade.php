@@ -157,8 +157,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row merged20" id="page-contents">
-                        <div class = "myownclass">
-                        <div class="col-lg-3">
+                        <div class = "col-lg-3 myownclass">
                             <aside class="sidebar static">
                                 <div class="widget">
                                     <h4 class="widget-title">Shortcuts</h4>
@@ -272,7 +271,7 @@
                                     @endif
                                 </div><!-- Friend Requests -->
                             </aside>
-                        </div><!-- sidebar -->
+
                         </div>
                         <div class="col-lg-6">
                             <div class="central-meta new-pst">
@@ -358,88 +357,44 @@
                                                     <div>
                                                         <hr style="margin-top: 10px; margin-bottom:10px; ">
                                                     </div>
-                                                    <ul>
-                                                        <li>
-                                                            <span class="Views" data-toggle="tooltip" title="views"
-                                                                style="color:grey ">
+                                                    <div class="row">
+                                                        <div class="col-2">
+                                                            <span class="Views" data-toggle="tooltip" title="views" style="color:grey ">
                                                                 <i class="fas fa-eye"></i>
                                                                 <ins>1.2k</ins>
                                                             </span>
-                                                        </li>
-                                                        <li>
+                                                        </div>
+                                                        <div class="col-2">
                                                             {{-- jab comment nhi hoga to i class = far fa-comments --}}
                                                             <span class="comment" data-toggle="tooltip" title="Comments"
-                                                                style="color:rgb(206, 177, 12) ">
-                                                                <i class="fas fa-comments"></i>
-                                                                <ins>12</ins>
-                                                            </span>
-                                                        </li>
-                                                        <li>
+                                                            style="color:rgb(206, 177, 12) ">
+                                                            <i class="fas fa-comments"></i>
+                                                            <ins>12</ins>
+                                                            </span>      
+                                                        </div>
+                                                        <div class="col-2">
                                                             {{-- jab like nhi hoga to i class = far fa-heart --}}
                                                             <span class="like" id="likebutton" data-toggle="tooltip"
-                                                                title="Like">
+                                                                title="Like" style="color:red">
                                                                 <i class="fas fa-heart"></i>
                                                                 <ins id="test">34</ins>
                                                             </span>
-                                                        </li>
-                                                        {{-- <li class="social-media">
-                                                            <div class="menu">
-                                                                <div class=""><i class="fas fa-share-square"></i>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-html5"></i></a></div>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-facebook"></i></a></div>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-google-plus"></i></a></div>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-twitter"></i></a></div>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-css3"></i></a></div>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-instagram"></i></a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-dribbble"></i></a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="rotater">
-                                                                    <div class="btn btn-icon"><a href="#" title=""><i
-                                                                                class="fa fa-pinterest"></i></a>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                        </li> --}}
-                                                        <li>
+                                                        </div>
+                                                        <div class="col-2">
                                                             <span class="like" id="sharebutton" data-toggle="tooltip"
                                                                 title="Share" style="color:black ">
                                                                 <i class="fas fa-share-square"></i>
                                                                 <ins>2</ins>
                                                             </span>
-                                                        </li>
-                                                        <li style="margin-right:0; margin-left:40%;">
+                                                        </div>
+                                                        <div class="col-4" style="text-align: right; padding-right: 4%">
                                                             <span class="like" id="sharebutton" data-toggle="tooltip"
                                                                 title="Report" style="color:rgb(107, 0, 0) ">
                                                                 <i class="fas fa-exclamation-triangle"></i>
                                                             </span>
-                                                        </li>
-                                                    </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
-
                                             </div>
                                         </div>
                                         <div>
@@ -578,91 +533,23 @@
 
                             </div>
                         </div><!-- centerl meta -->
-                        <div class = "myownclass">
-                        <div class="col-lg-3">
+                        <div class = "col-lg-3 myownclass">
                             <aside class="sidebar static">
 
                                 <div class="widget friend-list stick-widget">
                                     <h4 class="widget-title">Suggestions</h4>
                                     <div id="searchDir"></div>
-                                    <ul id="people-list" class="friendz-list">
-                                        <li>
-                                            <figure>
-                                                <img src="/images/resources/friend-avatar.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">bucky barnes</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="/images/resources/friend-avatar2.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">Sarah Loren</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="/images/resources/friend-avatar3.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">jason borne</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="/images/resources/friend-avatar4.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">Cameron diaz</a>
-                                            </div>
-                                        </li>
-                                        <li>
-
-                                            <figure>
-                                                <img src="/images/resources/friend-avatar5.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">daniel warber</a>
-                                            </div>
-                                        </li>
-                                        <li>
-
-                                            <figure>
-                                                <img src="/images/resources/friend-avatar6.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">andrew</a>
-                                            </div>
-                                        </li>
-                                        <li>
-
-                                            <figure>
-                                                <img src="/images/resources/friend-avatar7.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">amy watson</a>
-                                            </div>
-                                        </li>
-                                        <li>
-
-                                            <figure>
-                                                <img src="/images/resources/friend-avatar5.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">daniel warber</a>
-                                            </div>
-                                        </li>
-                                        <li>
-
-                                            <figure>
-                                                <img src="/images/resources/friend-avatar2.jpg" alt="">
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">Sarah Loren</a>
-                                            </div>
-                                        </li>
+                                    <ul id="people-list">
+                                        @foreach ($suggestions as $i)
+                                            <li>
+                                                <figure>
+                                                    <img src="{{$i->profile_picture}}" alt="">
+                                                </figure>
+                                                <div class="friendz-meta">
+                                                    <a href="{{ route('viewprofile',['id'=>$i->user_id,'circle_id'=>$circle_id]) }}">{{$i->name}}</a>
+                                                </div>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                     <div class="chat-box">
                                         <div class="chat-head">
@@ -746,7 +633,6 @@
                                     </div>
                                 </div><!-- Suggestions -->
                             </aside>
-                        </div><!-- sidebar -->
                         </div>
                     </div>
                 </div>
