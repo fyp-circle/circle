@@ -196,9 +196,11 @@ class CheckController extends Controller
         //         $cons->unset($con);
         //     }
         // }
-        $cons = $cons->filter(function($item) {
-            return ($item->user1_id != Auth::user()->user_id && $item->user2_id != Auth::user()->user_id);
-        });
+        if (count($cons)>0) {
+            $cons = $cons->filter(function($item) {
+                return ($item->user1_id != Auth::user()->user_id && $item->user2_id != Auth::user()->user_id);
+            });
+        }
         // return $cons;
         // return $cons[0]->user1;
         $user1 =[];
