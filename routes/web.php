@@ -113,6 +113,9 @@ Route::group([
         Route::get('/acceptrequestfamily/{id}/{sender_id}', ['as' => 'accept.request.f', 'uses' => 'FamilyController@acceptRequest'])->where('sender_id', '[0-9]+');
         Route::get('/removefromfamily/{id}/{sender_id}', ['as' => 'remove.f', 'uses' => 'FamilyController@remove'])->where('sender_id', '[0-9]+');
 
+
+        Route::get('adminhome/{circle_id}', ['as' => 'adminhome', 'uses' => 'CheckController@adminhome']);
+
     });
 
         Route::get('editinfofriends/{circle_id}', ['as' => 'editinfofriends', 'uses' => 'CheckController@editinfofriends'])->where('circle_id', '1');

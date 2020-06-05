@@ -408,6 +408,7 @@ class CheckController extends Controller
 
         return view("main.mainscreen")->with('suggestions',$suggestions)->with('reqs',$reqs)->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
     }
+
     public function mainscreenfamily($circle_id){
         if (Auth::user()->family_user==null) {
             alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
@@ -1115,6 +1116,34 @@ class CheckController extends Controller
         return redirect()->to('/');
     }
 
+    public function adminhome($circle_id){
+        //$user = User::find($id);
+        $id=Auth::user()->user_id;
+        $n = CheckController::getNotifications();
+        $my_posts=CheckController::getCirclePosts($circle_id);
+        // return $my_posts;
+        // $my_posts=CheckController::getMyPosts($circle_id,$id);
+        $cons=CheckController::getConnections($id,$circle_id);
+
+        $count = count($cons);
+        for ($i = 0; $i < $count; $i++) {
+            for ($j = $i + 1; $j < $count; $j++) {
+                if (!$cons[$i]->isOnline()) {
+                    $temp = $cons[$i];
+                    $cons[$i] = $cons[$j];
+                    $cons[$j] = $temp;
+                }
+            }
+        }
+
+        $reqs=CheckController::getFriendRequests($id,$circle_id);
+        $c=CheckController::checkConnection($id,$circle_id);
+        $suggestions=CheckController::recommendFriends($id,$circle_id);
+        //return $suggestions;
+        $recent_activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->take(4)->get();
+
+        return view("admin.home")->with('suggestions',$suggestions)->with('reqs',$reqs)->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
+    }
 
     public function sweetalertcheck(){
         alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.')->position('top-end')->toToast()->width('24rem')->padding('1.25rem')->showCancelButton()->showConfirmButton()->focusConfirm(true);

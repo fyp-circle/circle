@@ -453,9 +453,9 @@
                         <a href="#" title=""><span class="status f-online"></span>online</a>
                         <a href="#" title=""><span class="status f-away"></span>away</a>
                         <a href="#" title=""><span class="status f-off"></span>offline</a>
-                    <a href="{{ route('main.settings',['circle_id'=>1]) }}" title=""><i class="ti-settings"></i>account setting</a>
-                    <a href="{{ route('allactivities',['circle_id'=>1]) }}" title=""><i class="fa fa-bar-chart-o"></i>Activity Log</a>
-
+                    <a href="{{ route('main.settings',['circle_id'=>1]) }}" title=""><i class="fas fa-cogs"></i>account setting</a>
+                    <a href="{{ route('allactivities',['circle_id'=>1]) }}" title=""><i class="fas fa-tasks"></i>Activity Log</a>
+                    <a href="{{ route('adminhome',['circle_id'=>1]) }}" title=""><i class="fas fa-user-shield"></i>Admin</a>
                         <a href="{{ route('logout') }}" title="" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();"><i class="ti-power-off"></i>log out</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -468,7 +468,7 @@
         </div><!-- topbar -->
         @include('sweetalert::alert')
         @yield('content')
-        
+    </div>   
     <script src="/js/main.min.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/map-init.js"></script>
