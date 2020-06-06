@@ -319,6 +319,7 @@
                                 </div>
                                 @else
                                 @foreach ($posts as $post)
+                                @if (count($post->reports)==0)
                                 <div class="central-meta item">
                                     <div class="user-post">
                                         <div class="friend-info">
@@ -344,7 +345,7 @@
                                                 @else
 
                                                 @endif
-                                                
+
                                                 <div class="we-video-info">
                                                     <div>
                                                         <hr style="margin-top: 10px; margin-bottom:10px; ">
@@ -362,7 +363,7 @@
                                                             style="color:rgb(206, 177, 12) ">
                                                             <i class="fas fa-comments"></i>
                                                             <ins>12</ins>
-                                                            </span>      
+                                                            </span>
                                                         </div>
                                                         <div class="col-2">
                                                             {{-- jab like nhi hoga to i class = far fa-heart --}}
@@ -380,14 +381,16 @@
                                                             </span>
                                                         </div>
                                                         <div class="col-4" style="text-align: right; padding-right: 4%">
-                                                            <span class="like" id="sharebutton" data-toggle="tooltip"
+                                                            <a href="{{ route('report',['post_id'=>$post->post_id,'circle_id'=>$circle_id]) }}">
+                                                                <span class="like" id="sharebutton" data-toggle="tooltip"
                                                                 title="Report" style="color:rgb(107, 0, 0) ">
                                                                 <i class="fas fa-exclamation-triangle"></i>
                                                             </span>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                         <div>
@@ -505,7 +508,7 @@
                                                             <a href="#" style="text-decoration: none;">&#129326;</a>
                                                             <a href="#" style="text-decoration: none;">&#129327;</a>
 
-                                                            
+
                                                         </div>
                                                             {{-- <p class="lead emoji-picker-container">
                                                                 <textarea class="form-control textarea-control"
@@ -513,7 +516,7 @@
                                                                     data-emojiable="true"></textarea>
                                                             </p> --}}
                                                             {{-- <button type="submit"></button> --}}
-                                                        
+
                                                         </form>
                                                     </div>
                                                 </li>
@@ -521,6 +524,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endif
                                 @endforeach
                                 @endif
 

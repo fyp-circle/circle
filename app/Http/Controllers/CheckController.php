@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Input;
 use App\Events\CancelRequest;
 use App\Events\AcceptRequest;
 use App\Events\RemoveRequest;
+use App\Report;
 
 
 class CheckController extends Controller
@@ -1117,32 +1118,63 @@ class CheckController extends Controller
     }
 
     public function adminhome($circle_id){
-        //$user = User::find($id);
-        $id=Auth::user()->user_id;
-        $n = CheckController::getNotifications();
-        $my_posts=CheckController::getCirclePosts($circle_id);
-        // return $my_posts;
-        // $my_posts=CheckController::getMyPosts($circle_id,$id);
-        $cons=CheckController::getConnections($id,$circle_id);
+        if (Auth::user()->admin==0) {
+            alert()->error('Unauthorized way to access our website.','You have tried to access our website maliciously.')->position('top-end')->toToast()->width('24rem');
+            return redirect()->to('/');
+        } else {
+            //$user = User::find($id);
+            $id=Auth::user()->user_id;
+            $n = CheckController::getNotifications();
+            $reports=Report::all();
+            // return $my_posts;
+            // $my_posts=CheckController::getMyPosts($circle_id,$id);
+            $cons=CheckController::getConnections($id,$circle_id);
 
-        $count = count($cons);
-        for ($i = 0; $i < $count; $i++) {
-            for ($j = $i + 1; $j < $count; $j++) {
-                if (!$cons[$i]->isOnline()) {
-                    $temp = $cons[$i];
-                    $cons[$i] = $cons[$j];
-                    $cons[$j] = $temp;
+            $count = count($cons);
+            for ($i = 0; $i < $count; $i++) {
+                for ($j = $i + 1; $j < $count; $j++) {
+                    if (!$cons[$i]->isOnline()) {
+                        $temp = $cons[$i];
+                        $cons[$i] = $cons[$j];
+                        $cons[$j] = $temp;
+                    }
                 }
             }
+
+            $reqs=CheckController::getFriendRequests($id,$circle_id);
+            $c=CheckController::checkConnection($id,$circle_id);
+            $suggestions=CheckController::recommendFriends($id,$circle_id);
+            //return $suggestions;
+            $recent_activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->take(4)->get();
+
+            return view("admin.home")->with('suggestions',$suggestions)->with('reqs',$reqs)->with('recent_activities',$recent_activities)->with('cons',$cons)->with('reports',$reports)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
         }
 
-        $reqs=CheckController::getFriendRequests($id,$circle_id);
-        $c=CheckController::checkConnection($id,$circle_id);
-        $suggestions=CheckController::recommendFriends($id,$circle_id);
-        //return $suggestions;
-        $recent_activities=User::find(Auth::user()->user_id)->activities()->where('circle_id',$circle_id)->orderBy('updated_at','desc')->take(4)->get();
 
-        return view("admin.home")->with('suggestions',$suggestions)->with('reqs',$reqs)->with('recent_activities',$recent_activities)->with('cons',$cons)->with('posts',$my_posts)->with('user',Auth::user())->with('c',$c)->with('circle_id',$circle_id)->with('profile_id',$id)->with('notifications',$n);
+
+    }
+
+
+    public function reportPost($post_id,$circle_id){
+        $report = new Report;
+        $report->user_id = Auth::user()->user_id;
+        $report->post_id = $post_id;
+        $report->save();
+        return Redirect::back();
+    }
+
+    public function deletePost($report_id){
+
+        $report=Report::find($report_id);
+        $post_id=$report->post->post_id;
+        $report->delete();
+        Post::where('post_id', $post_id)->delete();
+        return Redirect::back();
+    }
+
+    public function approvePost($report_id){
+        Report::where('report_id', $report_id)->delete();
+        return Redirect::back();
     }
 
     public function sweetalertcheck(){

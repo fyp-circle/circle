@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('country')->nullable();
             $table->string('city')->nullable();
             $table->string('about_me')->nullable();
+            $table->integer('admin')->nullable()->default(0);
             $table->string('profile_picture')->default('/images/users/Friend/Profile_Pictures/default.png');
             $table->string('cover_picture')->default('/images/users/Friend/Cover_Pictures/default.jpg');
             $table->integer('business_user_id')->references('business_user_id')->on('business_users')->nullable();

@@ -24,4 +24,8 @@ class Post extends Model
         return $this->hasMany('App\Like','post_id','post_id');
     }
 
+    public function reports(){
+        return $this->hasMany('App\Report','post_id','post_id');
+    }
+
 }
