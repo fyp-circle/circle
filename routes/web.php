@@ -71,6 +71,13 @@ Route::group([
         ]
       ],
       function () {
+
+        Route::get('/report/{post_id}/{circle_id}', ['as' => 'report', 'uses' => 'CheckController@reportPost'])->where('circle_id', '[0-9]+')->where('post_id', '[0-9]+');
+        Route::get('/approvepost/{report_id}', ['as' => 'approvepost', 'uses' => 'CheckController@approvePost'])->where('report_id', '[0-9]+');
+        Route::get('/deletepost/{report_id}', ['as' => 'deletepost', 'uses' => 'CheckController@deletePost'])->where('report_id', '[0-9]+');
+
+
+
         Route::get('/requestsent/{id}', ['as' => 'request.sent', 'uses' => 'CheckController@sentRequest']);
         Route::get('/cancelrequest/{id}/{sender_id}', ['as' => 'cancel.request', 'uses' => 'CheckController@cancelRequest']);
         Route::get('/acceptrequest/{id}/{sender_id}', ['as' => 'accept.request', 'uses' => 'CheckController@acceptRequest'])->where('sender_id', '[0-9]+');
@@ -114,7 +121,7 @@ Route::group([
         Route::get('/removefromfamily/{id}/{sender_id}', ['as' => 'remove.f', 'uses' => 'FamilyController@remove'])->where('sender_id', '[0-9]+');
 
 
-        Route::get('adminhome/{circle_id}', ['as' => 'adminhome', 'uses' => 'CheckController@adminhome']);
+        Route::get('adminhome/{circle_id}', ['as' => 'adminhome', 'uses' => 'CheckController@adminhome'])->where('circle_id', '[0-9]+');
 
     });
 

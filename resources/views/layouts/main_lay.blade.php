@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/css/color.css">
     <link rel="stylesheet" href="/css/responsive.css">
     <link rel="stylesheet" href="/css/loader.css">
-    
+
     <link rel="stylesheet" href="/css/main.8d288f825d8dffbbe55e.css">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/spinner_wrapper.css') }}" rel="stylesheet">
@@ -27,7 +27,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://kit.fontawesome.com/d1bf4e5d94.js" crossorigin="anonymous"></script>
-    
+
     {{-- AJAX KI SCRIPT --}}
     <script>
         function showResult(str) {
@@ -62,13 +62,13 @@
                         @case(2)
                             <div class="dot" style="background-color: red"></div>
                             @break
-                        @case(2)
+                        @case(3)
                             <div class="dot" style="background-color:cornflowerblue"></div>
                             @break
                         @default
-                            
+
                     @endswitch
-                    
+
                 </div>
             </div>
     </div>
@@ -87,9 +87,9 @@
                     <div class="mh-head first Sticky" style="background-color:cornflowerblue;">
                     @break
                 @default
-                    
+
             @endswitch
-            
+
                 <span class="mh-btns-left" style="-webkit-text-fill-color: white;">
                     <a class="" href="#menu"><i class="fas fa-align-justify"></i></a>
                 </span>
@@ -111,7 +111,7 @@
                     <div class="mh-head second mh-sticky" style="background-color:cornflowerblue;">
                     @break
                 @default
-                    
+
             @endswitch
                 <form class="mh-form" action="{{ route('search',['circle_id'=>$circle_id]) }}" method="POST" role="search">
                     @csrf
@@ -124,7 +124,7 @@
                         </div>
                     </div>
                 </form>
-                
+
             </div>
             <nav id="menu" class="res-menu">
                 @switch($circle_id)
@@ -233,9 +233,9 @@
                         </ul>
                         @break
                     @default
-                        
+
                 @endswitch
-                
+
             </nav>
             <nav id="shoppingbag">
                 <div>
@@ -275,7 +275,7 @@
                                     @csrf
                                 </form>
                             </li>
-                        </ul>           
+                        </ul>
                     </div>
                 </div>
             </nav>
@@ -468,7 +468,9 @@
                         <a href="#" title=""><span class="status f-off"></span>offline</a>
                     <a href="{{ route('main.settings',['circle_id'=>1]) }}" title=""><i class="fas fa-cogs"></i>account setting</a>
                     <a href="{{ route('allactivities',['circle_id'=>1]) }}" title=""><i class="fas fa-tasks"></i>Activity Log</a>
+                    @if (Auth::user()->admin==1)
                     <a href="{{ route('adminhome',['circle_id'=>1]) }}" title=""><i class="fas fa-user-shield"></i>Admin</a>
+                    @endif
                         <a href="{{ route('logout') }}" title="" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();"><i class="ti-power-off"></i>log out</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -481,7 +483,7 @@
         </div><!-- topbar -->
         @include('sweetalert::alert')
         @yield('content')
-    </div>   
+    </div>
     <script src="/js/main.min.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/map-init.js"></script>

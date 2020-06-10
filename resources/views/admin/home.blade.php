@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="/css/main-styleadmin.css">
     <link rel="stylesheet" href="/css/coloradmin.css">
     <link rel="stylesheet" href="/css/responsiveadmin.css">
-    
+
     <link rel="stylesheet" href="/css/main.8d288f825d8dffbbe55e.css">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/spinner_wrapper.css') }}" rel="stylesheet">
@@ -46,9 +46,9 @@
                     <div class="mh-head first Sticky" style="background-color:cornflowerblue;">
                     @break
                 @default
-                    
+
             @endswitch
-            
+
                 <span class="mh-btns-left" style="-webkit-text-fill-color: white;">
                     <a class="" href="#menu"><i class="fas fa-align-justify"></i></a>
                 </span>
@@ -70,7 +70,7 @@
                     <div class="mh-head second mh-sticky" style="background-color:cornflowerblue;">
                     @break
                 @default
-                    
+
             @endswitch
                 <form class="mh-form" action="{{ route('search',['circle_id'=>$circle_id]) }}" method="POST" role="search">
                     @csrf
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                 </form>
-                
+
             </div>
             <nav id="menu" class="res-menu">
                 @switch($circle_id)
@@ -192,9 +192,9 @@
                         </ul>
                         @break
                     @default
-                        
+
                 @endswitch
-                
+
             </nav>
             <nav id="shoppingbag">
                 <div>
@@ -234,7 +234,7 @@
                                     @csrf
                                 </form>
                             </li>
-                        </ul>           
+                        </ul>
                     </div>
                 </div>
             </nav>
@@ -462,8 +462,8 @@
                             data-toggle="tooltip" data-placement="right"><i class="fas fa-user-edit"></i></a></li>
                     <li><a href="{{ route('main.settings',['circle_id'=>1]) }}" title="Main Setting" data-toggle="tooltip"
                             data-placement="right"><i class="fas fa-cogs"></i></a></li>
-        
-        
+
+
                 </ul>
             </div>
         </div><!-- left sidebar menu -->
@@ -471,7 +471,7 @@
         <section>
             <div class="gap gray-bg">
                 <div class="container">
-                    
+
                     <div class="panel-content">
                         <div class="row">
                             <div class="col-md-12">
@@ -533,7 +533,7 @@
                                                             <button type="submit" class="purple-skin">POST</button>
                                                         </div>
                                                     </div> --}}
-                                                
+
                                             </div>
                                         </div>
                                         <div class="row">
@@ -544,228 +544,240 @@
                                                             <h3>All Reported Posts</h3>
                                                         </div>
                                                         <ul class="activity-timeline masonry">
-                                                            @foreach ($posts as $post)
+                                                            @foreach ($reports as $report)
                                                             <li class="fb-pst flt-itm"> <span class="user-device"><i
-                                                                        class="fas fa-circle" style="-webkit-text-fill-color: black"></i></span>
-                                                                <div class="user-activity">
-                                                                    <div class="who-post-this" style="padding-bottom: 4%;"> <span><img src="images/resource/user.jpg" alt="" /></span>
-                                                                        <div class="who-post-detail">
-                                                                            <div class="pst-shr-inf"><i>2 minutes ago</i>
-                                                                                <div class="slct-whr-pst"> <span>Action</span>
-                                                                                    <ul>
-                                                                                        <li><i class="fas fa-trash-alt"></i> Delete</li>
-                                                                                        <li><i class="fas fa-check"></i> Pass</li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                            <h3><a href="#" title="">Diana Dare<i class="poster-status online"></i></a></h3>
-                                                                            <span>Reported in Friends Circle</span>
-                                                                        </div>
-                                                                    </div>                                                                    
-                                                                    <div class="central-meta item">
-                                                                        <div class="user-post">
-                                                                            <div class="friend-info">
-                                                                                <figure>
-                                                                                    <a
-                                                                                        href="{{ route('viewprofile',['id'=>$post->user->user_id,'circle_id'=>$circle_id]) }}"><img
-                                                                                            src="{{$post->user->profile_picture}}" alt=""></a>
-                                                                                </figure>
-                                                                                <div class="friend-name" style="width: 86%; ">
-                                                                                    <ins><a href="{{ route('viewprofile',['id'=>$post->user->user_id,'circle_id'=>$circle_id]) }}"
-                                                                                            title="">{{$post->user->name}}</a></ins>
-                                                                                    <span>published: {{$post->created_at}}</span>
-                                                                                </div>
-                                                                                <div class="post-meta">
-                                                                                    <div class="description">
-
-                                                                                        <p>
-                                                                                            {{$post->content}}
-                                                                                        </p>
-                                                                                    </div>
-                                                                                    @if ($post->picture!=null)
-                                                                                    <img src="{{$post->picture}}" alt="">
-                                                                                    @else
-
-                                                                                    @endif
-                                                                                    
-                                                                                    <div class="we-video-info">
-                                                                                        <div>
-                                                                                            <hr style="margin-top: 10px; margin-bottom:10px; ">
-                                                                                        </div>
-                                                                                        <div class="row">
-                                                                                            <div class="col-2">
-                                                                                                <span class="Views" data-toggle="tooltip" title="views" style="color:grey ">
-                                                                                                    <i class="fas fa-eye"></i>
-                                                                                                    <ins>1.2k</ins>
-                                                                                                </span>
-                                                                                            </div>
-                                                                                            <div class="col-2">
-                                                                                                {{-- jab comment nhi hoga to i class = far fa-comments --}}
-                                                                                                <span class="comment" data-toggle="tooltip" title="Comments"
-                                                                                                style="color:rgb(206, 177, 12); padding-bottom: 0; padding-top: 0;">
-                                                                                                <i class="fas fa-comments"></i>
-                                                                                                <ins>12</ins>
-                                                                                                </span>      
-                                                                                            </div>
-                                                                                            <div class="col-2">
-                                                                                                {{-- jab like nhi hoga to i class = far fa-heart --}}
-                                                                                                <span class="like" id="likebutton" data-toggle="tooltip"
-                                                                                                    title="Like" style="color:red ">
-                                                                                                    <i class="fas fa-heart" ></i>
-                                                                                                    <ins id="test">34</ins>
-                                                                                                </span>
-                                                                                            </div>
-                                                                                            <div class="col-2">
-                                                                                                <span class="like" id="sharebutton" data-toggle="tooltip"
-                                                                                                    title="Share" style="color:black ">
-                                                                                                    <i class="fas fa-share-square"></i>
-                                                                                                    <ins>2</ins>
-                                                                                                </span>
-                                                                                            </div>
-                                                                                            <div class="col-4" style="text-align: right; padding-right: 4%">
-                                                                                                <span class="like" id="sharebutton" data-toggle="tooltip"
-                                                                                                    title="Report" style="color:rgb(107, 0, 0) ">
-                                                                                                    <i class="fas fa-exclamation-triangle"></i>
-                                                                                                </span>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                            <div>
-                                                                                <hr style="margin-top: 0; margin-bottom:10px; ">
-                                                                            </div>
-                                                                            <div class="coment-area">
-                                                                                <ul class="we-comet">
-                                                                                    <li>
-                                                                                        <div class="comet-avatar">
-                                                                                            <img src="/images/resources/comet-1.jpg" alt="">
-                                                                                        </div>
-                                                                                        <div class="we-comment">
-                                                                                            <div class="coment-head">
-                                                                                                <h5><a href="time-line.html" title="">Jason borne</a></h5>
-                                                                                                <span>1 year ago</span>
-                                                                                            </div>
-                                                                                            <p>we are working for the dance and sing songs. this car is very
-                                                                                                awesome for
-                                                                                                the youngster. please vote this car and like our post</p>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <a href="#" title="" class="showmore underline">more comments</a>
-                                                                                    </li>
-                                                                                    <li class="post-comment">
-                                                                                        <div class="comet-avatar">
-                                                                                            <img src="/images/resources/comet-1.jpg" alt="">
-                                                                                        </div>
-                                                                                        <div class="post-comt-box">
-                                                                                            <form method="post">
-                                                                                            <textarea placeholder="Post your comment"></textarea>
-                                                                                            <div class="add-smiles">
-                                                                                                <span title="add icon">&#128515;</span>
-                                                                                            </div>
-                                                                                            <div class="smiles-bunch">
-                                                                                                <a href="#" style="text-decoration: none;">&#128512;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128513;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128514;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128515;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128516;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128517;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128518;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128519;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128520;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128521;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128522;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128523;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128524;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128525;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128526;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128527;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128528;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128529;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128530;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128531;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128532;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128533;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128534;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128535;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128536;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128537;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128538;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128539;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128540;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128541;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128542;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128543;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128544;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128545;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128546;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128547;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128548;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128549;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128550;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128551;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128552;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128553;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128554;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128555;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128556;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128557;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128558;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128559;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128560;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128561;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128562;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128563;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128564;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128565;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128566;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128567;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128577;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128578;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128579;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#128580;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129296;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129297;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129298;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129299;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129300;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129301;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129312;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129313;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129314;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129315;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129316;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129317;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129319;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129320;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129321;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129322;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129323;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129324;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129325;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129326;</a>
-                                                                                                <a href="#" style="text-decoration: none;">&#129327;</a>
-
-                                                                                                
-                                                                                            </div>
-                                                                                                {{-- <p class="lead emoji-picker-container">
-                                                                                                    <textarea class="form-control textarea-control"
-                                                                                                        placeholder="Textarea with emoji image input"
-                                                                                                        data-emojiable="true"></textarea>
-                                                                                                </p> --}}
-                                                                                                {{-- <button type="submit"></button> --}}
-                                                                                            
-                                                                                            </form>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
+                                                                class="fas fa-circle" style="-webkit-text-fill-color: black"></i></span>
+                                                        <div class="user-activity">
+                                                            <div class="who-post-this" style="padding-bottom: 4%;"> <span><img src="{{$report->user->profile_picture}}" alt="" /></span>
+                                                                <div class="who-post-detail">
+                                                                <div class="pst-shr-inf"><i>{{$report->updated_at}}</i>
+                                                                        <div class="slct-whr-pst"> <span>Action</span>
+                                                                            <ul>
+                                                                                <a href="{{ route('deletepost',['report_id'=>$report->report_id]) }}"><li><i class="fas fa-trash-alt"></i> Delete</li></a>
+                                                                                <a href="{{ route('approvepost',['report_id'=>$report->report_id]) }}"><li><i class="fas fa-check"></i> Pass</li></a>
+                                                                            </ul>
                                                                         </div>
                                                                     </div>
+                                                                <h3><a href="{{ route('viewprofile',['id'=>$report->user->user_id,'circle_id'=>$report->post->circle_id]) }}" title="">{{$report->user->name}}<i class="poster-status online"></i></a></h3>
+                                                                    @switch($report->post->circle_id)
+                                                                        @case(1)
+                                                                        <span>Reported in Friends Circle</span>
+                                                                            @break
+                                                                        @case(2)
+                                                                        <span>Reported in Family Circle</span>
+                                                                            @break
+                                                                        @case(3)
+                                                                        <span>Reported in Business Circle</span>
+                                                                            @break
+                                                                        @default
+
+                                                                    @endswitch
                                                                 </div>
-                                                            </li>
+                                                            </div>
+                                                            <div class="central-meta item">
+                                                                <div class="user-post">
+                                                                    <div class="friend-info">
+                                                                        <figure>
+                                                                            <a
+                                                                                href="{{ route('viewprofile',['id'=>$report->post->user->user_id,'circle_id'=>$report->post->circle_id]) }}"><img
+                                                                                    src="{{$report->post->user->profile_picture}}" alt=""></a>
+                                                                        </figure>
+                                                                        <div class="friend-name" style="width: 86%; ">
+                                                                            <ins><a href={{ route('viewprofile',['id'=>$report->post->user->user_id,'circle_id'=>$report->post->circle_id]) }}"
+                                                                                    title="">{{$report->post->user->name}}</a></ins>
+                                                                            <span>published: {{$report->post->created_at}}</span>
+                                                                        </div>
+                                                                        <div class="post-meta">
+                                                                            <div class="description">
+
+                                                                                <p>
+                                                                                    {{$report->post->content}}
+                                                                                </p>
+                                                                            </div>
+                                                                            @if ($report->post->picture!=null)
+                                                                            <img src="{{$report->post->picture}}" alt="">
+                                                                            @else
+
+                                                                            @endif
+
+                                                                            <div class="we-video-info">
+                                                                                <div>
+                                                                                    <hr style="margin-top: 10px; margin-bottom:10px; ">
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                    <div class="col-2">
+                                                                                        <span class="Views" data-toggle="tooltip" title="views" style="color:grey ">
+                                                                                            <i class="fas fa-eye"></i>
+                                                                                            <ins>1.2k</ins>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div class="col-2">
+                                                                                        {{-- jab comment nhi hoga to i class = far fa-comments --}}
+                                                                                        <span class="comment" data-toggle="tooltip" title="Comments"
+                                                                                        style="color:rgb(206, 177, 12); padding-bottom: 0; padding-top: 0;">
+                                                                                        <i class="fas fa-comments"></i>
+                                                                                        <ins>12</ins>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div class="col-2">
+                                                                                        {{-- jab like nhi hoga to i class = far fa-heart --}}
+                                                                                        <span class="like" id="likebutton" data-toggle="tooltip"
+                                                                                            title="Like" style="color:red ">
+                                                                                            <i class="fas fa-heart" ></i>
+                                                                                            <ins id="test">34</ins>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div class="col-2">
+                                                                                        <span class="like" id="sharebutton" data-toggle="tooltip"
+                                                                                            title="Share" style="color:black ">
+                                                                                            <i class="fas fa-share-square"></i>
+                                                                                            <ins>2</ins>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    {{-- <div class="col-4" style="text-align: right; padding-right: 4%">
+                                                                                        <span class="like" id="sharebutton" data-toggle="tooltip"
+                                                                                            title="Report" style="color:rgb(107, 0, 0) ">
+                                                                                            <i class="fas fa-exclamation-triangle"></i>
+                                                                                        </span>
+                                                                                    </div> --}}
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div>
+                                                                        <hr style="margin-top: 0; margin-bottom:10px; ">
+                                                                    </div>
+                                                                    <div class="coment-area">
+                                                                        <ul class="we-comet">
+                                                                            <li>
+                                                                                <div class="comet-avatar">
+                                                                                    <img src="/images/resources/comet-1.jpg" alt="">
+                                                                                </div>
+                                                                                <div class="we-comment">
+                                                                                    <div class="coment-head">
+                                                                                        <h5><a href="time-line.html" title="">Jason borne</a></h5>
+                                                                                        <span>1 year ago</span>
+                                                                                    </div>
+                                                                                    <p>we are working for the dance and sing songs. this car is very
+                                                                                        awesome for
+                                                                                        the youngster. please vote this car and like our post</p>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#" title="" class="showmore underline">more comments</a>
+                                                                            </li>
+                                                                            {{-- <li class="post-comment">
+                                                                                <div class="comet-avatar">
+                                                                                    <img src="/images/resources/comet-1.jpg" alt="">
+                                                                                </div>
+                                                                                <div class="post-comt-box">
+                                                                                    <form method="post">
+                                                                                    <textarea placeholder="Post your comment"></textarea>
+                                                                                    <div class="add-smiles">
+                                                                                        <span title="add icon">&#128515;</span>
+                                                                                    </div>
+                                                                                    <div class="smiles-bunch">
+                                                                                        <a href="#" style="text-decoration: none;">&#128512;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128513;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128514;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128515;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128516;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128517;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128518;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128519;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128520;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128521;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128522;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128523;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128524;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128525;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128526;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128527;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128528;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128529;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128530;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128531;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128532;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128533;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128534;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128535;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128536;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128537;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128538;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128539;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128540;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128541;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128542;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128543;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128544;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128545;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128546;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128547;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128548;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128549;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128550;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128551;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128552;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128553;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128554;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128555;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128556;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128557;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128558;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128559;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128560;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128561;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128562;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128563;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128564;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128565;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128566;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128567;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128577;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128578;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128579;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#128580;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129296;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129297;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129298;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129299;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129300;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129301;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129312;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129313;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129314;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129315;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129316;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129317;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129319;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129320;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129321;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129322;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129323;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129324;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129325;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129326;</a>
+                                                                                        <a href="#" style="text-decoration: none;">&#129327;</a>
+
+
+                                                                                    </div>
+                                                                                        <p class="lead emoji-picker-container">
+                                                                                            <textarea class="form-control textarea-control"
+                                                                                                placeholder="Textarea with emoji image input"
+                                                                                                data-emojiable="true"></textarea>
+                                                                                        </p>
+                                                                                        <button type="submit"></button>
+
+                                                                                    </form>
+                                                                                </div>
+                                                                            </li> --}}
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
                                                             @endforeach
                                                         </ul>
                                                     </div>
@@ -792,7 +804,7 @@
 	<script src="/js/appsadmin.js"></script>
 	<script src="/js/isotopeadmin-int.js"></script>
     <script src="/js/mainadmin.js"></script>
-    
+
 
     <script src="/js/main.min.js"></script>
     <script src="/js/script.js"></script>
@@ -807,7 +819,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="{{asset('/js/message.js')}}"></script>
     <script>
-    
+
     <script>
         $(document).ready(function () {
             //Preloader
