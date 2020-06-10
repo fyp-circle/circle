@@ -73,6 +73,17 @@
             @else
                 @if ($c ==2)
                     {{-- Myself --}}
+                    <div class="add-btn" style="bottom:25%; right:4%;">
+                        <a id = "ShareButton" href="#" title="" data-ripple="" style="background-color: cornflowerblue; -webkit-text-fill-color: white;">Share Profile</a>
+                    </div>
+                    <script type="text/javascript">
+                        document.getElementById("ShareButton").onclick = function (){
+                            var message = "Hi, I am now on Circle. Please join and add my profile: " + window.location.href;
+                            var msg = $('<input>').val(message).appendTo('body').select()
+                            document.execCommand("copy");
+                            alert("Your Invitation is copied to clipboard!");
+                        };
+                    </script>
                 @else
                     @if ($c==3)
                     <div class="add-btn" style="bottom:35%; right:7%;">
