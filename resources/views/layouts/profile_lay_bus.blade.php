@@ -101,7 +101,7 @@
                                     var profile_id = "{{ $profile_id }}";
                                     location.href = "/cancelrequestbusiness/" + profile_id+"/{{Auth::user()->user_id}}";
                                 };
-
+                                //
                             </script>
                         @else
                         @endif
